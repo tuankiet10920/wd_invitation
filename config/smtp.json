@@ -1,0 +1,23 @@
+{
+    "development": {
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "secure": false,
+        "user": "kietnguyen02112002@gmail.com",
+        "pass": "vkah qtwj nifd vzdf"
+    },
+    "test": {
+        "host": "smtp.gmail.com",
+        "port": 465,
+        "secure": true,
+        "user": "kietnguyen02112002@gmail.com",
+        "pass": "vkah qtwj nifd vzdf"
+    },
+    "production": {
+        "host": "smtp.gmail.com",
+        "port": 465,
+        "secure": true,
+        "user": "kietnguyen02112002@gmail.com",
+        "pass": "vkah qtwj nifd vzdf"
+    }
+}

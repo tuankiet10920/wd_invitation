@@ -1,0 +1,14 @@
+{
+    "development": {
+        "key": "4c19d2828f54a8e78e7952dd41af29fa",
+        "domain": "sandbox8c0abb5b08884fb0bc38ef2920b2ced8.mailgun.org"
+    },
+    "test": {
+        "key": "4c19d2828f54a8e78e7952dd41af29fa",
+        "domain": "sandbox8c0abb5b08884fb0bc38ef2920b2ced8.mailgun.org"
+    },
+    "production": {
+        "key": "4c19d2828f54a8e78e7952dd41af29fa",
+        "domain": "sandbox8c0abb5b08884fb0bc38ef2920b2ced8.mailgun.org"
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Mẫu Thiệp Minimalist",
+  "meta_desc": "Mẫu thiệp cưới tối giản, hiện đại",
+  "image_page": "https://example.com/templates/minimalist.jpg",
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "mau-thiep-minimalist",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 500,
+  "height": 1024,
+  "is_template": false,
+  "is_template_user": true,
+  "id_category_wedding_card": 1,
+  "id_user": 1,
+  "id_package": 3,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#ffffff",
+  "nodes": [],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-05T05:35:38.000Z",
+  "updatedAt": "2026-06-13T13:41:46.093Z"
+}

@@ -1,0 +1,228 @@
+{
+  "info": {
+    "_postman_id": "cebadb4e-0bb3-43f6-bd08-dc909b942d28",
+    "name": "Researches App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "researches",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "46fec764-65c9-48f3-8cf0-ebdb2c816683",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/researches",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "researches"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "0c5e92df-addb-4b22-83b4-ce68c654aa92",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"keywords\": \"test 2\",\r\n    \"contents\": \"test 22\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/researches",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "researches"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "dcc3801e-0dac-482a-91d1-46554b4d3488",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"keywords\": \"test 2\",\r\n    \"contents\": \"test 22\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/researches/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "researches",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "images",
+          "id": "b4f0a7cc-a98b-4e81-8249-b3f0b3e6aa97",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3050/api/resolve-image",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3050",
+              "path": [
+                "api",
+                "resolve-image"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "2384c66e-0cb8-403e-b95b-ffd6ef2c21bd"
+    }
+  ]
+}

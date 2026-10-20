@@ -1,0 +1,69 @@
+AAPANEL của công ty
+
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false
+  },
+  "test": {
+    "username": "dwspnssr_devtest",
+    "password": "QIuEL1C1rY_u5luP",
+    "database": "dwspnssr_test",
+    "host": "103.15.222.22",
+    "dialect": "mysql",
+    "ssl": false
+  },
+  "production": {
+    "username": "dwspnssr_devtest",
+    "password": "QIuEL1C1rY_u5luP",
+    "database": "dwspnssr_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false
+  }
+
+  "test": {
+    "username": "cinelove",
+    "password": "2JZ8wBZkChxSaWir",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false,
+    "port": 3307
+  },
+}
+
+//
+
+NA Panel
+
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false
+  },
+  "test": {
+    "username": "cinelove",
+    "password": "2JZ8wBZkChxSaWir",
+    "database": "cinelove",
+    "host": "27.75.192.232",
+    "dialect": "mysql",
+    "ssl": false
+  },
+  "production": {
+    "username": "cinelove",
+    "password": "2JZ8wBZkChxSaWir",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false
+  }
+}

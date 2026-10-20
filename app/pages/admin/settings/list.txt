@@ -1,0 +1,4 @@
+<button class="btn-action btn-delete" type="button" title="Delete"
+    @click="openDeleteModal(setting)">
+    <BaseIconComponent name="delete-sharp" :size="18" color="#dc2626" />
+</button>

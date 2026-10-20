@@ -1,0 +1,886 @@
+{
+  "name": "dadasdasd4567",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "dadasdasd4567",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 1,
+  "height": 5246,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 2,
+  "id_user": 1,
+  "id_package": 3,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#86377f\",\"path\":\"\"}",
+  "background": "url('/backgrounds/list/opf94vjkqikbmm7f7spwdb.png') center center / cover no-repeat",
+  "nodes": [
+    {
+      "id": 1775230662509,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2753px",
+        "left": "87px",
+        "color": "#dd9994",
+        "width": "66px",
+        "height": "66px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775229125130,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298222120220260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "57px",
+        "left": "78px",
+        "width": "348px",
+        "height": "362px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775229188549,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298122074020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "68px",
+        "left": "101px",
+        "width": "302px",
+        "height": "339px",
+        "position": "absolute",
+        "transform": "",
+        "borderTopLeftRadius": "200px",
+        "borderTopRightRadius": "200px"
+      }
+    },
+    {
+      "id": 1775229158322,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298322123620260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "42px",
+        "left": "163px",
+        "width": "123px",
+        "height": "53px",
+        "position": "absolute",
+        "transform": "rotate(-8.47193deg)"
+      }
+    },
+    {
+      "id": 1775229292608,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298422145020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "404px",
+        "left": "60px",
+        "width": "384px",
+        "height": "484px",
+        "position": "absolute",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775229318738,
+      "type": "Text",
+      "props": {
+        "content": "BIRTHDAY PARTY"
+      },
+      "styles": {
+        "top": "439px",
+        "left": "146px",
+        "width": "212px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775229363640,
+      "type": "Text",
+      "props": {
+        "content": "12"
+      },
+      "styles": {
+        "top": "492px",
+        "left": "195px",
+        "width": "70px",
+        "height": "",
+        "fontSize": "53px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775229385321,
+      "type": "Text",
+      "props": {
+        "content": "TH"
+      },
+      "styles": {
+        "top": "523px",
+        "left": "228px",
+        "width": "79px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775229419755,
+      "type": "Text",
+      "props": {
+        "content": "Trân trọng mời bạn đến tham dự tiệc sinh nhật lần thứ 12 của mình!"
+      },
+      "styles": {
+        "top": "586px",
+        "left": "51px",
+        "width": "403px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775229464196,
+      "type": "Text",
+      "props": {
+        "content": "Ngày 20 tháng 05 năm 2025"
+      },
+      "styles": {
+        "top": "623px",
+        "left": "60px",
+        "width": "384px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775229495494,
+      "type": "Text",
+      "props": {
+        "content": "Tại Khách sạn Thanh Hải"
+      },
+      "styles": {
+        "top": "660px",
+        "left": "61px",
+        "width": "384px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775229526372,
+      "type": "Text",
+      "props": {
+        "content": "Nguyễn Hải Anh"
+      },
+      "styles": {
+        "top": "732px",
+        "left": "145px",
+        "width": "212px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775229546890,
+      "type": "Text",
+      "props": {
+        "content": "YOU ARE CORDIALLY INVITED TO ATTEND"
+      },
+      "styles": {
+        "top": "843px",
+        "left": "73px",
+        "width": "358px",
+        "height": "",
+        "fontSize": "17px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775229647923,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298522204520260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "920px",
+        "left": "58px",
+        "width": "280px",
+        "height": "404px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "7px"
+      }
+    },
+    {
+      "id": 1775229697096,
+      "type": "Text",
+      "props": {
+        "content": "A SPECIAL DAY, A SPECIAL BLESSING"
+      },
+      "styles": {
+        "top": "1102px",
+        "left": "210px",
+        "width": "322px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "rotate(90.2138deg)",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775229824615,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298622234220260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1278px",
+        "left": "254px",
+        "width": "178px",
+        "height": "250px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "6px"
+      }
+    },
+    {
+      "id": 1775229857147,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1262px",
+        "left": "404px",
+        "color": "#dd9994",
+        "width": "45px",
+        "height": "45px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775229934559,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298722253220260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1485px",
+        "left": "134px",
+        "width": "184px",
+        "height": "126px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "6px"
+      }
+    },
+    {
+      "id": 1775229986106,
+      "type": "Text",
+      "props": {
+        "content": "SWEET BABY"
+      },
+      "styles": {
+        "top": "1451px",
+        "left": "117px",
+        "width": "156px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230039747,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298422145020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1718px",
+        "left": "43px",
+        "width": "411px",
+        "height": "325px",
+        "position": "absolute",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775230079912,
+      "type": "Text",
+      "props": {
+        "content": "“Tuổi thơ là những năm tháng hạnh phúc,\nTuổi thơ là thời gian vui vẻ,\nTuổi thơ là những kỷ niệm tuyệt vời,\nTuổi thơ là niềm mong ước vĩnh cửu.\nChúc con giữ mãi trái tim ngây thơ,\nDancing with the steps of birthday.”\nCô gái của tôi, chúc mừng sinh nhật 12 tuổi."
+      },
+      "styles": {
+        "top": "1764px",
+        "left": "96px",
+        "width": "302px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230137587,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298822285520260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2102px",
+        "left": "40px",
+        "width": "419px",
+        "height": "285px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "6px"
+      }
+    },
+    {
+      "id": 1775230248812,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298922304520260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2467px",
+        "left": "40px",
+        "width": "228px",
+        "height": "146px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "6px"
+      }
+    },
+    {
+      "id": 1775230300693,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298222120220260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2511px",
+        "left": "279px",
+        "width": "189px",
+        "height": "211px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775230323924,
+      "type": "Text",
+      "props": {
+        "content": "SWEET BABY"
+      },
+      "styles": {
+        "top": "2399px",
+        "left": "295px",
+        "width": "156px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230542105,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298122074020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2525px",
+        "left": "288px",
+        "width": "171px",
+        "height": "188px",
+        "position": "absolute",
+        "transform": "",
+        "borderTopLeftRadius": "80px",
+        "borderTopRightRadius": "80px"
+      }
+    },
+    {
+      "id": 1775230625205,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298622234220260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2783px",
+        "left": "73px",
+        "width": "357px",
+        "height": "551px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "6px"
+      }
+    },
+    {
+      "id": 1775230703468,
+      "type": "Text",
+      "props": {
+        "content": "happy  BIRTHDAY"
+      },
+      "styles": {
+        "top": "2749px",
+        "left": "268px",
+        "width": "156px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230743363,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298422145020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "3401px",
+        "left": "50px",
+        "width": "398px",
+        "height": "584px",
+        "position": "absolute",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775230772669,
+      "type": "Text",
+      "props": {
+        "content": "// Thời gian buổi tiệc //"
+      },
+      "styles": {
+        "top": "3436px",
+        "left": "131px",
+        "width": "244px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230795636,
+      "type": "CountDown",
+      "props": {
+        "gap": "10",
+        "textColor": "#ffffff",
+        "backgroundColor": "#000000"
+      },
+      "styles": {
+        "top": "3501px",
+        "left": "116px",
+        "width": "302px",
+        "height": "54px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775230837028,
+      "type": "Calendar",
+      "props": {
+        "calendarStyle": "style2"
+      },
+      "styles": {
+        "top": "3589px",
+        "left": "117px",
+        "width": "263px",
+        "height": "253px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "",
+        "paddingTop": "14px",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    },
+    {
+      "id": 1775230882762,
+      "type": "Text",
+      "props": {
+        "content": "Thứ 3 ngày 20 tháng 05 năm 2025"
+      },
+      "styles": {
+        "top": "3883px",
+        "left": "98px",
+        "width": "303px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230900459,
+      "type": "Text",
+      "props": {
+        "content": "Ngày 28 tháng 04 âm lịch 11:45AM"
+      },
+      "styles": {
+        "top": "3920px",
+        "left": "99px",
+        "width": "303px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775230964356,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298422145020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "4115px",
+        "left": "47px",
+        "width": "398px",
+        "height": "426px",
+        "position": "absolute",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775230998663,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298322123620260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "4024px",
+        "left": "181px",
+        "width": "138px",
+        "height": "59px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775231048084,
+      "type": "Text",
+      "props": {
+        "content": "//Địa điểm buổi tiệc//"
+      },
+      "styles": {
+        "top": "4158px",
+        "left": "128px",
+        "width": "244px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775231060184,
+      "type": "Text",
+      "props": {
+        "content": "52 Miếu Đầm, Mễ Trì, Nam Từ Liêm, Hà Nội"
+      },
+      "styles": {
+        "top": "4481px",
+        "left": "85px",
+        "width": "318px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775231076018,
+      "type": "Map",
+      "props": {},
+      "styles": {
+        "top": "4213px",
+        "left": "94px",
+        "width": "300px",
+        "height": "250px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775231124140,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298422145020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "4666px",
+        "left": "46px",
+        "width": "398px",
+        "height": "470px",
+        "position": "absolute",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775231138697,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298322123620260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "4577px",
+        "left": "174px",
+        "width": "138px",
+        "height": "59px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775231162910,
+      "type": "Text",
+      "props": {
+        "content": "// Xác nhận tham dự //"
+      },
+      "styles": {
+        "top": "4696px",
+        "left": "123px",
+        "width": "244px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    },
+    {
+      "id": 1775231176315,
+      "type": "AcceptInvitation",
+      "props": {},
+      "styles": {
+        "top": "4740px",
+        "left": "95px",
+        "width": "294px",
+        "height": "321px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775231218297,
+      "type": "CallNow",
+      "props": {
+        "icon": "phone-outline",
+        "text": "Gọi cho tôi",
+        "showIcon": true,
+        "textColor": "#ffffff",
+        "backgroundColor": "#dd9994"
+      },
+      "styles": {
+        "top": "5077px",
+        "left": "61px",
+        "width": "163px",
+        "height": "41px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775231236506,
+      "type": "CallNow",
+      "props": {
+        "icon": "phone-outline",
+        "text": "Gọi cho ba mẹ",
+        "showIcon": true,
+        "textColor": "#ffffff",
+        "backgroundColor": "#dd9994"
+      },
+      "styles": {
+        "top": "5076px",
+        "left": "246px",
+        "width": "",
+        "height": "",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775231323615,
+      "type": "Text",
+      "props": {
+        "content": "A SPECIAL DAY, A SPECIAL BLESSING"
+      },
+      "styles": {
+        "top": "5191px",
+        "left": "0px",
+        "width": "500px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Signora"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"slide-up-all\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-03T15:05:41.000Z",
+  "updatedAt": "2026-04-04T14:44:08.198Z"
+}

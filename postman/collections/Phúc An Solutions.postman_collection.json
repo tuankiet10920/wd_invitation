@@ -1,0 +1,4052 @@
+{
+  "info": {
+    "_postman_id": "a7dc892f-8720-4252-9c78-d864b80ba76e",
+    "name": "Phúc An Solutions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "login",
+          "id": "8fd7be7c-11a6-4d9a-8906-a0037f42ec3b",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"tuankiet10920@gmail.com\", //anhtu7761 //kietnguyen02112002 // tuankiet10920\r\n    \"password\": \"@Kiet2020\" //At170601 //@Kiet2020\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-profile",
+          "id": "8ec73d0c-6ec4-4f3d-98db-a963101fdef1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU3NzM1MDI4LCJleHAiOjE3NjAzMjcwMjh9.zArYU6rCfER5mdLvaYNGecLngJlmdW0VAiK4ydcfyUg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/auth/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "id": "67afc369-c96f-4259-83de-782729439caa",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"email\": \"kietnguyen0211200222@gmail.com\",\r\n    \"password\": \"@Kiet2020\",\r\n    \"phone\": \"0877713348\",\r\n    \"address\": \"351 Nguyễn Huệ, An Lộc, Bình Long, Đồng Nai\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forgot-password",
+          "id": "611d1e28-8714-458c-8aae-042002ca5728",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/forgot-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "forgot-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "03270ece-dfea-4cfd-b962-b997dc0e5bcc",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU3NzM1MDI4LCJleHAiOjE3NjAzMjcwMjh9.zArYU6rCfER5mdLvaYNGecLngJlmdW0VAiK4ydcfyUg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "avatar",
+          "id": "ebefe581-0135-45d9-a774-13e6d247bf60",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU3NzM1MDI4LCJleHAiOjE3NjAzMjcwMjh9.zArYU6rCfER5mdLvaYNGecLngJlmdW0VAiK4ydcfyUg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/20250829_134057_linh_user.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/avatar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "avatar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "users",
+          "id": "8ded8ee7-05ee-4fe4-8f87-0b213518d29b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "fe5f619c-c662-40c1-b6ad-aac75e8a8d73"
+    },
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "index",
+          "id": "eddaddfc-63e1-4ad5-83c0-163abea0395e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "best-selling",
+          "id": "705e06bb-ef18-4efb-acfc-f03ae998cf5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/best-selling?category=14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "best-selling"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "5af82ea1-458a-4e43-8f06-2aadb6102490",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC Gaming MG RTX 5060 Ti  - test 2",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text"
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text"
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text"
+                },
+                {
+                  "key": "sku",
+                  "value": "1301293012321",
+                  "type": "text"
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/kietn/Downloads/screencapture-docs-google-document-d-159p8xNRCXNsHLd6uy-ZHBA5qKbJmR-Eb6J5nlpk3XHM-edit-2025-09-22-11_52_48.png",
+                    "/C:/Users/kietn/Downloads/screencapture-ap-poly-edu-vn-sinh-vien-bang-diem-2025-09-22-11_41_44.png",
+                    "/C:/Users/kietn/Downloads/meme.png"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "edit",
+          "id": "7564d895-997f-47f6-93d6-8cfa663c62c4",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Cấu Hình Giả Lập GL17 – Xeon E5 2696V3 | 64G | SSD 512GB | GTX1060 6GB",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "18",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/Cau-Hinh-Gia-Lap-GL17-Xeon-E5-2696V3.png",
+                  "disabled": true
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/kietn/Downloads/dark.png",
+                    "/C:/Users/kietn/Downloads/LOGO2.png",
+                    "/C:/Users/kietn/Downloads/default-avatar.jpg"
+                  ],
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/products/55",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "products",
+                "55"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "product-by-category",
+          "id": "12190417-b1fe-4985-a0a1-a592694a7524",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/category/14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "category",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-brands-by-category-id",
+          "id": "c02cef55-340d-4e28-96e8-8b927dee3164",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/brands/15",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "brands",
+                "15"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "best-selling-products",
+          "id": "a86d617f-bf4e-4dd6-baf7-faf2a16defb1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/products/best-selling-products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "products",
+                "best-selling-products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "detail",
+          "id": "d1dd565f-4adb-47b5-a127-a6b7108e7111",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/sieu-may-tinh-gia-re-chi-hon-100-trieu",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "sieu-may-tinh-gia-re-chi-hon-100-trieu"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "filter",
+          "id": "e2f857bf-7da3-432c-8fe6-d0ef47d25018",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/filters/search",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "filters",
+                "search"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "filter-page",
+          "id": "f538a921-874d-4748-8e93-5415d3cc21d7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/products/filter?category=pc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "filter"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "pc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "prepare-for-add-product",
+          "id": "c8e591c3-ca02-4d38-bd0c-75a4886b2092",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/prepare-for-add-product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "prepare-for-add-product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "tags",
+          "id": "53d865f9-9719-44b9-bda1-0fd7e23c3e5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/tags/products-tags/39",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "tags",
+                "products-tags",
+                "39"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "related",
+          "id": "69a9a30c-49fd-4c5c-a82d-09977137e7b4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "dasdasdsadasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "position",
+                  "value": "dadsad",
+                  "type": "text"
+                },
+                {
+                  "key": "active",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "startDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "endDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "dasdasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "link",
+                  "value": "https://youtube.com",
+                  "type": "text"
+                },
+                {
+                  "key": "isCarousel",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "carouselAutoplay",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/67779-510x510.webp"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/34/related",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "34",
+                "related"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "index-admin",
+          "id": "52a2a28d-04e0-4c04-9c6d-1608b889a84b",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/admin/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all-products-with-all-parent-categories",
+          "id": "d8a22830-f7a8-49f7-bfbf-2bd5ea7379f2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/get-all-products-with-all-parent-categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "get-all-products-with-all-parent-categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search",
+          "id": "b7ed724e-dc37-4e6c-854f-4ef1dec7bc5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/search?q=ti&page=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "ti"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "build-pc",
+          "id": "a82c57bc-c82f-4cb4-9dd5-4561272307c5",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/products/build-pc/44?rams=11&sort=all&search=",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "build-pc",
+                "44"
+              ],
+              "query": [
+                {
+                  "key": "rams",
+                  "value": "11"
+                },
+                {
+                  "key": "sort",
+                  "value": "all"
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-images",
+          "id": "de8308e6-47f6-49dc-a63c-02b0639663f2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://www.mocgarden.net/products/update-images",
+              "protocol": "https",
+              "host": [
+                "www",
+                "mocgarden",
+                "net"
+              ],
+              "path": [
+                "products",
+                "update-images"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "a699f02c-f440-4965-ab35-1137a1332a4e"
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "related",
+          "id": "65c768cd-66ee-4558-a20c-cdcfc142f35a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/category/14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "category",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getParents",
+          "id": "1fcd41cb-7a7c-457e-bd0c-b4651c96e361",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/categories/parents",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories",
+                "parents"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "menu",
+          "id": "2bc8470f-b1e7-4f78-ab86-2c91c7fa3e8f",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/menu",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "menu"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "index",
+          "id": "1bdcf30f-fd5e-4303-82af-a6c7cf687a59",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-childrens",
+          "id": "2d460317-7c3e-42fe-9646-2ebaf96d2381",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/categories/children/14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories",
+                "children",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "build-pc",
+          "id": "adc70be7-e46e-4fca-b3d4-98f252b9a497",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/categories/build-pc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories",
+                "build-pc"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "6f68bdec-36b6-4a3a-b32c-db4d98ef25de"
+    },
+    {
+      "name": "API Address",
+      "item": [
+        {
+          "name": "city",
+          "id": "2e7476c6-2598-474d-8eb2-171b94b62720",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://provinces.open-api.vn/api/v1/p/",
+              "protocol": "https",
+              "host": [
+                "provinces",
+                "open-api",
+                "vn"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "p",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "district",
+          "id": "22dd181f-f6e2-4b2d-ad57-7c03c2dc3e72",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://provinces.open-api.vn/api/v1/p/79?depth=2",
+              "protocol": "https",
+              "host": [
+                "provinces",
+                "open-api",
+                "vn"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "p",
+                "79"
+              ],
+              "query": [
+                {
+                  "key": "depth",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ward",
+          "id": "8b49d7d3-da4e-475d-8bf3-7418233ad91c",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://provinces.open-api.vn/api/v1/d/761?depth=2",
+              "protocol": "https",
+              "host": [
+                "provinces",
+                "open-api",
+                "vn"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "d",
+                "761"
+              ],
+              "query": [
+                {
+                  "key": "depth",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "city-other",
+          "id": "f75be86a-b6de-4a67-b34a-0542cd8006dc",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "hvn_t3AO8QkMXEAXuuJMIuzwBPTNCbdtkVYr",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tinhthanhpho.com/api/v1/provinces?limit=300",
+              "protocol": "https",
+              "host": [
+                "tinhthanhpho",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "provinces"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "300"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "district-other",
+          "id": "d3de248b-7bb1-42f3-b472-819966d0060b",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tinhthanhpho.com/api/v1/provinces/79/districts?limit=300",
+              "protocol": "https",
+              "host": [
+                "tinhthanhpho",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "provinces",
+                "79",
+                "districts"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "300"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ward-order",
+          "id": "6baa5313-7440-46b9-b13b-50c137048152",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tinhthanhpho.com/api/v1/districts/767/wards?limit=300",
+              "protocol": "https",
+              "host": [
+                "tinhthanhpho",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "districts",
+                "767",
+                "wards"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "300"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "cffca6fe-3fee-4594-9a3c-eba70684eb5c"
+    },
+    {
+      "name": "orders",
+      "item": [
+        {
+          "name": "guest",
+          "id": "651b7b6b-3e58-450c-a77f-bd78ba85ebfa",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isGuest\": true,\r\n    \"items\": [\r\n        {\r\n            \"productId\": 1,\r\n            \"product\": 1,\r\n            \"quantity\": 1,\r\n            \"price\": 1\r\n        }\r\n    ],\r\n    \"guestInfo\": {\r\n        \"fullName\": \"\", // bắt buộc\r\n        \"email\": \"\", // bắt buộc\r\n        \"phone\": \"\", // bắt buộc\r\n        \"address\": \"\",\r\n        \"ward\": \"\",\r\n        \"district\": \"\",\r\n        \"province\": \"\"\r\n    },\r\n    \"shippingAddress\": \"\",\r\n    \"paymentMethod\": \"COD\" // momo || vnpay\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/guest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "guest"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "vnpay",
+          "id": "262c8776-77a1-4ca6-8641-ae7a61f208d5",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"total\": 100000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/payments/vnpay/create-url",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "payments",
+                "vnpay",
+                "create-url"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "test",
+          "id": "72d78e30-170f-4490-aa42-29fab4207ae1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5173/?vnp_Amount=12000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15162421&vnp_CardType=ATM&vnp_OrderInfo=Payment+for+13&vnp_PayDate=20250909114053&vnp_ResponseCode=00&vnp_TmnCode=NJJ0R8FS&vnp_TransactionNo=15162421&vnp_TransactionStatus=00&vnp_TxnRef=13&vnp_SecureHash=306cbcd5807d7e087e944cf20497586ccadffe7f74f923df6b73dea40e310a524e935d32e15ab03ca35ef908b208dc0d6ab152730a7cdeb5ea1ec881c7a7d843",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "vnp_Amount",
+                  "value": "12000000"
+                },
+                {
+                  "key": "vnp_BankCode",
+                  "value": "NCB"
+                },
+                {
+                  "key": "vnp_BankTranNo",
+                  "value": "VNP15162421"
+                },
+                {
+                  "key": "vnp_CardType",
+                  "value": "ATM"
+                },
+                {
+                  "key": "vnp_OrderInfo",
+                  "value": "Payment+for+13"
+                },
+                {
+                  "key": "vnp_PayDate",
+                  "value": "20250909114053"
+                },
+                {
+                  "key": "vnp_ResponseCode",
+                  "value": "00"
+                },
+                {
+                  "key": "vnp_TmnCode",
+                  "value": "NJJ0R8FS"
+                },
+                {
+                  "key": "vnp_TransactionNo",
+                  "value": "15162421"
+                },
+                {
+                  "key": "vnp_TransactionStatus",
+                  "value": "00"
+                },
+                {
+                  "key": "vnp_TxnRef",
+                  "value": "13"
+                },
+                {
+                  "key": "vnp_SecureHash",
+                  "value": "306cbcd5807d7e087e944cf20497586ccadffe7f74f923df6b73dea40e310a524e935d32e15ab03ca35ef908b208dc0d6ab152730a7cdeb5ea1ec881c7a7d843"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getBankList",
+          "id": "c9ea1b42-4f2a-4c7a-a5ae-826c8d91be56",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "tmn_code",
+                  "value": "E2GPROBA",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://sandbox.vnpayment.vn/qrpayauth/api/merchant/get_bank_list",
+              "protocol": "https",
+              "host": [
+                "sandbox",
+                "vnpayment",
+                "vn"
+              ],
+              "path": [
+                "qrpayauth",
+                "api",
+                "merchant",
+                "get_bank_list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "my-orders",
+          "id": "1b05d496-54da-4c47-800b-36ce40dff4e6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU3NzM1MDI4LCJleHAiOjE3NjAzMjcwMjh9.zArYU6rCfER5mdLvaYNGecLngJlmdW0VAiK4ydcfyUg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/myorders?orderId=67",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "myorders"
+              ],
+              "query": [
+                {
+                  "key": "orderId",
+                  "value": "67"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "orders-admin",
+          "id": "7a6e2c8b-a2cc-4150-b8b7-5cb9cf794abc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzU5MTE5MjgxLCJleHAiOjE3NjE3MTEyODF9.rGAtj4WIXZKznovjZukfZ5r5daIL4B6rUnhEuOdGh3E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "synth-revenue",
+          "id": "f9244204-cbb8-489a-a727-e854d96397b3",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders/synth-revenue",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "synth-revenue"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "68d51c3c-3307-4d71-997c-8805ddabe282"
+    },
+    {
+      "name": "promotions",
+      "item": [
+        {
+          "name": "add-discount-voucher",
+          "id": "ace4ac35-63fd-49fd-8214-b62d7141b7cb",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cart\": [\r\n        {\r\n            \"id\": 34,\r\n            \"qty\": 1,\r\n            \"sale_price\": 20500000.00\r\n        }\r\n    ],\r\n    \"code\": \"VOUCHER25K\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/promotions/add-discount-code",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "promotions",
+                "add-discount-code"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get",
+          "id": "8d743280-5bbc-4d30-b25c-582c458e2c91",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/promotions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "promotions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "ae1b18a0-168d-4c33-9fe6-3c30e7fd0361",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  /**\r\n    28, \r\n    34,\r\n    39,\r\n    40,\r\n    41,\r\n    43\r\n  */\r\n  \"name\": \"Giảm 10% Cho Đơn Hàng Lớn\",\r\n  \"code\": \"FLASHSALE50K\",\r\n  \"point\": 100,\r\n  \"usage_limit\": 50,\r\n  \"status\": \"active\",\r\n  \"min_order_value\": 500000,\r\n  \"discount_value\": 10,\r\n  \"end_date\": \"2025-11-30T23:59:59Z\",\r\n  \"start_date\": \"2025-10-25T00:00:00Z\",\r\n  \"max_discount\": 50000\r\n//   ,\r\n//   \"products\": [\r\n//     {\r\n//         \"id\": 28\r\n//     },\r\n//     {\r\n//         \"id\": 34\r\n//     },\r\n//     {\r\n//         \"id\": 39\r\n//     },\r\n//     {\r\n//         \"id\": 40\r\n//     }\r\n//   ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/promotions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "promotions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "1f54afd5-f912-447b-b7b2-24c0af7586bd",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Khuyến Mãi Đặc Biệt Tháng 11\",\r\n  \"code\": \"FLASHSALE100K\",\r\n  \"point\": 100,\r\n  \"usage_limit\": 500,\r\n  \"status\": \"active\",\r\n  \"min_order_value\": 300000,\r\n  \"discount_value\": 15,\r\n  \"end_date\": \"2025-11-30T23:59:59Z\",\r\n  \"start_date\": \"2025-11-01T00:00:00Z\",\r\n  \"max_discount\": 50000,\r\n  \"description\": \"Giảm 15% tối đa 50k cho đơn hàng từ 300k, áp dụng trong tháng 11.\",\r\n  \"milestone\": null\r\n  ,\r\n  \"products\": [\r\n    {\r\n        \"id\": 28\r\n    },\r\n    {\r\n        \"id\": 34\r\n    },\r\n    {\r\n        \"id\": 39\r\n    },\r\n    {\r\n        \"id\": 40\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/promotions/14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "promotions",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "5e39b5ff-684d-434f-bbb0-2d27505df7a0"
+    },
+    {
+      "name": "wishlist",
+      "item": [
+        {
+          "name": "add",
+          "id": "87b94e40-f7f4-40bf-88b2-7fa3f65d1563",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU3NzM1MDI4LCJleHAiOjE3NjAzMjcwMjh9.zArYU6rCfER5mdLvaYNGecLngJlmdW0VAiK4ydcfyUg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/wishlist/products/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wishlist",
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "check",
+          "id": "4c3b3c0b-b109-4dd9-bd89-ef2d38a07c7b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\", //anhtu7761 //kietnguyen02112002\r\n    \"password\": \"@Kiet2020\" //At170601 //@Kiet2020\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/wishlist/check/67",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wishlist",
+                "check",
+                "67"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "b052b796-6b5a-4e79-ad0a-6a6bd263913c",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/wishlist/products/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wishlist",
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-wishlist",
+          "id": "363fb03d-3be8-4253-ba69-538103ee148c",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/wishlist",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wishlist"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "f54be7f6-48f9-4a3a-96cd-8a75dd0c076b"
+    },
+    {
+      "name": "addresses",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "3c0ac5e4-86ef-4ee9-b1ba-fd6ba617b5ff",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/addresses",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "addresses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "f64be209-e9cc-478b-ac0f-a363847c04d2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"Nguyễn Tuấn Kiệt\",\r\n    \"phone\": \"0877713348\",\r\n    \"addressLine\": \"351 Nguyễn Huệ\",\r\n    \"province\": \"Long An\",\r\n    \"district\": \"Bình Long\",\r\n    \"ward\": \"Phú Thịnh\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/addresses",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "addresses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "default",
+          "id": "0ca083e1-5eec-4164-8db8-20fc3b1bb973",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/addresses/default",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "addresses",
+                "default"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "4717ec9a-8735-4ca5-a05a-fe1700205de2"
+    },
+    {
+      "name": "filters",
+      "item": [
+        {
+          "name": "search",
+          "id": "ac5aa67a-2225-410c-8f61-ee53bf9df351",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://babythrees.ntkmarket.shop/api/news/featured?limit=5",
+              "protocol": "https",
+              "host": [
+                "babythrees",
+                "ntkmarket",
+                "shop"
+              ],
+              "path": [
+                "api",
+                "news",
+                "featured"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "c0e62b0d-88e9-445c-85a8-30af63d8bd58"
+    },
+    {
+      "name": "brands",
+      "item": [
+        {
+          "name": "index",
+          "id": "5ab35368-4f7a-41d5-ae84-6a317e77733b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/brands",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "brands"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getProductsBrands",
+          "id": "86cd467d-768c-4b43-bd6f-62a5ab28b71e",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/brands/1/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "brands",
+                "1",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "d04a50c5-f3f8-4faa-aa48-ff0eca2fd1d3"
+    },
+    {
+      "name": "product - types",
+      "item": [
+        {
+          "name": "index",
+          "id": "0be676d0-77e2-4c6d-9581-1709f731ed19",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2OTc3NDQxLCJleHAiOjE3NTk1Njk0NDF9.GVepygRQn11eeZPqXUFqNBZNMAfJZNW_BDFblae7QMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products-types"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "eb4e4076-a77c-4fd8-87ea-9daecae2ae4e"
+    },
+    {
+      "name": "banners",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "c1f5fe5d-c55c-46c0-935e-e98dd82e5f78",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzU5MTE5MjgxLCJleHAiOjE3NjE3MTEyODF9.rGAtj4WIXZKznovjZukfZ5r5daIL4B6rUnhEuOdGh3E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/banners",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "banners"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "conditions",
+          "id": "cb50cea4-6b42-4106-938f-71e011f979a3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzU5MTE5MjgxLCJleHAiOjE3NjE3MTEyODF9.rGAtj4WIXZKznovjZukfZ5r5daIL4B6rUnhEuOdGh3E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/banners/conditions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "banners",
+                "conditions"
+              ],
+              "query": [
+                {
+                  "key": "active",
+                  "value": "false",
+                  "disabled": true
+                },
+                {
+                  "key": "position",
+                  "value": "about",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "0f77d986-da9d-4b37-a158-f1db005fbcc1"
+    },
+    {
+      "name": "home",
+      "item": [
+        {
+          "name": "countdown",
+          "id": "9616491b-ce1c-4f1f-8986-ed09cbdf7968",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzU5MTE5MjgxLCJleHAiOjE3NjE3MTEyODF9.rGAtj4WIXZKznovjZukfZ5r5daIL4B6rUnhEuOdGh3E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/home/countdown",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "home",
+                "countdown"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "72dfa9de-5d0b-4a68-b01a-f9b1b9bcf487"
+    },
+    {
+      "name": "tags",
+      "item": [
+        {
+          "name": "by-categories",
+          "id": "402154fe-a468-4b2f-8847-1212fe7a3751",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzU5MTE5MjgxLCJleHAiOjE3NjE3MTEyODF9.rGAtj4WIXZKznovjZukfZ5r5daIL4B6rUnhEuOdGh3E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/tags/by-category/14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "tags",
+                "by-category",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "a99cdc8a-4f16-4053-8ec1-01f440d3a288"
+    },
+    {
+      "name": "products-tags",
+      "item": [
+        {
+          "name": "test",
+          "id": "faf4b21a-603a-4b05-9c3c-21355b5f51b1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzU5MTE5MjgxLCJleHAiOjE3NjE3MTEyODF9.rGAtj4WIXZKznovjZukfZ5r5daIL4B6rUnhEuOdGh3E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"gender\": \"\",\r\n    \"birthday\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products-tags/test",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products-tags",
+                "test"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "f0e590a8-94e3-4c2b-a513-0939d0925b68"
+    },
+    {
+      "name": "banners",
+      "item": [
+        {
+          "name": "add",
+          "id": "8782236d-b4d6-4ee3-a8e6-10550578dbca",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "dasdasdsadasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "position",
+                  "value": "dadsad",
+                  "type": "text"
+                },
+                {
+                  "key": "active",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "startDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "endDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "dasdasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "link",
+                  "value": "https://youtube.com",
+                  "type": "text"
+                },
+                {
+                  "key": "isCarousel",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "carouselAutoplay",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/67779-510x510.webp"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/banners",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "banners"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "4efd756d-43e7-46d2-8faa-55d3460bef31"
+    },
+    {
+      "name": "news-types",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "d3c10b1e-54e6-4eb9-bce9-3468e4833b95",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "dasdasdsadasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "position",
+                  "value": "dadsad",
+                  "type": "text"
+                },
+                {
+                  "key": "active",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "startDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "endDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "dasdasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "link",
+                  "value": "https://youtube.com",
+                  "type": "text"
+                },
+                {
+                  "key": "isCarousel",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "carouselAutoplay",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/67779-510x510.webp"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "c8b27b28-905a-4bfb-b6d6-4f7cc448ac81",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "dasdasdsadasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "position",
+                  "value": "dadsad",
+                  "type": "text"
+                },
+                {
+                  "key": "active",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "startDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "endDate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "dasdasdasd",
+                  "type": "text"
+                },
+                {
+                  "key": "link",
+                  "value": "https://youtube.com",
+                  "type": "text"
+                },
+                {
+                  "key": "isCarousel",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "carouselAutoplay",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/67779-510x510.webp"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news-types/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news-types",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "id": "d5aae289-6c0f-4fa7-bef2-6dd73e64161d",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Loại 2\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "7691c557-df59-464e-b90e-6d45e9db3057",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Loại 1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news-types/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news-types",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "5b584bcd-180a-4945-8b68-7ab438a1ac08",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test hello bro 2\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news-types/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news-types",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "e7de2caf-f617-4020-a649-2c1f02927380"
+    },
+    {
+      "name": "news",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "205fdc03-5089-45eb-bc29-2f0f0cb7d3de",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test hello bro 2\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "fb5914ea-0b30-4288-b3e9-d35eb7a07066",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test hello bro 2\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "id": "44fcccc9-fdfe-4d02-ba5b-5a0e22477bf8",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Test hello bro 1\",\r\n    \"content\": \"<h1>dasdadsa</h1>\",\r\n    \"id_type\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "9b81092d-d476-416b-87ea-e81995ae7a23",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Test hello bro 2\",\r\n    \"content\": \"<h1>dasdadsa</h1>\",\r\n    \"id_type\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "f585901a-1f45-4b78-a4d8-5c3a9a85e54e",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test hello bro 2\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/news/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "news",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getByType",
+          "id": "6f89d936-c46d-43c8-9bc1-b00548c9c4aa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test hello bro 2\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/news/tin-tuc-cong-nghe/type?page=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "news",
+                "tin-tuc-cong-nghe",
+                "type"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "related",
+          "id": "7d3b361b-9756-421c-a15e-9b1099f9223c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test hello bro 2\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/news/27/related",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "news",
+                "27",
+                "related"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b8e3000d-bf65-42c2-9beb-b5a95ba7bce5"
+    },
+    {
+      "name": "rank",
+      "item": [
+        {
+          "name": "get",
+          "id": "1512a75b-e71c-4585-91e4-2a08373ffded",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgsImlhdCI6MTc2MDYwMjU4NSwiZXhwIjoxNzYzMTk0NTg1fQ.0KHvYuiBqnaV1yOf59zjPp88GQdjekjdcHn5TlFT3wI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/ranks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "ranks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all",
+          "id": "b2ef8844-22f2-491a-b09f-8fb4461dd193",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/ranks/get-all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "ranks",
+                "get-all"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b291d8b9-7953-4e50-aea8-c892e3f72105"
+    },
+    {
+      "name": "user-promotions",
+      "item": [
+        {
+          "name": "add",
+          "id": "b4f4e914-bb38-4162-871b-05ebc5b7186c",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_promotion\": 6\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/user-promotions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "user-promotions"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b010aa2c-222a-4c0d-9b4f-8aef81f65102"
+    },
+    {
+      "name": "accessories",
+      "item": [
+        {
+          "name": "index",
+          "id": "8b1b5a24-54ef-4aa4-8d72-2e300f20060b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "PC STAR Hunt E | AMD Ryzen 5 5500, A520, RAM 16GB, SSD 512GB, RX 6500XT",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Không có",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sale_price",
+                  "value": "280000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "420000000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "14",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "stock",
+                  "value": "25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sku",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isActive",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mainImage",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/cypher_76bc077c520a46d7984be0dc9fde30b7_large_5de0771a7b4243758f9e63d74bdd9aeb_master.png"
+                },
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": "/C:/Users/kietn/Downloads/250-7805-pc-gaming-mg-rtx-5060-ti-intel-i5-14400f-ram-16gb-256gb-ssd.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "103edf07-f05f-4560-97d1-21e7465f54b3",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Linh kiện điện tử 2\",\r\n    \"id_type\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "edit",
+          "id": "c4b39a7d-1691-4587-a6bc-8a258e6b7dd8",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Linh kiện điện tử 2\",\r\n    \"id_type\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessories/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessories",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "4dc11f48-16ba-4c80-80a6-3dea383ab8de",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessories/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessories",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "type",
+          "id": "352f0b7a-8529-459e-83e9-9fd312ee1c02",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessories/2/type",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessories",
+                "2",
+                "type"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "type-slug",
+          "id": "926d81a6-e00c-48be-8e44-b02dfc6cc8a3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessories/type-slug?label=ram,socket",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessories",
+                "type-slug"
+              ],
+              "query": [
+                {
+                  "key": "label",
+                  "value": "ram,socket"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "367a579c-ca45-4a2d-9c5a-8bbf88fed388"
+    },
+    {
+      "name": "accessory-types",
+      "item": [
+        {
+          "name": "index",
+          "id": "e3397c9c-0b0b-4dde-a6b6-eb4ec4807fd9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzYyMzA4NjA5LCJleHAiOjE3NjQ5MDA2MDl9.fH7i-iWiUeyCUA1u96wCrjs5mG7NDB47csA8OZJPS7M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"anhtu7761@gmail.com\",\r\n    \"password\": \"At170601\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/accessory-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "accessory-types"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "44cfda43-4b60-4e63-b8b7-6df90923727b"
+    },
+    {
+      "name": "point",
+      "item": [
+        {
+          "name": "export",
+          "id": "913c0dd7-d83f-4723-aeae-dc5913912af7",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/point/export",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "point",
+                "export"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "8b378293-4d63-47d7-a1fb-c49e27c0fe98"
+    }
+  ]
+}

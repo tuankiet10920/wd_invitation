@@ -1,0 +1,482 @@
+[
+  {
+    "url": "stocks/chu-hy-1.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-10.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-11.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-12.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-2.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-3.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-4.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-5.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-6.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-7.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-8.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/chu-hy-9.webp",
+    "id_image_type": 4,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-1.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-10.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-11.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-12.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-2.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-3.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-4.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-5.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-6.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-7.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-8.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/hoa-cuoi-9.webp",
+    "id_image_type": 3,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-1.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-10.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-11.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-12.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-2.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-3.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-4.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-5.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-6.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-7.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-8.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/nhan-vat-9.webp",
+    "id_image_type": 2,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-1.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-10.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-11.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-12.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-2.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-3.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-4.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-5.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-6.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-7.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-8.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/trai-tim-9.webp",
+    "id_image_type": 5,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-10.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-11.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-12.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-2.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-3.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-4.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-5.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-6.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-7.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-8.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-cuoi-9.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  },
+  {
+    "url": "stocks/yeu-to-dam-duoi-1.webp",
+    "id_image_type": 1,
+    "id_min_package": 1,
+    "id_user": null,
+    "createdAt": new Date(),
+    "updatedAt": new Date()
+  }
+]

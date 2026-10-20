@@ -1,0 +1,704 @@
+[
+  {
+    "id": "weddingElements",
+    "name": "Yếu tố đám cưới",
+    "samples": [
+      {
+        "id": "0hnjau4p5jocl2nx1f5u2ur",
+        "imgKey": "resources/weddingElements/0hnjau4p5jocl2nx1f5u2ur.png",
+        "thumbnailKey": "resources/weddingElements/thumbnail/0hnjau4p5jocl2nx1f5u2ur.webp"
+      },
+      {
+        "id": "0plo1wbwbqol8btsy0ugp32",
+        "imgKey": "resources/weddingElements/0plo1wbwbqol8btsy0ugp32.png",
+        "thumbnailKey": "resources/weddingElements/thumbnail/0plo1wbwbqol8btsy0ugp32.webp"
+      },
+      {
+        "id": "27kyhvoqq0k82c2wi9tq57",
+        "imgKey": "resources/weddingElements/27kyhvoqq0k82c2wi9tq57.png",
+        "thumbnailKey": "resources/weddingElements/thumbnail/27kyhvoqq0k82c2wi9tq57.webp"
+      },
+      {
+        "id": "2fflrfqw5xd6x8cd6j3ugu",
+        "imgKey": "resources/weddingElements/2fflrfqw5xd6x8cd6j3ugu.png",
+        "thumbnailKey": "resources/weddingElements/thumbnail/2fflrfqw5xd6x8cd6j3ugu.webp"
+      },
+      {
+        "id": "2r7tavxz2433wmdpdpwss5",
+        "imgKey": "resources/weddingElements/2r7tavxz2433wmdpdpwss5.png",
+        "thumbnailKey": "resources/weddingElements/thumbnail/2r7tavxz2433wmdpdpwss5.webp"
+      },
+      {
+        "id": "4opt9o18cuh9izyxjvt7cl",
+        "imgKey": "resources/weddingElements/4opt9o18cuh9izyxjvt7cl.png",
+        "thumbnailKey": "resources/weddingElements/thumbnail/4opt9o18cuh9izyxjvt7cl.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "yeu-to-dam-cuoi"
+  },
+  {
+    "id": "characters",
+    "name": "Nhân vật",
+    "samples": [
+      {
+        "id": "00jc1jrorbkrkkh75js0i8",
+        "imgKey": "resources/characters/00jc1jrorbkrkkh75js0i8.png",
+        "thumbnailKey": "resources/characters/thumbnail/00jc1jrorbkrkkh75js0i8.webp"
+      },
+      {
+        "id": "0396959cdc4f4facbf963131d33506fa",
+        "imgKey": "resources/characters/0396959cdc4f4facbf963131d33506fa.jpg",
+        "thumbnailKey": "resources/characters/thumbnail/0396959cdc4f4facbf963131d33506fa.webp"
+      },
+      {
+        "id": "03hrsey2ul8x7ilq8zdwt3j",
+        "imgKey": "resources/characters/03hrsey2ul8x7ilq8zdwt3j.png",
+        "thumbnailKey": "resources/characters/thumbnail/03hrsey2ul8x7ilq8zdwt3j.webp"
+      },
+      {
+        "id": "05e40de8c6e54e85908ffb9c36d68055",
+        "imgKey": "resources/characters/05e40de8c6e54e85908ffb9c36d68055.jpg",
+        "thumbnailKey": "resources/characters/thumbnail/05e40de8c6e54e85908ffb9c36d68055.webp"
+      },
+      {
+        "id": "06r8bf67a9d70j82uva1udsv",
+        "imgKey": "resources/characters/06r8bf67a9d70j82uva1udsv.png",
+        "thumbnailKey": "resources/characters/thumbnail/06r8bf67a9d70j82uva1udsv.webp"
+      },
+      {
+        "id": "0ba81df5f7cf42dbb92001e7d16c6e1c",
+        "imgKey": "resources/characters/0ba81df5f7cf42dbb92001e7d16c6e1c.png",
+        "thumbnailKey": "resources/characters/thumbnail/0ba81df5f7cf42dbb92001e7d16c6e1c.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "nhan-vat"
+  },
+  {
+    "id": "bouquet",
+    "name": "Hoa cưới",
+    "samples": [
+      {
+        "id": "00510qza2x55rthg4nso1zco",
+        "imgKey": "resources/bouquet/00510qza2x55rthg4nso1zco.png",
+        "thumbnailKey": "resources/bouquet/thumbnail/00510qza2x55rthg4nso1zco.webp"
+      },
+      {
+        "id": "0ulsh4sx9m8pxmqd5d50puo",
+        "imgKey": "resources/bouquet/0ulsh4sx9m8pxmqd5d50puo.png",
+        "thumbnailKey": "resources/bouquet/thumbnail/0ulsh4sx9m8pxmqd5d50puo.webp"
+      },
+      {
+        "id": "2k48km3yvhc15s6q5njtpc",
+        "imgKey": "resources/bouquet/2k48km3yvhc15s6q5njtpc.png",
+        "thumbnailKey": "resources/bouquet/thumbnail/2k48km3yvhc15s6q5njtpc.webp"
+      },
+      {
+        "id": "3qvrtt0f2agvqph8ver7h9",
+        "imgKey": "resources/bouquet/3qvrtt0f2agvqph8ver7h9.png",
+        "thumbnailKey": "resources/bouquet/thumbnail/3qvrtt0f2agvqph8ver7h9.webp"
+      },
+      {
+        "id": "4e1afc9gnp5jp2oluxui3o",
+        "imgKey": "resources/bouquet/4e1afc9gnp5jp2oluxui3o.png",
+        "thumbnailKey": "resources/bouquet/thumbnail/4e1afc9gnp5jp2oluxui3o.webp"
+      },
+      {
+        "id": "4tuaudv8i4cf7xas8rxbah",
+        "imgKey": "resources/bouquet/4tuaudv8i4cf7xas8rxbah.png",
+        "thumbnailKey": "resources/bouquet/thumbnail/4tuaudv8i4cf7xas8rxbah.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "hoa-cuoi"
+  },
+  {
+    "id": "happiness",
+    "name": "Chữ hỷ",
+    "samples": [
+      {
+        "id": "04w8fwcc3aq7c03tunedt9",
+        "imgKey": "resources/happiness/04w8fwcc3aq7c03tunedt9.png",
+        "thumbnailKey": "resources/happiness/thumbnail/04w8fwcc3aq7c03tunedt9.webp"
+      },
+      {
+        "id": "0ghigvoh92gm7l17spy6is2",
+        "imgKey": "resources/happiness/0ghigvoh92gm7l17spy6is2.png",
+        "thumbnailKey": "resources/happiness/thumbnail/0ghigvoh92gm7l17spy6is2.webp"
+      },
+      {
+        "id": "0o68oy8lw7sad3o74ehkwk",
+        "imgKey": "resources/happiness/0o68oy8lw7sad3o74ehkwk.png",
+        "thumbnailKey": "resources/happiness/thumbnail/0o68oy8lw7sad3o74ehkwk.webp"
+      },
+      {
+        "id": "0p1j8bgum1wolb7k8c1t1b",
+        "imgKey": "resources/happiness/0p1j8bgum1wolb7k8c1t1b.png",
+        "thumbnailKey": "resources/happiness/thumbnail/0p1j8bgum1wolb7k8c1t1b.webp"
+      },
+      {
+        "id": "0u2unnxalt31wq5tvw74a",
+        "imgKey": "resources/happiness/0u2unnxalt31wq5tvw74a.png",
+        "thumbnailKey": "resources/happiness/thumbnail/0u2unnxalt31wq5tvw74a.webp"
+      },
+      {
+        "id": "124w3zziomn3n5u6p903ne",
+        "imgKey": "resources/happiness/124w3zziomn3n5u6p903ne.png",
+        "thumbnailKey": "resources/happiness/thumbnail/124w3zziomn3n5u6p903ne.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "chu-hy"
+  },
+  {
+    "id": "love",
+    "name": "Trái tim",
+    "samples": [
+      {
+        "id": "04imilbv0864t7bir6r2sb8",
+        "imgKey": "resources/love/04imilbv0864t7bir6r2sb8.png",
+        "thumbnailKey": "resources/love/thumbnail/04imilbv0864t7bir6r2sb8.webp"
+      },
+      {
+        "id": "04o9h4m4ra858edyl15d8z9",
+        "imgKey": "resources/love/04o9h4m4ra858edyl15d8z9.png",
+        "thumbnailKey": "resources/love/thumbnail/04o9h4m4ra858edyl15d8z9.webp"
+      },
+      {
+        "id": "060x9pz4st77f03msl2hus5",
+        "imgKey": "resources/love/060x9pz4st77f03msl2hus5.png",
+        "thumbnailKey": "resources/love/thumbnail/060x9pz4st77f03msl2hus5.webp"
+      },
+      {
+        "id": "08u86zhvew8rjqtt9c04k4k",
+        "imgKey": "resources/love/08u86zhvew8rjqtt9c04k4k.png",
+        "thumbnailKey": "resources/love/thumbnail/08u86zhvew8rjqtt9c04k4k.webp"
+      },
+      {
+        "id": "0am0ja0zkl4m33jp4fiwsfv",
+        "imgKey": "resources/love/0am0ja0zkl4m33jp4fiwsfv.png",
+        "thumbnailKey": "resources/love/thumbnail/0am0ja0zkl4m33jp4fiwsfv.webp"
+      },
+      {
+        "id": "0mpzufiecwpyvppfpf67so",
+        "imgKey": "resources/love/0mpzufiecwpyvppfpf67so.png",
+        "thumbnailKey": "resources/love/thumbnail/0mpzufiecwpyvppfpf67so.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "trai-tim"
+  },
+  {
+    "id": "textCombination",
+    "name": "Kết hợp chữ",
+    "samples": [
+      {
+        "id": "0c1w2ltlzhb76s3s55dc1v",
+        "imgKey": "resources/textCombination/0c1w2ltlzhb76s3s55dc1v.png",
+        "thumbnailKey": "resources/textCombination/thumbnail/0c1w2ltlzhb76s3s55dc1v.webp"
+      },
+      {
+        "id": "0daohsq79gfvzurcrce3qoj",
+        "imgKey": "resources/textCombination/0daohsq79gfvzurcrce3qoj.png",
+        "thumbnailKey": "resources/textCombination/thumbnail/0daohsq79gfvzurcrce3qoj.webp"
+      },
+      {
+        "id": "0z1qe906fhn1x6aoonezav",
+        "imgKey": "resources/textCombination/0z1qe906fhn1x6aoonezav.png",
+        "thumbnailKey": "resources/textCombination/thumbnail/0z1qe906fhn1x6aoonezav.webp"
+      },
+      {
+        "id": "1e74wxu604y9cowlqol03q",
+        "imgKey": "resources/textCombination/1e74wxu604y9cowlqol03q.png",
+        "thumbnailKey": "resources/textCombination/thumbnail/1e74wxu604y9cowlqol03q.webp"
+      },
+      {
+        "id": "1hcetrugsfsva9rf4ejae",
+        "imgKey": "resources/textCombination/1hcetrugsfsva9rf4ejae.png",
+        "thumbnailKey": "resources/textCombination/thumbnail/1hcetrugsfsva9rf4ejae.webp"
+      },
+      {
+        "id": "1xf4tui7l6runl98igik7",
+        "imgKey": "resources/textCombination/1xf4tui7l6runl98igik7.png",
+        "thumbnailKey": "resources/textCombination/thumbnail/1xf4tui7l6runl98igik7.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "ket-hop-chu"
+  },
+  {
+    "id": "numbersAndLetters",
+    "name": "Số và chữ cái",
+    "samples": [
+      {
+        "id": "001_fpaocauoyxg",
+        "imgKey": "resources/numbersAndLetters/001_fpaocauoyxg.png",
+        "thumbnailKey": "resources/numbersAndLetters/thumbnail/001_fpaocauoyxg.webp"
+      },
+      {
+        "id": "002_4dtmu814s98",
+        "imgKey": "resources/numbersAndLetters/002_4dtmu814s98.png",
+        "thumbnailKey": "resources/numbersAndLetters/thumbnail/002_4dtmu814s98.webp"
+      },
+      {
+        "id": "003_zf1wafb93b",
+        "imgKey": "resources/numbersAndLetters/003_zf1wafb93b.png",
+        "thumbnailKey": "resources/numbersAndLetters/thumbnail/003_zf1wafb93b.webp"
+      },
+      {
+        "id": "004_v7pxth4u6mb",
+        "imgKey": "resources/numbersAndLetters/004_v7pxth4u6mb.png",
+        "thumbnailKey": "resources/numbersAndLetters/thumbnail/004_v7pxth4u6mb.webp"
+      },
+      {
+        "id": "005_51fl0d9je8n",
+        "imgKey": "resources/numbersAndLetters/005_51fl0d9je8n.png",
+        "thumbnailKey": "resources/numbersAndLetters/thumbnail/005_51fl0d9je8n.webp"
+      },
+      {
+        "id": "006_flc5mwq41q",
+        "imgKey": "resources/numbersAndLetters/006_flc5mwq41q.png",
+        "thumbnailKey": "resources/numbersAndLetters/thumbnail/006_flc5mwq41q.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "so-va-chu-cai"
+  },
+  {
+    "id": "decorativeElements",
+    "name": "Trang trí không gian",
+    "samples": [
+      {
+        "id": "08tfjn6g9ku3jtp7wr2qm1",
+        "imgKey": "resources/decorativeElements/08tfjn6g9ku3jtp7wr2qm1.png",
+        "thumbnailKey": "resources/decorativeElements/thumbnail/08tfjn6g9ku3jtp7wr2qm1.webp"
+      },
+      {
+        "id": "0984loh7so7dwyeo9e6yhxd",
+        "imgKey": "resources/decorativeElements/0984loh7so7dwyeo9e6yhxd.png",
+        "thumbnailKey": "resources/decorativeElements/thumbnail/0984loh7so7dwyeo9e6yhxd.webp"
+      },
+      {
+        "id": "09hzg5sl8k4b8dv10hw0cv",
+        "imgKey": "resources/decorativeElements/09hzg5sl8k4b8dv10hw0cv.png",
+        "thumbnailKey": "resources/decorativeElements/thumbnail/09hzg5sl8k4b8dv10hw0cv.webp"
+      },
+      {
+        "id": "09wndis4y0ohj1fl7foyara",
+        "imgKey": "resources/decorativeElements/09wndis4y0ohj1fl7foyara.png",
+        "thumbnailKey": "resources/decorativeElements/thumbnail/09wndis4y0ohj1fl7foyara.webp"
+      },
+      {
+        "id": "0bkxnuiuvnefei6zn55swy7",
+        "imgKey": "resources/decorativeElements/0bkxnuiuvnefei6zn55swy7.png",
+        "thumbnailKey": "resources/decorativeElements/thumbnail/0bkxnuiuvnefei6zn55swy7.webp"
+      },
+      {
+        "id": "0rcjuijptdx8jr9yrunihy",
+        "imgKey": "resources/decorativeElements/0rcjuijptdx8jr9yrunihy.png",
+        "thumbnailKey": "resources/decorativeElements/thumbnail/0rcjuijptdx8jr9yrunihy.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "trang-tri-khong-gian"
+  },
+  {
+    "id": "birthdayWishes",
+    "name": "Chúc mừng sinh nhật",
+    "samples": [
+      {
+        "id": "0qm5qx47l6aa5t9akkx8dij",
+        "imgKey": "resources/birthdayWishes/0qm5qx47l6aa5t9akkx8dij.png",
+        "thumbnailKey": "resources/birthdayWishes/thumbnail/0qm5qx47l6aa5t9akkx8dij.webp"
+      },
+      {
+        "id": "0txn7h8qqlc4ptiq630dfk",
+        "imgKey": "resources/birthdayWishes/0txn7h8qqlc4ptiq630dfk.png",
+        "thumbnailKey": "resources/birthdayWishes/thumbnail/0txn7h8qqlc4ptiq630dfk.webp"
+      },
+      {
+        "id": "0vfmz7omzf1py79q0nz44e",
+        "imgKey": "resources/birthdayWishes/0vfmz7omzf1py79q0nz44e.png",
+        "thumbnailKey": "resources/birthdayWishes/thumbnail/0vfmz7omzf1py79q0nz44e.webp"
+      },
+      {
+        "id": "0vh0wmaqp7kc6rgauenszvf",
+        "imgKey": "resources/birthdayWishes/0vh0wmaqp7kc6rgauenszvf.png",
+        "thumbnailKey": "resources/birthdayWishes/thumbnail/0vh0wmaqp7kc6rgauenszvf.webp"
+      },
+      {
+        "id": "1b51hqabv8jzf6nou7fuw",
+        "imgKey": "resources/birthdayWishes/1b51hqabv8jzf6nou7fuw.png",
+        "thumbnailKey": "resources/birthdayWishes/thumbnail/1b51hqabv8jzf6nou7fuw.webp"
+      },
+      {
+        "id": "1rfwnbqx59172vgca6sk03",
+        "imgKey": "resources/birthdayWishes/1rfwnbqx59172vgca6sk03.png",
+        "thumbnailKey": "resources/birthdayWishes/thumbnail/1rfwnbqx59172vgca6sk03.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "chuc-mung-sinh-nhat"
+  },
+  {
+    "id": "sun",
+    "name": "Mặt trời",
+    "samples": [
+      {
+        "id": "053ql0c0kratrjehqjmlssf",
+        "imgKey": "resources/sun/053ql0c0kratrjehqjmlssf.png",
+        "thumbnailKey": "resources/sun/thumbnail/053ql0c0kratrjehqjmlssf.webp"
+      },
+      {
+        "id": "0rqz1ud0dzqoep3m3c8hb",
+        "imgKey": "resources/sun/0rqz1ud0dzqoep3m3c8hb.png",
+        "thumbnailKey": "resources/sun/thumbnail/0rqz1ud0dzqoep3m3c8hb.webp"
+      },
+      {
+        "id": "0uf18ko6kh8w22fmi4ejr",
+        "imgKey": "resources/sun/0uf18ko6kh8w22fmi4ejr.png",
+        "thumbnailKey": "resources/sun/thumbnail/0uf18ko6kh8w22fmi4ejr.webp"
+      },
+      {
+        "id": "0z36fpceskr6onlh71nq88",
+        "imgKey": "resources/sun/0z36fpceskr6onlh71nq88.png",
+        "thumbnailKey": "resources/sun/thumbnail/0z36fpceskr6onlh71nq88.webp"
+      },
+      {
+        "id": "1aq7do0v22qmb5eajmdih",
+        "imgKey": "resources/sun/1aq7do0v22qmb5eajmdih.png",
+        "thumbnailKey": "resources/sun/thumbnail/1aq7do0v22qmb5eajmdih.webp"
+      },
+      {
+        "id": "1rpo399kc9xxu6r8vcosz",
+        "imgKey": "resources/sun/1rpo399kc9xxu6r8vcosz.png",
+        "thumbnailKey": "resources/sun/thumbnail/1rpo399kc9xxu6r8vcosz.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "mat-troi"
+  },
+  {
+    "id": "festivalHighlights",
+    "name": "Lễ hội nổi bật",
+    "samples": [
+      {
+        "id": "03g0g5qun6nsywtwd84zqx",
+        "imgKey": "resources/festivalHighlights/03g0g5qun6nsywtwd84zqx.png",
+        "thumbnailKey": "resources/festivalHighlights/thumbnail/03g0g5qun6nsywtwd84zqx.webp"
+      },
+      {
+        "id": "0bo01zl1e7yqdid9c20exbv",
+        "imgKey": "resources/festivalHighlights/0bo01zl1e7yqdid9c20exbv.png",
+        "thumbnailKey": "resources/festivalHighlights/thumbnail/0bo01zl1e7yqdid9c20exbv.webp"
+      },
+      {
+        "id": "0d2ht79pexthuspetz1ddsp",
+        "imgKey": "resources/festivalHighlights/0d2ht79pexthuspetz1ddsp.png",
+        "thumbnailKey": "resources/festivalHighlights/thumbnail/0d2ht79pexthuspetz1ddsp.webp"
+      },
+      {
+        "id": "0zjbwqe7l6lavz011b31h3p",
+        "imgKey": "resources/festivalHighlights/0zjbwqe7l6lavz011b31h3p.png",
+        "thumbnailKey": "resources/festivalHighlights/thumbnail/0zjbwqe7l6lavz011b31h3p.webp"
+      },
+      {
+        "id": "12v3ygc98qcrff826222mso",
+        "imgKey": "resources/festivalHighlights/12v3ygc98qcrff826222mso.png",
+        "thumbnailKey": "resources/festivalHighlights/thumbnail/12v3ygc98qcrff826222mso.webp"
+      },
+      {
+        "id": "168do9or4hoira9gpp6r6cs",
+        "imgKey": "resources/festivalHighlights/168do9or4hoira9gpp6r6cs.png",
+        "thumbnailKey": "resources/festivalHighlights/thumbnail/168do9or4hoira9gpp6r6cs.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "le-hoi-noi-bat"
+  },
+  {
+    "id": "stars",
+    "name": "Ngôi sao",
+    "samples": [
+      {
+        "id": "01l3wvskzed7jou5jdg2il",
+        "imgKey": "resources/stars/01l3wvskzed7jou5jdg2il.png",
+        "thumbnailKey": "resources/stars/thumbnail/01l3wvskzed7jou5jdg2il.webp"
+      },
+      {
+        "id": "037y3i5mgin4680s0atq94x",
+        "imgKey": "resources/stars/037y3i5mgin4680s0atq94x.png",
+        "thumbnailKey": "resources/stars/thumbnail/037y3i5mgin4680s0atq94x.webp"
+      },
+      {
+        "id": "12bjnnmx72gchybfms0q28u",
+        "imgKey": "resources/stars/12bjnnmx72gchybfms0q28u.png",
+        "thumbnailKey": "resources/stars/thumbnail/12bjnnmx72gchybfms0q28u.webp"
+      },
+      {
+        "id": "198if2s4k5w3eyjbm6aa9u",
+        "imgKey": "resources/stars/198if2s4k5w3eyjbm6aa9u.png",
+        "thumbnailKey": "resources/stars/thumbnail/198if2s4k5w3eyjbm6aa9u.webp"
+      },
+      {
+        "id": "1fuqnb16z1pa828khuh12",
+        "imgKey": "resources/stars/1fuqnb16z1pa828khuh12.png",
+        "thumbnailKey": "resources/stars/thumbnail/1fuqnb16z1pa828khuh12.webp"
+      },
+      {
+        "id": "1x00c72dnn60ijm9q5yum3e",
+        "imgKey": "resources/stars/1x00c72dnn60ijm9q5yum3e.png",
+        "thumbnailKey": "resources/stars/thumbnail/1x00c72dnn60ijm9q5yum3e.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "ngoi-sao"
+  },
+  {
+    "id": "motherAndBaby",
+    "name": "Mẹ và bé",
+    "samples": [
+      {
+        "id": "028d6vohkn6culvx6yv8st",
+        "imgKey": "resources/motherAndBaby/028d6vohkn6culvx6yv8st.png",
+        "thumbnailKey": "resources/motherAndBaby/thumbnail/028d6vohkn6culvx6yv8st.webp"
+      },
+      {
+        "id": "0ok18nfwmzbf2hpe4qqzfnz",
+        "imgKey": "resources/motherAndBaby/0ok18nfwmzbf2hpe4qqzfnz.png",
+        "thumbnailKey": "resources/motherAndBaby/thumbnail/0ok18nfwmzbf2hpe4qqzfnz.webp"
+      },
+      {
+        "id": "1dllhkpioikp4miop1wvkd",
+        "imgKey": "resources/motherAndBaby/1dllhkpioikp4miop1wvkd.png",
+        "thumbnailKey": "resources/motherAndBaby/thumbnail/1dllhkpioikp4miop1wvkd.webp"
+      },
+      {
+        "id": "1g5kt83hsqfe7gxs0vqm17",
+        "imgKey": "resources/motherAndBaby/1g5kt83hsqfe7gxs0vqm17.png",
+        "thumbnailKey": "resources/motherAndBaby/thumbnail/1g5kt83hsqfe7gxs0vqm17.webp"
+      },
+      {
+        "id": "1wyss5gij27sgn7rf11uio",
+        "imgKey": "resources/motherAndBaby/1wyss5gij27sgn7rf11uio.png",
+        "thumbnailKey": "resources/motherAndBaby/thumbnail/1wyss5gij27sgn7rf11uio.webp"
+      },
+      {
+        "id": "21ltjkbe11jd3d18g6ovc5",
+        "imgKey": "resources/motherAndBaby/21ltjkbe11jd3d18g6ovc5.png",
+        "thumbnailKey": "resources/motherAndBaby/thumbnail/21ltjkbe11jd3d18g6ovc5.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "me-va-be"
+  },
+  {
+    "id": "flowchartIcons",
+    "name": "Biểu tượng lưu đồ",
+    "samples": [
+      {
+        "id": "0irmsmjsp53ue0bhs2x46ga",
+        "imgKey": "resources/flowchartIcons/0irmsmjsp53ue0bhs2x46ga.png",
+        "thumbnailKey": "resources/flowchartIcons/thumbnail/0irmsmjsp53ue0bhs2x46ga.webp"
+      },
+      {
+        "id": "0znwy9qeefxdus3ekqh1c6n",
+        "imgKey": "resources/flowchartIcons/0znwy9qeefxdus3ekqh1c6n.png",
+        "thumbnailKey": "resources/flowchartIcons/thumbnail/0znwy9qeefxdus3ekqh1c6n.webp"
+      },
+      {
+        "id": "1by6l0uvmy6yv14w6yoi4d",
+        "imgKey": "resources/flowchartIcons/1by6l0uvmy6yv14w6yoi4d.png",
+        "thumbnailKey": "resources/flowchartIcons/thumbnail/1by6l0uvmy6yv14w6yoi4d.webp"
+      },
+      {
+        "id": "1hpyfl9cq7b1xocmm26t0i",
+        "imgKey": "resources/flowchartIcons/1hpyfl9cq7b1xocmm26t0i.png",
+        "thumbnailKey": "resources/flowchartIcons/thumbnail/1hpyfl9cq7b1xocmm26t0i.webp"
+      },
+      {
+        "id": "1u64lvcg56egyde7h8rkwr",
+        "imgKey": "resources/flowchartIcons/1u64lvcg56egyde7h8rkwr.png",
+        "thumbnailKey": "resources/flowchartIcons/thumbnail/1u64lvcg56egyde7h8rkwr.webp"
+      },
+      {
+        "id": "1ysw1uokr3olm5ztnct90b",
+        "imgKey": "resources/flowchartIcons/1ysw1uokr3olm5ztnct90b.png",
+        "thumbnailKey": "resources/flowchartIcons/thumbnail/1ysw1uokr3olm5ztnct90b.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "bieu-tuong-luu-do"
+  },
+  {
+    "id": "map",
+    "name": "Bản đồ",
+    "samples": [
+      {
+        "id": "0o4uycfw1psmev259bmyv8c",
+        "imgKey": "resources/map/0o4uycfw1psmev259bmyv8c.png",
+        "thumbnailKey": "resources/map/thumbnail/0o4uycfw1psmev259bmyv8c.webp"
+      },
+      {
+        "id": "1t2sescnejq2b6tzxci82d",
+        "imgKey": "resources/map/1t2sescnejq2b6tzxci82d.png",
+        "thumbnailKey": "resources/map/thumbnail/1t2sescnejq2b6tzxci82d.webp"
+      },
+      {
+        "id": "3vq3necxd67spckz1uylf",
+        "imgKey": "resources/map/3vq3necxd67spckz1uylf.png",
+        "thumbnailKey": "resources/map/thumbnail/3vq3necxd67spckz1uylf.webp"
+      },
+      {
+        "id": "47j5q2eh3hmsmd3gmzssck",
+        "imgKey": "resources/map/47j5q2eh3hmsmd3gmzssck.png",
+        "thumbnailKey": "resources/map/thumbnail/47j5q2eh3hmsmd3gmzssck.webp"
+      },
+      {
+        "id": "48zyk5rlp2kajb8qz8b52w",
+        "imgKey": "resources/map/48zyk5rlp2kajb8qz8b52w.png",
+        "thumbnailKey": "resources/map/thumbnail/48zyk5rlp2kajb8qz8b52w.webp"
+      },
+      {
+        "id": "5hc9r4il77b5byra57ls1h",
+        "imgKey": "resources/map/5hc9r4il77b5byra57ls1h.png",
+        "thumbnailKey": "resources/map/thumbnail/5hc9r4il77b5byra57ls1h.webp"
+      }
+    ],
+    "type": "img",
+    "total": 6,
+    "slug": "ban-do"
+  },
+  {
+    "id": "shapes",
+    "name": "Hình dạng",
+    "samples": [
+      {
+        "id": "0fb89ayso052291jwh3m1l",
+        "imgKey": "resources/shapes/0fb89ayso052291jwh3m1l.svg",
+        "thumbnailKey": "resources/shapes/0fb89ayso052291jwh3m1l.svg"
+      },
+      {
+        "id": "13en92j7xg8wq3tork87g",
+        "imgKey": "resources/shapes/13en92j7xg8wq3tork87g.svg",
+        "thumbnailKey": "resources/shapes/13en92j7xg8wq3tork87g.svg"
+      },
+      {
+        "id": "1n8ksb7ezcm0a6gjqkymqdm",
+        "imgKey": "resources/shapes/1n8ksb7ezcm0a6gjqkymqdm.svg",
+        "thumbnailKey": "resources/shapes/1n8ksb7ezcm0a6gjqkymqdm.svg"
+      },
+      {
+        "id": "2a02uvtw7kqx0r5wwwt6rm",
+        "imgKey": "resources/shapes/2a02uvtw7kqx0r5wwwt6rm.svg",
+        "thumbnailKey": "resources/shapes/2a02uvtw7kqx0r5wwwt6rm.svg"
+      },
+      {
+        "id": "2v20dzqel2wg2dv9fotr1g",
+        "imgKey": "resources/shapes/2v20dzqel2wg2dv9fotr1g.svg",
+        "thumbnailKey": "resources/shapes/2v20dzqel2wg2dv9fotr1g.svg"
+      },
+      {
+        "id": "30rwtzbhdhz82681o9tnib",
+        "imgKey": "resources/shapes/30rwtzbhdhz82681o9tnib.svg",
+        "thumbnailKey": "resources/shapes/30rwtzbhdhz82681o9tnib.svg"
+      }
+    ],
+    "type": "svg",
+    "total": 6,
+    "slug": "hinh-dang"
+  },
+  {
+    "id": "borders",
+    "name": "Khung viền",
+    "samples": [
+      {
+        "id": "0i381mu8rf5bxqzuhk70go",
+        "imgKey": "resources/borders/0i381mu8rf5bxqzuhk70go.svg",
+        "thumbnailKey": "resources/borders/0i381mu8rf5bxqzuhk70go.svg"
+      },
+      {
+        "id": "1256ndngzmcpg8dhr1iyxl",
+        "imgKey": "resources/borders/1256ndngzmcpg8dhr1iyxl.svg",
+        "thumbnailKey": "resources/borders/1256ndngzmcpg8dhr1iyxl.svg"
+      },
+      {
+        "id": "138351fcx6kjlhqjultr8ye",
+        "imgKey": "resources/borders/138351fcx6kjlhqjultr8ye.svg",
+        "thumbnailKey": "resources/borders/138351fcx6kjlhqjultr8ye.svg"
+      },
+      {
+        "id": "1g21kqgxhjnxa3jeiv02d",
+        "imgKey": "resources/borders/1g21kqgxhjnxa3jeiv02d.svg",
+        "thumbnailKey": "resources/borders/1g21kqgxhjnxa3jeiv02d.svg"
+      },
+      {
+        "id": "1vrhowbo44afdd6hs0ss4p",
+        "imgKey": "resources/borders/1vrhowbo44afdd6hs0ss4p.svg",
+        "thumbnailKey": "resources/borders/1vrhowbo44afdd6hs0ss4p.svg"
+      },
+      {
+        "id": "318yiz27r5pdshp1p1jo8o",
+        "imgKey": "resources/borders/318yiz27r5pdshp1p1jo8o.svg",
+        "thumbnailKey": "resources/borders/318yiz27r5pdshp1p1jo8o.svg"
+      }
+    ],
+    "type": "svg",
+    "total": 6,
+    "slug": "khung-vien"
+  },
+  {
+    "id": "dividers",
+    "name": "Đường phân cách",
+    "samples": [
+      {
+        "id": "16cvdln0hsto193fhow8kr",
+        "imgKey": "resources/dividers/16cvdln0hsto193fhow8kr.svg",
+        "thumbnailKey": "resources/dividers/16cvdln0hsto193fhow8kr.svg"
+      },
+      {
+        "id": "18dny130zxalxd2ti99o2s",
+        "imgKey": "resources/dividers/18dny130zxalxd2ti99o2s.svg",
+        "thumbnailKey": "resources/dividers/18dny130zxalxd2ti99o2s.svg"
+      },
+      {
+        "id": "3r98hnjndkxpu9zf004mj",
+        "imgKey": "resources/dividers/3r98hnjndkxpu9zf004mj.svg",
+        "thumbnailKey": "resources/dividers/3r98hnjndkxpu9zf004mj.svg"
+      },
+      {
+        "id": "4sohspoapkqk7s36bj2be",
+        "imgKey": "resources/dividers/4sohspoapkqk7s36bj2be.svg",
+        "thumbnailKey": "resources/dividers/4sohspoapkqk7s36bj2be.svg"
+      },
+      {
+        "id": "5cz80n1ql4k2zjbhwe6d8j",
+        "imgKey": "resources/dividers/5cz80n1ql4k2zjbhwe6d8j.svg",
+        "thumbnailKey": "resources/dividers/5cz80n1ql4k2zjbhwe6d8j.svg"
+      },
+      {
+        "id": "5okdl67gjxyhxy84bn0wgm",
+        "imgKey": "resources/dividers/5okdl67gjxyhxy84bn0wgm.svg",
+        "thumbnailKey": "resources/dividers/5okdl67gjxyhxy84bn0wgm.svg"
+      }
+    ],
+    "type": "svg",
+    "total": 6,
+    "slug": "duong-phan-cach"
+  }
+]

@@ -1,0 +1,716 @@
+{
+  "info": {
+    "_postman_id": "136a3568-9c7b-402b-a1d2-f204c232c56e",
+    "name": "MYRESEARCH",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "researchs",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "d8e0765b-f5b7-476e-a382-7269078b43ea",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/researchs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "researchs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "store",
+          "id": "5b813f72-d2b2-48d4-bc8e-89dc1927bbe4",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keywords",
+                  "value": "cronjob",
+                  "type": "text"
+                },
+                {
+                  "key": "contents",
+                  "value": "Tạo cron job trong Express.js thường được thực hiện bằng cách sử dụng các thư viện Node.js được thiết kế đặc biệt cho mục đích này. Các thư viện này giúp bạn lập lịch trình các tác vụ chạy định kỳ mà không cần phải dựa vào các công cụ bên ngoài như cron của hệ điều hành.\n\nDưới đây là một số thư viện phổ biến và cách sử dụng cơ bản của chúng:\n\n1. Thư viện node-cron\nnode-cron là một thư viện nhẹ và đơn giản để tạo cron job trong Node.js. Nó sử dụng cú pháp cron job tiêu chuẩn, rất quen thuộc với các nhà phát triển.\n\nCài đặt\nBash\n\nnpm install node-cron\nCách sử dụng\nBạn có thể đặt cron job ngay trong file server.js hoặc tạo một file riêng cho các tác vụ định kỳ của bạn.\n\nJavaScript\n\n// server.js\nconst cron = require('node-cron');\nconst express = require('express');\nconst app = express();\n\n// Một tác vụ đơn giản\nfunction cleanupDatabase() {\n    console.log('Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.');\n    // Logic dọn dẹp database của bạn ở đây\n}\n\n// Lập lịch một cron job\n// Cú pháp: 'giây phút giờ ngày_trong_tháng tháng ngày_trong_tuần'\n// Ví dụ: Lập lịch chạy mỗi ngày vào lúc 2 giờ sáng (0 2 * * *)\ncron.schedule('0 2 * * *', () => {\n    cleanupDatabase();\n});\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\n2. Thư viện node-schedule\nnode-schedule cung cấp một API linh hoạt hơn node-cron. Bạn có thể lập lịch bằng cách sử dụng đối tượng JavaScript, cú pháp cron tiêu chuẩn hoặc định nghĩa thời gian cụ thể.\n\nCài đặt\nBash\n\nnpm install node-schedule\nCách sử dụng\nJavaScript\n\n// server.js\nconst schedule = require('node-schedule');\nconst express = require('express');\nconst app = express();\n\n// Lập lịch bằng đối tượng JavaScript\nconst job = schedule.scheduleJob({ hour: 2, minute: 0 }, function() {\n    console.log('Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.');\n});\n\n// Lập lịch bằng cú pháp cron\nschedule.scheduleJob('0 2 * * *', function() {\n    console.log('Chạy tác vụ khác vào lúc 2 giờ sáng.');\n});\n\n// Hủy một job (nếu cần)\n// job.cancel();\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\nĐặt cron job ở đâu?\nFile chính (server.js hoặc app.js): Đây là cách đơn giản nhất. Khi server khởi động, tất cả các cron job sẽ được lập lịch.\n\nFile riêng biệt: Đối với các ứng dụng lớn hơn, bạn nên tạo một thư mục riêng (cron/) để chứa các file định nghĩa job. Sau đó, require chúng trong file chính.\n\nJavaScript\n\n// cron/tasks.js\nconst cron = require('node-cron');\n\nmodule.exports = function() {\n    cron.schedule('0 2 * * *', () => {\n        console.log('Tác vụ dọn dẹp database được gọi.');\n    });\n};\n\n// server.js\nconst express = require('express');\nconst startCronJobs = require('./cron/tasks');\nconst app = express();\n\nstartCronJobs(); // Gọi hàm để lập lịch các job\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\nLưu ý quan trọng\nTính sẵn sàng của server: Các cron job này chỉ chạy khi ứng dụng Node.js của bạn đang hoạt động. Nếu server bị sập, các job sẽ dừng lại.\n\nMôi trường sản phẩm: Trong môi trường sản phẩm, bạn có thể cân nhắc sử dụng các dịch vụ cron job của bên thứ ba (như Heroku Scheduler, AWS EventBridge) hoặc các hệ thống hàng đợi tác vụ (message queue) để đảm bảo độ tin cậy và khả năng mở rộng.",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/researchs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "researchs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "5141c6f9-4b21-457c-ad2c-127ecfa24fbd",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keywords",
+                  "value": "cronjob",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "contents",
+                  "value": "<div _ngcontent-ng-c2139483468=\"\" class=\"response-container-content ng-tns-c2139483468-397\"><!----><!----><!----><!----><!----><!----><!----><!----><div _ngcontent-ng-c4190599829=\"\" class=\"response-content ng-tns-c2139483468-397\"><!----><!----><!----><message-content _ngcontent-ng-c4190599829=\"\" class=\"model-response-text ng-star-inserted\" _nghost-ng-c295621690=\"\" id=\"message-content-id-r_8f2028559a85d158\" style=\"height: auto;\"><div _ngcontent-ng-c295621690=\"\" class=\"markdown markdown-main-panel enable-updated-hr-color\" id=\"model-response-message-contentr_8f2028559a85d158\" dir=\"ltr\" style=\"--animation-duration: 400ms; --fade-animation-function: linear;\"><p>Tạo cron job trong Express.js thường được thực hiện bằng cách sử dụng các thư viện Node.js được thiết kế đặc biệt cho mục đích này. Các thư viện này giúp bạn lập lịch trình các tác vụ chạy định kỳ mà không cần phải dựa vào các công cụ bên ngoài như cron của hệ điều hành.</p><p>Dưới đây là một số thư viện phổ biến và cách sử dụng cơ bản của chúng:</p><p></p><h3>1. Thư viện <code>node-cron</code></h3><p></p><p><code>node-cron</code> là một thư viện nhẹ và đơn giản để tạo cron job trong Node.js. Nó sử dụng cú pháp cron job tiêu chuẩn, rất quen thuộc với các nhà phát triển.</p><p></p><h4>Cài đặt</h4><p></p><response-element class=\"\" ng-version=\"0.0.0-PLACEHOLDER\"><!----><!----><!----><!----><code-block _nghost-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-446 ng-star-inserted\" style=\"\"><!----><!----><div _ngcontent-ng-c1893454034=\"\" class=\"code-block ng-tns-c1893454034-446 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation\" jslog=\"223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]]\" data-hveid=\"3\" style=\"display: block;\"><div _ngcontent-ng-c1893454034=\"\" class=\"code-block-decoration header-formatted gds-title-s ng-tns-c1893454034-446 ng-star-inserted\" style=\"\"><span _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-446\">Bash</span><div _ngcontent-ng-c1893454034=\"\" class=\"buttons ng-tns-c1893454034-446 ng-star-inserted\"><button _ngcontent-ng-c1893454034=\"\" aria-label=\"Copy code\" mat-icon-button=\"\" mattooltip=\"Copy code\" class=\"mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c1893454034-446 mat-unthemed ng-star-inserted\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" mat-ripple-loader-centered=\"\" jslog=\"179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]];mutable:true\"><span class=\"mat-mdc-button-persistent-ripple mdc-icon-button__ripple\"></span><mat-icon _ngcontent-ng-c1893454034=\"\" role=\"img\" fonticon=\"content_copy\" class=\"mat-icon notranslate google-symbols mat-ligature-font mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\" data-mat-icon-name=\"content_copy\"></mat-icon><span class=\"mat-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></button><!----><!----><!----></div><!----></div><!----><div _ngcontent-ng-c1893454034=\"\" class=\"formatted-code-block-internal-container ng-tns-c1893454034-446\"><div _ngcontent-ng-c1893454034=\"\" class=\"animated-opacity ng-tns-c1893454034-446\"><pre _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-446\"><code _ngcontent-ng-c1893454034=\"\" role=\"text\" data-test-id=\"code-content\" class=\"code-container formatted ng-tns-c1893454034-446\">npm install node-cron\n</code></pre><!----><!----><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p></p><h4>Cách sử dụng</h4><p></p><p>Bạn có thể đặt cron job ngay trong file <code>server.js</code> hoặc tạo một file riêng cho các tác vụ định kỳ của bạn.</p><response-element class=\"\" ng-version=\"0.0.0-PLACEHOLDER\"><!----><!----><!----><!----><code-block _nghost-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-447 ng-star-inserted\" style=\"\"><!----><!----><div _ngcontent-ng-c1893454034=\"\" class=\"code-block ng-tns-c1893454034-447 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation\" jslog=\"223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]]\" data-hveid=\"5\" style=\"display: block;\"><div _ngcontent-ng-c1893454034=\"\" class=\"code-block-decoration header-formatted gds-title-s ng-tns-c1893454034-447 ng-star-inserted\" style=\"\"><span _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-447\">JavaScript</span><div _ngcontent-ng-c1893454034=\"\" class=\"buttons ng-tns-c1893454034-447 ng-star-inserted\"><button _ngcontent-ng-c1893454034=\"\" aria-label=\"Copy code\" mat-icon-button=\"\" mattooltip=\"Copy code\" class=\"mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c1893454034-447 mat-unthemed ng-star-inserted\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" mat-ripple-loader-centered=\"\" jslog=\"179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]];mutable:true\"><span class=\"mat-mdc-button-persistent-ripple mdc-icon-button__ripple\"></span><mat-icon _ngcontent-ng-c1893454034=\"\" role=\"img\" fonticon=\"content_copy\" class=\"mat-icon notranslate google-symbols mat-ligature-font mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\" data-mat-icon-name=\"content_copy\"></mat-icon><span class=\"mat-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></button><!----><!----><!----></div><!----></div><!----><div _ngcontent-ng-c1893454034=\"\" class=\"formatted-code-block-internal-container ng-tns-c1893454034-447\"><div _ngcontent-ng-c1893454034=\"\" class=\"animated-opacity ng-tns-c1893454034-447\"><pre _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-447\"><code _ngcontent-ng-c1893454034=\"\" role=\"text\" data-test-id=\"code-content\" class=\"code-container formatted ng-tns-c1893454034-447\"><span class=\"hljs-comment\">// server.js</span>\n<span class=\"hljs-keyword\">const</span> cron = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'node-cron'</span>);\n<span class=\"hljs-keyword\">const</span> express = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'express'</span>);\n<span class=\"hljs-keyword\">const</span> app = express();\n\n<span class=\"hljs-comment\">// Một tác vụ đơn giản</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">cleanupDatabase</span>(<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.'</span>);\n    <span class=\"hljs-comment\">// Logic dọn dẹp database của bạn ở đây</span>\n}\n\n<span class=\"hljs-comment\">// Lập lịch một cron job</span>\n<span class=\"hljs-comment\">// Cú pháp: 'giây phút giờ ngày_trong_tháng tháng ngày_trong_tuần'</span>\n<span class=\"hljs-comment\">// Ví dụ: Lập lịch chạy mỗi ngày vào lúc 2 giờ sáng (0 2 * * *)</span>\ncron.schedule(<span class=\"hljs-string\">'0 2 * * *'</span>, <span class=\"hljs-function\">() =&gt;</span> {\n    cleanupDatabase();\n});\n\napp.listen(<span class=\"hljs-number\">3000</span>, <span class=\"hljs-function\">() =&gt;</span> {\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Server is running on port 3000.'</span>);\n});\n</code></pre><!----><!----><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p></p><h3>2. Thư viện <code>node-schedule</code></h3><p></p><p><code>node-schedule</code> cung cấp một API linh hoạt hơn <code>node-cron</code>. Bạn có thể lập lịch bằng cách sử dụng đối tượng JavaScript, cú pháp cron tiêu chuẩn hoặc định nghĩa thời gian cụ thể.</p><p></p><h4>Cài đặt</h4><p></p><response-element class=\"\" ng-version=\"0.0.0-PLACEHOLDER\"><!----><!----><!----><!----><code-block _nghost-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-448 ng-star-inserted\" style=\"\"><!----><!----><div _ngcontent-ng-c1893454034=\"\" class=\"code-block ng-tns-c1893454034-448 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation\" jslog=\"223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]]\" data-hveid=\"7\" style=\"display: block;\"><div _ngcontent-ng-c1893454034=\"\" class=\"code-block-decoration header-formatted gds-title-s ng-tns-c1893454034-448 ng-star-inserted\" style=\"\"><span _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-448\">Bash</span><div _ngcontent-ng-c1893454034=\"\" class=\"buttons ng-tns-c1893454034-448 ng-star-inserted\"><button _ngcontent-ng-c1893454034=\"\" aria-label=\"Copy code\" mat-icon-button=\"\" mattooltip=\"Copy code\" class=\"mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c1893454034-448 mat-unthemed ng-star-inserted\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" mat-ripple-loader-centered=\"\" jslog=\"179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]];mutable:true\"><span class=\"mat-mdc-button-persistent-ripple mdc-icon-button__ripple\"></span><mat-icon _ngcontent-ng-c1893454034=\"\" role=\"img\" fonticon=\"content_copy\" class=\"mat-icon notranslate google-symbols mat-ligature-font mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\" data-mat-icon-name=\"content_copy\"></mat-icon><span class=\"mat-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></button><!----><!----><!----></div><!----></div><!----><div _ngcontent-ng-c1893454034=\"\" class=\"formatted-code-block-internal-container ng-tns-c1893454034-448\"><div _ngcontent-ng-c1893454034=\"\" class=\"animated-opacity ng-tns-c1893454034-448\"><pre _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-448\"><code _ngcontent-ng-c1893454034=\"\" role=\"text\" data-test-id=\"code-content\" class=\"code-container formatted ng-tns-c1893454034-448\">npm install node-schedule\n</code></pre><!----><!----><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p></p><h4>Cách sử dụng</h4><p></p><response-element class=\"\" ng-version=\"0.0.0-PLACEHOLDER\"><!----><!----><!----><!----><code-block _nghost-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-449 ng-star-inserted\" style=\"\"><!----><!----><div _ngcontent-ng-c1893454034=\"\" class=\"code-block ng-tns-c1893454034-449 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation\" jslog=\"223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]]\" data-hveid=\"9\" style=\"display: block;\"><div _ngcontent-ng-c1893454034=\"\" class=\"code-block-decoration header-formatted gds-title-s ng-tns-c1893454034-449 ng-star-inserted\" style=\"\"><span _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-449\">JavaScript</span><div _ngcontent-ng-c1893454034=\"\" class=\"buttons ng-tns-c1893454034-449 ng-star-inserted\"><button _ngcontent-ng-c1893454034=\"\" aria-label=\"Copy code\" mat-icon-button=\"\" mattooltip=\"Copy code\" class=\"mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c1893454034-449 mat-unthemed ng-star-inserted\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" mat-ripple-loader-centered=\"\" jslog=\"179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]];mutable:true\"><span class=\"mat-mdc-button-persistent-ripple mdc-icon-button__ripple\"></span><mat-icon _ngcontent-ng-c1893454034=\"\" role=\"img\" fonticon=\"content_copy\" class=\"mat-icon notranslate google-symbols mat-ligature-font mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\" data-mat-icon-name=\"content_copy\"></mat-icon><span class=\"mat-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></button><!----><!----><!----></div><!----></div><!----><div _ngcontent-ng-c1893454034=\"\" class=\"formatted-code-block-internal-container ng-tns-c1893454034-449\"><div _ngcontent-ng-c1893454034=\"\" class=\"animated-opacity ng-tns-c1893454034-449\"><pre _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-449\"><code _ngcontent-ng-c1893454034=\"\" role=\"text\" data-test-id=\"code-content\" class=\"code-container formatted ng-tns-c1893454034-449\"><span class=\"hljs-comment\">// server.js</span>\n<span class=\"hljs-keyword\">const</span> schedule = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'node-schedule'</span>);\n<span class=\"hljs-keyword\">const</span> express = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'express'</span>);\n<span class=\"hljs-keyword\">const</span> app = express();\n\n<span class=\"hljs-comment\">// Lập lịch bằng đối tượng JavaScript</span>\n<span class=\"hljs-keyword\">const</span> job = schedule.scheduleJob({ <span class=\"hljs-attr\">hour</span>: <span class=\"hljs-number\">2</span>, <span class=\"hljs-attr\">minute</span>: <span class=\"hljs-number\">0</span> }, <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.'</span>);\n});\n\n<span class=\"hljs-comment\">// Lập lịch bằng cú pháp cron</span>\nschedule.scheduleJob(<span class=\"hljs-string\">'0 2 * * *'</span>, <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Chạy tác vụ khác vào lúc 2 giờ sáng.'</span>);\n});\n\n<span class=\"hljs-comment\">// Hủy một job (nếu cần)</span>\n<span class=\"hljs-comment\">// job.cancel();</span>\n\napp.listen(<span class=\"hljs-number\">3000</span>, <span class=\"hljs-function\">() =&gt;</span> {\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Server is running on port 3000.'</span>);\n});\n</code></pre><!----><!----><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p></p><h3>Đặt cron job ở đâu?</h3><p></p><ul><li><p><b>File chính (<code>server.js</code> hoặc <code>app.js</code>):</b> Đây là cách đơn giản nhất. Khi server khởi động, tất cả các cron job sẽ được lập lịch.</p></li><li><p><b>File riêng biệt:</b> Đối với các ứng dụng lớn hơn, bạn nên tạo một thư mục riêng (<code>cron/</code>) để chứa các file định nghĩa job. Sau đó, require chúng trong file chính.</p></li></ul><response-element class=\"\" ng-version=\"0.0.0-PLACEHOLDER\"><!----><!----><!----><!----><code-block _nghost-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-450 ng-star-inserted\" style=\"\"><!----><!----><div _ngcontent-ng-c1893454034=\"\" class=\"code-block ng-tns-c1893454034-450 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation\" jslog=\"223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]]\" data-hveid=\"11\" style=\"display: block;\"><div _ngcontent-ng-c1893454034=\"\" class=\"code-block-decoration header-formatted gds-title-s ng-tns-c1893454034-450 ng-star-inserted\" style=\"\"><span _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-450\">JavaScript</span><div _ngcontent-ng-c1893454034=\"\" class=\"buttons ng-tns-c1893454034-450 ng-star-inserted\"><button _ngcontent-ng-c1893454034=\"\" aria-label=\"Copy code\" mat-icon-button=\"\" mattooltip=\"Copy code\" class=\"mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c1893454034-450 mat-unthemed ng-star-inserted\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" mat-ripple-loader-centered=\"\" jslog=\"179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_8f2028559a85d158&quot;,&quot;c_ca247f425340a40a&quot;,null,&quot;rc_0d39eb17845c5cae&quot;,null,null,&quot;vi&quot;,null,1,null,null,1,0]];mutable:true\"><span class=\"mat-mdc-button-persistent-ripple mdc-icon-button__ripple\"></span><mat-icon _ngcontent-ng-c1893454034=\"\" role=\"img\" fonticon=\"content_copy\" class=\"mat-icon notranslate google-symbols mat-ligature-font mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\" data-mat-icon-name=\"content_copy\"></mat-icon><span class=\"mat-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></button><!----><!----><!----></div><!----></div><!----><div _ngcontent-ng-c1893454034=\"\" class=\"formatted-code-block-internal-container ng-tns-c1893454034-450\"><div _ngcontent-ng-c1893454034=\"\" class=\"animated-opacity ng-tns-c1893454034-450\"><pre _ngcontent-ng-c1893454034=\"\" class=\"ng-tns-c1893454034-450\"><code _ngcontent-ng-c1893454034=\"\" role=\"text\" data-test-id=\"code-content\" class=\"code-container formatted ng-tns-c1893454034-450\"><span class=\"hljs-comment\">// cron/tasks.js</span>\n<span class=\"hljs-keyword\">const</span> cron = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'node-cron'</span>);\n\n<span class=\"hljs-built_in\">module</span>.exports = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n    cron.schedule(<span class=\"hljs-string\">'0 2 * * *'</span>, <span class=\"hljs-function\">() =&gt;</span> {\n        <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Tác vụ dọn dẹp database được gọi.'</span>);\n    });\n};\n\n<span class=\"hljs-comment\">// server.js</span>\n<span class=\"hljs-keyword\">const</span> express = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'express'</span>);\n<span class=\"hljs-keyword\">const</span> startCronJobs = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'./cron/tasks'</span>);\n<span class=\"hljs-keyword\">const</span> app = express();\n\nstartCronJobs(); <span class=\"hljs-comment\">// Gọi hàm để lập lịch các job</span>\n\napp.listen(<span class=\"hljs-number\">3000</span>, <span class=\"hljs-function\">() =&gt;</span> {\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Server is running on port 3000.'</span>);\n});\n</code></pre><!----><!----><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p></p><h3>Lưu ý quan trọng</h3><p></p><ul><li><p><b>Tính sẵn sàng của server:</b> Các cron job này chỉ chạy khi ứng dụng Node.js của bạn đang hoạt động. Nếu server bị sập, các job sẽ dừng lại.</p></li><li><p><b>Môi trường sản phẩm:</b> Trong môi trường sản phẩm, bạn có thể cân nhắc sử dụng các dịch vụ cron job của bên thứ ba (như Heroku Scheduler, AWS EventBridge) hoặc các hệ thống hàng đợi tác vụ (message queue) để đảm bảo độ tin cậy và khả năng mở rộng.</p></li></ul></div></message-content><!----><!----><div _ngcontent-ng-c4190599829=\"\" class=\"response-footer complete gap\"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></div><!----><sensitive-memories-banner _ngcontent-ng-c4190599829=\"\" _nghost-ng-c3372263261=\"\" class=\"ng-star-inserted\"><!----></sensitive-memories-banner><!----><!----><!----><!----></div>",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/researchs/689f6a3b0cd34386ee74c7ab",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "researchs",
+                "689f6a3b0cd34386ee74c7ab"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "6674803d-c209-4203-8cd3-4aef4f882c5a",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/researchs/689f6a3b0cd34386ee74c7ab",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "researchs",
+                "689f6a3b0cd34386ee74c7ab"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search",
+          "id": "f43efdc0-3d9e-4524-847f-ef7a8552175b",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/researchs?search=vps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "researchs"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "vps"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "c25e2c44-ca25-4e0e-a9d7-6036d6b40096",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keywords",
+                  "value": "cronjob",
+                  "type": "text"
+                },
+                {
+                  "key": "contents",
+                  "value": "Tạo cron job trong Express.js thường được thực hiện bằng cách sử dụng các thư viện Node.js được thiết kế đặc biệt cho mục đích này. Các thư viện này giúp bạn lập lịch trình các tác vụ chạy định kỳ mà không cần phải dựa vào các công cụ bên ngoài như cron của hệ điều hành.\n\nDưới đây là một số thư viện phổ biến và cách sử dụng cơ bản của chúng:\n\n1. Thư viện node-cron\nnode-cron là một thư viện nhẹ và đơn giản để tạo cron job trong Node.js. Nó sử dụng cú pháp cron job tiêu chuẩn, rất quen thuộc với các nhà phát triển.\n\nCài đặt\nBash\n\nnpm install node-cron\nCách sử dụng\nBạn có thể đặt cron job ngay trong file server.js hoặc tạo một file riêng cho các tác vụ định kỳ của bạn.\n\nJavaScript\n\n// server.js\nconst cron = require('node-cron');\nconst express = require('express');\nconst app = express();\n\n// Một tác vụ đơn giản\nfunction cleanupDatabase() {\n    console.log('Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.');\n    // Logic dọn dẹp database của bạn ở đây\n}\n\n// Lập lịch một cron job\n// Cú pháp: 'giây phút giờ ngày_trong_tháng tháng ngày_trong_tuần'\n// Ví dụ: Lập lịch chạy mỗi ngày vào lúc 2 giờ sáng (0 2 * * *)\ncron.schedule('0 2 * * *', () => {\n    cleanupDatabase();\n});\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\n2. Thư viện node-schedule\nnode-schedule cung cấp một API linh hoạt hơn node-cron. Bạn có thể lập lịch bằng cách sử dụng đối tượng JavaScript, cú pháp cron tiêu chuẩn hoặc định nghĩa thời gian cụ thể.\n\nCài đặt\nBash\n\nnpm install node-schedule\nCách sử dụng\nJavaScript\n\n// server.js\nconst schedule = require('node-schedule');\nconst express = require('express');\nconst app = express();\n\n// Lập lịch bằng đối tượng JavaScript\nconst job = schedule.scheduleJob({ hour: 2, minute: 0 }, function() {\n    console.log('Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.');\n});\n\n// Lập lịch bằng cú pháp cron\nschedule.scheduleJob('0 2 * * *', function() {\n    console.log('Chạy tác vụ khác vào lúc 2 giờ sáng.');\n});\n\n// Hủy một job (nếu cần)\n// job.cancel();\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\nĐặt cron job ở đâu?\nFile chính (server.js hoặc app.js): Đây là cách đơn giản nhất. Khi server khởi động, tất cả các cron job sẽ được lập lịch.\n\nFile riêng biệt: Đối với các ứng dụng lớn hơn, bạn nên tạo một thư mục riêng (cron/) để chứa các file định nghĩa job. Sau đó, require chúng trong file chính.\n\nJavaScript\n\n// cron/tasks.js\nconst cron = require('node-cron');\n\nmodule.exports = function() {\n    cron.schedule('0 2 * * *', () => {\n        console.log('Tác vụ dọn dẹp database được gọi.');\n    });\n};\n\n// server.js\nconst express = require('express');\nconst startCronJobs = require('./cron/tasks');\nconst app = express();\n\nstartCronJobs(); // Gọi hàm để lập lịch các job\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\nLưu ý quan trọng\nTính sẵn sàng của server: Các cron job này chỉ chạy khi ứng dụng Node.js của bạn đang hoạt động. Nếu server bị sập, các job sẽ dừng lại.\n\nMôi trường sản phẩm: Trong môi trường sản phẩm, bạn có thể cân nhắc sử dụng các dịch vụ cron job của bên thứ ba (như Heroku Scheduler, AWS EventBridge) hoặc các hệ thống hàng đợi tác vụ (message queue) để đảm bảo độ tin cậy và khả năng mở rộng.",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/researchs/689f6a3b0cd34386ee74c7ab",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "researchs",
+                "689f6a3b0cd34386ee74c7ab"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forDev",
+          "id": "86895107-0230-4386-81d7-7c3513c65ce1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:authorization-secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/for-dev",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "for-dev"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "myReseachs",
+          "id": "2ad59594-dd28-4c6f-98d5-fff0c239fba2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:authorization-secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/my-researchs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "my-researchs"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "a92df27f-22ee-400f-b795-eca381b79ec6"
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "register",
+          "id": "44411d76-5808-4a7c-93a6-f7bbb433cffd",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:authorization-secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"vuongmatu\",\r\n    \"password\": \"@Kiet2020\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "id": "97cabe65-93b5-43ed-aadb-c9bcb8c5c9b3",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:authorization-secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\", //vuongmatu //kietnguyen02112002@gmail.com\r\n    \"password\": \"@Kiet2020\" //@Kiet2020\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "id": "925bbf53-3741-4650-9e88-aa764a368f02",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keywords",
+                  "value": "cronjob",
+                  "type": "text"
+                },
+                {
+                  "key": "contents",
+                  "value": "Tạo cron job trong Express.js thường được thực hiện bằng cách sử dụng các thư viện Node.js được thiết kế đặc biệt cho mục đích này. Các thư viện này giúp bạn lập lịch trình các tác vụ chạy định kỳ mà không cần phải dựa vào các công cụ bên ngoài như cron của hệ điều hành.\n\nDưới đây là một số thư viện phổ biến và cách sử dụng cơ bản của chúng:\n\n1. Thư viện node-cron\nnode-cron là một thư viện nhẹ và đơn giản để tạo cron job trong Node.js. Nó sử dụng cú pháp cron job tiêu chuẩn, rất quen thuộc với các nhà phát triển.\n\nCài đặt\nBash\n\nnpm install node-cron\nCách sử dụng\nBạn có thể đặt cron job ngay trong file server.js hoặc tạo một file riêng cho các tác vụ định kỳ của bạn.\n\nJavaScript\n\n// server.js\nconst cron = require('node-cron');\nconst express = require('express');\nconst app = express();\n\n// Một tác vụ đơn giản\nfunction cleanupDatabase() {\n    console.log('Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.');\n    // Logic dọn dẹp database của bạn ở đây\n}\n\n// Lập lịch một cron job\n// Cú pháp: 'giây phút giờ ngày_trong_tháng tháng ngày_trong_tuần'\n// Ví dụ: Lập lịch chạy mỗi ngày vào lúc 2 giờ sáng (0 2 * * *)\ncron.schedule('0 2 * * *', () => {\n    cleanupDatabase();\n});\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\n2. Thư viện node-schedule\nnode-schedule cung cấp một API linh hoạt hơn node-cron. Bạn có thể lập lịch bằng cách sử dụng đối tượng JavaScript, cú pháp cron tiêu chuẩn hoặc định nghĩa thời gian cụ thể.\n\nCài đặt\nBash\n\nnpm install node-schedule\nCách sử dụng\nJavaScript\n\n// server.js\nconst schedule = require('node-schedule');\nconst express = require('express');\nconst app = express();\n\n// Lập lịch bằng đối tượng JavaScript\nconst job = schedule.scheduleJob({ hour: 2, minute: 0 }, function() {\n    console.log('Chạy tác vụ dọn dẹp database vào lúc 2 giờ sáng.');\n});\n\n// Lập lịch bằng cú pháp cron\nschedule.scheduleJob('0 2 * * *', function() {\n    console.log('Chạy tác vụ khác vào lúc 2 giờ sáng.');\n});\n\n// Hủy một job (nếu cần)\n// job.cancel();\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\nĐặt cron job ở đâu?\nFile chính (server.js hoặc app.js): Đây là cách đơn giản nhất. Khi server khởi động, tất cả các cron job sẽ được lập lịch.\n\nFile riêng biệt: Đối với các ứng dụng lớn hơn, bạn nên tạo một thư mục riêng (cron/) để chứa các file định nghĩa job. Sau đó, require chúng trong file chính.\n\nJavaScript\n\n// cron/tasks.js\nconst cron = require('node-cron');\n\nmodule.exports = function() {\n    cron.schedule('0 2 * * *', () => {\n        console.log('Tác vụ dọn dẹp database được gọi.');\n    });\n};\n\n// server.js\nconst express = require('express');\nconst startCronJobs = require('./cron/tasks');\nconst app = express();\n\nstartCronJobs(); // Gọi hàm để lập lịch các job\n\napp.listen(3000, () => {\n    console.log('Server is running on port 3000.');\n});\nLưu ý quan trọng\nTính sẵn sàng của server: Các cron job này chỉ chạy khi ứng dụng Node.js của bạn đang hoạt động. Nếu server bị sập, các job sẽ dừng lại.\n\nMôi trường sản phẩm: Trong môi trường sản phẩm, bạn có thể cân nhắc sử dụng các dịch vụ cron job của bên thứ ba (như Heroku Scheduler, AWS EventBridge) hoặc các hệ thống hàng đợi tác vụ (message queue) để đảm bảo độ tin cậy và khả năng mở rộng.",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "ca25f91d-3de0-4785-bdf2-d3f76421418e"
+    },
+    {
+      "name": "todo",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "99b2ff23-f893-47b9-8a72-63c4a7354012",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:authorization-secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/todo",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "todo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "store",
+          "id": "546e23cc-409f-4c09-8bbf-5e9cec6d34ae",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:authorization-secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Kiểm tra ghế đã đặt.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/todo",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "todo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "filter",
+          "id": "33a1524b-bd9a-48f6-ae59-c66fedf36b8d",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"do_at\": \"12-08-2025\",\r\n    \"typeIds\": [\"1\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/todo-filter",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "todo-filter"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "99c57177-7789-476f-acd9-06c06f529587"
+    },
+    {
+      "name": "topic",
+      "item": [
+        {
+          "name": "vocabulary",
+          "id": "7511e7c2-a6df-4362-a075-479d65338c87",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"word\": \"Salary\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/vocabularies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "vocabularies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAll",
+          "id": "f313f78a-261c-4f70-a742-77775d93f53a",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFmMzU2ZWM1MDQ0NTQyNjhlOWEwMiIsImlhdCI6MTc2MjczNzQzMSwiZXhwIjoxNzYzMzQyMjMxfQ.r4oCPF311uvDyklTeB8DSBAuxj-bIeU9sx9nSpzxMgo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/topics",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "topics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "c1a0d278-d216-4581-934a-8481b2896177",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFmMzU2ZWM1MDQ0NTQyNjhlOWEwMiIsImlhdCI6MTc2MjczNzQzMSwiZXhwIjoxNzYzMzQyMjMxfQ.r4oCPF311uvDyklTeB8DSBAuxj-bIeU9sx9nSpzxMgo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"seasons\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/topics",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "topics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "id": "00775642-787b-435e-998b-96eeca709957",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFmMzU2ZWM1MDQ0NTQyNjhlOWEwMiIsImlhdCI6MTc2MjczNzQzMSwiZXhwIjoxNzYzMzQyMjMxfQ.r4oCPF311uvDyklTeB8DSBAuxj-bIeU9sx9nSpzxMgo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"seasons\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/topics/69113d64c812cd5e92ba9e80",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "topics",
+                "69113d64c812cd5e92ba9e80"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "7849a709-cefe-4920-b791-a65264a0ad62"
+    },
+    {
+      "name": "vocabulary",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "d8c4e045-ca48-4838-8da0-92339dbc8aa8",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFmMzU2ZWM1MDQ0NTQyNjhlOWEwMiIsImlhdCI6MTc2Mjc4MjkxNywiZXhwIjoxNzYzMzg3NzE3fQ.ZU3XSZPvi_rPt4QbGNooiSGOBK6zk8mvHgqva4gv8RE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3333/api/vocabularies/69113d64c812cd5e92ba9e80",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "vocabularies",
+                "69113d64c812cd5e92ba9e80"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "id": "c41a512b-3065-4de5-946c-1091d5aaf356",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFmMzU2ZWM1MDQ0NTQyNjhlOWEwMiIsImlhdCI6MTc2Mjc4MjkxNywiZXhwIjoxNzYzMzg3NzE3fQ.ZU3XSZPvi_rPt4QbGNooiSGOBK6zk8mvHgqva4gv8RE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"terms\": \"Configuration\",\r\n    \"definitions\": \"Cấu hình\",\r\n    \"   \": \"69113d64c812cd5e92ba9e80\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3333/api/vocabularies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "api",
+                "vocabularies"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "9bf218a7-7cb0-4799-b114-e4f4d28fa127"
+    }
+  ]
+}

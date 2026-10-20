@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "c764fa8f-9f33-43ad-8944-d0970248bdf6",
+    "name": "backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "simple store",
+      "item": [
+        {
+          "name": "users",
+          "item": [
+            {
+              "name": "getAll",
+              "id": "2c4536cd-cdd6-4e62-9d2c-ae8a59f9947c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "dasdasdsadasdasd",
+                      "type": "text"
+                    },
+                    {
+                      "key": "position",
+                      "value": "dadsad",
+                      "type": "text"
+                    },
+                    {
+                      "key": "active",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "description",
+                      "value": "dasdasdasd",
+                      "type": "text"
+                    },
+                    {
+                      "key": "link",
+                      "value": "https://youtube.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "isCarousel",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "key": "carouselAutoplay",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/kietn/Downloads/67779-510x510.webp"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/user",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "user"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "id": "38fd443b-1214-4d3a-ad24-cd5a15c6a4b2",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            }
+          ],
+          "id": "edbc76f1-affa-401c-bc79-7b7072c24125"
+        }
+      ],
+      "id": "8d47ecb6-434f-421f-82b5-6392748090fd"
+    }
+  ]
+}

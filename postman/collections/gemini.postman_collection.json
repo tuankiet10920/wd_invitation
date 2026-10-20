@@ -1,0 +1,60 @@
+{
+  "info": {
+    "_postman_id": "177b2987-cc94-46c2-8e89-209f15348a88",
+    "name": "gemini",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "api",
+      "id": "15cc3866-c8e5-4cec-ac71-f91bc5d3604f",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "https://generativelanguage.googleapis.com/v1beta/models/\\\r\ngemini-3-pro-preview:generateContent",
+      "id": "228e3291-c0ca-4823-8ebb-2b476373c4a4",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-goog-api-key",
+            "value": "AIzaSyD4olLlS-kpGQuapp3Lu7jP4tnhmL0ixBo"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"contents\": [\r\n      {\r\n        \"parts\": [\r\n          {\r\n            \"text\": \"Explain how AI works in a few words\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent",
+          "protocol": "https",
+          "host": [
+            "generativelanguage",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "v1beta",
+            "models",
+            "gemini-3-pro-preview:generateContent"
+          ]
+        },
+        "description": "Generated from cURL: curl \"https://generativelanguage.googleapis.com/v1beta/models/\\\r\ngemini-3-pro-preview:generateContent\" \\\r\n  -H \"x-goog-api-key: $GEMINI_API_KEY\" \\\r\n  -H 'Content-Type: application/json' \\\r\n  -X POST \\\r\n  -d '{\r\n    \"contents\": [\r\n      {\r\n        \"parts\": [\r\n          {\r\n            \"text\": \"Explain how AI works in a few words\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }'"
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<NuxtLink :to="{
+    path: `/admin/users/edit/${user.id}`,
+    query: { page: $route.query?.page ?? undefined }
+}" class="btn-action btn-edit" title="Edit">
+    <BaseIconComponent name="edit" :size="18" color="#d97706" />
+</NuxtLink>
+<button class="btn-action btn-delete" type="button" title="Delete"
+    @click="openDeleteModal(user)">
+    <BaseIconComponent name="delete-sharp" :size="18" color="#dc2626" />
+</button>

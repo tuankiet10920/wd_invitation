@@ -1,0 +1,11 @@
+<NuxtLink :to="`/admin/users/edit?id=${user.id}`" class="btn-action btn-edit" title="Edit">
+    <BaseIconComponent name="edit" :size="18" color="#d97706" />
+</NuxtLink>
+
+<button class="btn-action btn-delete" type="button" title="Delete" @click="openDeleteModal(user)">
+    <BaseIconComponent name="delete-sharp" :size="18" color="#dc2626" />
+</button>
+
+<NuxtLink :to="`/admin/users/edit/${user.id}`" class="btn-action btn-edit" title="Edit">
+    <BaseIconComponent name="edit" :size="18" color="#d97706" />
+</NuxtLink>

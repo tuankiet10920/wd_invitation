@@ -1,0 +1,786 @@
+{
+  "fontTypes": [
+    {
+      "name": "Display",
+      "slug": "display",
+      "createdAt": "2026-03-30T08:50:22.005Z",
+      "updatedAt": "2026-03-30T08:50:22.005Z"
+    },
+    {
+      "name": "Script",
+      "slug": "script",
+      "createdAt": "2026-03-30T08:50:23.612Z",
+      "updatedAt": "2026-03-30T08:50:23.612Z"
+    },
+    {
+      "name": "Handwriting",
+      "slug": "handwriting",
+      "createdAt": "2026-03-30T08:50:24.239Z",
+      "updatedAt": "2026-03-30T08:50:24.239Z"
+    },
+    {
+      "name": "Sans-serif",
+      "slug": "sans-serif",
+      "createdAt": "2026-03-30T08:50:27.369Z",
+      "updatedAt": "2026-03-30T08:50:27.369Z"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Carlytte",
+      "slug": "carlytte",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/carlytte.woff2",
+      "image": "carlytte.png",
+      "createdAt": "2026-03-30T09:16:48.584Z",
+      "updatedAt": "2026-03-30T09:16:48.584Z"
+    },
+    {
+      "name": "Moving",
+      "slug": "moving",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/moving.woff2",
+      "image": "moving.png",
+      "createdAt": "2026-03-30T09:16:48.725Z",
+      "updatedAt": "2026-03-30T09:16:48.725Z"
+    },
+    {
+      "name": "The Hamstter",
+      "slug": "the-hamstter",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/the-hamstter.woff2",
+      "image": "the-hamstter.png",
+      "createdAt": "2026-03-30T09:16:48.887Z",
+      "updatedAt": "2026-03-30T09:16:48.887Z"
+    },
+    {
+      "name": "Katty Diona",
+      "slug": "katty-diona",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/katty-diona.woff2",
+      "image": "katty-diona.png",
+      "createdAt": "2026-03-30T09:16:49.044Z",
+      "updatedAt": "2026-03-30T09:16:49.044Z"
+    },
+    {
+      "name": "Signora",
+      "slug": "signora",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/signora.woff2",
+      "image": "signora.png",
+      "createdAt": "2026-03-30T09:16:49.180Z",
+      "updatedAt": "2026-03-30T09:16:49.180Z"
+    },
+    {
+      "name": "Vocago Regular",
+      "slug": "vocago-regular",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/vocago-regular.woff2",
+      "image": "vocago-regular.png",
+      "createdAt": "2026-03-30T09:16:49.327Z",
+      "updatedAt": "2026-03-30T09:16:49.327Z"
+    },
+    {
+      "name": "Quicksand",
+      "slug": "quicksand",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/quicksand.woff2",
+      "image": "quicksand.png",
+      "createdAt": "2026-03-30T09:16:49.465Z",
+      "updatedAt": "2026-03-30T09:16:49.465Z"
+    },
+    {
+      "name": "Selly Calligraphy",
+      "slug": "selly-calligraphy",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/selly-calligraphy.woff2",
+      "image": "selly-calligraphy.png",
+      "createdAt": "2026-03-30T09:16:49.605Z",
+      "updatedAt": "2026-03-30T09:16:49.605Z"
+    },
+    {
+      "name": "Roboto",
+      "slug": "roboto",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/roboto.woff2",
+      "image": "roboto.png",
+      "createdAt": "2026-03-30T09:16:49.740Z",
+      "updatedAt": "2026-03-30T09:16:49.740Z"
+    },
+    {
+      "name": "Summerfun",
+      "slug": "summerfun",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/summerfun.woff2",
+      "image": "summerfun.png",
+      "createdAt": "2026-03-30T09:16:49.883Z",
+      "updatedAt": "2026-03-30T09:16:49.883Z"
+    },
+    {
+      "name": "Pencerio",
+      "slug": "pencerio",
+      "id_font_type_slug": "handwriting",
+      "path": "/images/fonts/pencerio.woff2",
+      "image": "pencerio.png",
+      "createdAt": "2026-03-30T09:16:50.013Z",
+      "updatedAt": "2026-03-30T09:16:50.013Z"
+    },
+    {
+      "name": "Shine Brightly",
+      "slug": "shine-brightly",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/shine-brightly.woff2",
+      "image": "shine-brightly.png",
+      "createdAt": "2026-03-30T09:16:50.159Z",
+      "updatedAt": "2026-03-30T09:16:50.159Z"
+    },
+    {
+      "name": "Right Here",
+      "slug": "right-here",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/right-here.woff2",
+      "image": "right-here.png",
+      "createdAt": "2026-03-30T09:16:50.308Z",
+      "updatedAt": "2026-03-30T09:16:50.308Z"
+    },
+    {
+      "name": "EdwardianScriptRegular",
+      "slug": "edwardianscriptregular",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/edwardianscriptregular.woff2",
+      "image": "edwardianscriptregular.png",
+      "createdAt": "2026-03-30T09:16:50.478Z",
+      "updatedAt": "2026-03-30T09:16:50.478Z"
+    },
+    {
+      "name": "Amstirdam",
+      "slug": "amstirdam",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/amstirdam.woff2",
+      "image": "amstirdam.png",
+      "createdAt": "2026-03-30T09:16:50.612Z",
+      "updatedAt": "2026-03-30T09:16:50.612Z"
+    },
+    {
+      "name": "Qarinthen Italic",
+      "slug": "qarinthen-italic",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/qarinthen-italic.woff2",
+      "image": "qarinthen-italic.png",
+      "createdAt": "2026-03-30T09:16:50.748Z",
+      "updatedAt": "2026-03-30T09:16:50.748Z"
+    },
+    {
+      "name": "Browny Cakes Signature",
+      "slug": "browny-cakes-signature",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/browny-cakes-signature.woff2",
+      "image": "browny-cakes-signature.png",
+      "createdAt": "2026-03-30T09:16:50.880Z",
+      "updatedAt": "2026-03-30T09:16:50.880Z"
+    },
+    {
+      "name": "BethanWhite",
+      "slug": "bethanwhite",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/bethanwhite.woff2",
+      "image": "bethanwhite.png",
+      "createdAt": "2026-03-30T09:16:51.011Z",
+      "updatedAt": "2026-03-30T09:16:51.011Z"
+    },
+    {
+      "name": "Mallong",
+      "slug": "mallong",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/mallong.woff2",
+      "image": "mallong.png",
+      "createdAt": "2026-03-30T09:16:51.182Z",
+      "updatedAt": "2026-03-30T09:16:51.182Z"
+    },
+    {
+      "name": "Brotherside Signature",
+      "slug": "brotherside-signature",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/brotherside-signature.woff2",
+      "image": "brotherside-signature.png",
+      "createdAt": "2026-03-30T09:16:51.323Z",
+      "updatedAt": "2026-03-30T09:16:51.323Z"
+    },
+    {
+      "name": "Soul Note Display",
+      "slug": "soul-note-display",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/soul-note-display.woff2",
+      "image": "soul-note-display.png",
+      "createdAt": "2026-03-30T09:16:51.460Z",
+      "updatedAt": "2026-03-30T09:16:51.460Z"
+    },
+    {
+      "name": "Hevantica",
+      "slug": "hevantica",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/hevantica.woff2",
+      "image": "hevantica.png",
+      "createdAt": "2026-03-30T09:16:51.594Z",
+      "updatedAt": "2026-03-30T09:16:51.594Z"
+    },
+    {
+      "name": "HoaTay1",
+      "slug": "hoatay1",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/hoatay1.woff2",
+      "image": "hoatay1.png",
+      "createdAt": "2026-03-30T09:16:51.727Z",
+      "updatedAt": "2026-03-30T09:16:51.727Z"
+    },
+    {
+      "name": "The Panorama",
+      "slug": "the-panorama",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/the-panorama.woff2",
+      "image": "the-panorama.png",
+      "createdAt": "2026-03-30T09:16:51.859Z",
+      "updatedAt": "2026-03-30T09:16:51.859Z"
+    },
+    {
+      "name": "Sadstory",
+      "slug": "sadstory",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/sadstory.woff2",
+      "image": "sadstory.png",
+      "createdAt": "2026-03-30T09:16:52.008Z",
+      "updatedAt": "2026-03-30T09:16:52.008Z"
+    },
+    {
+      "name": "ShowcaseSans",
+      "slug": "showcasesans",
+      "id_font_type_slug": "sans-serif",
+      "path": "/images/fonts/showcasesans.woff2",
+      "image": "showcasesans.png",
+      "createdAt": "2026-03-30T09:16:52.143Z",
+      "updatedAt": "2026-03-30T09:16:52.143Z"
+    },
+    {
+      "name": "Gillastone",
+      "slug": "gillastone",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/gillastone.woff2",
+      "image": "gillastone.png",
+      "createdAt": "2026-03-30T09:16:52.281Z",
+      "updatedAt": "2026-03-30T09:16:52.281Z"
+    },
+    {
+      "name": "Vocago Italic",
+      "slug": "vocago-italic",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/vocago-italic.woff2",
+      "image": "vocago-italic.png",
+      "createdAt": "2026-03-30T09:16:52.449Z",
+      "updatedAt": "2026-03-30T09:16:52.449Z"
+    },
+    {
+      "name": "Bregan Regular",
+      "slug": "bregan-regular",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/bregan-regular.woff2",
+      "image": "bregan-regular.png",
+      "createdAt": "2026-03-30T09:16:52.581Z",
+      "updatedAt": "2026-03-30T09:16:52.581Z"
+    },
+    {
+      "name": "Qalogre Regular",
+      "slug": "qalogre-regular",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/qalogre-regular.woff2",
+      "image": "qalogre-regular.png",
+      "createdAt": "2026-03-30T09:16:52.724Z",
+      "updatedAt": "2026-03-30T09:16:52.724Z"
+    },
+    {
+      "name": "Chillatos",
+      "slug": "chillatos",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/chillatos.woff2",
+      "image": "chillatos.png",
+      "createdAt": "2026-03-30T09:16:52.856Z",
+      "updatedAt": "2026-03-30T09:16:52.856Z"
+    },
+    {
+      "name": "BucThu",
+      "slug": "bucthu",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/bucthu.woff2",
+      "image": "bucthu.png",
+      "createdAt": "2026-03-30T09:16:52.995Z",
+      "updatedAt": "2026-03-30T09:16:52.995Z"
+    },
+    {
+      "name": "Faugllin Balseyn",
+      "slug": "faugllin-balseyn",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/faugllin-balseyn.woff2",
+      "image": "faugllin-balseyn.png",
+      "createdAt": "2026-03-30T09:16:53.147Z",
+      "updatedAt": "2026-03-30T09:16:53.147Z"
+    },
+    {
+      "name": "Poppins",
+      "slug": "poppins",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/poppins.woff2",
+      "image": "poppins.png",
+      "createdAt": "2026-03-30T09:16:53.295Z",
+      "updatedAt": "2026-03-30T09:16:53.295Z"
+    },
+    {
+      "name": "Antro Vectra",
+      "slug": "antro-vectra",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/antro-vectra.woff2",
+      "image": "antro-vectra.png",
+      "createdAt": "2026-03-30T09:16:53.437Z",
+      "updatedAt": "2026-03-30T09:16:53.437Z"
+    },
+    {
+      "name": "Scarlet Bradley.script",
+      "slug": "scarlet-bradleyscript",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/scarlet-bradleyscript.woff2",
+      "image": "scarlet-bradleyscript.png",
+      "createdAt": "2026-03-30T09:16:53.575Z",
+      "updatedAt": "2026-03-30T09:16:53.575Z"
+    },
+    {
+      "name": "Times New Roman",
+      "slug": "times-new-roman",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/times-new-roman.woff2",
+      "image": "times-new-roman.png",
+      "createdAt": "2026-03-30T09:16:53.766Z",
+      "updatedAt": "2026-03-30T09:16:53.766Z"
+    },
+    {
+      "name": "Mentawai",
+      "slug": "mentawai",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/mentawai.woff2",
+      "image": "mentawai.png",
+      "createdAt": "2026-03-30T09:16:53.917Z",
+      "updatedAt": "2026-03-30T09:16:53.917Z"
+    },
+    {
+      "name": "Whitegone",
+      "slug": "whitegone",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/whitegone.woff2",
+      "image": "whitegone.png",
+      "createdAt": "2026-03-30T09:16:54.068Z",
+      "updatedAt": "2026-03-30T09:16:54.068Z"
+    },
+    {
+      "name": "South Australia",
+      "slug": "south-australia",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/south-australia.woff2",
+      "image": "south-australia.png",
+      "createdAt": "2026-03-30T09:16:54.191Z",
+      "updatedAt": "2026-03-30T09:16:54.191Z"
+    },
+    {
+      "name": "ShowcaseScript",
+      "slug": "showcasescript",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/showcasescript.woff2",
+      "image": "showcasescript.png",
+      "createdAt": "2026-03-30T09:16:54.369Z",
+      "updatedAt": "2026-03-30T09:16:54.369Z"
+    },
+    {
+      "name": "Love Signature",
+      "slug": "love-signature",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/love-signature.woff2",
+      "image": "love-signature.png",
+      "createdAt": "2026-03-30T09:16:54.489Z",
+      "updatedAt": "2026-03-30T09:16:54.489Z"
+    },
+    {
+      "name": "RetroSignature",
+      "slug": "retrosignature",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/retrosignature.woff2",
+      "image": "retrosignature.png",
+      "createdAt": "2026-03-30T09:16:54.612Z",
+      "updatedAt": "2026-03-30T09:16:54.612Z"
+    },
+    {
+      "name": "Modisframe",
+      "slug": "modisframe",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/modisframe.woff2",
+      "image": "modisframe.png",
+      "createdAt": "2026-03-30T09:16:54.747Z",
+      "updatedAt": "2026-03-30T09:16:54.747Z"
+    },
+    {
+      "name": "BrikeyMoura Regular",
+      "slug": "brikeymoura-regular",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/brikeymoura-regular.woff2",
+      "image": "brikeymoura-regular.png",
+      "createdAt": "2026-03-30T09:16:54.864Z",
+      "updatedAt": "2026-03-30T09:16:54.864Z"
+    },
+    {
+      "name": "Rustling Sound",
+      "slug": "rustling-sound",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/rustling-sound.woff2",
+      "image": "rustling-sound.png",
+      "createdAt": "2026-03-30T09:16:54.997Z",
+      "updatedAt": "2026-03-30T09:16:54.997Z"
+    },
+    {
+      "name": "Abbassy Script",
+      "slug": "abbassy-script",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/abbassy-script.woff2",
+      "image": "abbassy-script.png",
+      "createdAt": "2026-03-30T09:16:55.132Z",
+      "updatedAt": "2026-03-30T09:16:55.132Z"
+    },
+    {
+      "name": "BrikeyMoura Italic",
+      "slug": "brikeymoura-italic",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/brikeymoura-italic.woff2",
+      "image": "brikeymoura-italic.png",
+      "createdAt": "2026-03-30T09:16:55.267Z",
+      "updatedAt": "2026-03-30T09:16:55.267Z"
+    },
+    {
+      "name": "Ceraso",
+      "slug": "ceraso",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/ceraso.woff2",
+      "image": "ceraso.png",
+      "createdAt": "2026-03-30T09:16:55.399Z",
+      "updatedAt": "2026-03-30T09:16:55.399Z"
+    },
+    {
+      "name": "Perfect Beloved",
+      "slug": "perfect-beloved",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/perfect-beloved.woff2",
+      "image": "perfect-beloved.png",
+      "createdAt": "2026-03-30T09:16:55.530Z",
+      "updatedAt": "2026-03-30T09:16:55.530Z"
+    },
+    {
+      "name": "Madam Ghea",
+      "slug": "madam-ghea",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/madam-ghea.woff2",
+      "image": "madam-ghea.png",
+      "createdAt": "2026-03-30T09:16:55.658Z",
+      "updatedAt": "2026-03-30T09:16:55.658Z"
+    },
+    {
+      "name": "Aquarelle",
+      "slug": "aquarelle",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/aquarelle.woff2",
+      "image": "aquarelle.png",
+      "createdAt": "2026-03-30T09:16:55.791Z",
+      "updatedAt": "2026-03-30T09:16:55.791Z"
+    },
+    {
+      "name": "Monsieur La Doulaise",
+      "slug": "monsieur-la-doulaise",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/monsieur-la-doulaise.woff2",
+      "image": "monsieur-la-doulaise.png",
+      "createdAt": "2026-03-30T09:16:55.919Z",
+      "updatedAt": "2026-03-30T09:16:55.919Z"
+    },
+    {
+      "name": "Montserrat",
+      "slug": "montserrat",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/montserrat.woff2",
+      "image": "montserrat.png",
+      "createdAt": "2026-03-30T09:16:56.055Z",
+      "updatedAt": "2026-03-30T09:16:56.055Z"
+    },
+    {
+      "name": "Belinda Avenue",
+      "slug": "belinda-avenue",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/belinda-avenue.woff2",
+      "image": "belinda-avenue.png",
+      "createdAt": "2026-03-30T09:16:56.192Z",
+      "updatedAt": "2026-03-30T09:16:56.192Z"
+    },
+    {
+      "name": "Sunshine Script",
+      "slug": "sunshine-script",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/sunshine-script.woff2",
+      "image": "sunshine-script.png",
+      "createdAt": "2026-03-30T09:16:56.319Z",
+      "updatedAt": "2026-03-30T09:16:56.319Z"
+    },
+    {
+      "name": "Scriptina KT",
+      "slug": "scriptina-kt",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/scriptina-kt.woff2",
+      "image": "scriptina-kt.png",
+      "createdAt": "2026-03-30T09:16:56.650Z",
+      "updatedAt": "2026-03-30T09:16:56.650Z"
+    },
+    {
+      "name": "Moon Light",
+      "slug": "moon-light",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/moon-light.woff2",
+      "image": "moon-light.png",
+      "createdAt": "2026-03-30T09:16:56.774Z",
+      "updatedAt": "2026-03-30T09:16:56.774Z"
+    },
+    {
+      "name": "Jonathan Andrea Script",
+      "slug": "jonathan-andrea-script",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/jonathan-andrea-script.woff2",
+      "image": "jonathan-andrea-script.png",
+      "createdAt": "2026-03-30T09:16:56.907Z",
+      "updatedAt": "2026-03-30T09:16:56.907Z"
+    },
+    {
+      "name": "Anisa Signature",
+      "slug": "anisa-signature",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/anisa-signature.woff2",
+      "image": "anisa-signature.png",
+      "createdAt": "2026-03-30T09:16:57.036Z",
+      "updatedAt": "2026-03-30T09:16:57.036Z"
+    },
+    {
+      "name": "Molahesta Italic",
+      "slug": "molahesta-italic",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/molahesta-italic.woff2",
+      "image": "molahesta-italic.png",
+      "createdAt": "2026-03-30T09:16:57.190Z",
+      "updatedAt": "2026-03-30T09:16:57.190Z"
+    },
+    {
+      "name": "Portrait Script Bounce",
+      "slug": "portrait-script-bounce",
+      "id_font_type_slug": "script",
+      "path": "/images/fonts/portrait-script-bounce.woff2",
+      "image": "portrait-script-bounce.png",
+      "createdAt": "2026-03-30T09:16:57.316Z",
+      "updatedAt": "2026-03-30T09:16:57.316Z"
+    },
+    {
+      "name": "The Artisan",
+      "slug": "the-artisan",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/the-artisan.woff2",
+      "image": "the-artisan.png",
+      "createdAt": "2026-03-30T09:16:57.443Z",
+      "updatedAt": "2026-03-30T09:16:57.443Z"
+    },
+    {
+      "name": "Scarlet Bradley.regular",
+      "slug": "scarlet-bradleyregular",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/scarlet-bradleyregular.woff2",
+      "image": "scarlet-bradleyregular.png",
+      "createdAt": "2026-03-30T09:16:57.576Z",
+      "updatedAt": "2026-03-30T09:16:57.576Z"
+    },
+    {
+      "name": "Arcittya Begatri",
+      "slug": "arcittya-begatri",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/arcittya-begatri.woff2",
+      "image": "arcittya-begatri.png",
+      "createdAt": "2026-03-30T09:16:57.715Z",
+      "updatedAt": "2026-03-30T09:16:57.715Z"
+    },
+    {
+      "name": "Daughter",
+      "slug": "daughter",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/daughter.woff2",
+      "image": "daughter.png",
+      "createdAt": "2026-03-30T09:16:57.846Z",
+      "updatedAt": "2026-03-30T09:16:57.846Z"
+    },
+    {
+      "name": "The Yoshi",
+      "slug": "the-yoshi",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/the-yoshi.woff2",
+      "image": "the-yoshi.png",
+      "createdAt": "2026-03-30T09:16:57.978Z",
+      "updatedAt": "2026-03-30T09:16:57.978Z"
+    },
+    {
+      "name": "Memory Of 2018",
+      "slug": "memory-of-2018",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/memory-of-2018.woff2",
+      "image": "memory-of-2018.png",
+      "createdAt": "2026-03-30T09:16:58.109Z",
+      "updatedAt": "2026-03-30T09:16:58.109Z"
+    },
+    {
+      "name": "Miya Wayne",
+      "slug": "miya-wayne",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/miya-wayne.woff2",
+      "image": "miya-wayne.png",
+      "createdAt": "2026-03-30T09:16:58.262Z",
+      "updatedAt": "2026-03-30T09:16:58.262Z"
+    },
+    {
+      "name": "Chetta Vissto",
+      "slug": "chetta-vissto",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/chetta-vissto.woff2",
+      "image": "chetta-vissto.png",
+      "createdAt": "2026-03-30T09:16:58.556Z",
+      "updatedAt": "2026-03-30T09:16:58.556Z"
+    },
+    {
+      "name": "Nura Asyifa",
+      "slug": "nura-asyifa",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/nura-asyifa.woff2",
+      "image": "nura-asyifa.png",
+      "createdAt": "2026-03-30T09:16:58.683Z",
+      "updatedAt": "2026-03-30T09:16:58.683Z"
+    },
+    {
+      "name": "Lobster",
+      "slug": "lobster",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/lobster.woff2",
+      "image": "lobster.png",
+      "createdAt": "2026-03-30T09:16:58.827Z",
+      "updatedAt": "2026-03-30T09:16:58.827Z"
+    },
+    {
+      "name": "OpenSans_SemiCondensed",
+      "slug": "opensans_semicondensed",
+      "id_font_type_slug": "sans-serif",
+      "path": "/images/fonts/opensans_semicondensed.woff2",
+      "image": "opensans_semicondensed.png",
+      "createdAt": "2026-03-30T09:16:58.974Z",
+      "updatedAt": "2026-03-30T09:16:58.974Z"
+    },
+    {
+      "name": "Fixedsys Excelsior 3.01 Regular",
+      "slug": "fixedsys-excelsior-301-regular",
+      "id_font_type_slug": "",
+      "path": "/images/fonts/fixedsys-excelsior-301-regular.woff2",
+      "image": "fixedsys-excelsior-301-regular.png",
+      "createdAt": "2026-03-30T09:16:59.114Z",
+      "updatedAt": "2026-03-30T09:16:59.114Z"
+    },
+    {
+      "name": "PlayfairDisplay",
+      "slug": "playfairdisplay",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/playfairdisplay.woff2",
+      "image": "playfairdisplay.png",
+      "createdAt": "2026-03-30T09:16:59.245Z",
+      "updatedAt": "2026-03-30T09:16:59.245Z"
+    },
+    {
+      "name": "Clodia",
+      "slug": "clodia",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/clodia.woff2",
+      "image": "clodia.png",
+      "createdAt": "2026-03-30T09:16:59.369Z",
+      "updatedAt": "2026-03-30T09:16:59.369Z"
+    },
+    {
+      "name": "OpenSans",
+      "slug": "opensans",
+      "id_font_type_slug": "sans-serif",
+      "path": "/images/fonts/opensans.woff2",
+      "image": "opensans.png",
+      "createdAt": "2026-03-30T09:16:59.498Z",
+      "updatedAt": "2026-03-30T09:16:59.498Z"
+    },
+    {
+      "name": "Celestial Dream",
+      "slug": "celestial-dream",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/celestial-dream.woff2",
+      "image": "celestial-dream.png",
+      "createdAt": "2026-03-30T09:16:59.629Z",
+      "updatedAt": "2026-03-30T09:16:59.629Z"
+    },
+    {
+      "name": "Signatie",
+      "slug": "signatie",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/signatie.woff2",
+      "image": "signatie.png",
+      "createdAt": "2026-03-30T09:16:59.761Z",
+      "updatedAt": "2026-03-30T09:16:59.761Z"
+    },
+    {
+      "name": "Only You",
+      "slug": "only-you",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/only-you.woff2",
+      "image": "only-you.png",
+      "createdAt": "2026-03-30T09:16:59.893Z",
+      "updatedAt": "2026-03-30T09:16:59.893Z"
+    },
+    {
+      "name": "Sacramento",
+      "slug": "sacramento",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/sacramento.woff2",
+      "image": "sacramento.png",
+      "createdAt": "2026-03-30T09:17:00.027Z",
+      "updatedAt": "2026-03-30T09:17:00.027Z"
+    },
+    {
+      "name": "Sparkle Perfection",
+      "slug": "sparkle-perfection",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/sparkle-perfection.woff2",
+      "image": "sparkle-perfection.png",
+      "createdAt": "2026-03-30T09:17:00.162Z",
+      "updatedAt": "2026-03-30T09:17:00.162Z"
+    },
+    {
+      "name": "CristalElegance",
+      "slug": "cristalelegance",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/cristalelegance.woff2",
+      "image": "cristalelegance.png",
+      "createdAt": "2026-03-30T09:17:00.341Z",
+      "updatedAt": "2026-03-30T09:17:00.341Z"
+    },
+    {
+      "name": "Signerica_Medium",
+      "slug": "signerica_medium",
+      "id_font_type_slug": "display",
+      "path": "/images/fonts/signerica_medium.woff2",
+      "image": "signerica_medium.png",
+      "createdAt": "2026-03-30T09:17:00.509Z",
+      "updatedAt": "2026-03-30T09:17:00.509Z"
+    }
+  ]
+}

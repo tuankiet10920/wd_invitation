@@ -1,0 +1,506 @@
+{
+  "info": {
+    "_postman_id": "d9634b62-39b2-487f-8c8e-43da5c585878",
+    "name": "cinelove",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "card",
+      "item": [
+        {
+          "name": "image",
+          "id": "57cda8a8-04f3-4477-9a5e-d869ba5714c3",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"image\": {{base64}}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://upload.anhcoder.vn/callback/upload",
+              "protocol": "https",
+              "host": [
+                "upload",
+                "anhcoder",
+                "vn"
+              ],
+              "path": [
+                "callback",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "466b0470-3749-4034-b0ab-7798484fa016"
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "register",
+          "id": "f9a0ed72-7da1-417c-9846-e3e16a040ae2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\",\r\n    \"name\": \"Nguyen Tuan Kiet\",\r\n    \"password\": \"@Kiet2020\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURLCinlove}}/api/v1/auth/register",
+              "host": [
+                "{{baseURLCinlove}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "6d9fae69-341b-4fd2-b8f8-fcff741f2652"
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "admin",
+          "item": [
+            {
+              "name": "package",
+              "item": [
+                {
+                  "name": "getAll",
+                  "id": "202630b9-cd50-4403-bacb-5de157abded6",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/admin/packages",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "packages"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "getOne",
+                  "id": "67f4905e-3f2b-40be-bda2-2ab0894a1333",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/admin/packages/1",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "packages",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "create",
+                  "id": "451fe325-e3f5-4ef4-9260-888b11e8128b",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzcwMDAzODYwLCJleHAiOjE3NzAwOTAyNjB9.8jIxvogBNwd10u79eyMmVzTFoebBaFupgd5FecrsW4Q",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"image_limits\": 1000,\r\n    \"is_best\": false,\r\n    \"level\": 2,\r\n    \"name\": \"Basic\",\r\n    \"original_price\": 450000,\r\n    \"sale_price\": 299000,\r\n    \"short_description\": \"Đầy đủ tính năng từ gói free và các tính năng nâng cao.\",\r\n    \"time_save_card\": 18\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/admin/packages",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "packages"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "id": "e7734c84-ea07-4527-8a07-42cc00bdaf0b"
+            },
+            {
+              "name": "login",
+              "id": "a98107d0-0659-4f77-9e15-4dede827e0a0",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"admin@thiepcuoi.com\",\r\n    \"password\": \"@Kiet2020\",\r\n    \"remember\": true,\r\n    \"isAdmin\": true\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "c9cd2261-80c1-4b56-ab07-96c43665d108"
+        },
+        {
+          "name": "login",
+          "id": "28013881-7169-403c-a39b-585e581c88e3",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\",\r\n    \"password\": \"@Kiet2022\",\r\n    \"remember\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/login",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "id": "d8c113da-e847-49fb-8149-200c31ff896a",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tuann Kiett\",\r\n    \"email\": \"kietnguyen02112002@gmail.com\",\r\n    \"password\": \"@Kiet2020\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/register",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "tasks",
+          "id": "b7d617fa-f2f0-41c5-86d2-fdfaef7cb47d",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODI4OTAyMSwiZXhwIjoxNzY4Mzc1NDIxfQ.8KYIOtHoiQxTVJY5wTpDyEu1iUw8kzOFlKVRDS-iBPg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Hà làm trong 2 ngày nhen!\",\r\n    \"employee_id\": 1,\r\n    \"priority\": \"high\",\r\n    \"status\": \"todo\",\r\n    \"title\": \"Dự án siêu cấp vip pro!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://task.malo.asia/api/tasks",
+              "protocol": "https",
+              "host": [
+                "task",
+                "malo",
+                "asia"
+              ],
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employees",
+          "id": "0aea3485-564c-410b-82a2-7d9eda3d76d2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODI4OTAyMSwiZXhwIjoxNzY4Mzc1NDIxfQ.8KYIOtHoiQxTVJY5wTpDyEu1iUw8kzOFlKVRDS-iBPg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"X-132Y\",\r\n    \"position\": \"IT STAFF DEV\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://task.malo.asia/api/employees",
+              "protocol": "https",
+              "host": [
+                "task",
+                "malo",
+                "asia"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "send-mail-reset-password",
+          "id": "c47efb6f-43be-490d-86cc-bd7d7c217e90",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/confirm-reset-password",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "confirm-reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "id": "a21a6462-2faa-4194-9880-adb49f9d2c07",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"019bbb3b-812c-701a-8d1e-ff955004ae14-pas-kietnguyen02112002@gmail.com\",\r\n    \"password\": \"@Kiet2025\",\r\n    \"confirm_password\": \"@Kiet2025\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/reset-password",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "e8c7da28-924c-41f3-84f8-3675710fffd2"
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "articles",
+          "item": [
+            {
+              "name": "list",
+              "id": "0372ee05-cf68-4bf3-97e1-105ed514ed85",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzcwMDkyMTYzLCJleHAiOjE3NzAxNzg1NjN9.NX45rRcphZOSbC548tjTz5JUDW32A9lFCeOXPB8mEGw",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/admin/articles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "articles"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "52152513-d3d5-4a85-b741-87271fe58984"
+        },
+        {
+          "name": "test",
+          "id": "db9e4407-cce9-4736-b1cf-8d0e520b5b5f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@cinelove.vn\",\r\n    \"password\": \"@Kiet2020\",\r\n    \"remember\": true,\r\n    \"isAdmin\": true\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/admin/test",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "admin",
+                "test"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "276e0687-449f-4e1e-aa28-4d2ef1e996cf"
+    }
+  ],
+  "variable": [
+    {
+      "id": "f1e857fa-77ca-4824-874c-797ccea4e536",
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

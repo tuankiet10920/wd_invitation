@@ -1,0 +1,681 @@
+{
+  "info": {
+    "_postman_id": "31760916-8d11-4e61-9326-75d0be2fd011",
+    "name": "Phúc An Solutions Nuxt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "brands",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "e03cca33-a261-44af-8840-cff4eef3f1fd",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/brands",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "brands"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "4f087441-d74e-4f06-81ab-30140b62a887",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/brands/780",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "brands",
+                "780"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "4df1bed8-ccde-4cb9-8dd5-a096deae0970"
+    },
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "getBrandProducts",
+          "id": "4c439fef-0b68-4ec7-bae0-ac0dd8a6373f",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/products/1/brands",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "1",
+                "brands"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "custom",
+          "id": "54d5318c-7a65-46b0-8273-283e82d17b7d",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/products/custom",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "custom"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-filename-image",
+          "id": "f822f5e8-ab19-4c59-ad69-67861287cc4b",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/products/custom/resolve-images",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "custom",
+                "resolve-images"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "a39746a2-0a90-468f-a989-cb130656a40f",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/products/laptop-lg-gram-15z90n-var55a5-i5-1035g78gb-ram512gb-ssd156inch-fhdxam-bac",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "laptop-lg-gram-15z90n-var55a5-i5-1035g78gb-ram512gb-ssd156inch-fhdxam-bac"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "c59a138a-18f4-4df9-bb42-9b4c841e24ef"
+    },
+    {
+      "name": "product-types",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "6788983f-5180-4e8e-b7ba-ef6e9e07bc7f",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/product-types",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "product-types"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "e9b9a254-4a27-418c-aab2-6369a36e38db"
+    },
+    {
+      "name": "tags",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "633b5b57-56e8-4b0c-8f93-d2d9d7c24215",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/tags",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "tags"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "e19ac473-aa47-4a2d-ab73-b8eaf67cc55c"
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "getAll",
+          "id": "c93e9b35-915a-490a-af41-fa84e1bf8ed1",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/categories",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "cbbf2397-2bee-497b-8717-b2b22b3b709a"
+    },
+    {
+      "name": "pages",
+      "item": [
+        {
+          "name": "home",
+          "id": "77ebbb99-09c7-4fcb-a36b-18bd5e2aa1be",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/pages/home",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pages",
+                "home"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "435b637b-b190-424a-9077-be881b00e326"
+    },
+    {
+      "name": "news",
+      "item": [
+        {
+          "name": "news-with-type",
+          "id": "fde82ea6-f988-4d95-8433-18fa060a0f5b",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/news-with-type",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "news-with-type"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAll",
+          "id": "e70ffda7-a34b-4c12-b402-47bab5cf3631",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/v1/news",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "news"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "id": "c4c34b80-69f6-47ed-991e-ad3135e3a3c7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Title 1\",\r\n    \"content\": \"Nothing haha :)))))!\",\r\n    \"slug\": \"title-1\",\r\n    \"image\": {{image}},\r\n    \"id_type\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/news",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "news"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "581a5964-7982-4088-a476-d1c822cc59c0"
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "id": "6fb0d619-4fc3-465c-b67c-d1904158b925",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\",\r\n    \"password\": \"@Kiet2025\",\r\n    \"remember\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/login",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "id": "025d511b-b5be-4038-b439-c5ce470f1f1c",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\",\r\n    \"password\": \"@Kiet2020\",\r\n    \"phone\": \"0877713348\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/register",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "tasks",
+          "id": "ffff1997-0851-4986-a28c-f8c881f19fc5",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODI4OTAyMSwiZXhwIjoxNzY4Mzc1NDIxfQ.8KYIOtHoiQxTVJY5wTpDyEu1iUw8kzOFlKVRDS-iBPg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Hà làm trong 2 ngày nhen!\",\r\n    \"employee_id\": 1,\r\n    \"priority\": \"high\",\r\n    \"status\": \"todo\",\r\n    \"title\": \"Dự án siêu cấp vip pro!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://task.malo.asia/api/tasks",
+              "protocol": "https",
+              "host": [
+                "task",
+                "malo",
+                "asia"
+              ],
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employees",
+          "id": "ee854bb8-3a8c-4888-a81b-24b79811905e",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODI4OTAyMSwiZXhwIjoxNzY4Mzc1NDIxfQ.8KYIOtHoiQxTVJY5wTpDyEu1iUw8kzOFlKVRDS-iBPg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"X-132Y\",\r\n    \"position\": \"IT STAFF DEV\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://task.malo.asia/api/employees",
+              "protocol": "https",
+              "host": [
+                "task",
+                "malo",
+                "asia"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "send-mail-reset-password",
+          "id": "b3fcd74d-9e96-4609-b15a-ca7b25e4b49d",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kietnguyen02112002@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/confirm-reset-password",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "confirm-reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "id": "d62b8ffa-eaf2-4be2-a4d2-25a9890c2343",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"019bbb3b-812c-701a-8d1e-ff955004ae14-pas-kietnguyen02112002@gmail.com\",\r\n    \"password\": \"@Kiet2025\",\r\n    \"confirm_password\": \"@Kiet2025\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/v1/auth/reset-password",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b6886b4e-db4f-46cb-b98f-6cb12866db98"
+    },
+    {
+      "name": "mail",
+      "item": [
+        {
+          "name": "smtp",
+          "id": "835c20a2-c22c-4cf4-b17f-a793923062b4",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/mail/smtp",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "mail",
+                "smtp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "mailgun",
+          "id": "921ade51-a014-4bbd-8846-aa3b17ecde17",
+          "request": {
+            "auth": {
+              "type": "apikey"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/mail/mailgun",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "mail",
+                "mailgun"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "resend",
+          "id": "1b4dcff3-681a-4b06-bb65-aed96ed62e49",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/mail/resend",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "mail",
+                "resend"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "6c7c6244-5773-41cd-924a-09a165058cc4"
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "bull-queues",
+          "id": "1b25d1eb-dab5-4b9a-85e6-4f8588885194",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/admin/queues",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "queues"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "096636e0-d255-4d77-94df-ae3fc97c8855"
+    }
+  ],
+  "variable": [
+    {
+      "id": "e601233c-ed17-44b1-80f6-b5d5a73b6df6",
+      "key": "baseURL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

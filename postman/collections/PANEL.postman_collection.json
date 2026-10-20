@@ -1,0 +1,553 @@
+{
+  "info": {
+    "_postman_id": "541ef72c-7b8a-4271-9b5b-f361d9a5fdc4",
+    "name": "PANEL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "node project",
+      "item": [
+        {
+          "name": "create",
+          "id": "5975c06b-38db-4c79-9bcb-ece0b2a817ea",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "data",
+                  "value": "{\"project_name\":\"sss\"}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://dashboard.ntkservices.com/v2/project/nodejs/start_project",
+              "protocol": "https",
+              "host": [
+                "dashboard",
+                "ntkservices",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "project",
+                "nodejs",
+                "start_project"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "1a96bd29-736b-4d7c-8c6a-eadcf9fff6aa"
+    },
+    {
+      "name": "https://dashboard.ntkservices.com/v2/project/nodejs/start_project",
+      "id": "08f71e73-f7ec-478b-90c8-18ae556cc0e3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.9,vi;q=0.8"
+          },
+          {
+            "key": "content-type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "origin",
+            "value": "https://dashboard.ntkservices.com"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://dashboard.ntkservices.com/site/node"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-http-token",
+            "value": "lNJYeK06KsXT0CetLFPOdvRcI9fKlwSFalejnpZEUgjxvVfU"
+          },
+          {
+            "key": "Cookie",
+            "value": "__stripe_mid=d92d5d5e-6686-4a46-86a4-8f7db7120b35c1c81b; _ga=GA1.1.1444826760.1767536876; 9923f5801a51b43518f37974c4cf2e1e=ed22c9aa-52f0-4e81-aac6-2304912aeebc.wNufzASbfLI7PxLpYMVLbj3Nz7Y; 91caaf8ddfe00be5f1305dc77d4c1bf3=8e9036cd-1e90-4a3b-8457-df66c7bbdef5.w_auXR3AeLl7_sWrM0tVfz8OTu8; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=42c935b3-af68-4298-a48a-f032d2293efb.9YET9ZgDEbjo8E4AeT6gMb0kMKs; _ga_S3YDE18W6Y=GS2.1.s1768225758$o1$g0$t1768225766$j52$l0$h0; 41c526259bd1e8d8704a1041fec24890=ec8afce7-4306-4026-bd7c-27eeb4070c8a.u882iZv6U15So7YlMtJY3wgKjYM; Path=; 3e5182c7b3c6cdbafc6ec901fca0d7f0=987e14ee-fd1b-405b-81fb-5879b45ddd66.ntuFLg0YQm3gke7J3yI6w0Pi8Ao; a654d92b147397d274e4512ddb60b7c9=8407868e-d010-4a3f-a9dc-6998aa230a8d.euKB_MakcKG5z-3bX25XJFo4yWk; _ga_8TZ15FNY4J=GS2.1.s1769525086$o18$g1$t1769525812$j60$l0$h0; e0e10967bb6812dee3e0fb1c42211640=e522640b-d2b6-4bd7-bf8f-a501f877d3d2.YaDFW9J-1mHDo5bM6oAetLqYp7c; __stripe_sid=46413bf0-3549-4e5e-bdff-082d8139562415c426; FileEditorPath=/www/wwwroot/sss"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "data",
+              "value": "{\"project_name\":\"sss\"}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.ntkservices.com/v2/project/nodejs/start_project",
+          "protocol": "https",
+          "host": [
+            "dashboard",
+            "ntkservices",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "project",
+            "nodejs",
+            "start_project"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://dashboard.ntkservices.com/v2/project/nodejs/start_project' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9,vi;q=0.8' \\\r\n  -H 'content-type: application/x-www-form-urlencoded' \\\r\n  -b '__stripe_mid=d92d5d5e-6686-4a46-86a4-8f7db7120b35c1c81b; _ga=GA1.1.1444826760.1767536876; 9923f5801a51b43518f37974c4cf2e1e=ed22c9aa-52f0-4e81-aac6-2304912aeebc.wNufzASbfLI7PxLpYMVLbj3Nz7Y; 91caaf8ddfe00be5f1305dc77d4c1bf3=8e9036cd-1e90-4a3b-8457-df66c7bbdef5.w_auXR3AeLl7_sWrM0tVfz8OTu8; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=42c935b3-af68-4298-a48a-f032d2293efb.9YET9ZgDEbjo8E4AeT6gMb0kMKs; _ga_S3YDE18W6Y=GS2.1.s1768225758$o1$g0$t1768225766$j52$l0$h0; 41c526259bd1e8d8704a1041fec24890=ec8afce7-4306-4026-bd7c-27eeb4070c8a.u882iZv6U15So7YlMtJY3wgKjYM; Path=; 3e5182c7b3c6cdbafc6ec901fca0d7f0=987e14ee-fd1b-405b-81fb-5879b45ddd66.ntuFLg0YQm3gke7J3yI6w0Pi8Ao; a654d92b147397d274e4512ddb60b7c9=8407868e-d010-4a3f-a9dc-6998aa230a8d.euKB_MakcKG5z-3bX25XJFo4yWk; _ga_8TZ15FNY4J=GS2.1.s1769525086$o18$g1$t1769525812$j60$l0$h0; e0e10967bb6812dee3e0fb1c42211640=e522640b-d2b6-4bd7-bf8f-a501f877d3d2.YaDFW9J-1mHDo5bM6oAetLqYp7c; __stripe_sid=46413bf0-3549-4e5e-bdff-082d8139562415c426; FileEditorPath=/www/wwwroot/sss' \\\r\n  -H 'origin: https://dashboard.ntkservices.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://dashboard.ntkservices.com/site/node' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36' \\\r\n  -H 'x-http-token: lNJYeK06KsXT0CetLFPOdvRcI9fKlwSFalejnpZEUgjxvVfU' \\\r\n  --data-raw 'data=%7B%22project_name%22%3A%22sss%22%7D'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://dashboard.ntkservices.com/v2/project/nodejs/create_project",
+      "id": "026757c5-877f-4ca8-a461-06fe2cc71e7d",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.9,vi;q=0.8"
+          },
+          {
+            "key": "content-type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "origin",
+            "value": "https://dashboard.ntkservices.com"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://dashboard.ntkservices.com/site/node"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-http-token",
+            "value": "lNJYeK06KsXT0CetLFPOdvRcI9fKlwSFalejnpZEUgjxvVfU"
+          },
+          {
+            "key": "Cookie",
+            "value": "__stripe_mid=d92d5d5e-6686-4a46-86a4-8f7db7120b35c1c81b; _ga=GA1.1.1444826760.1767536876; 9923f5801a51b43518f37974c4cf2e1e=ed22c9aa-52f0-4e81-aac6-2304912aeebc.wNufzASbfLI7PxLpYMVLbj3Nz7Y; 91caaf8ddfe00be5f1305dc77d4c1bf3=8e9036cd-1e90-4a3b-8457-df66c7bbdef5.w_auXR3AeLl7_sWrM0tVfz8OTu8; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=42c935b3-af68-4298-a48a-f032d2293efb.9YET9ZgDEbjo8E4AeT6gMb0kMKs; _ga_S3YDE18W6Y=GS2.1.s1768225758$o1$g0$t1768225766$j52$l0$h0; 41c526259bd1e8d8704a1041fec24890=ec8afce7-4306-4026-bd7c-27eeb4070c8a.u882iZv6U15So7YlMtJY3wgKjYM; Path=; 3e5182c7b3c6cdbafc6ec901fca0d7f0=987e14ee-fd1b-405b-81fb-5879b45ddd66.ntuFLg0YQm3gke7J3yI6w0Pi8Ao; a654d92b147397d274e4512ddb60b7c9=8407868e-d010-4a3f-a9dc-6998aa230a8d.euKB_MakcKG5z-3bX25XJFo4yWk; _ga_8TZ15FNY4J=GS2.1.s1769525086$o18$g1$t1769525812$j60$l0$h0; e0e10967bb6812dee3e0fb1c42211640=e522640b-d2b6-4bd7-bf8f-a501f877d3d2.YaDFW9J-1mHDo5bM6oAetLqYp7c; __stripe_sid=46413bf0-3549-4e5e-bdff-082d8139562415c426; FileEditorPath=/www/wwwroot/sss"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "data",
+              "value": "{\"project_cwd\":\"/www/wwwroot/sss\",\"project_name\":\"sss\",\"project_script\":\"start\",\"port\":\"3567\",\"run_user\":\"www\",\"nodejs_version\":\"v24.11.1\",\"project_ps\":\"sss\",\"domains\":[],\"bind_extranet\":0,\"is_power_on\":1,\"max_memory_limit\":4096,\"project_env\":\"\"}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.ntkservices.com/v2/project/nodejs/create_project",
+          "protocol": "https",
+          "host": [
+            "dashboard",
+            "ntkservices",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "project",
+            "nodejs",
+            "create_project"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://dashboard.ntkservices.com/v2/project/nodejs/create_project' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9,vi;q=0.8' \\\r\n  -H 'content-type: application/x-www-form-urlencoded' \\\r\n  -b '__stripe_mid=d92d5d5e-6686-4a46-86a4-8f7db7120b35c1c81b; _ga=GA1.1.1444826760.1767536876; 9923f5801a51b43518f37974c4cf2e1e=ed22c9aa-52f0-4e81-aac6-2304912aeebc.wNufzASbfLI7PxLpYMVLbj3Nz7Y; 91caaf8ddfe00be5f1305dc77d4c1bf3=8e9036cd-1e90-4a3b-8457-df66c7bbdef5.w_auXR3AeLl7_sWrM0tVfz8OTu8; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=42c935b3-af68-4298-a48a-f032d2293efb.9YET9ZgDEbjo8E4AeT6gMb0kMKs; _ga_S3YDE18W6Y=GS2.1.s1768225758$o1$g0$t1768225766$j52$l0$h0; 41c526259bd1e8d8704a1041fec24890=ec8afce7-4306-4026-bd7c-27eeb4070c8a.u882iZv6U15So7YlMtJY3wgKjYM; Path=; 3e5182c7b3c6cdbafc6ec901fca0d7f0=987e14ee-fd1b-405b-81fb-5879b45ddd66.ntuFLg0YQm3gke7J3yI6w0Pi8Ao; a654d92b147397d274e4512ddb60b7c9=8407868e-d010-4a3f-a9dc-6998aa230a8d.euKB_MakcKG5z-3bX25XJFo4yWk; _ga_8TZ15FNY4J=GS2.1.s1769525086$o18$g1$t1769525812$j60$l0$h0; e0e10967bb6812dee3e0fb1c42211640=e522640b-d2b6-4bd7-bf8f-a501f877d3d2.YaDFW9J-1mHDo5bM6oAetLqYp7c; __stripe_sid=46413bf0-3549-4e5e-bdff-082d8139562415c426; FileEditorPath=/www/wwwroot/sss' \\\r\n  -H 'origin: https://dashboard.ntkservices.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://dashboard.ntkservices.com/site/node' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36' \\\r\n  -H 'x-http-token: lNJYeK06KsXT0CetLFPOdvRcI9fKlwSFalejnpZEUgjxvVfU' \\\r\n  --data-raw 'data=%7B%22project_cwd%22%3A%22%2Fwww%2Fwwwroot%2Fsss%22%2C%22project_name%22%3A%22sss%22%2C%22project_script%22%3A%22start%22%2C%22port%22%3A%223567%22%2C%22run_user%22%3A%22www%22%2C%22nodejs_version%22%3A%22v24.11.1%22%2C%22project_ps%22%3A%22sss%22%2C%22domains%22%3A%5B%5D%2C%22bind_extranet%22%3A0%2C%22is_power_on%22%3A1%2C%22max_memory_limit%22%3A4096%2C%22project_env%22%3A%22%22%7D'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://dashboard.ntkservices.com/v2/files?action=upload",
+      "id": "9b8aa27d-5bb3-49c7-b898-735da788e2e3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.9,vi;q=0.8"
+          },
+          {
+            "key": "origin",
+            "value": "https://dashboard.ntkservices.com"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://dashboard.ntkservices.com/files"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-http-token",
+            "value": "lNJYeK06KsXT0CetLFPOdvRcI9fKlwSFalejnpZEUgjxvVfU"
+          },
+          {
+            "key": "Cookie",
+            "value": "__stripe_mid=d92d5d5e-6686-4a46-86a4-8f7db7120b35c1c81b; _ga=GA1.1.1444826760.1767536876; 9923f5801a51b43518f37974c4cf2e1e=ed22c9aa-52f0-4e81-aac6-2304912aeebc.wNufzASbfLI7PxLpYMVLbj3Nz7Y; 91caaf8ddfe00be5f1305dc77d4c1bf3=8e9036cd-1e90-4a3b-8457-df66c7bbdef5.w_auXR3AeLl7_sWrM0tVfz8OTu8; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=42c935b3-af68-4298-a48a-f032d2293efb.9YET9ZgDEbjo8E4AeT6gMb0kMKs; _ga_S3YDE18W6Y=GS2.1.s1768225758$o1$g0$t1768225766$j52$l0$h0; 41c526259bd1e8d8704a1041fec24890=ec8afce7-4306-4026-bd7c-27eeb4070c8a.u882iZv6U15So7YlMtJY3wgKjYM; Path=; 3e5182c7b3c6cdbafc6ec901fca0d7f0=987e14ee-fd1b-405b-81fb-5879b45ddd66.ntuFLg0YQm3gke7J3yI6w0Pi8Ao; a654d92b147397d274e4512ddb60b7c9=8407868e-d010-4a3f-a9dc-6998aa230a8d.euKB_MakcKG5z-3bX25XJFo4yWk; _ga_8TZ15FNY4J=GS2.1.s1769525086$o18$g1$t1769525812$j60$l0$h0; e0e10967bb6812dee3e0fb1c42211640=e522640b-d2b6-4bd7-bf8f-a501f877d3d2.YaDFW9J-1mHDo5bM6oAetLqYp7c; FileEditorPath=/www/wwwroot/sss"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "f_path",
+              "value": "/www/wwwroot/sss/",
+              "type": "text"
+            },
+            {
+              "key": "f_name",
+              "value": "logo.svg",
+              "type": "text"
+            },
+            {
+              "key": "f_size",
+              "value": "4096",
+              "type": "text"
+            },
+            {
+              "key": "f_start",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "blob",
+              "type": "file",
+              "src": "blob"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://dashboard.ntkservices.com/v2/files?action=upload",
+          "protocol": "https",
+          "host": [
+            "dashboard",
+            "ntkservices",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "files"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "upload"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://dashboard.ntkservices.com/v2/files?action=upload' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9,vi;q=0.8' \\\r\n  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundaryAuYCu1cSdm63QymC' \\\r\n  -b '__stripe_mid=d92d5d5e-6686-4a46-86a4-8f7db7120b35c1c81b; _ga=GA1.1.1444826760.1767536876; 9923f5801a51b43518f37974c4cf2e1e=ed22c9aa-52f0-4e81-aac6-2304912aeebc.wNufzASbfLI7PxLpYMVLbj3Nz7Y; 91caaf8ddfe00be5f1305dc77d4c1bf3=8e9036cd-1e90-4a3b-8457-df66c7bbdef5.w_auXR3AeLl7_sWrM0tVfz8OTu8; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=42c935b3-af68-4298-a48a-f032d2293efb.9YET9ZgDEbjo8E4AeT6gMb0kMKs; _ga_S3YDE18W6Y=GS2.1.s1768225758$o1$g0$t1768225766$j52$l0$h0; 41c526259bd1e8d8704a1041fec24890=ec8afce7-4306-4026-bd7c-27eeb4070c8a.u882iZv6U15So7YlMtJY3wgKjYM; Path=; 3e5182c7b3c6cdbafc6ec901fca0d7f0=987e14ee-fd1b-405b-81fb-5879b45ddd66.ntuFLg0YQm3gke7J3yI6w0Pi8Ao; a654d92b147397d274e4512ddb60b7c9=8407868e-d010-4a3f-a9dc-6998aa230a8d.euKB_MakcKG5z-3bX25XJFo4yWk; _ga_8TZ15FNY4J=GS2.1.s1769525086$o18$g1$t1769525812$j60$l0$h0; e0e10967bb6812dee3e0fb1c42211640=e522640b-d2b6-4bd7-bf8f-a501f877d3d2.YaDFW9J-1mHDo5bM6oAetLqYp7c; FileEditorPath=/www/wwwroot/sss' \\\r\n  -H 'origin: https://dashboard.ntkservices.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://dashboard.ntkservices.com/files' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36' \\\r\n  -H 'x-http-token: lNJYeK06KsXT0CetLFPOdvRcI9fKlwSFalejnpZEUgjxvVfU' \\\r\n  --data-raw $'------WebKitFormBoundaryAuYCu1cSdm63QymC\\r\\nContent-Disposition: form-data; name=\"f_path\"\\r\\n\\r\\n/www/wwwroot/sss/\\r\\n------WebKitFormBoundaryAuYCu1cSdm63QymC\\r\\nContent-Disposition: form-data; name=\"f_name\"\\r\\n\\r\\nlogo.svg\\r\\n------WebKitFormBoundaryAuYCu1cSdm63QymC\\r\\nContent-Disposition: form-data; name=\"f_size\"\\r\\n\\r\\n4096\\r\\n------WebKitFormBoundaryAuYCu1cSdm63QymC\\r\\nContent-Disposition: form-data; name=\"f_start\"\\r\\n\\r\\n0\\r\\n------WebKitFormBoundaryAuYCu1cSdm63QymC\\r\\nContent-Disposition: form-data; name=\"blob\"; filename=\"blob\"\\r\\nContent-Type: application/octet-stream\\r\\n\\r\\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\r\\n<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\" viewBox=\"0 0 30 33\">\\r\\n  <\\u0021-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->\\r\\n  <defs>\\r\\n    <style>\\r\\n      .st0 {\\r\\n        mask: url(#mask);\\r\\n      }\\r\\n\\r\\n      .st1 {\\r\\n        fill: url(#linear-gradient2);\\r\\n      }\\r\\n\\r\\n      .st2 {\\r\\n        fill: url(#linear-gradient1);\\r\\n      }\\r\\n\\r\\n      .st3 {\\r\\n        fill: url(#linear-gradient3);\\r\\n      }\\r\\n\\r\\n      .st4 {\\r\\n        fill: url(#linear-gradient);\\r\\n      }\\r\\n\\r\\n      .st5 {\\r\\n        fill: #c4c4c4;\\r\\n      }\\r\\n\\r\\n      .st6 {\\r\\n        fill: #fff;\\r\\n      }\\r\\n    </style>\\r\\n    <mask id=\"mask\" x=\"-1.26\" y=\"-.87\" width=\"32.49\" height=\"35.4\" maskUnits=\"userSpaceOnUse\">\\r\\n      <g id=\"mask0_13247_81097\">\\r\\n        <path class=\"st5\" d=\"M12.18,1.04c1.74-1,3.88-1,5.62,0l9.2,5.31c1.74,1,2.81,2.86,2.81,4.87v10.62c0,2.01-1.07,3.86-2.81,4.87l-9.2,5.31c-1.74,1-3.88,1-5.62,0l-9.2-5.31c-1.74-1-2.81-2.86-2.81-4.87v-10.62c0-2.01,1.07-3.86,2.81-4.87L12.18,1.04Z\"/>\\r\\n      </g>\\r\\n    </mask>\\r\\n    <linearGradient id=\"linear-gradient\" x1=\"15.18\" y1=\"33.4\" x2=\"14.9\" y2=\"22.12\" gradientTransform=\"translate(0 34) scale(1 -1)\" gradientUnits=\"userSpaceOnUse\">\\r\\n      <stop offset=\"0\" stop-color=\"#ff8fa3\"/>\\r\\n      <stop offset=\"1\" stop-color=\"#ff7d94\"/>\\r\\n    </linearGradient>\\r\\n    <linearGradient id=\"linear-gradient1\" x1=\"10.31\" y1=\"6.67\" x2=\"1.37\" y2=\"17.38\" gradientTransform=\"translate(0 34) scale(1 -1)\" gradientUnits=\"userSpaceOnUse\">\\r\\n      <stop offset=\"0\" stop-color=\"#ff4c6e\"/>\\r\\n      <stop offset=\"1\" stop-color=\"#ff8ca0\"/>\\r\\n    </linearGradient>\\r\\n    <linearGradient id=\"linear-gradient2\" x1=\"19.98\" y1=\"5.59\" x2=\"28.52\" y2=\"17.01\" gradientTransform=\"translate(0 34) scale(1 -1)\" gradientUnits=\"userSpaceOnUse\">\\r\\n      <stop offset=\"0\" stop-color=\"#ff4b6e\"/>\\r\\n      <stop offset=\"1\" stop-color=\"#ff889e\"/>\\r\\n    </linearGradient>\\r\\n    <linearGradient id=\"linear-gradient3\" x1=\"14.98\" y1=\"27.85\" x2=\"14.98\" y2=\"8.09\" gradientTransform=\"translate(0 34) scale(1 -1)\" gradientUnits=\"userSpaceOnUse\">\\r\\n      <stop offset=\"0\" stop-color=\"#ff8ca0\"/>\\r\\n      <stop offset=\"1\" stop-color=\"#f76f88\"/>\\r\\n    </linearGradient>\\r\\n  </defs>\\r\\n  <g class=\"st0\">\\r\\n    <g>\\r\\n      <path class=\"st4\" d=\"M14.98-.87l16.24,9.38-8.22,4.43-3.4-1.85-3.09.31-7.72-2.78-1.85,2.47-.93,1.23-1.85-1.23-5.44-2.57L14.98-.87Z\"/>\\r\\n      <path class=\"st2\" d=\"M.04,8.65l6.3,3.06,3.7,8.95v.31l1.23,1.54,5.56,4.32-1.85,7.71L.04,25.91V8.65Z\"/>\\r\\n      <path class=\"st1\" d=\"M19.92,20.96l4.01-8.64,6-3.67v17.26l-14.95,8.63-.31-7.71,5.25-5.87Z\"/>\\r\\n      <path class=\"st3\" d=\"M14.98,6.15c-2.55,0-4.88.97-6.64,2.56l1.42,12.26c.39.18,2.62.93,3.05.93h3.09c.55,0,4.32-1.16,4.32-.62l-.31-1.3c0,.55-.44.99-.99.99h-7.9c-.55,0-.99-.44-.99-.99v-4.78c0-.43-.09-.85-.27-1.24l-1.42-5.25c-1.59,1.75-3.24,4.76-3.24,7.32,0,5.46,4.42,9.88,9.88,9.88s9.88-4.42,9.88-9.88-4.42-9.88-9.88-9.88Z\"/>\\r\\n      <g>\\r\\n        <path class=\"st6\" d=\"M17.51,22.11c-1.54.42-3.11.56-4.65.18-1.87-.45-3-1.54-3.48-3.47-.39-1.48-.4-3.04.04-4.59.22-.78.62-1.52,1.11-2.2.9-1.15,2.13-2.07,3.48-2.39,1.11-.26,2.4-.02,3.19.71.61.56.94,1.2,1.08,1.91.18.8.09,1.54-.29,2.12-.69,1.07-1.27,1.18-1.85.96-.56-.22-.71-.68-.47-1.25.26-.5.23-1.29.06-1.73-.16-.38-.67-.77-1.25-.69-.99.13-1.74,1.08-2.25,1.76-.98,1.38-.97,2.82-.68,4.28.42,1.87,1.4,2.42,3.43,2.47.73.03,1.48-.07,2.21-.25,1.11-.29,1.95-.88,2.68-1.69.34-.38.92-.2,1.1.1.32.46.4,1.07-.12,1.74-.9,1.15-2.02,1.68-3.32,2.03Z\"/>\\r\\n        <path class=\"st6\" d=\"M17.18,22.11c-1.54.42-3.11.56-4.65.18-1.87-.45-3-1.54-3.48-3.47-.39-1.48-.4-3.04.04-4.59.22-.78.62-1.52,1.11-2.2.9-1.15,2.13-2.07,3.48-2.39,1.11-.26,2.4-.02,3.19.71.61.56.94,1.2,1.08,1.91.18.8.09,1.54-.29,2.12-.69,1.07-1.27,1.18-1.85.96-.56-.22-.71-.68-.47-1.25.26-.5.23-1.29.06-1.73-.16-.38-.67-.77-1.25-.69-.99.13-1.74,1.08-2.25,1.76-.98,1.38-.97,2.82-.68,4.28.42,1.87,1.4,2.42,3.43,2.47.73.03,1.48-.07,2.21-.25,1.11-.29,1.95-.88,2.68-1.69.34-.38.92-.2,1.1.1.32.46.4,1.07-.12,1.74-.9,1.15-2.02,1.68-3.32,2.03Z\"/>\\r\\n      </g>\\r\\n    </g>\\r\\n  </g>\\r\\n</svg>\\r\\n------WebKitFormBoundaryAuYCu1cSdm63QymC--\\r\\n'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://10.10.9.240:3333/v2/project/nodejs/create_project",
+      "id": "12e03c24-701b-431c-9ac0-b178cd31acb0",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.9,vi;q=0.8"
+          },
+          {
+            "key": "content-type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "origin",
+            "value": "https://10.10.9.240:3333"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://10.10.9.240:3333/site/node"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-http-token",
+            "value": "xvVdOiNssMZzPLgaAqu9XfCSZPfXLwvd9QE3CXtPtH9QgnYB"
+          },
+          {
+            "key": "Cookie",
+            "value": "d3e83269c4977fd369450fcf497919d3=0badf723-d507-4d79-8d80-60dee528ce8b.dxkIaJGSii7UJyxU0UIwaneKCUQ; __stripe_mid=e6ab93f2-ede4-4ecf-ae91-69f9b8f86ed3dbae74; _ga=GA1.1.1993139157.1767144804; _ga_8TZ15FNY4J=GS2.1.s1767144803$o1$g0$t1767144805$j58$l0$h0; Path=; _ga_S3YDE18W6Y=GS2.1.s1767151062$o1$g0$t1767151071$j51$l0$h0; force=0; pro_end=-1; load_page=null; load_type=null; load_search=undefined; 9923f5801a51b43518f37974c4cf2e1e=ec3cb862-39c3-4bf9-9eb6-0d1abc665935.wEuNusWiMzuKRT6FhjvFz6w09_c; 91caaf8ddfe00be5f1305dc77d4c1bf3=199da060-8044-417d-bfe4-af0710cfd0a2.rcP1Rk6WGyFTqUR95B4VwBvfses; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=cba64266-816d-44c4-9f75-bae07f3d8b64.Cu4kV690OE0PchH9UDFEq8jl5yM; 8654348ad4f47644b909c61349e88d39=48b8a3df-b1a7-43f2-a900-4e4a3cc9740a.3SYxici0Hl43o4LFX6rS3dBkjTo; 3e5182c7b3c6cdbafc6ec901fca0d7f0=61c1640d-89bd-4269-9834-cc7809abb50d.tQCKI8Sx9oOUJ-7Eu8Z4_Fz-ico; 9885abb34256fe7514b5b8f212064aea=22481627-916a-4b44-8766-1ec884e1a85d.u9E6CERVYd3QB8G_0TyXpbLSiuc; a654d92b147397d274e4512ddb60b7c9=53f1dcdd-d870-4bed-8fa4-ab6aa7c0ec1b.Ta_SyI5IKfO0Fxz1ncRxUEUWVGE; FileEditorPath=/www/wwwroot/researches.ntkservices.com/api/controllers; 6d5779bb6cb67528c62bd1336646954f=df5c63bb-15e3-4c32-9c6e-065eaf110add.uLqrgPPseekcMR40N0SCjI-L_Pw; e0e10967bb6812dee3e0fb1c42211640=5f675b08-c380-4d9d-9a76-4ff3e62ae65c.3XsH2o_JlfwOe8mpOCrq5CRK1w8"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "data",
+              "value": "{\"project_cwd\":\"/www/wwwroot/sss\",\"project_name\":\"sss\",\"project_script\":\"ssss\",\"port\":\"3323\",\"run_user\":\"www\",\"nodejs_version\":\"v24.11.1\",\"project_ps\":\"sss\",\"domains\":[],\"bind_extranet\":0,\"is_power_on\":1,\"max_memory_limit\":4096,\"project_env\":\"\"}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://10.10.9.240:3333/v2/project/nodejs/create_project",
+          "protocol": "https",
+          "host": [
+            "10",
+            "10",
+            "9",
+            "240"
+          ],
+          "port": "3333",
+          "path": [
+            "v2",
+            "project",
+            "nodejs",
+            "create_project"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://10.10.9.240:3333/v2/project/nodejs/create_project' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9,vi;q=0.8' \\\r\n  -H 'content-type: application/x-www-form-urlencoded' \\\r\n  -b 'd3e83269c4977fd369450fcf497919d3=0badf723-d507-4d79-8d80-60dee528ce8b.dxkIaJGSii7UJyxU0UIwaneKCUQ; __stripe_mid=e6ab93f2-ede4-4ecf-ae91-69f9b8f86ed3dbae74; _ga=GA1.1.1993139157.1767144804; _ga_8TZ15FNY4J=GS2.1.s1767144803$o1$g0$t1767144805$j58$l0$h0; Path=; _ga_S3YDE18W6Y=GS2.1.s1767151062$o1$g0$t1767151071$j51$l0$h0; force=0; pro_end=-1; load_page=null; load_type=null; load_search=undefined; 9923f5801a51b43518f37974c4cf2e1e=ec3cb862-39c3-4bf9-9eb6-0d1abc665935.wEuNusWiMzuKRT6FhjvFz6w09_c; 91caaf8ddfe00be5f1305dc77d4c1bf3=199da060-8044-417d-bfe4-af0710cfd0a2.rcP1Rk6WGyFTqUR95B4VwBvfses; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=cba64266-816d-44c4-9f75-bae07f3d8b64.Cu4kV690OE0PchH9UDFEq8jl5yM; 8654348ad4f47644b909c61349e88d39=48b8a3df-b1a7-43f2-a900-4e4a3cc9740a.3SYxici0Hl43o4LFX6rS3dBkjTo; 3e5182c7b3c6cdbafc6ec901fca0d7f0=61c1640d-89bd-4269-9834-cc7809abb50d.tQCKI8Sx9oOUJ-7Eu8Z4_Fz-ico; 9885abb34256fe7514b5b8f212064aea=22481627-916a-4b44-8766-1ec884e1a85d.u9E6CERVYd3QB8G_0TyXpbLSiuc; a654d92b147397d274e4512ddb60b7c9=53f1dcdd-d870-4bed-8fa4-ab6aa7c0ec1b.Ta_SyI5IKfO0Fxz1ncRxUEUWVGE; FileEditorPath=/www/wwwroot/researches.ntkservices.com/api/controllers; 6d5779bb6cb67528c62bd1336646954f=df5c63bb-15e3-4c32-9c6e-065eaf110add.uLqrgPPseekcMR40N0SCjI-L_Pw; e0e10967bb6812dee3e0fb1c42211640=5f675b08-c380-4d9d-9a76-4ff3e62ae65c.3XsH2o_JlfwOe8mpOCrq5CRK1w8' \\\r\n  -H 'origin: https://10.10.9.240:3333' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://10.10.9.240:3333/site/node' \\\r\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\r\n  -H 'x-http-token: xvVdOiNssMZzPLgaAqu9XfCSZPfXLwvd9QE3CXtPtH9QgnYB' \\\r\n  --data-raw 'data=%7B%22project_cwd%22%3A%22%2Fwww%2Fwwwroot%2Fsss%22%2C%22project_name%22%3A%22sss%22%2C%22project_script%22%3A%22ssss%22%2C%22port%22%3A%223323%22%2C%22run_user%22%3A%22www%22%2C%22nodejs_version%22%3A%22v24.11.1%22%2C%22project_ps%22%3A%22sss%22%2C%22domains%22%3A%5B%5D%2C%22bind_extranet%22%3A0%2C%22is_power_on%22%3A1%2C%22max_memory_limit%22%3A4096%2C%22project_env%22%3A%22%22%7D' \\\r\n  --insecure"
+      },
+      "response": []
+    },
+    {
+      "name": "https://10.10.9.240:3333/v2/project/nodejs/remove_project",
+      "id": "c72a6d23-a8ed-4442-86b2-2efd216d5615",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.9,vi;q=0.8"
+          },
+          {
+            "key": "content-type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "origin",
+            "value": "https://10.10.9.240:3333"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://10.10.9.240:3333/site/node"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-http-token",
+            "value": "xvVdOiNssMZzPLgaAqu9XfCSZPfXLwvd9QE3CXtPtH9QgnYB"
+          },
+          {
+            "key": "Cookie",
+            "value": "d3e83269c4977fd369450fcf497919d3=0badf723-d507-4d79-8d80-60dee528ce8b.dxkIaJGSii7UJyxU0UIwaneKCUQ; __stripe_mid=e6ab93f2-ede4-4ecf-ae91-69f9b8f86ed3dbae74; _ga=GA1.1.1993139157.1767144804; _ga_8TZ15FNY4J=GS2.1.s1767144803$o1$g0$t1767144805$j58$l0$h0; Path=; _ga_S3YDE18W6Y=GS2.1.s1767151062$o1$g0$t1767151071$j51$l0$h0; force=0; pro_end=-1; load_page=null; load_type=null; load_search=undefined; 9923f5801a51b43518f37974c4cf2e1e=ec3cb862-39c3-4bf9-9eb6-0d1abc665935.wEuNusWiMzuKRT6FhjvFz6w09_c; 91caaf8ddfe00be5f1305dc77d4c1bf3=199da060-8044-417d-bfe4-af0710cfd0a2.rcP1Rk6WGyFTqUR95B4VwBvfses; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=cba64266-816d-44c4-9f75-bae07f3d8b64.Cu4kV690OE0PchH9UDFEq8jl5yM; 8654348ad4f47644b909c61349e88d39=48b8a3df-b1a7-43f2-a900-4e4a3cc9740a.3SYxici0Hl43o4LFX6rS3dBkjTo; 3e5182c7b3c6cdbafc6ec901fca0d7f0=61c1640d-89bd-4269-9834-cc7809abb50d.tQCKI8Sx9oOUJ-7Eu8Z4_Fz-ico; 9885abb34256fe7514b5b8f212064aea=22481627-916a-4b44-8766-1ec884e1a85d.u9E6CERVYd3QB8G_0TyXpbLSiuc; a654d92b147397d274e4512ddb60b7c9=53f1dcdd-d870-4bed-8fa4-ab6aa7c0ec1b.Ta_SyI5IKfO0Fxz1ncRxUEUWVGE; FileEditorPath=/www/wwwroot/researches.ntkservices.com/api/controllers; 6d5779bb6cb67528c62bd1336646954f=df5c63bb-15e3-4c32-9c6e-065eaf110add.uLqrgPPseekcMR40N0SCjI-L_Pw; e0e10967bb6812dee3e0fb1c42211640=5f675b08-c380-4d9d-9a76-4ff3e62ae65c.3XsH2o_JlfwOe8mpOCrq5CRK1w8"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "data",
+              "value": "{\"project_name\":\"sss\"}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://10.10.9.240:3333/v2/project/nodejs/remove_project",
+          "protocol": "https",
+          "host": [
+            "10",
+            "10",
+            "9",
+            "240"
+          ],
+          "port": "3333",
+          "path": [
+            "v2",
+            "project",
+            "nodejs",
+            "remove_project"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://10.10.9.240:3333/v2/project/nodejs/remove_project' \\\r\n  -H 'accept: application/json, text/plain, */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9,vi;q=0.8' \\\r\n  -H 'content-type: application/x-www-form-urlencoded' \\\r\n  -b 'd3e83269c4977fd369450fcf497919d3=0badf723-d507-4d79-8d80-60dee528ce8b.dxkIaJGSii7UJyxU0UIwaneKCUQ; __stripe_mid=e6ab93f2-ede4-4ecf-ae91-69f9b8f86ed3dbae74; _ga=GA1.1.1993139157.1767144804; _ga_8TZ15FNY4J=GS2.1.s1767144803$o1$g0$t1767144805$j58$l0$h0; Path=; _ga_S3YDE18W6Y=GS2.1.s1767151062$o1$g0$t1767151071$j51$l0$h0; force=0; pro_end=-1; load_page=null; load_type=null; load_search=undefined; 9923f5801a51b43518f37974c4cf2e1e=ec3cb862-39c3-4bf9-9eb6-0d1abc665935.wEuNusWiMzuKRT6FhjvFz6w09_c; 91caaf8ddfe00be5f1305dc77d4c1bf3=199da060-8044-417d-bfe4-af0710cfd0a2.rcP1Rk6WGyFTqUR95B4VwBvfses; 25f7d587e1c6b6f2eddb0a87a4f3e8cc=cba64266-816d-44c4-9f75-bae07f3d8b64.Cu4kV690OE0PchH9UDFEq8jl5yM; 8654348ad4f47644b909c61349e88d39=48b8a3df-b1a7-43f2-a900-4e4a3cc9740a.3SYxici0Hl43o4LFX6rS3dBkjTo; 3e5182c7b3c6cdbafc6ec901fca0d7f0=61c1640d-89bd-4269-9834-cc7809abb50d.tQCKI8Sx9oOUJ-7Eu8Z4_Fz-ico; 9885abb34256fe7514b5b8f212064aea=22481627-916a-4b44-8766-1ec884e1a85d.u9E6CERVYd3QB8G_0TyXpbLSiuc; a654d92b147397d274e4512ddb60b7c9=53f1dcdd-d870-4bed-8fa4-ab6aa7c0ec1b.Ta_SyI5IKfO0Fxz1ncRxUEUWVGE; FileEditorPath=/www/wwwroot/researches.ntkservices.com/api/controllers; 6d5779bb6cb67528c62bd1336646954f=df5c63bb-15e3-4c32-9c6e-065eaf110add.uLqrgPPseekcMR40N0SCjI-L_Pw; e0e10967bb6812dee3e0fb1c42211640=5f675b08-c380-4d9d-9a76-4ff3e62ae65c.3XsH2o_JlfwOe8mpOCrq5CRK1w8' \\\r\n  -H 'origin: https://10.10.9.240:3333' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://10.10.9.240:3333/site/node' \\\r\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\r\n  -H 'x-http-token: xvVdOiNssMZzPLgaAqu9XfCSZPfXLwvd9QE3CXtPtH9QgnYB' \\\r\n  --data-raw 'data=%7B%22project_name%22%3A%22sss%22%7D' \\\r\n  --insecure"
+      },
+      "response": []
+    }
+  ]
+}

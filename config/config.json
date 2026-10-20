@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false,
+    "port": 3306
+  },
+  "test": {
+    "username": "root",
+    "password": "",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false,
+    "port": 3306
+  },
+  "production": {
+    "username": "cinelove",
+    "password": "2JZ8wBZkChxSaWir",
+    "database": "cinelove",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "ssl": false,
+    "port": 3306
+  }
+}

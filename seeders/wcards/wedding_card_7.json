@@ -1,0 +1,639 @@
+{
+  "name": "dadasdad123",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "dadasdad123-7",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 4,
+  "height": 4491,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 1,
+  "id_user": 1,
+  "id_package": 3,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "url('/backgrounds/list/zolxx9i3k5bapien05bkym.jpg') center center / cover no-repeat",
+  "nodes": [
+    {
+      "id": 1775058655992,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294022505220260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "0px",
+        "left": "0px",
+        "width": "500px",
+        "height": "973px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775058701767,
+      "type": "Text",
+      "props": {
+        "content": "28.12.2025"
+      },
+      "styles": {
+        "top": "667px",
+        "left": "144px",
+        "color": "#ffffff",
+        "width": "191px",
+        "height": "",
+        "fontSize": "28px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775058773745,
+      "type": "Text",
+      "props": {
+        "content": "\"Chúng ta đã cùng nhau đi qua nhiều thăng trầm để nhận ra rằng được ở bên nhau là điều quý giá nhất Hôm nay, Trước sự chứng kiến của mọi người, \ntừ khoảnh khắc này chúng ta nhẹ nhàng gọi nhau bằng hai tiếng Vợ - Chồng \""
+      },
+      "styles": {
+        "top": "711px",
+        "left": "50px",
+        "color": "#ffffff",
+        "width": "388px",
+        "height": "",
+        "position": "absolute",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775058941352,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294122554020260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1000px",
+        "left": "34px",
+        "width": "156px",
+        "height": "134px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775058972464,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294222561020260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1012px",
+        "left": "329px",
+        "width": "153px",
+        "height": "127px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775059086678,
+      "type": "Text",
+      "props": {
+        "content": "Nguyễn Hải Yến"
+      },
+      "styles": {
+        "top": "1150px",
+        "left": "36px",
+        "color": "#b07a7a",
+        "width": "180px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775059180084,
+      "type": "Text",
+      "props": {
+        "content": "Phạm Công Vinh"
+      },
+      "styles": {
+        "top": "1148px",
+        "left": "282.898px",
+        "color": "#b07a7a",
+        "width": "202px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775059205722,
+      "type": "Text",
+      "props": {
+        "content": "Một hành trình mới của chúng mình bắt đầu từ \nhôm nay"
+      },
+      "styles": {
+        "top": "1215px",
+        "left": "79px",
+        "color": "#999999",
+        "width": "352px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775059516477,
+      "type": "Text",
+      "props": {
+        "content": "          "
+      },
+      "styles": {
+        "top": "1291px",
+        "left": "111.072px",
+        "width": "271px",
+        "height": "",
+        "position": "absolute",
+        "transform": "",
+        "borderBottomStyle": "dotted"
+      }
+    },
+    {
+      "id": 1775059554728,
+      "type": "Text",
+      "props": {
+        "content": "Thiệp Mời "
+      },
+      "styles": {
+        "top": "1376px",
+        "left": "130.072px",
+        "color": "#5a3e36",
+        "width": "244px",
+        "height": "",
+        "fontSize": "39px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Summerfun",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775059640501,
+      "type": "Text",
+      "props": {
+        "content": "Tham dự lễ cưới Công Vinh & Hải Yến"
+      },
+      "styles": {
+        "top": "1470px",
+        "left": "49.998px",
+        "color": "#4a4a4a",
+        "width": "424px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775059697898,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294723081520260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1538px",
+        "left": "169px",
+        "width": "160px",
+        "height": "230px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775059722174,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294823083920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1571px",
+        "left": "22px",
+        "width": "128px",
+        "height": "220px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775059745580,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294923090320260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1575px",
+        "left": "349.9px",
+        "width": "126px",
+        "height": "222px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775059917980,
+      "type": "Text",
+      "props": {
+        "content": "TRÂN TRỌNG KÍNH MỜI"
+      },
+      "styles": {
+        "top": "1850px",
+        "left": "67.998px",
+        "color": "#4a4a4a",
+        "width": "356px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060014218,
+      "type": "Text",
+      "props": {
+        "content": "QUÝ KHÁCH"
+      },
+      "styles": {
+        "top": "1909px",
+        "left": "61.998px",
+        "color": "#7a5a4a",
+        "width": "356px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Soul Note Display",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060084701,
+      "type": "Text",
+      "props": {
+        "content": "Đến dự Bữa Tiệc thân mật cùng Gia Đình chúng Tôi vào lúc"
+      },
+      "styles": {
+        "top": "1977px",
+        "left": "49.998px",
+        "color": "#5a3e36",
+        "width": "417px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060195015,
+      "type": "Text",
+      "props": {
+        "content": "Chủ Nhật"
+      },
+      "styles": {
+        "top": "2095px",
+        "left": "59.998px",
+        "color": "#4a4a4a",
+        "width": "356px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060243847,
+      "type": "Text",
+      "props": {
+        "content": "28"
+      },
+      "styles": {
+        "top": "2153px",
+        "left": "159.998px",
+        "color": "#7a5a4a",
+        "width": "161px",
+        "height": "",
+        "fontSize": "77px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold",
+        "borderColor": "#7a5a4a",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    },
+    {
+      "id": 1775060326473,
+      "type": "Text",
+      "props": {
+        "content": "11h00"
+      },
+      "styles": {
+        "top": "2191px",
+        "left": "35.998px",
+        "color": "#4a4a4a",
+        "width": "102px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060341723,
+      "type": "Text",
+      "props": {
+        "content": "Năm 2025"
+      },
+      "styles": {
+        "top": "2191px",
+        "left": "352.998px",
+        "color": "#4a4a4a",
+        "width": "129px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060369286,
+      "type": "Text",
+      "props": {
+        "content": "Tháng 12"
+      },
+      "styles": {
+        "top": "2304px",
+        "left": "60.998px",
+        "color": "#4a4a4a",
+        "width": "356px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060394241,
+      "type": "Text",
+      "props": {
+        "content": "(Tức ngày 10 tháng 11 năm Ất Tỵ)"
+      },
+      "styles": {
+        "top": "2348px",
+        "left": "61.998px",
+        "color": "#4a4a4a",
+        "width": "356px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775060487000,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295023212420260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2415px",
+        "left": "2.30926e-14px",
+        "width": "500px",
+        "height": "776px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775060551185,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295123222920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2787px",
+        "left": "297px",
+        "width": "185px",
+        "height": "67px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775060587521,
+      "type": "Calendar",
+      "props": {
+        "date": "2026-04-16",
+        "textColor": "#ffffff"
+      },
+      "styles": {
+        "top": "2850px",
+        "left": "160px",
+        "width": "322px",
+        "height": "248px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775060642449,
+      "type": "CountDown",
+      "props": {
+        "textColor": "#000000",
+        "borderColor": "#ffffff",
+        "backgroundColor": "#ffffff"
+      },
+      "styles": {
+        "top": "3109px",
+        "left": "175px",
+        "width": "",
+        "height": "",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775060723051,
+      "type": "Text",
+      "props": {
+        "content": "Chúng mình rất mong sự hiện diện của bạn để cùng nhau chung vui, sẻ chia niềm hạnh phúc và lưu lại những khoảnh khắc đáng nhớ trong ngày cưới\nĐừng quên để lại xác nhận tham dự để chúng mình chuẩn bị chu đáo hơn!"
+      },
+      "styles": {
+        "top": "3223px",
+        "left": "41.998px",
+        "color": "#4a4a4a",
+        "width": "425px",
+        "height": "",
+        "fontSize": "16px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775060764979,
+      "type": "AcceptInvitation",
+      "props": {},
+      "styles": {
+        "top": "3339px",
+        "left": "121px",
+        "width": "252px",
+        "height": "292px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775060826109,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_294823083920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "3665px",
+        "left": "0px",
+        "width": "500px",
+        "height": "826px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775060888614,
+      "type": "Text",
+      "props": {
+        "content": "TRÂN TRỌNG"
+      },
+      "styles": {
+        "top": "4278px",
+        "left": "90px",
+        "color": "#ffffff",
+        "width": "224px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775060925649,
+      "type": "Text",
+      "props": {
+        "content": "&"
+      },
+      "styles": {
+        "top": "4321px",
+        "left": "222px",
+        "color": "#ffffff",
+        "width": "133px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775060928300,
+      "type": "Text",
+      "props": {
+        "content": "BIẾT ƠN !"
+      },
+      "styles": {
+        "top": "4367px",
+        "left": "242px",
+        "color": "#ffffff",
+        "width": "224px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"opening-blue\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-01T15:49:56.000Z",
+  "updatedAt": "2026-04-04T10:10:42.267Z"
+}

@@ -1,0 +1,703 @@
+{
+  "name": "asdad32",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "asdad32",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 3951,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 1,
+  "id_user": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "nodes": [
+    {
+      "id": 1775115880431,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "0px",
+        "left": "0px",
+        "color": "#932c20",
+        "width": "500px",
+        "height": "613px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775115919348,
+      "type": "Text",
+      "props": {
+        "content": "WEDDING"
+      },
+      "styles": {
+        "top": "43px",
+        "left": "139px",
+        "color": "#deb561",
+        "width": "224px",
+        "height": "",
+        "fontSize": "36px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775115973499,
+      "type": "Text",
+      "props": {
+        "content": "YOU ARE MY TODAY\nAND ALL OF MY TOMOROW"
+      },
+      "styles": {
+        "top": "126px",
+        "left": "148px",
+        "color": "#deb561",
+        "width": "212px",
+        "height": "",
+        "fontSize": "13px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775116052138,
+      "type": "Text",
+      "props": {
+        "content": "14.2.2025"
+      },
+      "styles": {
+        "top": "434px",
+        "left": "146px",
+        "color": "#deb561",
+        "width": "212px",
+        "height": "",
+        "fontSize": "30px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775116067992,
+      "type": "Text",
+      "props": {
+        "content": "WELCOME TO OUR WEDDING"
+      },
+      "styles": {
+        "top": "502px",
+        "left": "43px",
+        "color": "#deb561",
+        "width": "423px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775116136051,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295214485320260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "184px",
+        "left": "82px",
+        "width": "347px",
+        "height": "229px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116178249,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim11.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "651px",
+        "left": "215px",
+        "width": "77px",
+        "height": "67px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116206751,
+      "type": "Text",
+      "props": {
+        "content": "WEDDING INVITATION"
+      },
+      "styles": {
+        "top": "746px",
+        "left": "42px",
+        "color": "#d32c20",
+        "width": "423px",
+        "height": "",
+        "fontSize": "17px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775116254158,
+      "type": "Text",
+      "props": {
+        "content": "Hôm nay anh học toán hình, \nTròn vuông chẳng có, toàn hình bóng em"
+      },
+      "styles": {
+        "top": "1036px",
+        "left": "78px",
+        "color": "#d32c20",
+        "width": "353px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Sacramento"
+      }
+    },
+    {
+      "id": 1775116307055,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295314514520260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "800px",
+        "left": "109px",
+        "width": "299px",
+        "height": "200px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116352775,
+      "type": "Text",
+      "props": {
+        "content": "    "
+      },
+      "styles": {
+        "top": "1112px",
+        "left": "232px",
+        "color": "#d32c20",
+        "width": "28px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Arial",
+        "borderColor": "#932c20",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#932c20",
+        "borderBottomStyle": "dotted",
+        "borderBottomWidth": "5px"
+      }
+    },
+    {
+      "id": 1775116468598,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295414542620260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1181px",
+        "left": "15px",
+        "width": "190px",
+        "height": "294px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116505906,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295514550420260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1180px",
+        "left": "230px",
+        "width": "252px",
+        "height": "161px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116559489,
+      "type": "Text",
+      "props": {
+        "content": "2025.2"
+      },
+      "styles": {
+        "top": "1378px",
+        "left": "229px",
+        "color": "#d32c20",
+        "width": "132px",
+        "height": "",
+        "fontSize": "33px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Roboto"
+      }
+    },
+    {
+      "id": 1775116598878,
+      "type": "Text",
+      "props": {
+        "content": "Friday"
+      },
+      "styles": {
+        "top": "1421px",
+        "left": "214px",
+        "color": "#d32c20",
+        "width": "132px",
+        "height": "",
+        "fontSize": "33px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Roboto"
+      }
+    },
+    {
+      "id": 1775116623474,
+      "type": "Text",
+      "props": {
+        "content": "14"
+      },
+      "styles": {
+        "top": "1376px",
+        "left": "368px",
+        "color": "#d32c20",
+        "width": "132px",
+        "height": "",
+        "fontSize": "64px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Roboto",
+        "borderColor": "#d32c20",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingLeft": "16px",
+        "borderTopWidth": "0px",
+        "borderLeftColor": "#d32c20",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "3px",
+        "borderRightWidth": "0px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775116768332,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1500px",
+        "left": "6px",
+        "color": "#d32c20",
+        "width": "181px",
+        "height": "152px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116816413,
+      "type": "Text",
+      "props": {
+        "content": "YÊU"
+      },
+      "styles": {
+        "top": "1545px",
+        "left": "29px",
+        "color": "#deb561",
+        "width": "132px",
+        "height": "",
+        "fontSize": "38px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775116891970,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295615013020260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1500px",
+        "left": "186px",
+        "width": "314px",
+        "height": "152px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116937184,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1680px",
+        "left": "288px",
+        "color": "#d32c20",
+        "width": "212px",
+        "height": "152px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775116943062,
+      "type": "Text",
+      "props": {
+        "content": "THƯƠNG"
+      },
+      "styles": {
+        "top": "1727px",
+        "left": "293px",
+        "color": "#deb561",
+        "width": "199px",
+        "height": "",
+        "fontSize": "38px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775117001495,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295715031920260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1680px",
+        "left": "6px",
+        "width": "283px",
+        "height": "152px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117079404,
+      "type": "Text",
+      "props": {
+        "content": "Thương anh mấy núi cũng trèo, \nMấy sông cũng lội, mấy đèo cũng qua. \nThương anh không quản chi xa, \nĐá vàng cũng quyết, phong ba cũng liều."
+      },
+      "styles": {
+        "top": "1875px",
+        "left": "82px",
+        "color": "#d32c20",
+        "width": "336px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Sacramento"
+      }
+    },
+    {
+      "id": 1775117133272,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2152px",
+        "left": "0px",
+        "color": "#d32c20",
+        "width": "500px",
+        "height": "300px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117189091,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295815062720260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2062px",
+        "left": "22px",
+        "width": "235px",
+        "height": "356px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117226469,
+      "type": "Text",
+      "props": {
+        "content": "LOVE"
+      },
+      "styles": {
+        "top": "2157px",
+        "left": "282px",
+        "color": "#deb561",
+        "width": "199px",
+        "height": "",
+        "fontSize": "38px",
+        "position": "absolute",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775117250171,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295915072820260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2227px",
+        "left": "314px",
+        "width": "132px",
+        "height": "191px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117335579,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim11.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "2488px",
+        "left": "217px",
+        "width": "77px",
+        "height": "67px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117357476,
+      "type": "Text",
+      "props": {
+        "content": "WEDDING INVITATION"
+      },
+      "styles": {
+        "top": "2580px",
+        "left": "118px",
+        "color": "#d32c20",
+        "width": "274px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775117426847,
+      "type": "Text",
+      "props": {
+        "content": "Thời gian: 09 giờ 00 Thứ 6, ngày 14 tháng 2 năm 2025 Tại trung tâm tiệc cưới Cinelove"
+      },
+      "styles": {
+        "top": "2634px",
+        "left": "100px",
+        "color": "#d32c20",
+        "width": "305px",
+        "height": "",
+        "fontSize": "17px",
+        "position": "absolute",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775117488006,
+      "type": "Map",
+      "props": {},
+      "styles": {
+        "top": "2753px",
+        "left": "66px",
+        "width": "375px",
+        "height": "298px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117516256,
+      "type": "Text",
+      "props": {
+        "content": "WEDDING TIME"
+      },
+      "styles": {
+        "top": "3086px",
+        "left": "112px",
+        "color": "#d32c20",
+        "width": "274px",
+        "height": "",
+        "fontSize": "22px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay"
+      }
+    },
+    {
+      "id": 1775117533393,
+      "type": "Calendar",
+      "props": {
+        "date": "2026-04-23",
+        "calendarStyle": "style2"
+      },
+      "styles": {
+        "top": "3149px",
+        "left": "74px",
+        "width": "350px",
+        "height": "350px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "",
+        "paddingTop": "22px",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    },
+    {
+      "id": 1775117667356,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/nhan-vat65.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3539px",
+        "left": "203px",
+        "width": "103px",
+        "height": "146px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117738215,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_296015153620260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "3737px",
+        "left": "169px",
+        "width": "160px",
+        "height": "60px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775117780640,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim242.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3815px",
+        "left": "207px",
+        "width": "81px",
+        "height": "70px",
+        "position": "absolute",
+        "transform": ""
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-02T07:35:09.000Z",
+  "updatedAt": "2026-04-02T08:17:06.570Z",
+  "id_package": 3
+}

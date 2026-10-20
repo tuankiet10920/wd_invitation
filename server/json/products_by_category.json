@@ -1,0 +1,2524 @@
+{
+  "case": [
+    {
+      "id": 34,
+      "name": "Vỏ Case Máy Tính VSP Esport Republic Of Gamers ES1 - Đen",
+      "slug": "vo-case-may-tinh-vsp-esport-republic-of-gamers-es1-den"
+    },
+    {
+      "id": 288,
+      "name": "Thùng máy Case MIK AION 3FA - White",
+      "slug": "thung-may-case-mik-aion-3fa-white"
+    },
+    {
+      "id": 289,
+      "name": "Thùng máy Case MIK LV12 M White",
+      "slug": "thung-may-case-mik-lv12-m-white"
+    },
+    {
+      "id": 290,
+      "name": "Thùng máy Case MIK STORM 360 - Black",
+      "slug": "thung-may-case-mik-storm-360-black"
+    },
+    {
+      "id": 291,
+      "name": "Thùng máy Case VSP VP V2873",
+      "slug": "thung-may-case-vsp-vp-v2873"
+    },
+    {
+      "id": 292,
+      "name": "Thùng máy Case VSP x2 Black",
+      "slug": "thung-may-case-vsp-x2-black"
+    },
+    {
+      "id": 293,
+      "name": "Thùng máy Case XIGMATEX Pano M Nano 3GF Black (EN45523)",
+      "slug": "thung-may-case-xigmatex-pano-m-nano-3gf-black-en45523"
+    },
+    {
+      "id": 294,
+      "name": "Thùng máy Case XIGMATEX VIEW II 3F Black EN46247 ( Matx, 3 Fan, Case Bể cá)",
+      "slug": "thung-may-case-xigmatex-view-ii-3f-black-en46247-matx-3-fan-case-be-ca"
+    },
+    {
+      "id": 295,
+      "name": "Thùng máy Case XIGMATEX AQUA M Lite 3GF (3 Fan) M-ATX CMT.XM.78",
+      "slug": "thung-may-case-xigmatex-aqua-m-lite-3gf-3-fan-m-atx-cmtxm78"
+    }
+  ],
+  "pc-gaming": [
+    {
+      "id": 40,
+      "name": "PC Gaming Core I5 12400F | RAM 16G | RTX 3060 12G | NVME 256G",
+      "slug": "pc-gaming-core-i5-12400f-or-ram-16g-or-rtx-3060-12g-or-nvme-256g"
+    },
+    {
+      "id": 41,
+      "name": "PC Gaming MG RTX 5060 Ti | Intel I5 13400F | RAM 16GB | 256GB SSD",
+      "slug": "pc-gaming-mg-rtx-5060-ti-or-intel-i5-13400f-or-ram-16gb-or-256gb-ssd"
+    },
+    {
+      "id": 43,
+      "name": "PC Gaming MG RTX 5060 Ti | Intel I5 13400F | RAM 16GB | 256GB SSD",
+      "slug": "pc-gaming-mg-rtx-5060-ti-or-intel-i5-13400f-or-ram-16gb-or-256gb-ssd-s"
+    }
+  ],
+  "phu-kien": [
+    {
+      "id": 47,
+      "name": "Bàn Phím K68 Green Single-Mode",
+      "slug": "ban-phim-k68-green-single-mode"
+    },
+    {
+      "id": 48,
+      "name": "Bàn Phím K68 Mini Pink - 3 Mode",
+      "slug": "ban-phim-k68-mini-pink-3-mode"
+    },
+    {
+      "id": 49,
+      "name": "Bàn Phím K68 Oranger 3-Mode",
+      "slug": "ban-phim-k68-oranger-3-mode"
+    },
+    {
+      "id": 50,
+      "name": "Bàn Phím K550V4 ",
+      "slug": "ban-phim-k550v4"
+    },
+    {
+      "id": 51,
+      "name": "Bàn Phím KA820 ",
+      "slug": "ban-phim-ka820"
+    },
+    {
+      "id": 53,
+      "name": "Bàn Phím ZA641 Pro Red",
+      "slug": "ban-phim-za641-pro-red"
+    },
+    {
+      "id": 54,
+      "name": "Bàn Phím ZA641 V2 White - Blue",
+      "slug": "ban-phim-za641-v2-white-blue"
+    },
+    {
+      "id": 65,
+      "name": "Bàn Phím ZA981 ATAS",
+      "slug": "ban-phim-za981-atas"
+    },
+    {
+      "id": 307,
+      "name": "Air Remote Mouse ( Chuột bay tìm kiếm bằng giọng nói cho Android TV Box)",
+      "slug": "air-remote-mouse-chuot-bay-tim-kiem-bang-giong-noi-cho-android-tv-box"
+    },
+    {
+      "id": 308,
+      "name": "Bàn di chuột 4 ly khổ 25x32 (Razer)",
+      "slug": "ban-di-chuot-4-ly-kho-25x32-razer"
+    },
+    {
+      "id": 309,
+      "name": "Bàn di chuột VSP (245x320x3mm) Razer",
+      "slug": "ban-di-chuot-vsp-245x320x3mm-razer"
+    },
+    {
+      "id": 310,
+      "name": "Bàn di chuột VSP cao su (300x800x3mm)",
+      "slug": "ban-di-chuot-vsp-cao-su-300x800x3mm"
+    },
+    {
+      "id": 311,
+      "name": "Bút cảm ứng Baseus Household",
+      "slug": "but-cam-ung-baseus-household"
+    },
+    {
+      "id": 312,
+      "name": "Cáp sạc ANKER",
+      "slug": "cap-sac-anker"
+    },
+    {
+      "id": 313,
+      "name": "Cáp sạc không dây HOCO CW39C IWATEH",
+      "slug": "cap-sac-khong-day-hoco-cw39c-iwateh"
+    },
+    {
+      "id": 314,
+      "name": "Cáp sạc REMAX RC C115 C to C 100W 1.2m",
+      "slug": "cap-sac-remax-rc-c115-c-to-c-100w-12m"
+    },
+    {
+      "id": 315,
+      "name": "Cường lực Kingkong chống nhìn trộm WTP 012 chính hãng từ 12pm tới 15pm",
+      "slug": "cuong-luc-kingkong-chong-nhin-trom-wtp-012-chinh-hang-tu-12pm-toi-15pm"
+    },
+    {
+      "id": 316,
+      "name": "Cốc sạc ANKER",
+      "slug": "coc-sac-anker"
+    },
+    {
+      "id": 317,
+      "name": "Cường lực Kingkong từ IP 7 Promax tới 14 promax (hộp sắt) từ 12 promax tới 15 promax",
+      "slug": "cuong-luc-kingkong-tu-ip-7-promax-toi-14-promax-hop-sat-tu-12-promax-toi-15-promax"
+    },
+    {
+      "id": 319,
+      "name": "Cường lực Kingkong WTP-009 CHÍNH HÃNG từ 12 promax tới 15 Promax",
+      "slug": "cuong-luc-kingkong-wtp-009-chinh-hang-tu-12-promax-toi-15-promax"
+    },
+    {
+      "id": 324,
+      "name": "Chuột DAREU EM908",
+      "slug": "chuot-dareu-em908"
+    },
+    {
+      "id": 329,
+      "name": "Chuột BUFFALO không dây MB01",
+      "slug": "chuot-buffalo-khong-day-mb01"
+    },
+    {
+      "id": 330,
+      "name": "Chuột Logitech G102 ",
+      "slug": "chuot-logitech-g102"
+    },
+    {
+      "id": 331,
+      "name": "Chuột Logitech M220- không dây",
+      "slug": "chuot-logitech-m220-khong-day"
+    },
+    {
+      "id": 332,
+      "name": "Chuột MOTOSPEED F333 Đen",
+      "slug": "chuot-motospeed-f333-den"
+    },
+    {
+      "id": 333,
+      "name": "Chuột T-WOLF Q2- không dây",
+      "slug": "chuot-t-wolf-q2-khong-day"
+    },
+    {
+      "id": 334,
+      "name": "Định vị kkhông dây A9 + 4G",
+      "slug": "dinh-vi-kkhong-day-a9-4g"
+    },
+    {
+      "id": 335,
+      "name": "Đồng hồ thông minh S9 Max",
+      "slug": "dong-ho-thong-minh-s9-max"
+    },
+    {
+      "id": 336,
+      "name": "Đồng hồ thông minh Z85 Max",
+      "slug": "dong-ho-thong-minh-z85-max"
+    },
+    {
+      "id": 339,
+      "name": "Jack loa 1.5m /sợi",
+      "slug": "jack-loa-15m-soi"
+    },
+    {
+      "id": 343,
+      "name": "Jack loa HC UPA02 3.5mm to 3.5m",
+      "slug": "jack-loa-hc-upa02-35mm-to-35m"
+    },
+    {
+      "id": 346,
+      "name": "Kính cường lực chống nhìn trộm HOCO G11 từ IP 7 tới IP 14 promax (hộp 25 cái) ",
+      "slug": "kinh-cuong-luc-chong-nhin-trom-hoco-g11-tu-ip-7-toi-ip-14-promax-hop-25-cai"
+    },
+    {
+      "id": 348,
+      "name": "Kính cường lực full màn hình HOCO G9 từ IP7 tới  IP14 promax (hộp 25 cái) ",
+      "slug": "kinh-cuong-luc-full-man-hinh-hoco-g9-tu-ip7-toi-ip14-promax-hop-25-cai"
+    },
+    {
+      "id": 350,
+      "name": "Khóa cổng vân tay 2 mặt trong ngoài có app C27B",
+      "slug": "khoa-cong-van-tay-2-mat-trong-ngoai-co-app-c27b"
+    },
+    {
+      "id": 352,
+      "name": "Ổ điện HOCO AC7 3UIC 3 ổ cắm 1,5m",
+      "slug": "o-dien-hoco-ac7-3uic-3-o-cam-15m"
+    },
+    {
+      "id": 355,
+      "name": "Ốp IRIS xi màu từ IP X tới IP 14 promax",
+      "slug": "op-iris-xi-mau-tu-ip-x-toi-ip-14-promax"
+    },
+    {
+      "id": 356,
+      "name": "Ốp sạc MAGSAFE",
+      "slug": "op-sac-magsafe"
+    },
+    {
+      "id": 357,
+      "name": "Remote LOGITECH R400S (Bút trình chiếu Logitech R400 Laser)",
+      "slug": "remote-logitech-r400s-but-trinh-chieu-logitech-r400-laser"
+    },
+    {
+      "id": 358,
+      "name": "Tai nghe H130",
+      "slug": "tai-nghe-h130"
+    },
+    {
+      "id": 359,
+      "name": "Tai nghe H150",
+      "slug": "tai-nghe-h150"
+    },
+    {
+      "id": 360,
+      "name": "Tẩu sạc thoát hiểm đa năng VM31",
+      "slug": "tau-sac-thoat-hiem-da-nang-vm31"
+    },
+    {
+      "id": 361,
+      "name": "Túi chống sốc laptop đen 15 inch",
+      "slug": "tui-chong-soc-laptop-den-15-inch"
+    },
+    {
+      "id": 362,
+      "name": "Túi chống sốc Laptop Ugreen 13.9",
+      "slug": "tui-chong-soc-laptop-ugreen-139"
+    },
+    {
+      "id": 563,
+      "name": "Loa máy tính logitech S135i",
+      "slug": "loa-may-tinh-logitech-s135i"
+    },
+    {
+      "id": 564,
+      "name": "Loa máy tính Logitech S125i",
+      "slug": "loa-may-tinh-logitech-s125i"
+    },
+    {
+      "id": 627,
+      "name": "Chuột không dây Deiog Q7 White Bluetooth chính hãng FV",
+      "slug": "chuot-khong-day-deiog-q7-white-bluetooth-chinh-hang-fv"
+    },
+    {
+      "id": 628,
+      "name": "Chuột không dây JEDEL W926 màu đen",
+      "slug": "chuot-khong-day-jedel-w926-mau-den"
+    },
+    {
+      "id": 629,
+      "name": "Chuột Deiog A70 Pro Led RGB Black chính hãng",
+      "slug": "chuot-deiog-a70-pro-led-rgb-black-chinh-hang"
+    },
+    {
+      "id": 630,
+      "name": "Chuột Deiog G402 Led RGB Macro Black chính hãng",
+      "slug": "chuot-deiog-g402-led-rgb-macro-black-chinh-hang"
+    },
+    {
+      "id": 631,
+      "name": "Chuột VSP VM501 Black RGB FV",
+      "slug": "chuot-vsp-vm501-black-rgb-fv"
+    },
+    {
+      "id": 632,
+      "name": "Chuột GAMEMAX MG7 LED RGB",
+      "slug": "chuot-gamemax-mg7-led-rgb"
+    },
+    {
+      "id": 633,
+      "name": "Chuột T-WOLF G520 LED USB",
+      "slug": "chuot-t-wolf-g520-led-usb"
+    },
+    {
+      "id": 634,
+      "name": "Headphone Gaming AULA S608 Black LED FV",
+      "slug": "headphone-gaming-aula-s608-black-led-fv"
+    },
+    {
+      "id": 635,
+      "name": "Headphone Gaming ARIGATO USB 7.1 Black FV BH3T SPM",
+      "slug": "headphone-gaming-arigato-usb-71-black-fv-bh3t-spm"
+    },
+    {
+      "id": 651,
+      "name": "Bàn phím K68 Black 3 mode",
+      "slug": "ban-phim-k68-black-3-mode"
+    },
+    {
+      "id": 654,
+      "name": "Bàn phím cơ Gaming DAREU EK810 - Black",
+      "slug": "ban-phim-co-gaming-dareu-ek810-black"
+    },
+    {
+      "id": 655,
+      "name": "Bàn Phím Cơ T-Wolf T17",
+      "slug": "ban-phim-co-t-wolf-t17"
+    },
+    {
+      "id": 656,
+      "name": "Bàn Phím Cơ  SPARTAN TC3218 ĐEN",
+      "slug": "ban-phim-co-spartan-tc3218-den"
+    }
+  ],
+  "pc-aio-imac": [
+    {
+      "id": 55,
+      "name": "Máy tính All in one Dell Optiplex 9030 core i7 card rời 2GB",
+      "slug": "may-tinh-all-in-one-dell-optiplex-9030-core-i7-card-roi-2gb"
+    },
+    {
+      "id": 56,
+      "name": "IMAC – ME086 Core I5 2.7Ghz 8GB 1TB",
+      "slug": "imac-me086-core-i5-27ghz-8gb-1tb"
+    },
+    {
+      "id": 57,
+      "name": "IMAC – MK142 Core i5 1.6GHz / RAM 8GB / SSD 256GB",
+      "slug": "imac-mk142-core-i5-16ghz-ram-8gb-ssd-256gb"
+    }
+  ],
+  "man-hinh": [
+    {
+      "id": 58,
+      "name": "Màn hình KingView KV-2718Q - Đen | 27 inch, IPS, 165Hz, 1ms, Phẳng",
+      "slug": "man-hinh-kingview-kv-2718q-den-or-27-inch-ips-165hz-1ms-phang"
+    },
+    {
+      "id": 60,
+      "name": "Màn Hình LCD 27inch Dell  G2722HS",
+      "slug": "man-hinh-lcd-27inch-dell-g2722hs"
+    },
+    {
+      "id": 61,
+      "name": "Màn hình LCD 27in KingView KV 27U240H/240Hz",
+      "slug": "man-hinh-lcd-27in-kingview-kv-27u240h240hz"
+    },
+    {
+      "id": 62,
+      "name": "Màn Hình ViewSonic Gaming VX2719",
+      "slug": "man-hinh-viewsonic-gaming-vx2719"
+    },
+    {
+      "id": 63,
+      "name": "Màn Hình Dell Ultra Sharp U2722DE",
+      "slug": "man-hinh-dell-ultra-sharp-u2722de"
+    },
+    {
+      "id": 64,
+      "name": "Màn hình cong Ultrawide Xiaomi Curved Gaming 34 inch 2K 144Hz",
+      "slug": "man-hinh-cong-ultrawide-xiaomi-curved-gaming-34-inch-2k-144hz"
+    },
+    {
+      "id": 66,
+      "name": "Màn Hình ASUS VY279HF (27 inch - IPS - FHD - 75Hz - 1ms)",
+      "slug": "man-hinh-asus-vy279hf-27-inch-ips-fhd-75hz-1ms"
+    }
+  ],
+  "may-in": [
+    {
+      "id": 67,
+      "name": "Canon LBP 2900 White - Máy in Laser Trắng Đen",
+      "slug": "canon-lbp-2900-white-may-in-laser-trang-den"
+    },
+    {
+      "id": 68,
+      "name": " Máy In Laser đơn năng Pantum BP 5100DN",
+      "slug": "may-in-laser-don-nang-pantum-bp-5100dn"
+    },
+    {
+      "id": 69,
+      "name": " Máy in Laser đơn năng Pantum P2505 ( 1 mặt)",
+      "slug": "may-in-laser-don-nang-pantum-p2505-1-mat"
+    },
+    {
+      "id": 472,
+      "name": "Máy in laser đa chức năng Pantum M6558",
+      "slug": "may-in-laser-da-chuc-nang-pantum-m6558"
+    },
+    {
+      "id": 473,
+      "name": "Máy in laser đa chức năng Pantum M6702DW",
+      "slug": "may-in-laser-da-chuc-nang-pantum-m6702dw"
+    },
+    {
+      "id": 474,
+      "name": "Máy in laser đơn năng Pantum P3308DW (2 MẶT)",
+      "slug": "may-in-laser-don-nang-pantum-p3308dw-2-mat"
+    },
+    {
+      "id": 475,
+      "name": "Máy in bill Xprinter XP-Q260 III (2ND)",
+      "slug": "may-in-bill-xprinter-xp-q260-iii-2nd"
+    }
+  ],
+  "linh-kien-may-tinh": [
+    {
+      "id": 70,
+      "name": "Card Màn Hình Jginyue GT 730 2GB GDDR5",
+      "slug": "card-man-hinh-jginyue-gt-730-2gb-gddr5"
+    },
+    {
+      "id": 71,
+      "name": "Card màn hình HuaNanZhi GTX 750Ti 4GB GDDR5 2 Fan",
+      "slug": "card-man-hinh-huananzhi-gtx-750ti-4gb-gddr5-2-fan"
+    },
+    {
+      "id": 72,
+      "name": "Card màn hình Winfox GTX 1060 3GB",
+      "slug": "card-man-hinh-winfox-gtx-1060-3gb"
+    },
+    {
+      "id": 73,
+      "name": "Card màn hình Winfox GTX 1060 6GB",
+      "slug": "card-man-hinh-winfox-gtx-1060-6gb"
+    },
+    {
+      "id": 74,
+      "name": "Card màn hình Jginyue GTX 1060 6GB GDDR5",
+      "slug": "card-man-hinh-jginyue-gtx-1060-6gb-gddr5"
+    },
+    {
+      "id": 75,
+      "name": "Card màn hình OCPC NVIDIA GeForce RTX 2060 Super 8GB GDDR6",
+      "slug": "card-man-hinh-ocpc-nvidia-geforce-rtx-2060-super-8gb-gddr6"
+    },
+    {
+      "id": 76,
+      "name": "Card màn hình Colorful GeForce RTX 3050 NB DUO 6GB-V ",
+      "slug": "card-man-hinh-colorful-geforce-rtx-3050-nb-duo-6gb-v"
+    },
+    {
+      "id": 77,
+      "name": "Card màn hình MSI RTX 3050 VENTUS 2X 6GB OC",
+      "slug": "card-man-hinh-msi-rtx-3050-ventus-2x-6gb-oc"
+    },
+    {
+      "id": 78,
+      "name": "Card màn hình Jginyue RX 6600 8GB GDDR6",
+      "slug": "card-man-hinh-jginyue-rx-6600-8gb-gddr6"
+    },
+    {
+      "id": 79,
+      "name": " Card màn hình Gigabyte RX 7600 8GB Gaming OC 3Fan - FV",
+      "slug": "card-man-hinh-gigabyte-rx-7600-8gb-gaming-oc-3fan-fv"
+    },
+    {
+      "id": 80,
+      "name": "Card màn hình Inno3D Geforce RTX 4060 Ti 16GB Twin X2 OC Black",
+      "slug": "card-man-hinh-inno3d-geforce-rtx-4060-ti-16gb-twin-x2-oc-black"
+    },
+    {
+      "id": 81,
+      "name": "Card Màn Hình Colorful RTX 5060 8GB NB Duo",
+      "slug": "card-man-hinh-colorful-rtx-5060-8gb-nb-duo"
+    },
+    {
+      "id": 82,
+      "name": "Card Màn Hình Colorful  RTX 5060 Ti 8GB-V Igame Ultra W OC (3 FAN)",
+      "slug": "card-man-hinh-colorful-rtx-5060-ti-8gb-v-igame-ultra-w-oc-3-fan"
+    },
+    {
+      "id": 83,
+      "name": "Card Màn Hình MSI GeForce RTX 5070 12GB Ventus 2X OC White",
+      "slug": "card-man-hinh-msi-geforce-rtx-5070-12gb-ventus-2x-oc-white"
+    },
+    {
+      "id": 84,
+      "name": "Card Màn Hình Jginyue RX550 4GB GDDR5 ",
+      "slug": "card-man-hinh-jginyue-rx550-4gb-gddr5"
+    },
+    {
+      "id": 85,
+      "name": "Card Màn Hình Jginyue RX560 4GB DDR5",
+      "slug": "card-man-hinh-jginyue-rx560-4gb-ddr5"
+    },
+    {
+      "id": 86,
+      "name": "Card Màn Hình Simorchip RX580 8GB Black",
+      "slug": "card-man-hinh-simorchip-rx580-8gb-black"
+    },
+    {
+      "id": 282,
+      "name": "Bộ Hub LED Remote CENTAUR cho Quạt tản nhiệt",
+      "slug": "bo-hub-led-remote-centaur-cho-quat-tan-nhiet"
+    },
+    {
+      "id": 283,
+      "name": "Quạt tản nhiệt ATA Red Moom K8 2nd",
+      "slug": "quat-tan-nhiet-ata-red-moom-k8-2nd"
+    },
+    {
+      "id": 284,
+      "name": "Quạt tản nhiệt CENTAUR CT8400 RGB- đen (Cần hub)",
+      "slug": "quat-tan-nhiet-centaur-ct8400-rgb-den-can-hub"
+    },
+    {
+      "id": 285,
+      "name": "Quạt tản nhiệt CENTAUR CT-M2 Vô cực - Đen/Black ",
+      "slug": "quat-tan-nhiet-centaur-ct-m2-vo-cuc-denblack"
+    },
+    {
+      "id": 286,
+      "name": "Quạt tản nhiệt DF1202512R FHN đen 2nd",
+      "slug": "quat-tan-nhiet-df1202512r-fhn-den-2nd"
+    },
+    {
+      "id": 287,
+      "name": "Quạt tản nhiệt JUNGLE Leopard Galaxy RS ARGB Đen/Black",
+      "slug": "quat-tan-nhiet-jungle-leopard-galaxy-rs-argb-denblack"
+    },
+    {
+      "id": 326,
+      "name": "Ổ CứNg Hdd Seagate Desktop Sata 250Gb (St250Dm003) (2ND)",
+      "slug": "o-cung-hdd-seagate-desktop-sata-250gb-st250dm003-2nd"
+    },
+    {
+      "id": 338,
+      "name": "Ổ Cứng Western Digital Wd Blue 2Tb (2ND)",
+      "slug": "o-cung-western-digital-wd-blue-2tb-2nd"
+    },
+    {
+      "id": 354,
+      "name": "Ổ  Cứng Ssd M2 Xstar 512Gb",
+      "slug": "o-cung-ssd-m2-xstar-512gb"
+    }
+  ],
+  "laptop": [
+    {
+      "id": 87,
+      "name": "Laptop Dell Latitude E5270 i5 6300U 8GB",
+      "slug": "laptop-dell-latitude-e5270-i5-6300u-8gb"
+    },
+    {
+      "id": 88,
+      "name": "Laptop HP Probook 640 G2 i5-6300U / Ram 8GB / SSD 256GB / Màn 14.1″ LED / VGA  Intel HD Graphic 520\\",
+      "slug": "laptop-hp-probook-640-g2-i5-6300u-ram-8gb-ssd-256gb-man-141-led-vga-intel-hd-graphic-520"
+    },
+    {
+      "id": 89,
+      "name": "Laptop Dell Inspiron 15 3530  (FHD/I5-1334U/16GB/SSD 512GB/ BẠC)",
+      "slug": "laptop-dell-inspiron-15-3530-fhdi5-1334u16gbssd-512gb-bac"
+    },
+    {
+      "id": 90,
+      "name": "Laptop LG Gram 15Z90N-V.AR55A5  (i5 1035G7/8GB RAM/512GB SSD/15.6inch FHD/Xám Bạc)",
+      "slug": "laptop-lg-gram-15z90n-var55a5-i5-1035g78gb-ram512gb-ssd156inch-fhdxam-bac"
+    },
+    {
+      "id": 91,
+      "name": "Laptop Sony Vaio Core i5-1235U | RAM 16GB | SSD 240GB | 15.6 inch FHD IPS | Black ",
+      "slug": "laptop-sony-vaio-core-i5-1235u-or-ram-16gb-or-ssd-240gb-or-156-inch-fhd-ips-or-black"
+    },
+    {
+      "id": 520,
+      "name": "( 2ND ) Laptop Dell Latitude 5280 Core i5-7300U / RAM 8GB / SSD 256GB / 12.5 inch",
+      "slug": "2nd-laptop-dell-latitude-5280-core-i5-7300u-ram-8gb-ssd-256gb-125-inch"
+    },
+    {
+      "id": 522,
+      "name": "( 2ND ) Laptop Dell Latitude 5410",
+      "slug": "2nd-laptop-dell-latitude-5410"
+    },
+    {
+      "id": 524,
+      "name": "Laptop Dell Vostro 3520 (15.6/FHD/I3 - 1215U/8GB/SSD 512 / ĐEN)",
+      "slug": "laptop-dell-vostro-3520-156fhdi3-1215u8gbssd-512-den"
+    },
+    {
+      "id": 544,
+      "name": "( 2ND ) Lenovo ThinkPad L450, Core i5 4200U, RAM 8GB, SSD 256GB, Intel® HD Graphics 520, 14'' HD",
+      "slug": "2nd-lenovo-thinkpad-l450-core-i5-4200u-ram-8gb-ssd-256gb-intelr-hd-graphics-520-14-hd"
+    },
+    {
+      "id": 549,
+      "name": "( 2ND ) Laptop Lenovo thinkpad T460",
+      "slug": "2nd-laptop-lenovo-thinkpad-t460"
+    },
+    {
+      "id": 550,
+      "name": "( 2ND ) Laptop Lenovo K21-80 | Core i3-6100U | RAM 4GB | SSD 120GB | HD",
+      "slug": "2nd-laptop-lenovo-k21-80-or-core-i3-6100u-or-ram-4gb-or-ssd-120gb-or-hd"
+    },
+    {
+      "id": 551,
+      "name": "Macbook PRO 16 INCH 2019 I9 2.3/ 16G/ 1T (2ND)",
+      "slug": "macbook-pro-16-inch-2019-i9-23-16g-1t-2nd"
+    },
+    {
+      "id": 552,
+      "name": "Macbook AIR M2 2024 8CPU 10G (2ND)",
+      "slug": "macbook-air-m2-2024-8cpu-10g-2nd"
+    },
+    {
+      "id": 622,
+      "name": "Laptop Lenovo Ideapad Slim 3 15AMN8 - 82XQ00J0VN (R5 7520U, 16GB, 512GB, Full HD, Win11) Laptop Lenovo Ideapad Slim 3 15AMN8 - 82XQ00J0VN (R5 7520U, 16GB, 512GB, Full HD, Win11) ",
+      "slug": "laptop-lenovo-ideapad-slim-3-15amn8-82xq00j0vn-r5-7520u-16gb-512gb-full-hd-win11-laptop-lenovo-ideapad-slim-3-15amn8-82xq00j0vn-r5-7520u-16gb-512gb-full-hd-win11"
+    },
+    {
+      "id": 623,
+      "name": "Laptop Acer Gaming Aspire 5 A515 (i5 13420H, 16GB, 512G, RTX2050 4GB, Full HD 144Hz, Win 11)",
+      "slug": "laptop-acer-gaming-aspire-5-a515-i5-13420h-16gb-512g-rtx2050-4gb-full-hd-144hz-win-11"
+    },
+    {
+      "id": 624,
+      "name": "Laptop Acer Gaming Nitro V15 ANV15 (R5 6600H, 16GB, 512GB, RTX2050 4GB, Full HD 165Hz, Win 11)",
+      "slug": "laptop-acer-gaming-nitro-v15-anv15-r5-6600h-16gb-512gb-rtx2050-4gb-full-hd-165hz-win-11"
+    },
+    {
+      "id": 625,
+      "name": "Laptop Acer Gaming Aspire 7 A715 (i5 12450H, 16GB, 512G, RTX3050 4GB, Full HD 144Hz, Win 11)",
+      "slug": "laptop-acer-gaming-aspire-7-a715-i5-12450h-16gb-512g-rtx3050-4gb-full-hd-144hz-win-11"
+    },
+    {
+      "id": 626,
+      "name": "Laptop Asus Vivobook S16 (i5, 13420H, 16GB, 512GB, WUXGA 144Hz, Office H24+365, Win 11)",
+      "slug": "laptop-asus-vivobook-s16-i5-13420h-16gb-512gb-wuxga-144hz-office-h24365-win-11"
+    }
+  ],
+  "cpu": [
+    {
+      "id": 92,
+      "name": "CPU AMD Ryzen 5 5600G | AM4, Upto 4.40 GHz, 6C/12T, 16MB, Box Chính Hãng",
+      "slug": "cpu-amd-ryzen-5-5600g-or-am4-upto-440-ghz-6c12t-16mb-box-chinh-hang"
+    },
+    {
+      "id": 93,
+      "name": "CPU AMD Ryzen 5 5600X | AM4, Upto 4.60 GHz, 6C/12T, 32MB",
+      "slug": "cpu-amd-ryzen-5-5600x-or-am4-upto-460-ghz-6c12t-32mb"
+    },
+    {
+      "id": 94,
+      "name": "CPU AMD Ryzen 7 5700X | AM4, Upto 4.60 GHz, 8C/16T, 32MB, Box Chính Hãng",
+      "slug": "cpu-amd-ryzen-7-5700x-or-am4-upto-460-ghz-8c16t-32mb-box-chinh-hang"
+    },
+    {
+      "id": 95,
+      "name": "CPU AMD Ryzen 5 7600X | AM5, Upto 5.30 GHz, 6C/12T, 32MB, Box Chính Hãng",
+      "slug": "cpu-amd-ryzen-5-7600x-or-am5-upto-530-ghz-6c12t-32mb-box-chinh-hang"
+    },
+    {
+      "id": 97,
+      "name": "CPU AMD Ryzen 7 7800X3D Tray new",
+      "slug": "cpu-amd-ryzen-7-7800x3d-tray-new"
+    },
+    {
+      "id": 98,
+      "name": "CPU AMD Ryzen 5 7500F",
+      "slug": "cpu-amd-ryzen-5-7500f"
+    },
+    {
+      "id": 99,
+      "name": "CPU AMD Ryzen 5 7600 | AM5, Upto 5.10 GHz, 6C/12T, 32MB, Box Chính Hãng",
+      "slug": "cpu-amd-ryzen-5-7600-or-am5-upto-510-ghz-6c12t-32mb-box-chinh-hang"
+    },
+    {
+      "id": 100,
+      "name": "CPU AMD Ryzen 7 5700G | AM4, Upto 4.60 GHz, 8C/16T, 16MB, Box Chính Hãng",
+      "slug": "cpu-amd-ryzen-7-5700g-or-am4-upto-460-ghz-8c16t-16mb-box-chinh-hang"
+    },
+    {
+      "id": 105,
+      "name": "CPU AMD Ryzen 5 8500G | 3.5 GHz up to 5.0GHz, 6 Cores 12 Threads, AM5",
+      "slug": "cpu-amd-ryzen-5-8500g-or-35-ghz-up-to-50ghz-6-cores-12-threads-am5"
+    },
+    {
+      "id": 106,
+      "name": "CPU AMD Ryzen 7 5700X3D Tray new",
+      "slug": "cpu-amd-ryzen-7-5700x3d-tray-new"
+    },
+    {
+      "id": 107,
+      "name": "CPU AMD Ryzen 5 5600GT | 3.6 GHz up to 4.6 GHz, 6 Cores 12 Threads, AM4",
+      "slug": "cpu-amd-ryzen-5-5600gt-or-36-ghz-up-to-46-ghz-6-cores-12-threads-am4"
+    },
+    {
+      "id": 108,
+      "name": "CPU AMD RYZEN 5 3400G (3.7GHz Up to 4.2GHz, AM4, 4 Cores 8 Threads) Box Chính Hãng",
+      "slug": "cpu-amd-ryzen-5-3400g-37ghz-up-to-42ghz-am4-4-cores-8-threads-box-chinh-hang"
+    },
+    {
+      "id": 109,
+      "name": "CPU AMD Ryzen 5 5500GT | 3.6 GHz up to 4.6 GHz, 6 Cores 12 Threads, AM4",
+      "slug": "cpu-amd-ryzen-5-5500gt-or-36-ghz-up-to-46-ghz-6-cores-12-threads-am4"
+    },
+    {
+      "id": 110,
+      "name": "CPU AMD Ryzen 7 5700 | 3.7 GHz up to 4.6 GHz, 8 Cores 16 Threads, AM4",
+      "slug": "cpu-amd-ryzen-7-5700-or-37-ghz-up-to-46-ghz-8-cores-16-threads-am4"
+    },
+    {
+      "id": 111,
+      "name": "CPU AMD Ryzen 9 9900X chính hãng",
+      "slug": "cpu-amd-ryzen-9-9900x-chinh-hang"
+    },
+    {
+      "id": 112,
+      "name": "CPU AMD Ryzen 9 9900X3D chính hãng",
+      "slug": "cpu-amd-ryzen-9-9900x3d-chinh-hang"
+    },
+    {
+      "id": 113,
+      "name": "CPU AMD Ryzen 9 9950X Tray New",
+      "slug": "cpu-amd-ryzen-9-9950x-tray-new"
+    },
+    {
+      "id": 114,
+      "name": "CPU AMD Ryzen Threadripper 5955X 4.0G",
+      "slug": "cpu-amd-ryzen-threadripper-5955x-40g"
+    },
+    {
+      "id": 115,
+      "name": "CPU AMD Ryzen Threadripper 9960X Chính hãng",
+      "slug": "cpu-amd-ryzen-threadripper-9960x-chinh-hang"
+    },
+    {
+      "id": 116,
+      "name": "CPU AMD Ryzen Threadripper PRO 5965X 3.8G (up to 4.5G) 24C/48T",
+      "slug": "cpu-amd-ryzen-threadripper-pro-5965x-38g-up-to-45g-24c48t"
+    }
+  ],
+  "camera": [
+    {
+      "id": 117,
+      "name": "Camera  IP Wifi Full Color 2MP IMOU Cruiser SE IPC-S21FAP ",
+      "slug": "camera-ip-wifi-full-color-2mp-imou-cruiser-se-ipc-s21fap"
+    },
+    {
+      "id": 118,
+      "name": "Camera Dahua Analog DH-HAC - HFW1239CP-A-LED 2MP (HDCVI 2MP Full Color )",
+      "slug": "camera-dahua-analog-dh-hac-hfw1239cp-a-led-2mp-hdcvi-2mp-full-color"
+    },
+    {
+      "id": 119,
+      "name": "Camera Dahua DH H4AE - Hero A1",
+      "slug": "camera-dahua-dh-h4ae-hero-a1"
+    },
+    {
+      "id": 120,
+      "name": "Camera Dahua DH-IPC -HFW2841S-S 8MP (IP Bullet POE 4K)",
+      "slug": "camera-dahua-dh-ipc-hfw2841s-s-8mp-ip-bullet-poe-4k"
+    },
+    {
+      "id": 121,
+      "name": "Camera IP Thân Trụ 4MP Dahua IPC- HFW4431TX-AS-S2 (Starlight chống ngược sáng)",
+      "slug": "camera-ip-than-tru-4mp-dahua-ipc-hfw4431tx-as-s2-starlight-chong-nguoc-sang"
+    },
+    {
+      "id": 122,
+      "name": "Camera Dahua DH-SD2A200-GN-AW-PV ",
+      "slug": "camera-dahua-dh-sd2a200-gn-aw-pv"
+    },
+    {
+      "id": 123,
+      "name": "Camera IP 4MP Dahua DH-SD3E405DB-GNY-A-PV1 5X Optical Zoom",
+      "slug": "camera-ip-4mp-dahua-dh-sd3e405db-gny-a-pv1-5x-optical-zoom"
+    },
+    {
+      "id": 124,
+      "name": "Camera IP WiFi Ezviz C6N PRO  2K 3MP (quay quét 360 độ)",
+      "slug": "camera-ip-wifi-ezviz-c6n-pro-2k-3mp-quay-quet-360-do"
+    },
+    {
+      "id": 125,
+      "name": "Camera IP ngoài trời 2MP Ezviz C3TN 1080P Full Color (2ND) (CS-C3TN 2MP)",
+      "slug": "camera-ip-ngoai-troi-2mp-ezviz-c3tn-1080p-full-color-2nd-cs-c3tn-2mp"
+    },
+    {
+      "id": 126,
+      "name": "Camera Ezviz CS - C6N (IP Wifi Ezviz C6N 2MP 1080p 360)  ( 2ND)",
+      "slug": "camera-ezviz-cs-c6n-ip-wifi-ezviz-c6n-2mp-1080p-360-2nd"
+    },
+    {
+      "id": 127,
+      "name": "Cam IP ngoài trời 360 độ EZVIZ CS-C8W(4MP)",
+      "slug": "cam-ip-ngoai-troi-360-do-ezviz-cs-c8w4mp"
+    },
+    {
+      "id": 128,
+      "name": "Camera Ezviz CS - H3 (IP ngoài trời Ezviz H3 2K Full Color) 5MP",
+      "slug": "camera-ezviz-cs-h3-ip-ngoai-troi-ezviz-h3-2k-full-color-5mp"
+    },
+    {
+      "id": 129,
+      "name": "Camera  IP Ngoài Trời Ezviz CS - H3C (2MP)",
+      "slug": "camera-ip-ngoai-troi-ezviz-cs-h3c-2mp"
+    },
+    {
+      "id": 130,
+      "name": "Camera Wifi Ngoài Trời Ezviz CS - H3C (3MP)",
+      "slug": "camera-wifi-ngoai-troi-ezviz-cs-h3c-3mp"
+    },
+    {
+      "id": 131,
+      "name": "Camera IP Ezviz CS - H6C (3MP,W1) (Pro 2K 3MP 360 độ)",
+      "slug": "camera-ip-ezviz-cs-h6c-3mpw1-pro-2k-3mp-360-do"
+    },
+    {
+      "id": 132,
+      "name": "Camera Ezviz CS - H6C (5MP,W2)( IP EZVIZ H6C Pro 3K 5MP trong nhà 360 độ)",
+      "slug": "camera-ezviz-cs-h6c-5mpw2-ip-ezviz-h6c-pro-3k-5mp-trong-nha-360-do"
+    },
+    {
+      "id": 133,
+      "name": "Camera IP ngoài trời 360 Ezviz CS - H8C (3MP, 4G) ",
+      "slug": "camera-ip-ngoai-troi-360-ezviz-cs-h8c-3mp-4g"
+    },
+    {
+      "id": 134,
+      "name": "Camera CS-H8C PRO 3MP (WiFi quay quét Ezviz H8C PRO 2K 3MP)",
+      "slug": "camera-cs-h8c-pro-3mp-wifi-quay-quet-ezviz-h8c-pro-2k-3mp"
+    },
+    {
+      "id": 135,
+      "name": "Camera Ezviz CS - H8C ( 2nd)",
+      "slug": "camera-ezviz-cs-h8c-2nd"
+    },
+    {
+      "id": 136,
+      "name": "Camera Ezviz CS - H8C ( IP ngoài trời 360 độ 2MP EZVIZ H8c) (2ND) ",
+      "slug": "camera-ezviz-cs-h8c-ip-ngoai-troi-360-do-2mp-ezviz-h8c-2nd"
+    },
+    {
+      "id": 137,
+      "name": "Camera IP Ngoài Trời 360 độ Ezviz CS - H8C (4MP)",
+      "slug": "camera-ip-ngoai-troi-360-do-ezviz-cs-h8c-4mp"
+    },
+    {
+      "id": 138,
+      "name": "Camera IP 360 Độ 3MP Ezviz CS - TY1",
+      "slug": "camera-ip-360-do-3mp-ezviz-cs-ty1"
+    },
+    {
+      "id": 139,
+      "name": "Camera Haki IP DS - HAKI - HFW1493 - AI (4.0MP H265) (2ND)",
+      "slug": "camera-haki-ip-ds-haki-hfw1493-ai-40mp-h265-2nd"
+    },
+    {
+      "id": 140,
+      "name": "Camera Haki DS 2HK8MP - AI",
+      "slug": "camera-haki-ds-2hk8mp-ai"
+    },
+    {
+      "id": 142,
+      "name": "Camera HDCVI 2MP Dahua DH - HAC - HFW1200TP - S5",
+      "slug": "camera-hdcvi-2mp-dahua-dh-hac-hfw1200tp-s5"
+    },
+    {
+      "id": 143,
+      "name": "Camera IP HIKVISION 4MP DS -2CD2T43G2 -4LI2U",
+      "slug": "camera-ip-hikvision-4mp-ds-2cd2t43g2-4li2u"
+    },
+    {
+      "id": 144,
+      "name": "Camera HDTVI HIKVISION DS - 2CE12KF0T - FS (5MP)",
+      "slug": "camera-hdtvi-hikvision-ds-2ce12kf0t-fs-5mp"
+    },
+    {
+      "id": 145,
+      "name": "Camera HDTVI 2MP thân hồng ngoại HIKVISION DS - 2CE16DOT- IR (2ND)",
+      "slug": "camera-hdtvi-2mp-than-hong-ngoai-hikvision-ds-2ce16dot-ir-2nd"
+    },
+    {
+      "id": 146,
+      "name": " Camera HIKVISION DS - J142I (STD) NKS424W03H Bullet & Dome 4MP (Combo EasyLink WiFi)",
+      "slug": "camera-hikvision-ds-j142i-std-nks424w03h-bullet-and-dome-4mp-combo-easylink-wifi"
+    },
+    {
+      "id": 147,
+      "name": "Camera  IP Wifi Dome 2MP IMOU - IPC - T22EP ",
+      "slug": "camera-ip-wifi-dome-2mp-imou-ipc-t22ep"
+    },
+    {
+      "id": 148,
+      "name": "Camera IIMOU 5MP 3K IMOU REX 2D IPC - GK2DP - 5C0W",
+      "slug": "camera-iimou-5mp-3k-imou-rex-2d-ipc-gk2dp-5c0w"
+    },
+    {
+      "id": 149,
+      "name": "Camera IMOU IPC F52P",
+      "slug": "camera-imou-ipc-f52p"
+    },
+    {
+      "id": 151,
+      "name": "Camera Wifi IMOU Ranger 2 IPC-A32EP-L 3MP",
+      "slug": "camera-wifi-imou-ranger-2-ipc-a32ep-l-3mp"
+    },
+    {
+      "id": 152,
+      "name": "Camera IMOU Bullet 2E IPC - F22FP (2MP) (2ND)",
+      "slug": "camera-imou-bullet-2e-ipc-f22fp-2mp-2nd"
+    },
+    {
+      "id": 153,
+      "name": "Camera IMOU IPC - GS7EP - 3M0WE (2ND)",
+      "slug": "camera-imou-ipc-gs7ep-3m0we-2nd"
+    },
+    {
+      "id": 154,
+      "name": "Camera IP IMOU IPC - S21FTP (2MP) dùng sim 4G",
+      "slug": "camera-ip-imou-ipc-s21ftp-2mp-dung-sim-4g"
+    },
+    {
+      "id": 155,
+      "name": "Camera IMOU K2MP - 5H1WE",
+      "slug": "camera-imou-k2mp-5h1we"
+    },
+    {
+      "id": 156,
+      "name": "Camera  ( Hành trình ) IMOU T400 2K 4MP  (2ND)",
+      "slug": "camera-hanh-trinh-imou-t400-2k-4mp-2nd"
+    },
+    {
+      "id": 157,
+      "name": "Camera IP thân trụ ColorVu 2MP  HIKVISION DS - 2CD1027G2 - LUF",
+      "slug": "camera-ip-than-tru-colorvu-2mp-hikvision-ds-2cd1027g2-luf"
+    },
+    {
+      "id": 158,
+      "name": "Camera IP 360 Độ 5MP IMOU Rex VT Pro IPC - S2VBP - 5M0WR",
+      "slug": "camera-ip-360-do-5mp-imou-rex-vt-pro-ipc-s2vbp-5m0wr"
+    },
+    {
+      "id": 159,
+      "name": "Camera IP TIANDY TC-C34KN Dome 4.0 MP",
+      "slug": "camera-ip-tiandy-tc-c34kn-dome-40-mp"
+    },
+    {
+      "id": 160,
+      "name": "Camera TIANDY TC-C34GS",
+      "slug": "camera-tiandy-tc-c34gs"
+    },
+    {
+      "id": 161,
+      "name": "Camera IP Wifi 360° 2MP TIANDY TC - H322N",
+      "slug": "camera-ip-wifi-360-2mp-tiandy-tc-h322n"
+    },
+    {
+      "id": 162,
+      "name": "Camera (IP Wifi 360° 4MP) TIANDY TC - H342N",
+      "slug": "camera-ip-wifi-360-4mp-tiandy-tc-h342n"
+    },
+    {
+      "id": 163,
+      "name": "Camera IP Wifi Quay Quét (3MP)TP-LINK TAPO C212 ",
+      "slug": "camera-ip-wifi-quay-quet-3mptp-link-tapo-c212"
+    },
+    {
+      "id": 164,
+      "name": "Camera Visioncop VSC - IP0050R - PSSJ (2ND)",
+      "slug": "camera-visioncop-vsc-ip0050r-pssj-2nd"
+    },
+    {
+      "id": 165,
+      "name": "Camera IP Thân Trụ Super‑Starlight 6MP Visioncop VSC-IP0061R-PSSD",
+      "slug": "camera-ip-than-tru-superstarlight-6mp-visioncop-vsc-ip0061r-pssd"
+    },
+    {
+      "id": 166,
+      "name": "Camera IP Visioncop 6MP VSC-IP0461R-PSD (2ND)",
+      "slug": "camera-ip-visioncop-6mp-vsc-ip0461r-psd-2nd"
+    },
+    {
+      "id": 167,
+      "name": "Camera Wifi Bullet 3C 5MP IPC-S3DP-5M0WJ",
+      "slug": "camera-wifi-bullet-3c-5mp-ipc-s3dp-5m0wj"
+    },
+    {
+      "id": 168,
+      "name": "Camera Wifi Full Color Imou IPC-S31FEP (Cruiser SE+ 3MP)",
+      "slug": "camera-wifi-full-color-imou-ipc-s31fep-cruiser-se-3mp"
+    },
+    {
+      "id": 169,
+      "name": "Camera Wifi IP Ngoài Trời 360 Độ 3M TIANDY TC-H333N",
+      "slug": "camera-wifi-ip-ngoai-troi-360-do-3m-tiandy-tc-h333n"
+    },
+    {
+      "id": 170,
+      "name": "Camera Wifi UNV IPC-S3E-M3 (3MP - Quay quét - Đàm thoại 2 chiều)",
+      "slug": "camera-wifi-unv-ipc-s3e-m3-3mp-quay-quet-dam-thoai-2-chieu"
+    },
+    {
+      "id": 171,
+      "name": "Camera IP 4MP TIANDY TC-C34UN",
+      "slug": "camera-ip-4mp-tiandy-tc-c34un"
+    },
+    {
+      "id": 172,
+      "name": "Camera IP 2MP TIANDY TC-C321N (I3/E/Y/4mm)",
+      "slug": "camera-ip-2mp-tiandy-tc-c321n-i3ey4mm"
+    },
+    {
+      "id": 173,
+      "name": "Camera IP(WiFi bóng đèn) 5MP Full Color IMOU Bulb  Imou Bulb IPC-S6DP-5M0WEB ",
+      "slug": "camera-ipwifi-bong-den-5mp-full-color-imou-bulb-imou-bulb-ipc-s6dp-5m0web"
+    },
+    {
+      "id": 174,
+      "name": "Camera IP Wifi Bullet (Full‑Color C1 )2MP (Smart Dual Light) Dahua DH - F2C - LED",
+      "slug": "camera-ip-wifi-bullet-fullcolor-c1-2mp-smart-dual-light-dahua-dh-f2c-led"
+    },
+    {
+      "id": 175,
+      "name": "Camera IP Wifi DaHua Hero C1 DH-H4C 4MP 2K ",
+      "slug": "camera-ip-wifi-dahua-hero-c1-dh-h4c-4mp-2k"
+    },
+    {
+      "id": 176,
+      "name": "Camera IP Wifi full color 4MP Imou IPC-F46FEP( Bullet 2 Pro )",
+      "slug": "camera-ip-wifi-full-color-4mp-imou-ipc-f46fep-bullet-2-pro"
+    },
+    {
+      "id": 177,
+      "name": "Camera IPC S7UP - 11M0WED",
+      "slug": "camera-ipc-s7up-11m0wed"
+    },
+    {
+      "id": 178,
+      "name": "Camera IPC-F42P (Bullet 2C 4MP)",
+      "slug": "camera-ipc-f42p-bullet-2c-4mp"
+    },
+    {
+      "id": 179,
+      "name": "Camera IP Bullet 2MP KBVISION KX-A2011TN3 (2ND)",
+      "slug": "camera-ip-bullet-2mp-kbvision-kx-a2011tn3-2nd"
+    },
+    {
+      "id": 180,
+      "name": "Camera IP Wifi 5MP KBVISION KX - A5W ",
+      "slug": "camera-ip-wifi-5mp-kbvision-kx-a5w"
+    },
+    {
+      "id": 181,
+      "name": "Camera  IP 2MP thân trụ KBVISION KX-A2013N3 -V -A -VN",
+      "slug": "camera-ip-2mp-than-tru-kbvision-kx-a2013n3-v-a-vn"
+    },
+    {
+      "id": 182,
+      "name": "Camera thân HD Analog 2MP KBVISION KX-A2111C4-VN",
+      "slug": "camera-than-hd-analog-2mp-kbvision-kx-a2111c4-vn"
+    },
+    {
+      "id": 183,
+      "name": "Camera IP Dome 2MP KBVISION KX-A2112N3",
+      "slug": "camera-ip-dome-2mp-kbvision-kx-a2112n3"
+    },
+    {
+      "id": 184,
+      "name": "Camera HIKVision IP PTZ 4MP DS-2DF8C442IXG-EL",
+      "slug": "camera-hikvision-ip-ptz-4mp-ds-2df8c442ixg-el"
+    },
+    {
+      "id": 185,
+      "name": "Camera DAHUA PTZ Wifi 2MP DH- SD2A200-GN-AW-PV (2ND)",
+      "slug": "camera-dahua-ptz-wifi-2mp-dh-sd2a200-gn-aw-pv-2nd"
+    },
+    {
+      "id": 186,
+      "name": "Camera DAHUA IP WIFI Quay Quét 5MP DH-SD2A500HB-GN-AW-PV-S2",
+      "slug": "camera-dahua-ip-wifi-quay-quet-5mp-dh-sd2a500hb-gn-aw-pv-s2"
+    }
+  ],
+  "mainboard": [
+    {
+      "id": 189,
+      "name": "Mainboard ASROCK B760M Pro Rs DDR5",
+      "slug": "mainboard-asrock-b760m-pro-rs-ddr5"
+    },
+    {
+      "id": 190,
+      "name": "Mainboard ASROCK B760M Steel Legend Wifi DDR5",
+      "slug": "mainboard-asrock-b760m-steel-legend-wifi-ddr5"
+    },
+    {
+      "id": 191,
+      "name": "Mainboard ASROCK Z790 PG Lightning D5",
+      "slug": "mainboard-asrock-z790-pg-lightning-d5"
+    },
+    {
+      "id": 192,
+      "name": "Mainboard ASUS PRIME H410M E (Intel H410, LGA 1200, M-ATX, 2 khe RAM DDR4) (2ND)",
+      "slug": "mainboard-asus-prime-h410m-e-intel-h410-lga-1200-m-atx-2-khe-ram-ddr4-2nd"
+    },
+    {
+      "id": 193,
+      "name": "Mainboard ASUS  Prime B760M-A DDR5 ( Trưng bày )",
+      "slug": "mainboard-asus-prime-b760m-a-ddr5-trung-bay"
+    },
+    {
+      "id": 194,
+      "name": "Mainboard ASUS  TUF Gaming B760M Plus DDR4",
+      "slug": "mainboard-asus-tuf-gaming-b760m-plus-ddr4"
+    },
+    {
+      "id": 195,
+      "name": "Mainboard ASUS TUF Z390-Plus Gaming ",
+      "slug": "mainboard-asus-tuf-z390-plus-gaming"
+    },
+    {
+      "id": 196,
+      "name": "Mainboard ASROCK B660M PRO RS DDR4 ( 2ND )",
+      "slug": "mainboard-asrock-b660m-pro-rs-ddr4-2nd"
+    },
+    {
+      "id": 197,
+      "name": "Mainboard Colorful Battle AX B760M - T Pro (2ND)",
+      "slug": "mainboard-colorful-battle-ax-b760m-t-pro-2nd"
+    },
+    {
+      "id": 199,
+      "name": "Mainboard GIGABYTE B760M Aorus Elite AX DDR5 ( trưng bày)",
+      "slug": "mainboard-gigabyte-b760m-aorus-elite-ax-ddr5-trung-bay"
+    },
+    {
+      "id": 200,
+      "name": "Mainboard GIGABYTE B760M DS3H AX DDR4 (Wifi+Bluetooth)",
+      "slug": "mainboard-gigabyte-b760m-ds3h-ax-ddr4-wifibluetooth"
+    },
+    {
+      "id": 201,
+      "name": "Mainboard GIGABYTE B760M Gaming Wifi Plus DDR5 (2ND)",
+      "slug": "mainboard-gigabyte-b760m-gaming-wifi-plus-ddr5-2nd"
+    },
+    {
+      "id": 202,
+      "name": "Mainboard GIGABYTE Z690 UD DDR4 (2ND)",
+      "slug": "mainboard-gigabyte-z690-ud-ddr4-2nd"
+    },
+    {
+      "id": 203,
+      "name": "Mainboard GIGABYTE Z690M Aorus Elite DDR4",
+      "slug": "mainboard-gigabyte-z690m-aorus-elite-ddr4"
+    },
+    {
+      "id": 204,
+      "name": "Mainboard GIGABYTE H410M H V2",
+      "slug": "mainboard-gigabyte-h410m-h-v2"
+    },
+    {
+      "id": 205,
+      "name": "Mainboard MOBO B760M/Socket 1700 M-ATX  DDR4",
+      "slug": "mainboard-mobo-b760msocket-1700-m-atx-ddr4"
+    },
+    {
+      "id": 206,
+      "name": "Mainboard MSI MAG B460M Mortar (Intel B460, Socket 1200, M-ATX, 4 khe RAM DDR4) (2ND)",
+      "slug": "mainboard-msi-mag-b460m-mortar-intel-b460-socket-1200-m-atx-4-khe-ram-ddr4-2nd"
+    },
+    {
+      "id": 208,
+      "name": "Mainboard MSI MAG B760M Motar Wifi II DDR5 ",
+      "slug": "mainboard-msi-mag-b760m-motar-wifi-ii-ddr5"
+    },
+    {
+      "id": 209,
+      "name": "Mainboard MSI MAG B560 TORPEDO (INTEL B560/SOCKET 1200/ATX/4 KHE RAM/DDR4) (2ND)",
+      "slug": "mainboard-msi-mag-b560-torpedo-intel-b560socket-1200atx4-khe-ramddr4-2nd"
+    },
+    {
+      "id": 210,
+      "name": "Mainboard MSI X370 GAMING Pro Carbon DDR4 (2ND)",
+      "slug": "mainboard-msi-x370-gaming-pro-carbon-ddr4-2nd"
+    },
+    {
+      "id": 212,
+      "name": "Maiboard OEM X99H DDR4 - MATX Socket 2011V3V4 (2ND)",
+      "slug": "maiboard-oem-x99h-ddr4-matx-socket-2011v3v4-2nd"
+    },
+    {
+      "id": 214,
+      "name": "Mainboard MSI MPG Z390 GAMING PRO CARBON AC ( 2ND)",
+      "slug": "mainboard-msi-mpg-z390-gaming-pro-carbon-ac-2nd"
+    },
+    {
+      "id": 215,
+      "name": "Mainboard Asrock Z690 PG Velocita DDR5 WIFI ( 2ND )",
+      "slug": "mainboard-asrock-z690-pg-velocita-ddr5-wifi-2nd"
+    },
+    {
+      "id": 216,
+      "name": "Mainboard ASUS PRIME Z690-P D4-CSM ( 2ND )",
+      "slug": "mainboard-asus-prime-z690-p-d4-csm-2nd"
+    },
+    {
+      "id": 616,
+      "name": "Mainboard MSI MAG B660M MORTAR (DDR5)",
+      "slug": "mainboard-msi-mag-b660m-mortar-ddr5"
+    }
+  ],
+  "tan-nhiet-pc": [
+    {
+      "id": 217,
+      "name": "Fan Tản Nhiệt Khí CPU Centaur CT AIR200",
+      "slug": "fan-tan-nhiet-khi-cpu-centaur-ct-air200"
+    },
+    {
+      "id": 218,
+      "name": "Quạt Tản Nhiệt Khí CPU Cooler Master T400I",
+      "slug": "quat-tan-nhiet-khi-cpu-cooler-master-t400i"
+    },
+    {
+      "id": 219,
+      "name": "Tản nhiệt nước AIO MSI MAG CORELIQUID C360 MAG-CORELIQUID-C360",
+      "slug": "tan-nhiet-nuoc-aio-msi-mag-coreliquid-c360-mag-coreliquid-c360"
+    },
+    {
+      "id": 220,
+      "name": "Tản nhiệt khí JONSBO CR-1000 EVO WHITE (ARGB)",
+      "slug": "tan-nhiet-khi-jonsbo-cr-1000-evo-white-argb"
+    },
+    {
+      "id": 221,
+      "name": "Tản Nhiệt CPU Jonsbo CR-1200 RGB Air Cooling",
+      "slug": "tan-nhiet-cpu-jonsbo-cr-1200-rgb-air-cooling"
+    },
+    {
+      "id": 222,
+      "name": "Tản nhiệt khí CPU ID-Cooling IS-60 EVO ARGB",
+      "slug": "tan-nhiet-khi-cpu-id-cooling-is-60-evo-argb"
+    },
+    {
+      "id": 223,
+      "name": "Tản Nhiệt CPU ID-Cooling SE-214-XT ( 2ND )",
+      "slug": "tan-nhiet-cpu-id-cooling-se-214-xt-2nd"
+    },
+    {
+      "id": 224,
+      "name": "Tản nhiệt khí CPU Leopard KF401-DGT RGB Black",
+      "slug": "tan-nhiet-khi-cpu-leopard-kf401-dgt-rgb-black"
+    },
+    {
+      "id": 225,
+      "name": "Tản Nhiệt Nước AIO Deepcool Mystique 360",
+      "slug": "tan-nhiet-nuoc-aio-deepcool-mystique-360"
+    },
+    {
+      "id": 226,
+      "name": "Tản Nhiệt Nước AIO Thermalright Frozen Warframe 360 Black ARGB ",
+      "slug": "tan-nhiet-nuoc-aio-thermalright-frozen-warframe-360-black-argb"
+    },
+    {
+      "id": 227,
+      "name": "Tản Nhiệt Nước Cooler Master Masterliquid 360L Core ARGB",
+      "slug": "tan-nhiet-nuoc-cooler-master-masterliquid-360l-core-argb"
+    },
+    {
+      "id": 228,
+      "name": "Tản nhiệt nước AIO Deepcool LE720 A-RGB R-LE720-BKAMMN-G-1",
+      "slug": "tan-nhiet-nuoc-aio-deepcool-le720-a-rgb-r-le720-bkammn-g-1"
+    },
+    {
+      "id": 229,
+      "name": "Tản Nhiệt Nước ID-Cooling DX 240 Max ARGB - Black",
+      "slug": "tan-nhiet-nuoc-id-cooling-dx-240-max-argb-black"
+    },
+    {
+      "id": 230,
+      "name": "Tản Nhiệt Nước AIO Thermalright Aqua Elite 360 V3 ARGB White",
+      "slug": "tan-nhiet-nuoc-aio-thermalright-aqua-elite-360-v3-argb-white"
+    },
+    {
+      "id": 231,
+      "name": "Tản Nhiệt Nước AIO Thermalright Aqua Elite 360 V3 ARGB Black",
+      "slug": "tan-nhiet-nuoc-aio-thermalright-aqua-elite-360-v3-argb-black"
+    }
+  ],
+  "ram": [
+    {
+      "id": 233,
+      "name": "Bộ nhớ Ram Netac Shadow S DDR4 16GB Bus 3200Mhz  White",
+      "slug": "bo-nho-ram-netac-shadow-s-ddr4-16gb-bus-3200mhz-white"
+    },
+    {
+      "id": 235,
+      "name": "Bộ nhớ Ram Kingbank 32GB 3200Mhz  DDR4 Tản Nhiệt Trắng ",
+      "slug": "bo-nho-ram-kingbank-32gb-3200mhz-ddr4-tan-nhiet-trang"
+    },
+    {
+      "id": 236,
+      "name": "Bộ nhớ Ram Apacer Panther 16Gb DDR4 Bus 3200Mhz ",
+      "slug": "bo-nho-ram-apacer-panther-16gb-ddr4-bus-3200mhz"
+    },
+    {
+      "id": 237,
+      "name": "Bộ nhớ Ram Patriot Viper Elite 5 16GB DDR5 6000Mhz PVER516G60C42W",
+      "slug": "bo-nho-ram-patriot-viper-elite-5-16gb-ddr5-6000mhz-pver516g60c42w"
+    },
+    {
+      "id": 238,
+      "name": "Bộ nhớ Ram Ram Kingston Fury Beast White RGB 16GB 5200MHz DDR5",
+      "slug": "bo-nho-ram-ram-kingston-fury-beast-white-rgb-16gb-5200mhz-ddr5"
+    },
+    {
+      "id": 239,
+      "name": "Ram PC Lexar ARES RGB White 32GB 4000MHz DDR4  (2x16GB)",
+      "slug": "ram-pc-lexar-ares-rgb-white-32gb-4000mhz-ddr4-2x16gb"
+    },
+    {
+      "id": 240,
+      "name": "Bộ nhớ Ram Teamgroup T-Force Delta RGB 16GBx2(32GB) 6000Mhz DDR5 ",
+      "slug": "bo-nho-ram-teamgroup-t-force-delta-rgb-16gbx232gb-6000mhz-ddr5"
+    },
+    {
+      "id": 241,
+      "name": "Bộ nhớ Ram Kingston Fury Hyperx DDR4 16GB",
+      "slug": "bo-nho-ram-kingston-fury-hyperx-ddr4-16gb"
+    },
+    {
+      "id": 242,
+      "name": "Bộ nhớ Ram Gskill Tridentz RGB DDR4 16G Bus 3000",
+      "slug": "bo-nho-ram-gskill-tridentz-rgb-ddr4-16g-bus-3000"
+    },
+    {
+      "id": 243,
+      "name": "Bộ nhớ Ram Kingmax Zeus 16GB DDR4 2666",
+      "slug": "bo-nho-ram-kingmax-zeus-16gb-ddr4-2666"
+    },
+    {
+      "id": 244,
+      "name": "Bộ nhớ Ram Kingspec 16GB - 3200 New DDR4 đỏ",
+      "slug": "bo-nho-ram-kingspec-16gb-3200-new-ddr4-do"
+    },
+    {
+      "id": 247,
+      "name": "Bộ nhớ Ram PC DDR4 32GB 3200 Kingbank tản nhiệt Màu Trắng",
+      "slug": "bo-nho-ram-pc-ddr4-32gb-3200-kingbank-tan-nhiet-mau-trang"
+    },
+    {
+      "id": 252,
+      "name": "Bộ nhớ Ram KingMax 4GB DDR4 bus 2400",
+      "slug": "bo-nho-ram-kingmax-4gb-ddr4-bus-2400"
+    },
+    {
+      "id": 253,
+      "name": "Bộ nhớ Ram pc G.Skill RIPJAWSV DDR4 4GBx2",
+      "slug": "bo-nho-ram-pc-gskill-ripjawsv-ddr4-4gbx2"
+    },
+    {
+      "id": 254,
+      "name": "Bộ nhớ Ram TeamGroup T-Force 8GB DDR4 bus 3200 (TLZGD48G3200HC16FBK)",
+      "slug": "bo-nho-ram-teamgroup-t-force-8gb-ddr4-bus-3200-tlzgd48g3200hc16fbk"
+    },
+    {
+      "id": 255,
+      "name": "Bộ nhớ Ram KingMax ZEUS 8GB DDR4 Bus 2666 Mhz (KM-LD4-2666-8GHS)",
+      "slug": "bo-nho-ram-kingmax-zeus-8gb-ddr4-bus-2666-mhz-km-ld4-2666-8ghs"
+    },
+    {
+      "id": 256,
+      "name": "Bộ nhớ Ram MC Quest Hawk 8GB DDR4 bus 3200",
+      "slug": "bo-nho-ram-mc-quest-hawk-8gb-ddr4-bus-3200"
+    },
+    {
+      "id": 257,
+      "name": "Bộ nhớ Ram Kington Fury Beast 8GB DDR4 bus 3200 (HX432C15FB2/8)",
+      "slug": "bo-nho-ram-kington-fury-beast-8gb-ddr4-bus-3200-hx432c15fb28"
+    },
+    {
+      "id": 258,
+      "name": "Bộ nhớ Ram TeamGroup Elite 8GB DDR4 bus 2400Mhz ",
+      "slug": "bo-nho-ram-teamgroup-elite-8gb-ddr4-bus-2400mhz"
+    },
+    {
+      "id": 259,
+      "name": "Bộ nhớ Ram Apacer Panther 8GB DDR4 Bus 2666 Mhz",
+      "slug": "bo-nho-ram-apacer-panther-8gb-ddr4-bus-2666-mhz"
+    },
+    {
+      "id": 260,
+      "name": "Bộ nhớ Ram KingMax 8GB bus 2666Mhz DDR4",
+      "slug": "bo-nho-ram-kingmax-8gb-bus-2666mhz-ddr4"
+    },
+    {
+      "id": 261,
+      "name": "Ram Adata XPG Spectrix D41 8GB Bus 3200Mhz DDR4",
+      "slug": "ram-adata-xpg-spectrix-d41-8gb-bus-3200mhz-ddr4"
+    },
+    {
+      "id": 264,
+      "name": " Bộ nhớ Ram Apacer Nox 8GB DDR4 bus 3200 AH4U08G32C28YNBAA",
+      "slug": "bo-nho-ram-apacer-nox-8gb-ddr4-bus-3200-ah4u08g32c28ynbaa"
+    },
+    {
+      "id": 265,
+      "name": "Bộ nhớ Ram Samsung 8GB DDR5 bus 4800(M323R1GB4BB0-CQK)",
+      "slug": "bo-nho-ram-samsung-8gb-ddr5-bus-4800m323r1gb4bb0-cqk"
+    },
+    {
+      "id": 266,
+      "name": "Bộ nhớ Ram Lexar Ares DDR4 8g buss 3600 XMP OC tản nhiệt LED",
+      "slug": "bo-nho-ram-lexar-ares-ddr4-8g-buss-3600-xmp-oc-tan-nhiet-led"
+    },
+    {
+      "id": 267,
+      "name": "Bộ nhớ Ram Adata XPG D30 DDR4 8GB 3200MHz",
+      "slug": "bo-nho-ram-adata-xpg-d30-ddr4-8gb-3200mhz"
+    },
+    {
+      "id": 268,
+      "name": "Bộ nhớ Ram Corsair DDR4 2X8GB 3200MHz",
+      "slug": "bo-nho-ram-corsair-ddr4-2x8gb-3200mhz"
+    },
+    {
+      "id": 270,
+      "name": "Bộ nhớ Ram DDR3 8G/1600 Kingston",
+      "slug": "bo-nho-ram-ddr3-8g1600-kingston"
+    },
+    {
+      "id": 272,
+      "name": "Bộ nhớ Ram GSKILL AEGIS DDR3 4GB Bus 1600",
+      "slug": "bo-nho-ram-gskill-aegis-ddr3-4gb-bus-1600"
+    },
+    {
+      "id": 273,
+      "name": "Bộ nhớ Ram Kingspec 8GB - 2666",
+      "slug": "bo-nho-ram-kingspec-8gb-2666"
+    },
+    {
+      "id": 274,
+      "name": "Bộ nhớ Ram DDR4 TeamGroup T-Force Vulcan Z 8G 3200Mhz",
+      "slug": "bo-nho-ram-ddr4-teamgroup-t-force-vulcan-z-8g-3200mhz"
+    },
+    {
+      "id": 275,
+      "name": "Bộ nhớ Ram VSP DDR4 8GB tản thép",
+      "slug": "bo-nho-ram-vsp-ddr4-8gb-tan-thep"
+    },
+    {
+      "id": 276,
+      "name": "Bộ nhớ Ram kingmax DDR4 2400 8GX2GB",
+      "slug": "bo-nho-ram-kingmax-ddr4-2400-8gx2gb"
+    },
+    {
+      "id": 277,
+      "name": "Bộ nhớ Ram DDR4 8gb Fury Beast Bus 2666",
+      "slug": "bo-nho-ram-ddr4-8gb-fury-beast-bus-2666"
+    },
+    {
+      "id": 278,
+      "name": " Bộ nhớ Ram Panther Apacer 8G DDR4 bus 2666 LED",
+      "slug": "bo-nho-ram-panther-apacer-8g-ddr4-bus-2666-led"
+    },
+    {
+      "id": 279,
+      "name": " Bộ nhớ Ram Gskill Trident Z5 RGB 32G (2x16B) DDR5 5600Mhz White",
+      "slug": "bo-nho-ram-gskill-trident-z5-rgb-32g-2x16b-ddr5-5600mhz-white"
+    },
+    {
+      "id": 280,
+      "name": "Bộ nhớ Ram Corsair Vengeance RGB DDR5 32gb",
+      "slug": "bo-nho-ram-corsair-vengeance-rgb-ddr5-32gb"
+    },
+    {
+      "id": 281,
+      "name": "Bộ nhớ Ram KINGSTON Fury Hyper 8gb DDR4 3160",
+      "slug": "bo-nho-ram-kingston-fury-hyper-8gb-ddr4-3160"
+    },
+    {
+      "id": 612,
+      "name": "Ram Corsair Vengeance DDR5 32gb bus 6000 RGB CMH64Gx5M2B6000C38",
+      "slug": "ram-corsair-vengeance-ddr5-32gb-bus-6000-rgb-cmh64gx5m2b6000c38"
+    },
+    {
+      "id": 613,
+      "name": "Ram Kington Fury BEAST 16GB DDR5 bus 5200 (KF552C40BB-16)",
+      "slug": "ram-kington-fury-beast-16gb-ddr5-bus-5200-kf552c40bb-16"
+    },
+    {
+      "id": 615,
+      "name": "Ram PNY XLR8 8GB DDR4 3200 (MD8GD4320016XR)",
+      "slug": "ram-pny-xlr8-8gb-ddr4-3200-md8gd4320016xr"
+    },
+    {
+      "id": 617,
+      "name": "Ram PC Corsair Dominator Platinum RGB 16GB 3200Mhz DDR4 (2x8GB) ",
+      "slug": "ram-pc-corsair-dominator-platinum-rgb-16gb-3200mhz-ddr4-2x8gb"
+    },
+    {
+      "id": 618,
+      "name": "Ram PC Corsair Vengeance RGB 64GB 6000MHz DDR5 (2x32GB) ( 2ND )",
+      "slug": "ram-pc-corsair-vengeance-rgb-64gb-6000mhz-ddr5-2x32gb-2nd"
+    },
+    {
+      "id": 619,
+      "name": "Ram Kingspec 16GB DDR4 2666MHz (1x16GB)",
+      "slug": "ram-kingspec-16gb-ddr4-2666mhz-1x16gb"
+    }
+  ],
+  "nang-luong-mat-troi": [
+    {
+      "id": 296,
+      "name": "Đèn pha led SUNTEK NLMT 300W RP-300",
+      "slug": "den-pha-led-suntek-nlmt-300w-rp-300"
+    },
+    {
+      "id": 297,
+      "name": "Đèn pha led SUNTEK NLMT 500W RP-500",
+      "slug": "den-pha-led-suntek-nlmt-500w-rp-500"
+    },
+    {
+      "id": 298,
+      "name": "Đèn đường liền thể SUNTEK NLMT 400W RV-400",
+      "slug": "den-duong-lien-the-suntek-nlmt-400w-rv-400"
+    },
+    {
+      "id": 299,
+      "name": "Đèn đường liền thể SUNTEK NLMT 500w  RV-500",
+      "slug": "den-duong-lien-the-suntek-nlmt-500w-rv-500"
+    },
+    {
+      "id": 300,
+      "name": "Đèn đường rời thể SUNTEK NLMT RD200W",
+      "slug": "den-duong-roi-the-suntek-nlmt-rd200w"
+    },
+    {
+      "id": 301,
+      "name": "Đèn đường rời thể SUNTEK NLMT RD300W",
+      "slug": "den-duong-roi-the-suntek-nlmt-rd300w"
+    },
+    {
+      "id": 302,
+      "name": "Đèn đường rời thể SUNTEK NLMT RD400W",
+      "slug": "den-duong-roi-the-suntek-nlmt-rd400w"
+    },
+    {
+      "id": 303,
+      "name": "Đèn đường rời thể SUNTEK NLMT RD500W",
+      "slug": "den-duong-roi-the-suntek-nlmt-rd500w"
+    },
+    {
+      "id": 636,
+      "name": "Máy nước nóng NLMT Empire 140L Inox 316",
+      "slug": "may-nuoc-nong-nlmt-empire-140l-inox-316"
+    },
+    {
+      "id": 637,
+      "name": "Máy nước nóng NLMT Empire 160L Inox 316",
+      "slug": "may-nuoc-nong-nlmt-empire-160l-inox-316"
+    },
+    {
+      "id": 638,
+      "name": "Máy nước nóng NLMT Empire 180L Inox 316",
+      "slug": "may-nuoc-nong-nlmt-empire-180l-inox-316"
+    },
+    {
+      "id": 639,
+      "name": " Máy nước nóng NLMT Empire 140L Inox 304",
+      "slug": "may-nuoc-nong-nlmt-empire-140l-inox-304"
+    },
+    {
+      "id": 640,
+      "name": "Máy nước nóng NLMT Empire 160L Inox 304",
+      "slug": "may-nuoc-nong-nlmt-empire-160l-inox-304"
+    },
+    {
+      "id": 641,
+      "name": "Máy nước nóng NLMT Empire 180L Inox 304",
+      "slug": "may-nuoc-nong-nlmt-empire-180l-inox-304"
+    },
+    {
+      "id": 642,
+      "name": "Máy nước nóng NLMT Empire 200L Inox 304",
+      "slug": "may-nuoc-nong-nlmt-empire-200l-inox-304"
+    },
+    {
+      "id": 649,
+      "name": "Máy nước nóng NLMT Empire 300L Inox 304",
+      "slug": "may-nuoc-nong-nlmt-empire-300l-inox-304"
+    }
+  ],
+  "o-cung": [
+    {
+      "id": 318,
+      "name": "Ổ Cứng Hdd Western Digital Purple 1Tb",
+      "slug": "o-cung-hdd-western-digital-purple-1tb"
+    },
+    {
+      "id": 320,
+      "name": "Ổ Cứng Hdd Seagate Barracuda 1Tb",
+      "slug": "o-cung-hdd-seagate-barracuda-1tb"
+    },
+    {
+      "id": 321,
+      "name": "Ổ Cứng Hdd 2Tb Seagate Skyhawk Sata (St2000Vx003)",
+      "slug": "o-cung-hdd-2tb-seagate-skyhawk-sata-st2000vx003"
+    },
+    {
+      "id": 322,
+      "name": "Ổ Cứng Hdd Seagate Barracuda 2Tb  (2ND)",
+      "slug": "o-cung-hdd-seagate-barracuda-2tb-2nd"
+    },
+    {
+      "id": 323,
+      "name": "Ổ Cứng Hdd Sata 2T Seagate Exos 7E8",
+      "slug": "o-cung-hdd-sata-2t-seagate-exos-7e8"
+    },
+    {
+      "id": 325,
+      "name": "Ổ Cứng Hdd Seagate Skyhawk 4Tb (St4000Vx007) (2ND)",
+      "slug": "o-cung-hdd-seagate-skyhawk-4tb-st4000vx007-2nd"
+    },
+    {
+      "id": 327,
+      "name": "Ổ Cứng Hdd Seagate Skyhawk 3Tb",
+      "slug": "o-cung-hdd-seagate-skyhawk-3tb"
+    },
+    {
+      "id": 328,
+      "name": "Ổ Cứng Hdd Toshiba P300 2Tb  (2ND)",
+      "slug": "o-cung-hdd-toshiba-p300-2tb-2nd"
+    },
+    {
+      "id": 337,
+      "name": "Ổ Cứng Hdd Wd Blue 1Tb (Wd10Ezex)",
+      "slug": "o-cung-hdd-wd-blue-1tb-wd10ezex"
+    },
+    {
+      "id": 340,
+      "name": "Ổ Cứng Toshiba 2T Dt01Aba200V (2ND)",
+      "slug": "o-cung-toshiba-2t-dt01aba200v-2nd"
+    },
+    {
+      "id": 341,
+      "name": "Ổ Cứng Hdd Wd Blue 4Tb ",
+      "slug": "o-cung-hdd-wd-blue-4tb"
+    },
+    {
+      "id": 342,
+      "name": "Ổ Cứng Ssd Apacer Zadak Twss3 512Gb Sata 2.5 (Zs512Gtwss3-1)",
+      "slug": "o-cung-ssd-apacer-zadak-twss3-512gb-sata-25-zs512gtwss3-1"
+    },
+    {
+      "id": 344,
+      "name": "Ổ Cứng Ssd Nvme M.2 Intel 256Gb (Ssdpekkw256G8)",
+      "slug": "o-cung-ssd-nvme-m2-intel-256gb-ssdpekkw256g8"
+    },
+    {
+      "id": 347,
+      "name": "Ổ Cứng Ssd Nvme M2 250Gb Samsung Evo 970 Plus",
+      "slug": "o-cung-ssd-nvme-m2-250gb-samsung-evo-970-plus"
+    },
+    {
+      "id": 349,
+      "name": "Ổ Cứng Ssd 256G Agi Sata Iii 6Gb/S Tlc",
+      "slug": "o-cung-ssd-256g-agi-sata-iii-6gbs-tlc"
+    },
+    {
+      "id": 351,
+      "name": "Ổ Cứng Ssd 120G/128G Crucial (2ND)",
+      "slug": "o-cung-ssd-120g128g-crucial-2nd"
+    },
+    {
+      "id": 353,
+      "name": "Ổ Cứng Ssd 512Gb Sstc Megamouth-110 Sata 3",
+      "slug": "o-cung-ssd-512gb-sstc-megamouth-110-sata-3"
+    },
+    {
+      "id": 364,
+      "name": "Ổ Cứng Ssd Megamouth 2.5Sata 240Gb (2ND)",
+      "slug": "o-cung-ssd-megamouth-25sata-240gb-2nd"
+    },
+    {
+      "id": 366,
+      "name": "Ổ Cứng Ssd Samsung 870 Evo 500Gb 2.5Inch Sata Iii",
+      "slug": "o-cung-ssd-samsung-870-evo-500gb-25inch-sata-iii"
+    },
+    {
+      "id": 367,
+      "name": "Ổ Cứng Ssd Teamgroup Nvme Pcle 256Gb",
+      "slug": "o-cung-ssd-teamgroup-nvme-pcle-256gb"
+    },
+    {
+      "id": 369,
+      "name": "Ổ Cứng Ssd Kingmax Pcle 256Gb (2ND)",
+      "slug": "o-cung-ssd-kingmax-pcle-256gb-2nd"
+    },
+    {
+      "id": 370,
+      "name": "Ổ Cứng Ssd Nvme 256Gb M2 (2ND)",
+      "slug": "o-cung-ssd-nvme-256gb-m2-2nd"
+    },
+    {
+      "id": 371,
+      "name": "Ổ Cứng Ssd Samsung 120G /128G 850 Evo (2ND)",
+      "slug": "o-cung-ssd-samsung-120g-128g-850-evo-2nd"
+    },
+    {
+      "id": 372,
+      "name": "Ổ Cứng Ssd Sata Wd Green M2 480Gb (2ND)",
+      "slug": "o-cung-ssd-sata-wd-green-m2-480gb-2nd"
+    },
+    {
+      "id": 373,
+      "name": "Ổ Cứng Ssd 256Gb Sstc Megamouth-Sata 3",
+      "slug": "o-cung-ssd-256gb-sstc-megamouth-sata-3"
+    },
+    {
+      "id": 375,
+      "name": "Ổ Cứng Ssd Samsung 120G Evo (2ND)",
+      "slug": "o-cung-ssd-samsung-120g-evo-2nd"
+    },
+    {
+      "id": 377,
+      "name": "Ổ Cứng Ssd Micron 256G (2ND)",
+      "slug": "o-cung-ssd-micron-256g-2nd"
+    },
+    {
+      "id": 378,
+      "name": "Ổ Cứng Ssd Kingston 256Gb (2ND)",
+      "slug": "o-cung-ssd-kingston-256gb-2nd"
+    },
+    {
+      "id": 379,
+      "name": "Ổ cứng Ssd Samsung 128G (2ND)",
+      "slug": "o-cung-ssd-samsung-128g-2nd"
+    },
+    {
+      "id": 380,
+      "name": "Ổ Cứng Ssd Lexar 256G Nm620",
+      "slug": "o-cung-ssd-lexar-256g-nm620"
+    },
+    {
+      "id": 382,
+      "name": "Ổ Cứng Ssd Samsung 256G (2ND)",
+      "slug": "o-cung-ssd-samsung-256g-2nd"
+    },
+    {
+      "id": 383,
+      "name": "Ổ Cứng Ssd Intel 240G (2ND)",
+      "slug": "o-cung-ssd-intel-240g-2nd"
+    },
+    {
+      "id": 384,
+      "name": "Ổ Cứng Ssd Nvme M2 250Gb Samsung Evo 970 Plus (2ND)",
+      "slug": "o-cung-ssd-nvme-m2-250gb-samsung-evo-970-plus-2nd"
+    },
+    {
+      "id": 385,
+      "name": "Ổ Cứng Ssd Nvme 256G Dahua",
+      "slug": "o-cung-ssd-nvme-256g-dahua"
+    },
+    {
+      "id": 387,
+      "name": "Ổ Cứng SSD 1T Lexar Nq780 M2 2280 Pcle Gen 4X4",
+      "slug": "o-cung-ssd-1t-lexar-nq780-m2-2280-pcle-gen-4x4"
+    },
+    {
+      "id": 388,
+      "name": "Ổ Cứng SSD 512G Adata Legend 710 Pcle Gen 3X4 M2 Nvme",
+      "slug": "o-cung-ssd-512g-adata-legend-710-pcle-gen-3x4-m2-nvme"
+    },
+    {
+      "id": 390,
+      "name": "Ổ Cứng SSD Nvme 1Tb Kioxia M.2 Pcle Gen 4X4",
+      "slug": "o-cung-ssd-nvme-1tb-kioxia-m2-pcle-gen-4x4"
+    },
+    {
+      "id": 391,
+      "name": "Ổ Cứng Ssd Nvme Gigabyte 500Gb M.2 Pcle Gen 4X4",
+      "slug": "o-cung-ssd-nvme-gigabyte-500gb-m2-pcle-gen-4x4"
+    },
+    {
+      "id": 620,
+      "name": "Ổ cứng SSD XSTAR NVME 512Gb (NVMe PCIe/ Gen4x4 M2.2280/ 4200MB/s/ 4000MB/s)",
+      "slug": "o-cung-ssd-xstar-nvme-512gb-nvme-pcie-gen4x4-m22280-4200mbs-4000mbs"
+    },
+    {
+      "id": 621,
+      "name": "Ổ cứng Seagate Barracuda 250GB 16MB cache (ST250DM003)",
+      "slug": "o-cung-seagate-barracuda-250gb-16mb-cache-st250dm003"
+    }
+  ],
+  "thiet-bi-mang": [
+    {
+      "id": 363,
+      "name": "Bộ Chia Điện Thoại ATA Analog VoIP Gateway Dinstar DAG1000-8S",
+      "slug": "bo-chia-dien-thoai-ata-analog-voip-gateway-dinstar-dag1000-8s"
+    },
+    {
+      "id": 365,
+      "name": "Bộ Chuyển Đổi Không Dây USB TP-Link TL- WN725N (150Mbps Wireless N Nano )",
+      "slug": "bo-chuyen-doi-khong-day-usb-tp-link-tl-wn725n-150mbps-wireless-n-nano"
+    },
+    {
+      "id": 374,
+      "name": "Bộ đinh tuyến Router CISCO  2801 ( 2ND )",
+      "slug": "bo-dinh-tuyen-router-cisco-2801-2nd"
+    },
+    {
+      "id": 376,
+      "name": "Bộ đinh tuyến Router CISCO 2911 ( 2ND)",
+      "slug": "bo-dinh-tuyen-router-cisco-2911-2nd"
+    },
+    {
+      "id": 381,
+      "name": "Bộ đinh tuyến Rounter FILLWALL ASA 5512 - X ( 2ND )",
+      "slug": "bo-dinh-tuyen-rounter-fillwall-asa-5512-x-2nd"
+    },
+    {
+      "id": 386,
+      "name": "Bộ đinh tuyến Rounter FILLWALL ASA 5525 - X ( 2ND )",
+      "slug": "bo-dinh-tuyen-rounter-fillwall-asa-5525-x-2nd"
+    },
+    {
+      "id": 389,
+      "name": "Bộ phát Wifi Mesh D-Link CORV 1100 1166 Mbps/ Wifi 5/ 2.4/5 GHz",
+      "slug": "bo-phat-wifi-mesh-d-link-corv-1100-1166-mbps-wifi-5-245-ghz"
+    },
+    {
+      "id": 392,
+      "name": "Bộ phát sóng Wifi ốp trần RUIJIE RG-RAP2200 ( E)  (2ND)",
+      "slug": "bo-phat-song-wifi-op-tran-ruijie-rg-rap2200-e-2nd"
+    },
+    {
+      "id": 393,
+      "name": "Bộ phát Wifi Router Không Dây 4G LTE Tốc Độ 300 MBPS TP-Link TL-MR100",
+      "slug": "bo-phat-wifi-router-khong-day-4g-lte-toc-do-300-mbps-tp-link-tl-mr100"
+    },
+    {
+      "id": 394,
+      "name": "Bộ Phát Wifi Access Point Aruba  APEX0101 ngoài trời ( 2ND)",
+      "slug": "bo-phat-wifi-access-point-aruba-apex0101-ngoai-troi-2nd"
+    },
+    {
+      "id": 395,
+      "name": "Bộ Phát Wifi (Acces Point) ARUBA IAP-314 (2ND)",
+      "slug": "bo-phat-wifi-acces-point-aruba-iap-314-2nd"
+    },
+    {
+      "id": 396,
+      "name": "Bộ phát Wifi AEROHIVE AP250",
+      "slug": "bo-phat-wifi-aerohive-ap250"
+    },
+    {
+      "id": 397,
+      "name": "Bộ Phát Wifi AP ARUBA APIN215 ( 2ND)",
+      "slug": "bo-phat-wifi-ap-aruba-apin215-2nd"
+    },
+    {
+      "id": 398,
+      "name": "Bộ Phát Wifi Access Point Aruba AP-367 (JX973A)",
+      "slug": "bo-phat-wifi-access-point-aruba-ap-367-jx973a"
+    },
+    {
+      "id": 399,
+      "name": "Bộ Phát Wifi Access Point Aruba AP-325 (APIN0325) (2ND)",
+      "slug": "bo-phat-wifi-access-point-aruba-ap-325-apin0325-2nd"
+    },
+    {
+      "id": 400,
+      "name": "Bộ Phát Wifi Access Point Aruba APINO225 ( 2ND )",
+      "slug": "bo-phat-wifi-access-point-aruba-apino225-2nd"
+    },
+    {
+      "id": 401,
+      "name": "Thiết bị phát Wifi HOMA HM-HUB-120",
+      "slug": "thiet-bi-phat-wifi-homa-hm-hub-120"
+    },
+    {
+      "id": 402,
+      "name": "Bộ Phát Wifi (Access Point ) Ruckus ZoneFlex R500 ( 2ND)",
+      "slug": "bo-phat-wifi-access-point-ruckus-zoneflex-r500-2nd"
+    },
+    {
+      "id": 403,
+      "name": "Bộ Phát Wifi (Access Point) Ruckus ZoneFlex R600 ( 2ND)",
+      "slug": "bo-phat-wifi-access-point-ruckus-zoneflex-r600-2nd"
+    },
+    {
+      "id": 404,
+      "name": "Bộ phát wifi RUCKUS ZONEFLEX R710",
+      "slug": "bo-phat-wifi-ruckus-zoneflex-r710"
+    },
+    {
+      "id": 405,
+      "name": "Bộ Phát Wifi TotoLink N600R chuẩn N 600MBPS 4 râu",
+      "slug": "bo-phat-wifi-totolink-n600r-chuan-n-600mbps-4-rau"
+    },
+    {
+      "id": 406,
+      "name": "Bộ Phát Wifi TP Link TL WR 1043ND",
+      "slug": "bo-phat-wifi-tp-link-tl-wr-1043nd"
+    },
+    {
+      "id": 407,
+      "name": "Thiết bị phát Wifi TPLINK ARCHER AX10",
+      "slug": "thiet-bi-phat-wifi-tplink-archer-ax10"
+    },
+    {
+      "id": 408,
+      "name": "Bộ phát wifi Ubiquiti Rocket AC (R5AC-Lite)  ( 2ND )",
+      "slug": "bo-phat-wifi-ubiquiti-rocket-ac-r5ac-lite-2nd"
+    },
+    {
+      "id": 409,
+      "name": "Bộ Router (Access Point) Wifi APTEK A12 AC1200",
+      "slug": "bo-router-access-point-wifi-aptek-a12-ac1200"
+    },
+    {
+      "id": 410,
+      "name": "Converter quang điện NETLINK 100Mb A ( 2ND)",
+      "slug": "converter-quang-dien-netlink-100mb-a-2nd"
+    },
+    {
+      "id": 411,
+      "name": "Converter quang điện NETLINK 100Mb B",
+      "slug": "converter-quang-dien-netlink-100mb-b"
+    },
+    {
+      "id": 412,
+      "name": "CONVERTER quang điện ZC IDS 2SFP - 2GE 1000M",
+      "slug": "converter-quang-dien-zc-ids-2sfp-2ge-1000m"
+    },
+    {
+      "id": 413,
+      "name": "Converter quang điện 1 Gigabit ( bộ B )",
+      "slug": "converter-quang-dien-1-gigabit-bo-b"
+    },
+    {
+      "id": 414,
+      "name": "Đầu SFP AG-LP-31-10-A ( 2ND)",
+      "slug": "dau-sfp-ag-lp-31-10-a-2nd"
+    },
+    {
+      "id": 415,
+      "name": "Đầu SFP Transceiver Mikrotik 1.25G T1310/R1550nm 20KM- Hộp nhựa",
+      "slug": "dau-sfp-transceiver-mikrotik-125g-t1310r1550nm-20km-hop-nhua"
+    },
+    {
+      "id": 416,
+      "name": "Module CISCO C2960S - STACK V02 ( 2ND)",
+      "slug": "module-cisco-c2960s-stack-v02-2nd"
+    },
+    {
+      "id": 417,
+      "name": "Module CISCO C2960X - STACK V01 ( 2ND)",
+      "slug": "module-cisco-c2960x-stack-v01-2nd"
+    },
+    {
+      "id": 418,
+      "name": "Thiết bị cân bằng tải Router Draytek Vigor 2133",
+      "slug": "thiet-bi-can-bang-tai-router-draytek-vigor-2133"
+    },
+    {
+      "id": 419,
+      "name": "Thiết bị cân bằng tải Router DrayTek Vigor V2952 ",
+      "slug": "thiet-bi-can-bang-tai-router-draytek-vigor-v2952"
+    },
+    {
+      "id": 420,
+      "name": "Thiết bị ( Router) cân bằng tải DrayTek Vigor 2915AC ( 2ND)",
+      "slug": "thiet-bi-router-can-bang-tai-draytek-vigor-2915ac-2nd"
+    },
+    {
+      "id": 421,
+      "name": "Thiết bị (Router) cân bằng tải wifi DrayTek Vigor 2927(Fac)",
+      "slug": "thiet-bi-router-can-bang-tai-wifi-draytek-vigor-2927fac"
+    },
+    {
+      "id": 422,
+      "name": "Thiết bị cân bằng tải router Mikrotik RB 750GR3 (hEX) HAKTRAP chịu tải 80 - 100 user ",
+      "slug": "thiet-bi-can-bang-tai-router-mikrotik-rb-750gr3-hex-haktrap-chiu-tai-80-100-user"
+    },
+    {
+      "id": 423,
+      "name": "Thiết bị chuyển mạch Aptek SG1244P Switch 24 cổng PoE Gigabit ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-aptek-sg1244p-switch-24-cong-poe-gigabit-2nd"
+    },
+    {
+      "id": 424,
+      "name": "Thiết bị chuyển mạch Switch 16 cổng 10/100/100 BASE-T Ruijie Reyee RG-ES216GC",
+      "slug": "thiet-bi-chuyen-mach-switch-16-cong-10100100-base-t-ruijie-reyee-rg-es216gc"
+    },
+    {
+      "id": 425,
+      "name": "Thiết bị chuyển mạch Switch CISCO CATALYST 3750 24 Port 1G 4 SFP",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-catalyst-3750-24-port-1g-4-sfp"
+    },
+    {
+      "id": 426,
+      "name": "Thiết bị chuyển mạch Switch Cisco WS-C2960CG-8TC L2 Catalyst 2960-C Compact Switch 8 GE ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-ws-c2960cg-8tc-l2-catalyst-2960-c-compact-switch-8-ge-2nd"
+    },
+    {
+      "id": 428,
+      "name": "Thiết bị chuyển mạch Switch Cisco CATALYST 3850 24S 24 Port 1G ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-catalyst-3850-24s-24-port-1g-2nd"
+    },
+    {
+      "id": 429,
+      "name": "Thiết bị chuyển mạch Switch Access Point Cisco meraki MR34 ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-access-point-cisco-meraki-mr34-2nd"
+    },
+    {
+      "id": 430,
+      "name": "Thiết bị chuyển mạch Switch Cisco Meraki MS220-8P 8-Port PoE Gigabit 2 SFP( 2ND)  ",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-meraki-ms220-8p-8-port-poe-gigabit-2-sfp-2nd"
+    },
+    {
+      "id": 431,
+      "name": "Thiết bị chuyển mạch Switch Cisco Meraki MS220-24P L2 24 Port Gigabit 370W PoE  ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-meraki-ms220-24p-l2-24-port-gigabit-370w-poe-2nd"
+    },
+    {
+      "id": 432,
+      "name": "Thiết bị chuyển mạch Switch Cisco 48-Port GigE Switch Cisco Catalyst ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-48-port-gige-switch-cisco-catalyst-2nd"
+    },
+    {
+      "id": 433,
+      "name": "Thiết bị chuyển mạch Switch công nghiệp IES7511-8GE4GF-CA",
+      "slug": "thiet-bi-chuyen-mach-switch-cong-nghiep-ies7511-8ge4gf-ca"
+    },
+    {
+      "id": 434,
+      "name": "Thiết bị chuyển mạch Switch D-LINK DES 1210 - 28 PORT UTP 10/100Mbps (POE) + 2P SFP ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-d-link-des-1210-28-port-utp-10100mbps-poe-2p-sfp-2nd"
+    },
+    {
+      "id": 435,
+      "name": "Thiết bị chuyển mạch  Switch D-LINK DES -1008C 8 port 100MB (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-d-link-des-1008c-8-port-100mb-2nd"
+    },
+    {
+      "id": 436,
+      "name": "Thiết bị chuyển mạch Switch HP 1810G - 24 Port (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-hp-1810g-24-port-2nd"
+    },
+    {
+      "id": 437,
+      "name": "Thiết bị chuyển mạch Switch HP 1920 24G JG924A (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-hp-1920-24g-jg924a-2nd"
+    },
+    {
+      "id": 438,
+      "name": "Thiết bị chuyển mạch Switch Mikrotik CRS109-8G-1S-2HnD-IN witth 8 GE, 1 SFP port, LCD, WiFi (2ND) ",
+      "slug": "thiet-bi-chuyen-mach-switch-mikrotik-crs109-8g-1s-2hnd-in-witth-8-ge-1-sfp-port-lcd-wifi-2nd"
+    },
+    {
+      "id": 439,
+      "name": "Thiết bị chuyển mạch Switch Mikrotik CRS317-1G-16S+RM (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-mikrotik-crs317-1g-16srm-2nd"
+    },
+    {
+      "id": 440,
+      "name": "Thiết bị chuyển mạch NETGEAR 8 port Gigabit (2ND)",
+      "slug": "thiet-bi-chuyen-mach-netgear-8-port-gigabit-2nd"
+    },
+    {
+      "id": 441,
+      "name": "Thiết bị chuyển mạch Switch POE 6 cổng 4 Port 100MP ONV H1064PSD 10/100 Base-TX",
+      "slug": "thiet-bi-chuyen-mach-switch-poe-6-cong-4-port-100mp-onv-h1064psd-10100-base-tx"
+    },
+    {
+      "id": 442,
+      "name": "Thiết bị chuyển mạch Switch POE 8 Port 100MP ONV H1108PSD",
+      "slug": "thiet-bi-chuyen-mach-switch-poe-8-port-100mp-onv-h1108psd"
+    },
+    {
+      "id": 443,
+      "name": "Thiết bị chuyển mạch Switch POE 24 port Linksys LGS124 (Gigabit (1000Mbps)/ 24 Port/ Vỏ Thép) (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-poe-24-port-linksys-lgs124-gigabit-1000mbps-24-port-vo-thep-2nd"
+    },
+    {
+      "id": 444,
+      "name": "Thiết bị chuyển mạch Switch POE 9 cổng Rujice Reyee RG-ES209GC-P",
+      "slug": "thiet-bi-chuyen-mach-switch-poe-9-cong-rujice-reyee-rg-es209gc-p"
+    },
+    {
+      "id": 445,
+      "name": "Thiết bị chuyển mạch SWitch Fortinet FG800C (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-fortinet-fg800c-2nd"
+    },
+    {
+      "id": 446,
+      "name": "Thiết bị chuyển mạch Switch Micronet SP218D 8 Port",
+      "slug": "thiet-bi-chuyen-mach-switch-micronet-sp218d-8-port"
+    },
+    {
+      "id": 447,
+      "name": "Thiết bị chuyển mạch Switch POE tiandy TC-P3S06 4 cổng",
+      "slug": "thiet-bi-chuyen-mach-switch-poe-tiandy-tc-p3s06-4-cong"
+    },
+    {
+      "id": 448,
+      "name": "Thiết bị chuyển mạch Switch tiandy TC-P3S028 24 cổng PoE 10/100/1000M",
+      "slug": "thiet-bi-chuyen-mach-switch-tiandy-tc-p3s028-24-cong-poe-101001000m"
+    },
+    {
+      "id": 449,
+      "name": "Thiết bị chuyển mạch Swich TP Link 5 port 100mb - SF1005D",
+      "slug": "thiet-bi-chuyen-mach-swich-tp-link-5-port-100mb-sf1005d"
+    },
+    {
+      "id": 450,
+      "name": "Thiết bị chuyển mạch switch 5 Port Gigabit TP LINK TL SG1005P",
+      "slug": "thiet-bi-chuyen-mach-switch-5-port-gigabit-tp-link-tl-sg1005p"
+    },
+    {
+      "id": 451,
+      "name": "Thiết bị chuyển mạch Switch  8 port 100mb TP Link TL-SF1008D (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-8-port-100mb-tp-link-tl-sf1008d-2nd"
+    },
+    {
+      "id": 452,
+      "name": "Thiết bị chuyển mạch Switch 8 cổng Gigabit Aptek SG1080/10/100/1000Mbps",
+      "slug": "thiet-bi-chuyen-mach-switch-8-cong-gigabit-aptek-sg1080101001000mbps"
+    },
+    {
+      "id": 453,
+      "name": "Thiết bị chuyển mạch Easy Smart Switch  16 cổng Gigabit port TP Link TL SG 1016DE",
+      "slug": "thiet-bi-chuyen-mach-easy-smart-switch-16-cong-gigabit-port-tp-link-tl-sg-1016de"
+    },
+    {
+      "id": 454,
+      "name": "Thiết bị chuyển mạch Switch tp link 24 port TL 1024D 10/100Mbps ( 2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-tp-link-24-port-tl-1024d-10100mbps-2nd"
+    },
+    {
+      "id": 455,
+      "name": "Thiết bị chuyển mạch Switch Unifi UAP AP AC PRO 2 (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-unifi-uap-ap-ac-pro-2-2nd"
+    },
+    {
+      "id": 456,
+      "name": "Thiết Bị Mạng Router cân bằng tải  Mikrotik CCR2004-16G-2S+",
+      "slug": "thiet-bi-mang-router-can-bang-tai-mikrotik-ccr2004-16g-2s"
+    },
+    {
+      "id": 457,
+      "name": "Thiết Bị Mạng cân bằng tải Router Mikrotik L009 UIGS - RM (2ND)",
+      "slug": "thiet-bi-mang-can-bang-tai-router-mikrotik-l009-uigs-rm-2nd"
+    },
+    {
+      "id": 458,
+      "name": "Thiết Bị Mạng cân bằng tải Router MikroTik RB760iGS (hEX S)  ( 2ND) ",
+      "slug": "thiet-bi-mang-can-bang-tai-router-mikrotik-rb760igs-hex-s-2nd"
+    },
+    {
+      "id": 459,
+      "name": "Thiết Bị Mạng cân bằng tải Router MikroTik RB4011iGS RM (2ND)",
+      "slug": "thiet-bi-mang-can-bang-tai-router-mikrotik-rb4011igs-rm-2nd"
+    },
+    {
+      "id": 604,
+      "name": "Thiết bị chuyển mạch Switch CISCO CATALYST 3850 24 24 Port 1G (2ND)",
+      "slug": "thiet-bi-chuyen-mach-switch-cisco-catalyst-3850-24-24-port-1g-2nd"
+    },
+    {
+      "id": 610,
+      "name": "Bộ phát wifi 2 băng tần Draytek VigorAP 910C (2ND)",
+      "slug": "bo-phat-wifi-2-bang-tan-draytek-vigorap-910c-2nd"
+    },
+    {
+      "id": 611,
+      "name": "Thiết bị chuyển mạch Switch Linksys LGS108 (Gigabit (1000Mbps)/ 8 Cổng/ Vỏ Thép) ",
+      "slug": "thiet-bi-chuyen-mach-switch-linksys-lgs108-gigabit-1000mbps-8-cong-vo-thep"
+    }
+  ],
+  "nguon-may-tinh-psu": [
+    {
+      "id": 368,
+      "name": "Bộ chuyển đổi và cấp nguồn POE 4 cổng APTEK SG1041P ",
+      "slug": "bo-chuyen-doi-va-cap-nguon-poe-4-cong-aptek-sg1041p"
+    },
+    {
+      "id": 479,
+      "name": "Nguồn Segotep QPower350 350w",
+      "slug": "nguon-segotep-qpower350-350w"
+    },
+    {
+      "id": 481,
+      "name": "Nguồn Segotep U5 SG D600A 500W",
+      "slug": "nguon-segotep-u5-sg-d600a-500w"
+    },
+    {
+      "id": 483,
+      "name": "Nguồn SilverStone Strider Platinum Series 1200W ST1200-PTS",
+      "slug": "nguon-silverstone-strider-platinum-series-1200w-st1200-pts"
+    },
+    {
+      "id": 485,
+      "name": "Nguồn Xigmatek Thor T750M v2 750W EN41488 - 80 Plus (2ND)",
+      "slug": "nguon-xigmatek-thor-t750m-v2-750w-en41488-80-plus-2nd"
+    },
+    {
+      "id": 486,
+      "name": "Nguồn máy tính AcBel CE2+ 450W",
+      "slug": "nguon-may-tinh-acbel-ce2-450w"
+    },
+    {
+      "id": 488,
+      "name": "Nguồn máy tính Deepcool PK750D - 80 Plus Bronze (750W)",
+      "slug": "nguon-may-tinh-deepcool-pk750d-80-plus-bronze-750w"
+    },
+    {
+      "id": 489,
+      "name": "( 2ND ) Nguồn máy tính Antec 500W VP500P",
+      "slug": "2nd-nguon-may-tinh-antec-500w-vp500p"
+    },
+    {
+      "id": 491,
+      "name": "Nguồn Thermal Take LTP-650AL2NK 650W (2ND)",
+      "slug": "nguon-thermal-take-ltp-650al2nk-650w-2nd"
+    },
+    {
+      "id": 494,
+      "name": "Nguồn Eco 650W V3 (2ND)",
+      "slug": "nguon-eco-650w-v3-2nd"
+    },
+    {
+      "id": 497,
+      "name": "Nguồn Twinkel G6 700W (2ND)",
+      "slug": "nguon-twinkel-g6-700w-2nd"
+    },
+    {
+      "id": 500,
+      "name": "Nguồn Cooler Master MWE 400 Bronze ( 2ND )",
+      "slug": "nguon-cooler-master-mwe-400-bronze-2nd"
+    },
+    {
+      "id": 501,
+      "name": "Nguồn Switching Power Supply ATX-700W (2ND)",
+      "slug": "nguon-switching-power-supply-atx-700w-2nd"
+    },
+    {
+      "id": 502,
+      "name": "Nguồn Ac Bel plus 510 (2ND)",
+      "slug": "nguon-ac-bel-plus-510-2nd"
+    },
+    {
+      "id": 509,
+      "name": "Nguồn Acbel 470W (2ND)",
+      "slug": "nguon-acbel-470w-2nd"
+    },
+    {
+      "id": 512,
+      "name": "Nguồn Coolermaster  M2 1000W (2ND)",
+      "slug": "nguon-coolermaster-m2-1000w-2nd"
+    },
+    {
+      "id": 514,
+      "name": "Nguồn Coolermaser V3 PC600 (2ND)",
+      "slug": "nguon-coolermaser-v3-pc600-2nd"
+    },
+    {
+      "id": 521,
+      "name": "Nguồn Segotep SG D60A 600W",
+      "slug": "nguon-segotep-sg-d60a-600w"
+    },
+    {
+      "id": 523,
+      "name": "Nguồn Adata 750W XPG Pylon 750B Bronze (2ND)",
+      "slug": "nguon-adata-750w-xpg-pylon-750b-bronze-2nd"
+    },
+    {
+      "id": 525,
+      "name": "Nguồn Adata 650W XPG Pylon 750B Bronze (2ND)",
+      "slug": "nguon-adata-650w-xpg-pylon-750b-bronze-2nd"
+    },
+    {
+      "id": 543,
+      "name": "Nguồn Antec 300W đỏ (2ND)",
+      "slug": "nguon-antec-300w-do-2nd"
+    },
+    {
+      "id": 546,
+      "name": "Nguồn máy tính Corsair CV650 650W 80 Plus Bronze",
+      "slug": "nguon-may-tinh-corsair-cv650-650w-80-plus-bronze"
+    },
+    {
+      "id": 547,
+      "name": "Nguồn máy tính OCPC Energia WH650 650W 80 Plus White",
+      "slug": "nguon-may-tinh-ocpc-energia-wh650-650w-80-plus-white"
+    },
+    {
+      "id": 548,
+      "name": "Nguồn máy tính MIK S-POWER 500W Black",
+      "slug": "nguon-may-tinh-mik-s-power-500w-black"
+    }
+  ],
+  "dien-may": [
+    {
+      "id": 460,
+      "name": "Máy hút bụi Shop-Vac 45.5L 6 HP",
+      "slug": "may-hut-bui-shop-vac-455l-6-hp"
+    },
+    {
+      "id": 464,
+      "name": "Máy hút bụi Shop-Vac 18.9L 2HP",
+      "slug": "may-hut-bui-shop-vac-189l-2hp"
+    },
+    {
+      "id": 465,
+      "name": "Máy hút bụi Shop-Vac 3.8L 1 HP",
+      "slug": "may-hut-bui-shop-vac-38l-1-hp"
+    },
+    {
+      "id": 476,
+      "name": "Máy lạnh Aqua 1 HP AQA-R10PC ",
+      "slug": "may-lanh-aqua-1-hp-aqa-r10pc"
+    },
+    {
+      "id": 477,
+      "name": "Máy lạnh Aqua 1.5 HP AQA-R13PC ",
+      "slug": "may-lanh-aqua-15-hp-aqa-r13pc"
+    },
+    {
+      "id": 478,
+      "name": "Máy Lạnh Aqua 2 Hp AQA-R18PC ",
+      "slug": "may-lanh-aqua-2-hp-aqa-r18pc"
+    },
+    {
+      "id": 482,
+      "name": "Máy lạnh Aqua Inverter 1 HP AQA-RV10ME",
+      "slug": "may-lanh-aqua-inverter-1-hp-aqa-rv10me"
+    },
+    {
+      "id": 484,
+      "name": "Máy lạnh Aqua Inverter 1.5 HP AQA-RV13QC2",
+      "slug": "may-lanh-aqua-inverter-15-hp-aqa-rv13qc2"
+    },
+    {
+      "id": 487,
+      "name": "Máy lạnh Aqua Inverter 2 HP AQA-RV18QC2",
+      "slug": "may-lanh-aqua-inverter-2-hp-aqa-rv18qc2"
+    },
+    {
+      "id": 490,
+      "name": "Máy lạnh Casper Inverter 1 HP QC-09IS36",
+      "slug": "may-lanh-casper-inverter-1-hp-qc-09is36"
+    },
+    {
+      "id": 493,
+      "name": "Máy lạnh Daikin Inverter 1 HP ATKB25ZVMV",
+      "slug": "may-lanh-daikin-inverter-1-hp-atkb25zvmv"
+    },
+    {
+      "id": 498,
+      "name": "Máy lạnh Mitsubishi Electric Inverter 1 HP MSY-JY25VF",
+      "slug": "may-lanh-mitsubishi-electric-inverter-1-hp-msy-jy25vf"
+    },
+    {
+      "id": 499,
+      "name": "Máy lạnh Mitsubishi Heavy SRK-10YZP-W5 Inverter 1HP",
+      "slug": "may-lanh-mitsubishi-heavy-srk-10yzp-w5-inverter-1hp"
+    },
+    {
+      "id": 504,
+      "name": "Máy lạnh Nagakawa 1.5 HP NS-C12R2T30 ",
+      "slug": "may-lanh-nagakawa-15-hp-ns-c12r2t30"
+    },
+    {
+      "id": 510,
+      "name": "Máy lạnh Nagakawa 2.0 HP NS-C18R2T30",
+      "slug": "may-lanh-nagakawa-20-hp-ns-c18r2t30"
+    },
+    {
+      "id": 511,
+      "name": "Máy lạnh Panasonic Inverter 1.0 HP (CU/CS-RU9AKH-8)",
+      "slug": "may-lanh-panasonic-inverter-10-hp-cucs-ru9akh-8"
+    },
+    {
+      "id": 513,
+      "name": "Tủ lạnh Aqua Inverter 347 lít AQR-T400FA(WFB)",
+      "slug": "tu-lanh-aqua-inverter-347-lit-aqr-t400fawfb"
+    },
+    {
+      "id": 516,
+      "name": "Tủ lạnh Aqua Inverter 490 lít AQR-S552XA(CBC)",
+      "slug": "tu-lanh-aqua-inverter-490-lit-aqr-s552xacbc"
+    },
+    {
+      "id": 517,
+      "name": "Tủ lạnh LG Inverter 519 lít Side By Side GR-B256BL",
+      "slug": "tu-lanh-lg-inverter-519-lit-side-by-side-gr-b256bl"
+    },
+    {
+      "id": 518,
+      "name": "Tủ lạnh Panasonic Inverter 417 lít NR-BX471GPKV",
+      "slug": "tu-lanh-panasonic-inverter-417-lit-nr-bx471gpkv"
+    },
+    {
+      "id": 519,
+      "name": "Tủ lạnh Samsung Inverter 655 lít Side By Side RS70F65Q3TSV",
+      "slug": "tu-lanh-samsung-inverter-655-lit-side-by-side-rs70f65q3tsv"
+    },
+    {
+      "id": 579,
+      "name": " Xiaomi Google TV 43 inch 2025 Full HD A L43MA-AFSEA",
+      "slug": "xiaomi-google-tv-43-inch-2025-full-hd-a-l43ma-afsea"
+    },
+    {
+      "id": 580,
+      "name": "Google Tivi Xiaomi A Pro QLED 4K 65 inch L65MA-SSEA",
+      "slug": "google-tivi-xiaomi-a-pro-qled-4k-65-inch-l65ma-ssea"
+    },
+    {
+      "id": 592,
+      "name": "Smart Tivi Casper 4K 50 inch 50UG6100 Android TV",
+      "slug": "smart-tivi-casper-4k-50-inch-50ug6100-android-tv"
+    },
+    {
+      "id": 593,
+      "name": "Smart Tivi Samsung Crystal UHD 4K 43 inch UA43AU7002K",
+      "slug": "smart-tivi-samsung-crystal-uhd-4k-43-inch-ua43au7002k"
+    },
+    {
+      "id": 609,
+      "name": "Tủ lạnh Samsung Inverter 583 lít Side By Side RS57DG400EM9SV",
+      "slug": "tu-lanh-samsung-inverter-583-lit-side-by-side-rs57dg400em9sv"
+    },
+    {
+      "id": 650,
+      "name": "Máy lọc nước RO nóng nguội lạnh Hòa Phát HPN629 10 lõi",
+      "slug": "may-loc-nuoc-ro-nong-nguoi-lanh-hoa-phat-hpn629-10-loi"
+    }
+  ],
+  "mini-pc": [
+    {
+      "id": 466,
+      "name": "PC Mini HP Z2 Mini G3 Workstation XEON E3-1240V6 16GB 512GB Quadro M620",
+      "slug": "pc-mini-hp-z2-mini-g3-workstation-xeon-e3-1240v6-16gb-512gb-quadro-m620"
+    },
+    {
+      "id": 468,
+      "name": "Mac mini 2014 - CPU i5, Ram 8G 1600, SSD 256G (2ND)",
+      "slug": "mac-mini-2014-cpu-i5-ram-8g-1600-ssd-256g-2nd"
+    },
+    {
+      "id": 471,
+      "name": "PC mini G4S - CPU CELERON N4100, Ram 8G 2400, SSD 32G",
+      "slug": "pc-mini-g4s-cpu-celeron-n4100-ram-8g-2400-ssd-32g"
+    }
+  ],
+  "loa-cam-tay": [
+    {
+      "id": 571,
+      "name": "Loa cầm tay Libratone Zipp Mini 60W",
+      "slug": "loa-cam-tay-libratone-zipp-mini-60w"
+    }
+  ],
+  "the-nho": [
+    {
+      "id": 595,
+      "name": "Thẻ nhớ Micro SD 128GB HIKVISION HS-TF-C1(STD)/128G",
+      "slug": "the-nho-micro-sd-128gb-hikvision-hs-tf-c1std128g"
+    },
+    {
+      "id": 599,
+      "name": "Thẻ nhớ MicroSD 512GB Sandisk Ultra A1 150Mb",
+      "slug": "the-nho-microsd-512gb-sandisk-ultra-a1-150mb"
+    },
+    {
+      "id": 600,
+      "name": "Thẻ nhớ NETAC 64GB",
+      "slug": "the-nho-netac-64gb"
+    },
+    {
+      "id": 601,
+      "name": "Thẻ nhớ camera NETAC 128GB",
+      "slug": "the-nho-camera-netac-128gb"
+    },
+    {
+      "id": 602,
+      "name": "Thẻ nhớ Micro SDXC Sandisk Ultra A1 256gb 150Mbs",
+      "slug": "the-nho-micro-sdxc-sandisk-ultra-a1-256gb-150mbs"
+    }
+  ]
+}

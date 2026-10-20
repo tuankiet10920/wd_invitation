@@ -1,0 +1,84 @@
+{
+  "info": {
+    "_postman_id": "c62ddb17-9194-4c95-b2cd-0bae1be395ac",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "id": "bd218540-75ce-4567-bfb8-e43165370043",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "admin@cinelove.me",
+              "type": "text",
+              "uuid": "5c5d47bc-b52b-4648-a20b-89f1a3d2fca1"
+            },
+            {
+              "key": "password",
+              "value": "admin123",
+              "type": "text",
+              "uuid": "f5d2d446-f555-49eb-aeb5-23b1257499b9"
+            },
+            {
+              "key": "remember",
+              "value": "false",
+              "type": "text",
+              "uuid": "33da2bb3-3219-4530-b988-639daa74894c"
+            },
+            {
+              "key": "redirect",
+              "value": "false",
+              "type": "text",
+              "uuid": "3f5db88d-4f38-4947-a0a7-db7de6c93dc0"
+            },
+            {
+              "key": "csrfToken",
+              "value": "f5f420e3f6dc047aa9107f6652dfdd22c1c4cc0c6cf2a11169397f232671b06f",
+              "type": "text",
+              "uuid": "41415261-62b4-4806-8a9a-23588eaf374c"
+            },
+            {
+              "key": "callbackUrl",
+              "value": "https://cinelove.me/login?callbackUrl=https%3A%2F%2Fcinelove.me%2Fadmin&error=unauthorized\n",
+              "type": "text",
+              "uuid": "6b2f05b0-74f0-4624-94c3-700ed3801b05"
+            },
+            {
+              "key": "json",
+              "value": "true",
+              "type": "text",
+              "uuid": "642e4531-c38b-468c-ad70-02c01356da8a"
+            }
+          ],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://69819c89c9a606f5d4474841.mockapi.io/api/v1/test",
+          "protocol": "https",
+          "host": [
+            "69819c89c9a606f5d4474841",
+            "mockapi",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "test"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

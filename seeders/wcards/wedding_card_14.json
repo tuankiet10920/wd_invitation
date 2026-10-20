@@ -1,0 +1,40 @@
+{
+  "name": "dasd12313213easdasd",
+  "meta_desc": "",
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "dasd12313213easdasd",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 1024,
+  "is_template": false,
+  "is_template_user": false,
+  "id_category_wedding_card": 1,
+  "id_user": 1,
+  "id_package": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#ffffff",
+  "nodes": [
+    {
+      "id": 1779427958493,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi14.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "50px",
+        "left": "100px",
+        "width": "300px",
+        "height": "300px"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-05-22T05:32:25.000Z",
+  "updatedAt": "2026-05-22T05:32:56.308Z"
+}

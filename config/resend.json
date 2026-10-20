@@ -1,0 +1,14 @@
+{
+    "development": {
+        "token": "re_V8oVo32T_HL5s9TDBkEDGg7KvHb3VLfG5",
+        "domain": "phucan.ntkservices.com"
+    },
+    "test": {
+        "token": "re_ZrD5X4RP_AgVPG2f5J4g2DmmTvbv1BVAY",
+        "domain": "phucan.ntkservices.com"
+    },
+    "production": {
+        "token": "re_ZrD5X4RP_AgVPG2f5J4g2DmmTvbv1BVAY",
+        "domain": "phucan.ntkservices.com"
+    }
+}

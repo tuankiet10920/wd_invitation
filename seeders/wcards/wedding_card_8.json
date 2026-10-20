@@ -1,0 +1,1244 @@
+{
+  "name": "daasdasdasd123",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "daasdasdasd123",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 4931,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 1,
+  "id_user": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#7B1E17",
+  "nodes": [
+    {
+      "id": 1775147565894,
+      "type": "Text",
+      "props": {
+        "content": "Save The Date"
+      },
+      "styles": {
+        "top": "36px",
+        "left": "30px",
+        "color": "#ffffff",
+        "width": "276px",
+        "height": "",
+        "fontSize": "42px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn"
+      }
+    },
+    {
+      "id": 1775147620146,
+      "type": "Text",
+      "props": {
+        "content": "16.11.2025"
+      },
+      "styles": {
+        "top": "99px",
+        "left": "30px",
+        "color": "#ffffff",
+        "width": "211px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "Mentawai"
+      }
+    },
+    {
+      "id": 1775147660093,
+      "type": "Text",
+      "props": {
+        "content": "Thanh Huy - Phương Thúy"
+      },
+      "styles": {
+        "top": "177px",
+        "left": "30px",
+        "color": "#ffffff",
+        "width": "441px",
+        "height": "",
+        "fontSize": "38px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775147757046,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/chu-hy60.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "267px",
+        "left": "229px",
+        "width": "192px",
+        "height": "181px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775147802558,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_297723364020260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "256px",
+        "left": "60px",
+        "width": "395px",
+        "height": "566px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775147975088,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang8.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "902px",
+        "left": "22px",
+        "color": "#ffffff",
+        "width": "456px",
+        "height": "300px",
+        "position": "absolute",
+        "transform": "",
+        "borderRadius": "100px",
+        "borderTopLeftRadius": "100px",
+        "borderTopRightRadius": "100px",
+        "borderBottomLeftRadius": "100px",
+        "borderBottomRightRadius": "100px"
+      }
+    },
+    {
+      "id": 1775148019712,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "986px",
+        "left": "11px",
+        "color": "#ffffff",
+        "width": "479px",
+        "height": "371px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderColor": "#7b1e17",
+        "borderStyle": "solid",
+        "borderWidth": "12px"
+      }
+    },
+    {
+      "id": 1775148146651,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1345px",
+        "left": "10.5px",
+        "color": "#ffffff",
+        "width": "479px",
+        "height": "1024px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderColor": "#7b1e17",
+        "borderStyle": "solid",
+        "borderWidth": "12px",
+        "borderTopWidth": "12px",
+        "borderLeftWidth": "12px",
+        "borderRightWidth": "12px",
+        "borderBottomWidth": "12px"
+      }
+    },
+    {
+      "id": 1775148179959,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1324px",
+        "left": "0px",
+        "color": "#7b1e17",
+        "width": "52px",
+        "height": "52px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775148263884,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1324px",
+        "left": "447.5px",
+        "color": "#7b1e17",
+        "width": "52px",
+        "height": "52px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775148285089,
+      "type": "Text",
+      "props": {
+        "content": "Wedding Invitation"
+      },
+      "styles": {
+        "top": "921px",
+        "left": "72px",
+        "width": "360px",
+        "height": "",
+        "fontSize": "38px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Right Here",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775148353411,
+      "type": "Text",
+      "props": {
+        "content": "Nhà trai"
+      },
+      "styles": {
+        "top": "1023px",
+        "left": "97px",
+        "width": "75px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775148387329,
+      "type": "Text",
+      "props": {
+        "content": "\n\nÔng Nguyễn Viết Minh\nBà Trịnh Thị Lan"
+      },
+      "styles": {
+        "top": "1052px",
+        "left": "66px",
+        "width": "141px",
+        "height": "",
+        "fontSize": "12px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775148425939,
+      "type": "Text",
+      "props": {
+        "content": "Nhà gái "
+      },
+      "styles": {
+        "top": "1026px",
+        "left": "312px",
+        "width": "75px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775148441700,
+      "type": "Text",
+      "props": {
+        "content": "\n\nÔng Trịnh Văn Huy\nBà Ngô Mai Hoàn"
+      },
+      "styles": {
+        "top": "1052px",
+        "left": "275px",
+        "width": "141px",
+        "height": "",
+        "fontSize": "12px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775148473675,
+      "type": "Text",
+      "props": {
+        "content": "Nguyễn Thanh Huy"
+      },
+      "styles": {
+        "top": "1224px",
+        "left": "43px",
+        "color": "#752323",
+        "width": "186px",
+        "height": "",
+        "fontSize": "23px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775148590296,
+      "type": "Text",
+      "props": {
+        "content": "Trịnh Phương Thúy"
+      },
+      "styles": {
+        "top": "1222px",
+        "left": "259px",
+        "color": "#752323",
+        "width": "186px",
+        "height": "",
+        "fontSize": "23px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775148600394,
+      "type": "CountDown",
+      "props": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#000000"
+      },
+      "styles": {
+        "top": "1268px",
+        "left": "102px",
+        "width": "",
+        "height": "",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775148649448,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_297823504720260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1098px",
+        "left": "73px",
+        "width": "119px",
+        "height": "117px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 34px -5px #808080",
+        "transform": "none",
+        "borderRadius": "300px",
+        "borderTopLeftRadius": "300px",
+        "borderTopRightRadius": "300px",
+        "borderBottomLeftRadius": "300px",
+        "borderBottomRightRadius": "300px"
+      }
+    },
+    {
+      "id": 1775148714900,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_297923515320260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1096px",
+        "left": "292px",
+        "width": "119px",
+        "height": "118px",
+        "position": "absolute",
+        "boxShadow": "1px 0px 34px -5px #808080",
+        "transform": "",
+        "borderRadius": "300px",
+        "borderTopLeftRadius": "300px",
+        "borderTopRightRadius": "300px",
+        "borderBottomLeftRadius": "300px",
+        "borderBottomRightRadius": "300px"
+      }
+    },
+    {
+      "id": 1775148867179,
+      "type": "Text",
+      "props": {
+        "content": "&"
+      },
+      "styles": {
+        "top": "1223px",
+        "left": "219px",
+        "color": "#752323",
+        "width": "55px",
+        "height": "",
+        "fontSize": "23px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775148933850,
+      "type": "Text",
+      "props": {
+        "content": "Trân Trọng Kính Mời"
+      },
+      "styles": {
+        "top": "1376px",
+        "left": "94px",
+        "color": "#000000",
+        "width": "311px",
+        "height": "",
+        "fontSize": "36px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149016896,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298023565420260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1476px",
+        "left": "30px",
+        "width": "133px",
+        "height": "205px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149055639,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298123573320260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1441px",
+        "left": "169px",
+        "width": "157px",
+        "height": "271px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149106203,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298223582420260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1477px",
+        "left": "333px",
+        "width": "136px",
+        "height": "206px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149201440,
+      "type": "Text",
+      "props": {
+        "content": "THAM DỰ TIỆC MỪNG LỄ THÀNH HÔN"
+      },
+      "styles": {
+        "top": "1747px",
+        "left": "75px",
+        "width": "347px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149251884,
+      "type": "Text",
+      "props": {
+        "content": "Vào lúc"
+      },
+      "styles": {
+        "top": "1795px",
+        "left": "68px",
+        "width": "347px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149276833,
+      "type": "Text",
+      "props": {
+        "content": "12:00"
+      },
+      "styles": {
+        "top": "1884px",
+        "left": "71px",
+        "width": "103px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149297581,
+      "type": "Text",
+      "props": {
+        "content": "2025"
+      },
+      "styles": {
+        "top": "1884px",
+        "left": "306px",
+        "width": "103px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149317367,
+      "type": "Text",
+      "props": {
+        "content": "Chủ Nhật"
+      },
+      "styles": {
+        "top": "1853px",
+        "left": "186px",
+        "width": "103px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149325417,
+      "type": "Text",
+      "props": {
+        "content": "Tháng 11"
+      },
+      "styles": {
+        "top": "1911px",
+        "left": "185px",
+        "width": "103px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149351556,
+      "type": "Text",
+      "props": {
+        "content": "16"
+      },
+      "styles": {
+        "top": "1860px",
+        "left": "166px",
+        "width": "147px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Lobster",
+        "fontWeight": "bold",
+        "paddingTop": "20px",
+        "borderColor": "#752323",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "20px",
+        "borderTopWidth": "0px",
+        "borderLeftColor": "#000000",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "2px",
+        "borderRightColor": "#000000",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "2px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775149496354,
+      "type": "Calendar",
+      "props": {
+        "date": "2026-04-16",
+        "themeColor": "#931a28",
+        "calendarStyle": "style2"
+      },
+      "styles": {
+        "top": "1964px",
+        "left": "71px",
+        "width": "350px",
+        "height": "350px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "",
+        "paddingTop": "18px",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "1px",
+        "borderRadius": "5px",
+        "borderTopLeftRadius": "5px",
+        "borderTopRightRadius": "5px",
+        "borderBottomLeftRadius": "5px",
+        "borderBottomRightRadius": "5px"
+      }
+    },
+    {
+      "id": 1775149580671,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2357px",
+        "left": "10px",
+        "color": "#ffffff",
+        "width": "479px",
+        "height": "494px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderColor": "#7b1e17",
+        "borderStyle": "solid",
+        "borderWidth": "12px",
+        "borderTopWidth": "12px",
+        "borderLeftWidth": "12px",
+        "borderRightWidth": "12px",
+        "borderBottomWidth": "12px"
+      }
+    },
+    {
+      "id": 1775149616123,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2336px",
+        "left": "0px",
+        "color": "#7b1e17",
+        "width": "52px",
+        "height": "52px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149630674,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2338px",
+        "left": "448px",
+        "color": "#7b1e17",
+        "width": "52px",
+        "height": "52px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149665642,
+      "type": "Text",
+      "props": {
+        "content": "Địa Điểm Tổ Chức"
+      },
+      "styles": {
+        "top": "2393px",
+        "left": "77px",
+        "color": "#000000",
+        "width": "311px",
+        "height": "",
+        "fontSize": "36px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775149685486,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/ban-do36.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "2388px",
+        "left": "360px",
+        "width": "48px",
+        "height": "40px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149768266,
+      "type": "Text",
+      "props": {
+        "content": "Nhà hàng Dinamond Palace,  Hai Bà Trưng, Hà Nội"
+      },
+      "styles": {
+        "top": "2451px",
+        "left": "137px",
+        "width": "229px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Lobster",
+        "fontWeight": "bold",
+        "paddingTop": "0px",
+        "borderColor": "#752323",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftColor": "#000000",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "0px",
+        "borderRightColor": "#000000",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775149818918,
+      "type": "Map",
+      "props": {},
+      "styles": {
+        "top": "2528px",
+        "left": "82px",
+        "width": "334px",
+        "height": "269px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149861356,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2836px",
+        "left": "10px",
+        "color": "#ffffff",
+        "width": "479px",
+        "height": "541px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderColor": "#7b1e17",
+        "borderStyle": "solid",
+        "borderWidth": "12px",
+        "borderTopWidth": "12px",
+        "borderLeftWidth": "12px",
+        "borderRightWidth": "12px",
+        "borderBottomWidth": "12px"
+      }
+    },
+    {
+      "id": 1775149887094,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2814px",
+        "left": "0px",
+        "color": "#7b1e17",
+        "width": "52px",
+        "height": "52px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775149891630,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2815px",
+        "left": "448px",
+        "color": "#7b1e17",
+        "width": "52px",
+        "height": "52px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150048679,
+      "type": "Text",
+      "props": {
+        "content": "Xác nhận tham dự"
+      },
+      "styles": {
+        "top": "2868px",
+        "left": "95px",
+        "color": "#000000",
+        "width": "311px",
+        "height": "",
+        "fontSize": "36px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Faugllin Balseyn",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775150078858,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/chu-hy60.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "2922px",
+        "left": "187px",
+        "width": "113px",
+        "height": "115px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150105314,
+      "type": "AcceptInvitation",
+      "props": {},
+      "styles": {
+        "top": "3051px",
+        "left": "99px",
+        "width": "290px",
+        "height": "282px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150254172,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi37.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3446px",
+        "left": "127px",
+        "width": "248px",
+        "height": "244px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150323541,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi49.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3397px",
+        "left": "175px",
+        "width": "152px",
+        "height": "157px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150348057,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi57.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3378px",
+        "left": "44px",
+        "width": "83px",
+        "height": "81px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150356760,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi53.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3392px",
+        "left": "394px",
+        "width": "64px",
+        "height": "65px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150379874,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi59.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3607px",
+        "left": "56px",
+        "width": "59px",
+        "height": "57px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150440815,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hoa-cuoi62.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "3592.57px",
+        "left": "388.951px",
+        "width": "75px",
+        "height": "84px",
+        "position": "absolute",
+        "transform": "rotate(27.6582deg)"
+      }
+    },
+    {
+      "id": 1775150517803,
+      "type": "Text",
+      "props": {
+        "content": "Hạnh phúc lớn nhất chính là có thể đặt tay mình vào tay em."
+      },
+      "styles": {
+        "top": "3739px",
+        "left": "0px",
+        "color": "#ffffff",
+        "width": "500px",
+        "height": "",
+        "fontSize": "28px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Carlytte"
+      }
+    },
+    {
+      "id": 1775150590395,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "3807px",
+        "left": "12px",
+        "color": "#ffffff",
+        "width": "479px",
+        "height": "458px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderColor": "#7b1e17",
+        "borderStyle": "solid",
+        "borderWidth": "12px",
+        "borderTopWidth": "12px",
+        "borderLeftWidth": "12px",
+        "borderRightWidth": "12px",
+        "borderBottomWidth": "12px"
+      }
+    },
+    {
+      "id": 1775150625289,
+      "type": "Text",
+      "props": {
+        "content": "Huy"
+      },
+      "styles": {
+        "top": "3868px",
+        "left": "49px",
+        "color": "#752323",
+        "width": "130px",
+        "height": "",
+        "fontSize": "70px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Katty Diona",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775150664149,
+      "type": "Text",
+      "props": {
+        "content": "S"
+      },
+      "styles": {
+        "top": "3989px",
+        "left": "50px",
+        "color": "#752323",
+        "width": "130px",
+        "height": "",
+        "fontSize": "45px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Amstirdam",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775150675382,
+      "type": "Text",
+      "props": {
+        "content": "Thúy"
+      },
+      "styles": {
+        "top": "4080px",
+        "left": "45px",
+        "color": "#752323",
+        "width": "130px",
+        "height": "",
+        "fontSize": "70px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Katty Diona",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775150749921,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298300254620260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "3845px",
+        "left": "201px",
+        "width": "260px",
+        "height": "380px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150825807,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298123573320260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "4285px",
+        "left": "0px",
+        "width": "500px",
+        "height": "646px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150895007,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "4595px",
+        "left": "0px",
+        "width": "500px",
+        "height": "108px",
+        "opacity": "0.5",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775150936952,
+      "type": "Text",
+      "props": {
+        "content": "Thank You !"
+      },
+      "styles": {
+        "top": "4614px",
+        "left": "0px",
+        "color": "#ffffff",
+        "width": "500px",
+        "height": "",
+        "fontSize": "48px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Right Here",
+        "fontWeight": "bold"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-02T16:31:04.000Z",
+  "updatedAt": "2026-04-03T05:35:46.703Z",
+  "id_package": 3
+}

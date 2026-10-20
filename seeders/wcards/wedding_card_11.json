@@ -1,0 +1,554 @@
+{
+  "name": "adsadad6789",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "adsadad6789",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 3078,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 4,
+  "id_user": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#ffffff",
+  "nodes": [
+    {
+      "id": 1775234342174,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299223385920260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "0px",
+        "left": "0px",
+        "width": "500px",
+        "height": "703px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775234376352,
+      "type": "Text",
+      "props": {
+        "content": "TRÂN TRỌNG KÍNH MỜI"
+      },
+      "styles": {
+        "top": "67px",
+        "left": "151px",
+        "color": "#ffffff",
+        "width": "202px",
+        "height": "",
+        "fontSize": "13px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775234409419,
+      "type": "Text",
+      "props": {
+        "content": "2026"
+      },
+      "styles": {
+        "top": "265px",
+        "left": "166px",
+        "color": "#ffffff",
+        "width": "170px",
+        "height": "",
+        "fontSize": "62px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Lobster"
+      }
+    },
+    {
+      "id": 1775234460541,
+      "type": "Text",
+      "props": {
+        "content": "CHỦ NHẬT     31     THÁNG 12"
+      },
+      "styles": {
+        "top": "368px",
+        "left": "98px",
+        "color": "#ffffff",
+        "width": "310px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold",
+        "paddingTop": "5px",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "5px",
+        "borderTopColor": "#ffffff",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "2px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#ffffff",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "2px"
+      }
+    },
+    {
+      "id": 1775234503863,
+      "type": "Text",
+      "props": {
+        "content": "08:00 AM"
+      },
+      "styles": {
+        "top": "429px",
+        "left": "153px",
+        "color": "#ffffff",
+        "width": "202px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775234528546,
+      "type": "Text",
+      "props": {
+        "content": "VĂN NGHỆ • GIAO LƯU • ẨM THỰC & ĐỒ UỐNG"
+      },
+      "styles": {
+        "top": "468px",
+        "left": "109px",
+        "color": "#ffffff",
+        "width": "289px",
+        "height": "",
+        "fontSize": "11px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775234551571,
+      "type": "Text",
+      "props": {
+        "content": "TRUNG TÂM HỘI NGHỊ VIỆT HÀN\n123 LÝ THÁI TỔ -  BA ĐÌNH - HÀ NỘI"
+      },
+      "styles": {
+        "top": "526px",
+        "left": "148px",
+        "color": "#ffffff",
+        "width": "207px",
+        "height": "",
+        "fontSize": "12px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775234619843,
+      "type": "CountDown",
+      "props": {
+        "textColor": "#9e0b0f",
+        "borderColor": "#ffffff",
+        "backgroundColor": "#ffffff"
+      },
+      "styles": {
+        "top": "736px",
+        "left": "94px",
+        "width": "",
+        "height": "",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775234659582,
+      "type": "Text",
+      "props": {
+        "content": "Trân trọng kính mời"
+      },
+      "styles": {
+        "top": "836px",
+        "left": "98px",
+        "color": "#000000",
+        "width": "289px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775234695612,
+      "type": "GuestName",
+      "props": {},
+      "styles": {
+        "top": "885px",
+        "left": "128px",
+        "color": "#9e0b0f",
+        "width": "225px",
+        "height": "36px",
+        "zIndex": 10,
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontWeight": "normal",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#d4af37",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px"
+      }
+    },
+    {
+      "id": 1775234873738,
+      "type": "Text",
+      "props": {
+        "content": "Tham dự Chương trình New Year Party 2026\nCùng nhìn lại chặng đường đã qua và chào đón năm mới .\nThành công – Gắn kết – Bứt phá."
+      },
+      "styles": {
+        "top": "969px",
+        "left": "81px",
+        "color": "#000000",
+        "width": "329px",
+        "height": "",
+        "fontSize": "17px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775234922266,
+      "type": "Text",
+      "props": {
+        "content": "⏰ Thời gian"
+      },
+      "styles": {
+        "top": "1083px",
+        "left": "96px",
+        "color": "#9e0b0f",
+        "width": "289px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775234970969,
+      "type": "Text",
+      "props": {
+        "content": "31.12.2026"
+      },
+      "styles": {
+        "top": "1162px",
+        "left": "84px",
+        "color": "#000000",
+        "width": "167px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightColor": "#000000",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "2px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775234998390,
+      "type": "Text",
+      "props": {
+        "content": "Chủ Nhật"
+      },
+      "styles": {
+        "top": "1162px",
+        "left": "250px",
+        "color": "#000000",
+        "width": "156px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightColor": "#000000",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775235672029,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299300010920260404.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1250px",
+        "left": "58px",
+        "width": "391px",
+        "height": "399px",
+        "position": "absolute",
+        "transform": "scale(-1, 1)"
+      }
+    },
+    {
+      "id": 1775235705319,
+      "type": "Calendar",
+      "props": {
+        "date": "2026-04-16"
+      },
+      "styles": {
+        "top": "1337.62px",
+        "left": "150.153px",
+        "width": "234px",
+        "height": "236px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "rotate(-2.08149deg)"
+      }
+    },
+    {
+      "id": 1775236032002,
+      "type": "Text",
+      "props": {
+        "content": "📍 Địa điểm"
+      },
+      "styles": {
+        "top": "1686px",
+        "left": "105px",
+        "color": "#9e0b0f",
+        "width": "289px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775236043468,
+      "type": "Text",
+      "props": {
+        "content": "TRUNG TÂM HỘI NGHỊ VIỆT HÀN "
+      },
+      "styles": {
+        "top": "1744px",
+        "left": "7px",
+        "color": "#000000",
+        "width": "480px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "bold",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightColor": "#000000",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775236073510,
+      "type": "Map",
+      "props": {},
+      "styles": {
+        "top": "1810px",
+        "left": "97px",
+        "width": "300px",
+        "height": "250px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#db7e14",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775236130895,
+      "type": "Text",
+      "props": {
+        "content": "123 Lý Thái Tổ - Ba Đình - Hà Nội"
+      },
+      "styles": {
+        "top": "2106px",
+        "left": "79px",
+        "color": "#000000",
+        "width": "329px",
+        "height": "",
+        "fontSize": "17px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Times New Roman",
+        "fontWeight": "normal",
+        "borderColor": "#000000",
+        "borderStyle": "dotted",
+        "borderWidth": "0px",
+        "paddingBottom": "3px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#9e0b0f",
+        "borderBottomStyle": "dotted",
+        "borderBottomWidth": "1px"
+      }
+    },
+    {
+      "id": 1775236209407,
+      "type": "Text",
+      "props": {
+        "content": "Trên hành trình phát triển, chúng tôi luôn trân trọng sự hợp tác và đồng hành của Quý khách Những thành tựu trong năm qua có sự đóng góp từ sự tin tưởng và ủng hộ của Quý vị. Nhân dịp năm mới, chúng tôi trân trọng kính mời Quý khách tham dự Tiệc Tất Niên – Tri Ân Khách Hàng nhằm cùng sẻ chia niềm vui và thắt chặt mối quan hệ hợp tác. \n Sự hiện diện của Quý vị là niềm vinh hạnh cho chúng tôi."
+      },
+      "styles": {
+        "top": "2148px",
+        "left": "53px",
+        "color": "#000000",
+        "width": "381px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "id": 1775236290014,
+      "type": "AcceptInvitation",
+      "props": {},
+      "styles": {
+        "top": "2361px",
+        "left": "111px",
+        "width": "264px",
+        "height": "288px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775236380583,
+      "type": "Text",
+      "props": {
+        "content": "CÙNG NHÌN LẠI CHẶNG ĐƯỜNG NĂM VỪA QUA"
+      },
+      "styles": {
+        "top": "2695px",
+        "left": "0px",
+        "color": "#000000",
+        "width": "500px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "PlayfairDisplay",
+        "fontWeight": "bold",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightColor": "#000000",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775236457179,
+      "type": "Youtube",
+      "props": {
+        "src": "https://www.youtube.com/watch?v=A-7t7DrKHsc",
+        "mute": true,
+        "autoplay": true
+      },
+      "styles": {
+        "top": "2508px",
+        "left": "42px",
+        "width": "419px",
+        "height": "250px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#9e0b0f",
+        "borderStyle": "solid",
+        "borderWidth": "11px",
+        "borderRadius": "10px",
+        "borderTopLeftRadius": "10px",
+        "borderTopRightRadius": "10px",
+        "borderBottomLeftRadius": "10px",
+        "borderBottomRightRadius": "10px"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-03T16:38:15.000Z",
+  "updatedAt": "2026-04-03T17:15:23.777Z",
+  "id_package": 3
+}

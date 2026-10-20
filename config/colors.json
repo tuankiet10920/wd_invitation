@@ -1,0 +1,33 @@
+{
+    "user": {
+        "default": {
+            "header": {
+                "link": {
+                    "default": "#e5e7eb",
+                    "active": "#ff8fa3"
+                }
+            },
+            "footer": {
+                "link": {
+                    "default": "#666666",
+                    "active": "#ffffff"
+                }
+            }
+        },
+        "user-default": {
+            "header": {
+                "link": {
+                    "default": "#374151",
+                    "active": "#ff8fa3"
+                }
+            },
+            "footer": {
+                "link": {
+                    "default": "#666666",
+                    "active": "#0958d9"
+                }
+            }
+        }
+    },
+    "admin": {}
+}

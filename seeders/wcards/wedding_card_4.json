@@ -1,0 +1,1622 @@
+{
+  "name": "dsads12",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "dsads12",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 4861,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 1,
+  "id_user": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "nodes": [
+    {
+      "id": 1775021599441,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293612290920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "0px",
+        "left": "0px",
+        "width": "500px",
+        "height": "764px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775021641013,
+      "type": "Text",
+      "props": {
+        "content": "Quang"
+      },
+      "styles": {
+        "top": "61px",
+        "left": "386px",
+        "color": "#611010",
+        "width": "",
+        "height": "",
+        "fontSize": "30px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "HoaTay1"
+      }
+    },
+    {
+      "id": 1775021648940,
+      "type": "Text",
+      "props": {
+        "content": "Vân"
+      },
+      "styles": {
+        "top": "149px",
+        "left": "416px",
+        "color": "#611010",
+        "width": "",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "HoaTay1"
+      }
+    },
+    {
+      "id": 1775021758136,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim101.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "113px",
+        "left": "417px",
+        "width": "41px",
+        "height": "34px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775021789987,
+      "type": "Text",
+      "props": {
+        "content": "THƯ MỜI TIỆC CƯỚI"
+      },
+      "styles": {
+        "top": "510px",
+        "left": "254px",
+        "color": "#611010",
+        "width": "215px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px"
+      }
+    },
+    {
+      "id": 1775021804495,
+      "type": "Text",
+      "props": {
+        "content": "CHỦ NHẬT - 09 : 30"
+      },
+      "styles": {
+        "top": "561px",
+        "left": "257px",
+        "color": "#611010",
+        "width": "207px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775021922565,
+      "type": "Text",
+      "props": {
+        "content": "20.12.2026"
+      },
+      "styles": {
+        "top": "593px",
+        "left": "256px",
+        "color": "#611010",
+        "width": "207px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775021932611,
+      "type": "Text",
+      "props": {
+        "content": "LỄ THÀNH HÔN"
+      },
+      "styles": {
+        "top": "629px",
+        "left": "252px",
+        "color": "#611010",
+        "width": "215px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "1px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775021949086,
+      "type": "Text",
+      "props": {
+        "content": "CHỦ NHẬT - 14 : 00"
+      },
+      "styles": {
+        "top": "670px",
+        "left": "255px",
+        "color": "#611010",
+        "width": "207px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775021962466,
+      "type": "Text",
+      "props": {
+        "content": "20.12.2026"
+      },
+      "styles": {
+        "top": "703px",
+        "left": "254px",
+        "color": "#611010",
+        "width": "207px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775022041105,
+      "type": "Text",
+      "props": {
+        "content": " Nhà Có Hỷ"
+      },
+      "styles": {
+        "top": "745px",
+        "left": "16px",
+        "color": "#611010",
+        "width": "55px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Sunshine Script",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775022138279,
+      "type": "Text",
+      "props": {
+        "content": "NHÀ TRAI"
+      },
+      "styles": {
+        "top": "893px",
+        "left": "54px",
+        "color": "#000000",
+        "width": "123px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Quicksand",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775022165156,
+      "type": "Text",
+      "props": {
+        "content": "NHÀ GÁI"
+      },
+      "styles": {
+        "top": "1029px",
+        "left": "55px",
+        "color": "#000000",
+        "width": "123px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Quicksand",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775022197505,
+      "type": "Text",
+      "props": {
+        "content": "Ông : Nguyễn Văn Thắng  Bà : Trịnh Thị Viên"
+      },
+      "styles": {
+        "top": "932px",
+        "left": "54px",
+        "color": "#000000",
+        "width": "199px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Quicksand",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775022253008,
+      "type": "Text",
+      "props": {
+        "content": "Tân Mỹ  - Tiền Phong - Bắc Ninh"
+      },
+      "styles": {
+        "top": "982px",
+        "left": "54px",
+        "color": "#000000",
+        "width": "224px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775022290201,
+      "type": "Text",
+      "props": {
+        "content": "Ông : Nguyễn Tuấn Trung\nBà : Nguyễn Thị May"
+      },
+      "styles": {
+        "top": "1067px",
+        "left": "54px",
+        "color": "#000000",
+        "width": "199px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Quicksand",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775022322222,
+      "type": "Text",
+      "props": {
+        "content": "Phú Cát  - Quốc Oai - Hà Nội"
+      },
+      "styles": {
+        "top": "1118px",
+        "left": "55px",
+        "color": "#000000",
+        "width": "224px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "left",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775022375371,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "884px",
+        "left": "33px",
+        "color": "#999999",
+        "width": "6px",
+        "height": "261px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775022427300,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "891px",
+        "left": "404px",
+        "color": "#611010",
+        "width": "75px",
+        "height": "251px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775022477245,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/chu-hy12.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1083px",
+        "left": "420px",
+        "width": "44px",
+        "height": "44px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775022517049,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang34.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "904px",
+        "left": "429px",
+        "color": "#ffffff",
+        "width": "26px",
+        "height": "26px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775022638821,
+      "type": "Text",
+      "props": {
+        "content": "TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA"
+      },
+      "styles": {
+        "top": "1207px",
+        "left": "68px",
+        "color": "#000000",
+        "width": "358px",
+        "height": "",
+        "fontSize": "16px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775022701253,
+      "type": "Text",
+      "props": {
+        "content": "Nguyễn Vinh Quang"
+      },
+      "styles": {
+        "top": "1263px",
+        "left": "122px",
+        "color": "#611010",
+        "width": "255px",
+        "height": "",
+        "fontSize": "23px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775022736100,
+      "type": "Text",
+      "props": {
+        "content": "Nguyễn Thị Thúy Vân"
+      },
+      "styles": {
+        "top": "1348px",
+        "left": "114px",
+        "color": "#611010",
+        "width": "271px",
+        "height": "",
+        "fontSize": "23px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775022753129,
+      "type": "Text",
+      "props": {
+        "content": "&"
+      },
+      "styles": {
+        "top": "1308px",
+        "left": "205px",
+        "color": "#611010",
+        "width": "84px",
+        "height": "",
+        "fontSize": "23px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775022811164,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293712532920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1432px",
+        "left": "53px",
+        "width": "390px",
+        "height": "259px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775022868789,
+      "type": "Text",
+      "props": {
+        "content": "THƯ MỜI THAM DỰ"
+      },
+      "styles": {
+        "top": "1707px",
+        "left": "117px",
+        "color": "#000000",
+        "width": "271px",
+        "height": "",
+        "fontSize": "16px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775022934761,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1762px",
+        "left": "18px",
+        "color": "#611010",
+        "width": "463px",
+        "height": "296px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": "",
+        "borderRadius": "30px",
+        "borderTopLeftRadius": "30px",
+        "borderTopRightRadius": "30px",
+        "borderBottomLeftRadius": "30px",
+        "borderBottomRightRadius": "30px"
+      }
+    },
+    {
+      "id": 1775023020274,
+      "type": "Text",
+      "props": {
+        "content": "TIỆC CƯỚI NHÀ TRAI"
+      },
+      "styles": {
+        "top": "1781px",
+        "left": "112px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023046821,
+      "type": "Text",
+      "props": {
+        "content": "CHỦ NHẬT - 09:30"
+      },
+      "styles": {
+        "top": "1825px",
+        "left": "113px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023071917,
+      "type": "Text",
+      "props": {
+        "content": "20 . 12 . 2026"
+      },
+      "styles": {
+        "top": "1855px",
+        "left": "108px",
+        "color": "#ddaa12",
+        "width": "279px",
+        "height": "",
+        "fontSize": "30px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023136935,
+      "type": "Text",
+      "props": {
+        "content": "Tức Ngày 16 tháng 10 năm Bính Ngọ"
+      },
+      "styles": {
+        "top": "1902px",
+        "left": "112px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023171350,
+      "type": "Text",
+      "props": {
+        "content": "TẠI TƯ GIA NHÀ TRAI"
+      },
+      "styles": {
+        "top": "1932px",
+        "left": "111px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023193418,
+      "type": "Text",
+      "props": {
+        "content": "Tân Mỹ - Tiền Phong - Bắc Ninh"
+      },
+      "styles": {
+        "top": "1971px",
+        "left": "111px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023220614,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2005px",
+        "left": "155px",
+        "color": "#ffffff",
+        "width": "178px",
+        "height": "34px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775023250555,
+      "type": "Text",
+      "props": {
+        "content": "Xem chỉ đường"
+      },
+      "styles": {
+        "top": "2007px",
+        "left": "107px",
+        "color": "#000000",
+        "width": "279px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023301045,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2081px",
+        "left": "15px",
+        "color": "#611010",
+        "width": "463px",
+        "height": "296px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": "",
+        "borderRadius": "30px",
+        "borderTopLeftRadius": "30px",
+        "borderTopRightRadius": "30px",
+        "borderBottomLeftRadius": "30px",
+        "borderBottomRightRadius": "30px"
+      }
+    },
+    {
+      "id": 1775023318890,
+      "type": "Text",
+      "props": {
+        "content": "TIỆC CƯỚI NHÀ GÁI"
+      },
+      "styles": {
+        "top": "2106px",
+        "left": "110px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023330047,
+      "type": "Text",
+      "props": {
+        "content": "THỨ BẢY - 18 : 00"
+      },
+      "styles": {
+        "top": "2152px",
+        "left": "108px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023348983,
+      "type": "Text",
+      "props": {
+        "content": "19 . 12 . 2026"
+      },
+      "styles": {
+        "top": "2180px",
+        "left": "108px",
+        "color": "#ddaa12",
+        "width": "279px",
+        "height": "",
+        "fontSize": "30px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023365925,
+      "type": "Text",
+      "props": {
+        "content": "Tức Ngày 15 tháng 10 năm Bính Ngọ"
+      },
+      "styles": {
+        "top": "2226px",
+        "left": "105px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023377960,
+      "type": "Text",
+      "props": {
+        "content": "TẠI NHÀ HÀNG SEN VÀNG"
+      },
+      "styles": {
+        "top": "2256px",
+        "left": "90px",
+        "color": "#ffffff",
+        "width": "325px",
+        "height": "",
+        "fontSize": "24px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023406387,
+      "type": "Text",
+      "props": {
+        "content": "Phú Cát - Quốc Oai - Hà Nội"
+      },
+      "styles": {
+        "top": "2297px",
+        "left": "106px",
+        "color": "#ffffff",
+        "width": "279px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023431656,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "2327px",
+        "left": "150px",
+        "color": "#ffffff",
+        "width": "178px",
+        "height": "34px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": "",
+        "borderRadius": "20px",
+        "borderTopLeftRadius": "20px",
+        "borderTopRightRadius": "20px",
+        "borderBottomLeftRadius": "20px",
+        "borderBottomRightRadius": "20px"
+      }
+    },
+    {
+      "id": 1775023420840,
+      "type": "Text",
+      "props": {
+        "content": "Xem chỉ đường"
+      },
+      "styles": {
+        "top": "2329px",
+        "left": "104px",
+        "color": "#000000",
+        "width": "279px",
+        "height": "",
+        "fontSize": "15px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "paddingTop": "4px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "4px",
+        "borderTopColor": "#000000",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#611010",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px"
+      }
+    },
+    {
+      "id": 1775023513247,
+      "type": "Text",
+      "props": {
+        "content": "LỄ VU QUY"
+      },
+      "styles": {
+        "top": "2402px",
+        "left": "138px",
+        "width": "209px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775023550018,
+      "type": "Text",
+      "props": {
+        "content": "VÀO CHỦ NHẬT - 09H00"
+      },
+      "styles": {
+        "top": "2448px",
+        "left": "131px",
+        "width": "217px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775023602974,
+      "type": "Text",
+      "props": {
+        "content": "THÁNG 12"
+      },
+      "styles": {
+        "top": "2501px",
+        "left": "0px",
+        "width": "209px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775023610874,
+      "type": "Text",
+      "props": {
+        "content": "NĂM 2026"
+      },
+      "styles": {
+        "top": "2502px",
+        "left": "291px",
+        "width": "209px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775023637813,
+      "type": "Text",
+      "props": {
+        "content": "20"
+      },
+      "styles": {
+        "top": "2479px",
+        "left": "198px",
+        "color": "#611010",
+        "width": "101px",
+        "height": "",
+        "fontSize": "56px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "0px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    },
+    {
+      "id": 1775023735931,
+      "type": "Text",
+      "props": {
+        "content": "Tức Ngày 16 tháng 10 năm Bính Ngọ"
+      },
+      "styles": {
+        "top": "2584px",
+        "left": "100px",
+        "width": "295px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775023760438,
+      "type": "Text",
+      "props": {
+        "content": "TẠI TƯ GIA NHÀ GÁI"
+      },
+      "styles": {
+        "top": "2621px",
+        "left": "116px",
+        "width": "258px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "9px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#000000",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px"
+      }
+    },
+    {
+      "id": 1775023835756,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293813103420260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2550px",
+        "left": "22px",
+        "width": "462px",
+        "height": "374px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775024537418,
+      "type": "Text",
+      "props": {
+        "content": "LỄ THÀNH HÔN"
+      },
+      "styles": {
+        "top": "2902px",
+        "left": "116px",
+        "width": "265px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775024763210,
+      "type": "Text",
+      "props": {
+        "content": "VÀO CHỦ NHẬT - 14H00"
+      },
+      "styles": {
+        "top": "2951px",
+        "left": "134px",
+        "width": "217px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775024773590,
+      "type": "Text",
+      "props": {
+        "content": "THÁNG 12"
+      },
+      "styles": {
+        "top": "3005px",
+        "left": "0px",
+        "width": "209px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775024779684,
+      "type": "Text",
+      "props": {
+        "content": "NĂM 2026"
+      },
+      "styles": {
+        "top": "3005px",
+        "left": "291px",
+        "width": "209px",
+        "height": "",
+        "fontSize": "29px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular"
+      }
+    },
+    {
+      "id": 1775024787208,
+      "type": "Text",
+      "props": {
+        "content": "20"
+      },
+      "styles": {
+        "top": "2983px",
+        "left": "194px",
+        "color": "#611010",
+        "width": "101px",
+        "height": "",
+        "fontSize": "56px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "paddingTop": "0px",
+        "borderColor": "#611010",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    },
+    {
+      "id": 1775024830524,
+      "type": "Text",
+      "props": {
+        "content": "Tức Ngày 16 tháng 10 năm Bính Ngọ"
+      },
+      "styles": {
+        "top": "3081px",
+        "left": "98px",
+        "width": "303px",
+        "height": "",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Quicksand"
+      }
+    },
+    {
+      "id": 1775024855191,
+      "type": "Text",
+      "props": {
+        "content": "TẠI TƯ GIA NHÀ TRAI"
+      },
+      "styles": {
+        "top": "3115px",
+        "left": "120px",
+        "width": "258px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Scarlet Bradley.regular",
+        "fontWeight": "bold",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "paddingBottom": "9px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#000000",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px"
+      }
+    },
+    {
+      "id": 1775024923908,
+      "type": "Calendar",
+      "props": {
+        "date": "2026-04-15",
+        "date2": "2026-04-16",
+        "showTwoDays": true
+      },
+      "styles": {
+        "top": "3275px",
+        "left": "0px",
+        "width": "500px",
+        "height": "314px",
+        "zIndex": 10,
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775024987735,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "3196px",
+        "left": "0px",
+        "color": "#611010",
+        "width": "500px",
+        "height": "79px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775025031947,
+      "type": "Text",
+      "props": {
+        "content": "Tháng 12"
+      },
+      "styles": {
+        "top": "3210px",
+        "left": "307px",
+        "color": "#ffffff",
+        "width": "193px",
+        "height": "",
+        "fontSize": "32px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Aquarelle"
+      }
+    },
+    {
+      "id": 1775025133854,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293913321220260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "3591px",
+        "left": "0px",
+        "width": "500px",
+        "height": "735px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775025187398,
+      "type": "AcceptInvitation",
+      "props": {},
+      "styles": {
+        "top": "4174px",
+        "left": "89px",
+        "width": "323px",
+        "height": "369px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775025256489,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "4576px",
+        "left": "0px",
+        "color": "#ffffff",
+        "width": "500px",
+        "height": "280px",
+        "position": "absolute",
+        "boxShadow": "0px 0px 10px 0px #808080",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775025312436,
+      "type": "QrBox",
+      "props": {},
+      "styles": {
+        "top": "4633px",
+        "left": "182px",
+        "width": "116px",
+        "height": "104px",
+        "zIndex": 10,
+        "position": "absolute",
+        "boxShadow": "none",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775025343291,
+      "type": "Text",
+      "props": {
+        "content": "Gửi quà mừng tới Cô Dâu - Chú Rể"
+      },
+      "styles": {
+        "top": "4773px",
+        "left": "27px",
+        "width": "446px",
+        "height": "",
+        "fontSize": "26px",
+        "position": "absolute",
+        "boxShadow": "none",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Belinda Avenue"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-01T05:24:12.000Z",
+  "updatedAt": "2026-04-01T06:44:34.844Z",
+  "id_package": 3
+}

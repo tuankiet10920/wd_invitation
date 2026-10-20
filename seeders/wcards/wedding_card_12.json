@@ -1,0 +1,741 @@
+{
+  "name": "valentine",
+  "meta_desc": "",
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "valentine",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 2173,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 5,
+  "id_user": 1,
+  "id_package": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#F4EBE8",
+  "nodes": [
+    {
+      "id": 1775320503193,
+      "type": "Text",
+      "props": {
+        "content": "14 February"
+      },
+      "styles": {
+        "top": "20px",
+        "left": "24px",
+        "width": "159px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "Belinda Avenue"
+      }
+    },
+    {
+      "id": 1775320702530,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299423382020260404.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "47px",
+        "left": "0px",
+        "width": "500px",
+        "height": "510px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775320738111,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299523385520260404.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "55px",
+        "left": "209px",
+        "width": "96px",
+        "height": "50px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321025117,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293323161020260330.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "145px",
+        "left": "119px",
+        "width": "100px",
+        "height": "140px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775320801269,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_297517075420260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "216px",
+        "left": "34px",
+        "width": "108px",
+        "height": "152px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775320890794,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298822285520260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "412px",
+        "left": "123px",
+        "width": "120px",
+        "height": "157px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775320826341,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298122074020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "319px",
+        "left": "76px",
+        "width": "123px",
+        "height": "155px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775321057522,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293323161020260330.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "145px",
+        "left": "296px",
+        "width": "100px",
+        "height": "140px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775320779637,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298023565420260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "217px",
+        "left": "183px",
+        "width": "139px",
+        "height": "200px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "4px"
+      }
+    },
+    {
+      "id": 1775320922061,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_298122074020260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "323px",
+        "left": "294px",
+        "width": "123px",
+        "height": "155px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775320949757,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295915072820260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "407px",
+        "left": "265px",
+        "width": "113px",
+        "height": "164px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775320985425,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_295023212420260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "491px",
+        "left": "215px",
+        "width": "88px",
+        "height": "138px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775321112817,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "333px",
+        "left": "439px",
+        "width": "53px",
+        "height": "51px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321010690,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_297517075420260402.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "217px",
+        "left": "357px",
+        "width": "108px",
+        "height": "152px",
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#ffffff",
+        "borderStyle": "solid",
+        "borderWidth": "5px"
+      }
+    },
+    {
+      "id": 1775321081311,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "542px",
+        "left": "32px",
+        "width": "80px",
+        "height": "79px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321097964,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "458px",
+        "left": "15px",
+        "width": "53px",
+        "height": "51px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321321784,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299723483820260404.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "531px",
+        "left": "372px",
+        "width": "109px",
+        "height": "68px",
+        "position": "absolute",
+        "transform": "rotate(-8.24311deg)"
+      }
+    },
+    {
+      "id": 1775321348939,
+      "type": "Text",
+      "props": {
+        "content": "Love doesn’t need to be loud.  Sometimes, it’s just being there."
+      },
+      "styles": {
+        "top": "707px",
+        "left": "131px",
+        "width": "242px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "Chillatos"
+      }
+    },
+    {
+      "id": 1775321522143,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299823520020260404.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1590px",
+        "left": "10px",
+        "width": "331px",
+        "height": "227px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321538590,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "816.701px",
+        "left": "57.1472px",
+        "color": "#ffffff",
+        "width": "236px",
+        "height": "297px",
+        "position": "absolute",
+        "transform": "rotate(-7.02693deg)"
+      }
+    },
+    {
+      "id": 1775321568100,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293712532920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "829.039px",
+        "left": "68.4343px",
+        "width": "207px",
+        "height": "211px",
+        "position": "absolute",
+        "transform": "rotate(-6.93311deg)"
+      }
+    },
+    {
+      "id": 1775321612627,
+      "type": "Text",
+      "props": {
+        "content": "Thanh Loan - Đức Anh"
+      },
+      "styles": {
+        "top": "1049.68px",
+        "left": "84.041px",
+        "width": "211px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "rotate(-7.17177deg)",
+        "fontFamily": "HoaTay1"
+      }
+    },
+    {
+      "id": 1775321650312,
+      "type": "Text",
+      "props": {
+        "content": "14 . 02 . 2024"
+      },
+      "styles": {
+        "top": "1081.68px",
+        "left": "84.041px",
+        "width": "211px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "rotate(-7.17177deg)",
+        "fontFamily": "Times New Roman"
+      }
+    },
+    {
+      "id": 1775321683518,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1149.7px",
+        "left": "222.147px",
+        "color": "#ffffff",
+        "width": "236px",
+        "height": "297px",
+        "position": "absolute",
+        "transform": "rotate(10.3745deg)"
+      }
+    },
+    {
+      "id": 1775321695708,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_293712532920260401.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1167.04px",
+        "left": "241.434px",
+        "width": "207px",
+        "height": "211px",
+        "position": "absolute",
+        "transform": "rotate(10.0003deg)"
+      }
+    },
+    {
+      "id": 1775321712945,
+      "type": "Text",
+      "props": {
+        "content": "Thanh Loan - Đức Anh"
+      },
+      "styles": {
+        "top": "1382.68px",
+        "left": "215.041px",
+        "width": "211px",
+        "height": "",
+        "fontSize": "20px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "rotate(9.9028deg)",
+        "fontFamily": "HoaTay1"
+      }
+    },
+    {
+      "id": 1775321736444,
+      "type": "Text",
+      "props": {
+        "content": "14 . 02 . 2024"
+      },
+      "styles": {
+        "top": "1410.68px",
+        "left": "197.526px",
+        "width": "211px",
+        "height": "",
+        "fontSize": "14px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "rotate(10.0344deg)",
+        "fontFamily": "Times New Roman"
+      }
+    },
+    {
+      "id": 1775321764529,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi28.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "784px",
+        "left": "242px",
+        "width": "50px",
+        "height": "53px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321775421,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/yeu-to-dam-cuoi28.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1115px",
+        "left": "233px",
+        "width": "50px",
+        "height": "53px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321785902,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "881px",
+        "left": "371px",
+        "width": "53px",
+        "height": "51px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775321790055,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "961px",
+        "left": "328px",
+        "width": "34px",
+        "height": "31px",
+        "position": "absolute",
+        "transform": "rotate(18.3854deg)"
+      }
+    },
+    {
+      "id": 1775321802749,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1030.99px",
+        "left": "385.09px",
+        "width": "34px",
+        "height": "32px",
+        "position": "absolute",
+        "transform": "rotate(-10.3359deg)"
+      }
+    },
+    {
+      "id": 1775321815901,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1206px",
+        "left": "108px",
+        "width": "53px",
+        "height": "51px",
+        "position": "absolute",
+        "transform": "rotate(18.5985deg)"
+      }
+    },
+    {
+      "id": 1775321820384,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1317px",
+        "left": "99px",
+        "width": "34px",
+        "height": "31px",
+        "position": "absolute",
+        "transform": "rotate(-15.2612deg)"
+      }
+    },
+    {
+      "id": 1775321826143,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim130.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1276px",
+        "left": "171px",
+        "width": "34px",
+        "height": "31px",
+        "position": "absolute",
+        "transform": "rotate(23.2674deg)"
+      }
+    },
+    {
+      "id": 1775321852957,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang7.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "1741.52px",
+        "left": "148.685px",
+        "color": "#ffffff",
+        "width": "312px",
+        "height": "364px",
+        "position": "absolute",
+        "transform": "rotate(4.55349deg)"
+      }
+    },
+    {
+      "id": 1775321869296,
+      "type": "Text",
+      "props": {
+        "content": "Gửi em, \n Anh không giỏi nói những điều quá hoa mỹ, nhưng anh biết một điều rất rõ: từ khi có em, cuộc sống của anh trở nên ấm áp và dịu dàng hơn rất nhiều. \nCảm ơn em vì đã bước vào thế giới của anh, vì những nụ cười, những lần quan tâm nhỏ xíu nhưng khiến tim anh rung động. Ở bên em, anh thấy mình trưởng thành hơn, bình yên hơn và muốn cố gắng nhiều hơn mỗi ngày. \nValentine này, anh không hứa những điều quá xa xôi. Anh chỉ mong mình vẫn có thể nắm tay em như thế này, cùng nhau đi qua từng ngày bình thường nhưng đầy yêu thương.\n Yêu em rất nhiều."
+      },
+      "styles": {
+        "top": "1766px",
+        "left": "190.573px",
+        "width": "248px",
+        "height": "",
+        "fontSize": "11px",
+        "position": "absolute",
+        "transform": "rotate(4.81497deg)",
+        "fontFamily": "Mallong",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775321948186,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299923590620260404.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1972.12px",
+        "left": "172.726px",
+        "width": "85px",
+        "height": "79px",
+        "position": "absolute",
+        "transform": "rotate(8.19301deg)"
+      }
+    },
+    {
+      "id": 1775321992056,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/trai-tim279.png",
+        "width": 300,
+        "height": 300,
+        "imageType": "img"
+      },
+      "styles": {
+        "top": "1988.6px",
+        "left": "358.975px",
+        "width": "53px",
+        "height": "83px",
+        "position": "absolute",
+        "transform": "rotate(20.152deg)"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"scale-in-all\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-04T16:34:47.000Z",
+  "updatedAt": "2026-05-22T05:32:01.727Z"
+}

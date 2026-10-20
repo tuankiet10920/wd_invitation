@@ -1,0 +1,290 @@
+{
+  "info": {
+    "_postman_id": "c6ca9e47-78e6-4e11-860a-4aa297d0f712",
+    "name": "hotel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "order",
+      "item": [
+        {
+          "name": "change-status-room",
+          "id": "d328c958-0af7-4e02-94e4-ce8f56b3dd8e",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"checked_out\",\r\n    \"timestamp\": \"2026-01-19 11:55:36\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/change-status-room/80",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "change-status-room",
+                "80"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "id": "437b7778-dadd-4c26-98b2-6a337e47fb3b",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"booking_type\": \"daily\",\r\n    \"check_out\": \"2026-01-21 15:39\",\r\n    \"customer_email\": \"kietnguyen02112002@gmail.com\",\r\n    \"customer_name\": \"123\",\r\n    \"customer_passport\": \"21321321313\",\r\n    \"customer_phone\": \"0877713348\",\r\n    \"grand_total\": 44.4,\r\n    \"id_room\": 88,\r\n    \"service_charge\": 0,\r\n    \"subtotal\": 44.4,\r\n    \"tax_amount\": 2.4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/update-booking/40",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "update-booking",
+                "40"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b738e155-0de8-4f5f-97d8-709376524af2"
+    },
+    {
+      "name": "excel",
+      "item": [
+        {
+          "name": "list",
+          "id": "cd02288c-f46c-4417-b578-f9743405ae35",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/Kiet Dev/Downloads/THEO DÕI KHÁCH THUÊ THEO NGÀY.xlsx"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/excel",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "excel"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save",
+          "id": "c4dd5d9a-8c94-4cb1-9f10-4c39b94d42e9",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "excel",
+                  "type": "file",
+                  "src": "/C:/Users/Kiet Dev/Downloads/Theo dõi khách hàng vip.xlsx"
+                },
+                {
+                  "key": "name",
+                  "value": "Theo dõi khách hàng vip",
+                  "type": "text"
+                },
+                {
+                  "key": "isNew",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/excel/save/blank",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "excel",
+                "save",
+                "blank"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "download",
+          "id": "acc00a47-900d-4ef1-88f0-d2555c545508",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/excel/download/24",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "excel",
+                "download",
+                "24"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOne",
+          "id": "bf278ad2-36cc-489d-acb6-d27c6a36a4a4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "excel",
+                  "type": "file",
+                  "src": "/C:/Users/Kiet Dev/Downloads/THEO DÕI KHÁCH HÀNG.xlsx"
+                },
+                {
+                  "key": "name",
+                  "value": "Theo dõi khách hàng vip",
+                  "type": "text"
+                },
+                {
+                  "key": "isNew",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/excel/31",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "excel",
+                "31"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "id": "1fda465d-e653-4c0e-8a06-b76be584d68c",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "excel",
+                  "type": "file",
+                  "src": "/C:/Users/Kiet Dev/Downloads/THEO DÕI KHÁCH HÀNG.xlsx"
+                },
+                {
+                  "key": "name",
+                  "value": "Theo dõi khách hàng vip",
+                  "type": "text"
+                },
+                {
+                  "key": "isNew",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{urlHotel}}/api/admin/excel/32",
+              "host": [
+                "{{urlHotel}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "excel",
+                "32"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "2761811c-cd4f-4c52-898c-065252105bcf"
+    }
+  ]
+}

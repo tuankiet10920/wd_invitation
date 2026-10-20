@@ -1,0 +1,57 @@
+{
+  "name": "Thiệp cưới của tôi 1",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "card-1779856847208-7364",
+  "is_custom_url": true,
+  "is_public": true,
+  "is_publish": true,
+  "views": 1,
+  "height": 1024,
+  "is_template": false,
+  "is_template_user": true,
+  "id_category_wedding_card": 1,
+  "id_user": 2,
+  "id_package": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#ffffff",
+  "nodes": [
+    {
+      "id": 1779856837992,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_300413462020260405.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "0px",
+        "left": "0px",
+        "width": "500px",
+        "height": "532px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1779858272133,
+      "type": "Text",
+      "props": {
+        "content": "Double click to edaasdasdadadadadasdasd"
+      },
+      "styles": {
+        "top": "577.75px",
+        "left": "84.172px",
+        "width": "284px",
+        "height": "auto",
+        "fontSize": "31px",
+        "position": "absolute",
+        "transform": ""
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-05-27T04:40:47.000Z",
+  "updatedAt": "2026-06-13T13:46:45.915Z"
+}

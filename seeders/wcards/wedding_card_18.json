@@ -1,0 +1,39 @@
+{
+  "name": "Thiệp cưới của tôi 12",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/images/card_avatars/WEDDING_CARD_AVATAR_18.png",
+  "url": "card-1779435317883-1846",
+  "is_custom_url": true,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 1024,
+  "is_template": false,
+  "is_template_user": true,
+  "id_category_wedding_card": 2,
+  "id_user": 2,
+  "id_package": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#ffffff",
+  "nodes": [
+    {
+      "id": 1779436378347,
+      "type": "Text",
+      "props": {
+        "content": "hello bro\ndadasda\ndasdasdas\ndasdasdas\ndasdasd"
+      },
+      "styles": {
+        "top": "150px",
+        "left": "250px",
+        "width": "",
+        "height": "",
+        "position": "absolute",
+        "transform": ""
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-05-22T07:35:17.000Z",
+  "updatedAt": "2026-06-13T13:49:12.105Z"
+}

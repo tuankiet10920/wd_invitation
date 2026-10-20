@@ -1,0 +1,421 @@
+{
+  "name": "ddasdasda45678",
+  "meta_desc": null,
+  "image_page": null,
+  "avatar": "/others/cinelove-default-thumbnail.jpg",
+  "url": "ddasdasda45678",
+  "is_custom_url": false,
+  "is_public": true,
+  "is_publish": true,
+  "views": 0,
+  "height": 3241,
+  "is_template": true,
+  "is_template_user": false,
+  "id_category_wedding_card": 3,
+  "id_user": 1,
+  "music": "{\"icon\":\"music-circle-outline\",\"color\":\"#000000\",\"path\":\"\"}",
+  "background": "#ffffff",
+  "nodes": [
+    {
+      "id": 1775232105285,
+      "type": "Text",
+      "props": {
+        "content": "Ngay khoảnh khắc này, chúng mình cùng nhau khởi hành"
+      },
+      "styles": {
+        "top": "25px",
+        "left": "27px",
+        "color": "#365b7d",
+        "width": "332px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232137921,
+      "type": "Text",
+      "props": {
+        "content": "20/05/2026"
+      },
+      "styles": {
+        "top": "91px",
+        "left": "27px",
+        "color": "#365b7d",
+        "width": "332px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232387592,
+      "type": "Text",
+      "props": {
+        "content": "NGÀY TỤ HỌP"
+      },
+      "styles": {
+        "top": "159px",
+        "left": "-0.028px",
+        "color": "#365b7d",
+        "width": "500px",
+        "height": "",
+        "fontSize": "32px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "OpenSans",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": 1775232467303,
+      "type": "Text",
+      "props": {
+        "content": "\"Có thể bỏ lỡ nhiều điều, nhưng nhất định không thể bỏ lỡ chúng mình.”"
+      },
+      "styles": {
+        "top": "229px",
+        "left": "85px",
+        "color": "#365b7d",
+        "width": "331px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232494998,
+      "type": "Text",
+      "props": {
+        "content": "Time : 20.05.2026"
+      },
+      "styles": {
+        "top": "322px",
+        "left": "242px",
+        "color": "#365b7d",
+        "width": "194px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "right",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232513827,
+      "type": "Text",
+      "props": {
+        "content": "09:30"
+      },
+      "styles": {
+        "top": "358px",
+        "left": "242px",
+        "color": "#365b7d",
+        "width": "194px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "right",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232529181,
+      "type": "Text",
+      "props": {
+        "content": "Sảnh chính - Trường Đại Học NEU"
+      },
+      "styles": {
+        "top": "392px",
+        "left": "133px",
+        "color": "#365b7d",
+        "width": "302px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "right",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232602530,
+      "type": "Text",
+      "props": {
+        "content": "           "
+      },
+      "styles": {
+        "top": "358px",
+        "left": "403.764px",
+        "width": "107px",
+        "height": "",
+        "position": "absolute",
+        "transform": "rotate(90.3343deg)",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "0px",
+        "borderTopWidth": "0px",
+        "borderLeftWidth": "0px",
+        "borderRightWidth": "0px",
+        "borderBottomColor": "#365b7d",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px"
+      }
+    },
+    {
+      "id": 1775232728208,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299023120520260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "467px",
+        "left": "0px",
+        "width": "500px",
+        "height": "447px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775232874669,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299123143120260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "1265px",
+        "left": "0px",
+        "width": "500px",
+        "height": "326px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775232769432,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang16.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "825px",
+        "left": "0px",
+        "color": "#cbd6e1",
+        "width": "500px",
+        "height": "474px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775232817491,
+      "type": "Image",
+      "props": {
+        "url": "/images/stocks/lists/hinh-dang16.svg",
+        "width": 300,
+        "height": 300,
+        "imageType": "svg"
+      },
+      "styles": {
+        "top": "840px",
+        "left": "27px",
+        "color": "#f0f4f8",
+        "width": "443px",
+        "height": "433px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775232940829,
+      "type": "Text",
+      "props": {
+        "content": "🌸 Xin chào, những người bạn thân mến \n🌸 Vào một ngày thứ hai ấm áp rực rỡ (20/5), \nhãy cùng nhau tận hưởng cuối tuần thật tươi đẹp. \nChúng mình hẹn gặp nhau nhé! \n \nHy vọng mọi người sẽ có những tiếng cười rộn rã, những khoảnh khắc vui vẻ và một cuối tuần thật đáng nhớ, thật tuyệt vời. \n Cuộc đời hiếm có tri kỷ, các bạn đều là những người mình trân trọng. \nVậy nên nhất định phải đến nhé — \nkhông gặp không về! 💛"
+      },
+      "styles": {
+        "top": "2435px",
+        "left": "71px",
+        "color": "#365b7d",
+        "width": "374px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "right",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232944446,
+      "type": "Text",
+      "props": {
+        "content": "Tình bạn đã thêm cho tớ thật nhiều lớp ‘filter’, khiến một tớ vụng về, biến thành một tớ cũng khá ổn."
+      },
+      "styles": {
+        "top": "949px",
+        "left": "105px",
+        "color": "#365b7d",
+        "width": "331px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "right",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775232982461,
+      "type": "CountDown",
+      "props": {
+        "gap": "20",
+        "textColor": "#ffffff",
+        "borderColor": "#365b7d",
+        "backgroundColor": "#365b7d"
+      },
+      "styles": {
+        "top": "1080px",
+        "left": "124px",
+        "width": "300px",
+        "height": "71px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775233272071,
+      "type": "Calendar",
+      "props": {
+        "date": "2026-04-16"
+      },
+      "styles": {
+        "top": "1646px",
+        "left": "78px",
+        "width": "350px",
+        "height": "350px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": "",
+        "borderColor": "#000000",
+        "borderStyle": "solid",
+        "borderWidth": "1px",
+        "borderRadius": "5px",
+        "borderTopLeftRadius": "5px",
+        "borderTopRightRadius": "5px",
+        "borderBottomLeftRadius": "5px",
+        "borderBottomRightRadius": "5px"
+      }
+    },
+    {
+      "id": 1775233322484,
+      "type": "Text",
+      "props": {
+        "content": "09:30 sáng,"
+      },
+      "styles": {
+        "top": "2038px",
+        "left": "162px",
+        "color": "#365b7d",
+        "width": "186px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775233342810,
+      "type": "Text",
+      "props": {
+        "content": " ngày 20 tháng 5 năm 2026 "
+      },
+      "styles": {
+        "top": "2072px",
+        "left": "117px",
+        "color": "#365b7d",
+        "width": "263px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "center",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    },
+    {
+      "id": 1775233379427,
+      "type": "Map",
+      "props": {},
+      "styles": {
+        "top": "2129px",
+        "left": "87px",
+        "width": "330px",
+        "height": "260px",
+        "zIndex": 10,
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775233480826,
+      "type": "Image",
+      "props": {
+        "url": "/images/personal_image/PERSONAL_IMAGE_299123143120260403.png",
+        "width": 200,
+        "height": 200
+      },
+      "styles": {
+        "top": "2758px",
+        "left": "18px",
+        "width": "466px",
+        "height": "309px",
+        "position": "absolute",
+        "transform": ""
+      }
+    },
+    {
+      "id": 1775233501130,
+      "type": "Text",
+      "props": {
+        "content": "Nhất định phải gặp nhé!"
+      },
+      "styles": {
+        "top": "3100px",
+        "left": "113px",
+        "color": "#365b7d",
+        "width": "374px",
+        "height": "",
+        "fontSize": "18px",
+        "position": "absolute",
+        "textAlign": "right",
+        "transform": "",
+        "fontFamily": "OpenSans"
+      }
+    }
+  ],
+  "effect": "{\"dynamic\":\"none\",\"falling\":\"none\",\"opening\":{\"isCustom\":false,\"slug\":\"none\",\"custom\":{\"title\":\"\",\"subtitle\":\"\",\"time\":0,\"image\":\"\"}}}",
+  "createdAt": "2026-04-03T16:01:30.000Z",
+  "updatedAt": "2026-04-03T16:26:07.990Z",
+  "id_package": 3
+}
