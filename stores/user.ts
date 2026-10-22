@@ -16,6 +16,23 @@ export const useUserStore = defineStore("user", {
     openModal: false,
     social: "normal" as Social,
   }),
+  getters: {
+    avatarUrl: (state): string => {
+      if (!state.image) return "/images/avatars/default-avatar.png";
+      if (
+        state.image.startsWith("http://") ||
+        state.image.startsWith("https://") ||
+        state.image.startsWith("data:") ||
+        state.image.startsWith("blob:")
+      ) {
+        return state.image;
+      }
+      if (state.image.startsWith("/")) {
+        return state.image;
+      }
+      return `/images/avatars/${state.image}`;
+    },
+  },
   actions: {
     async logout() {
       const { clear } = useUserSession();

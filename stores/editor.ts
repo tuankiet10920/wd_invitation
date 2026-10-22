@@ -742,7 +742,56 @@ export const useEditorStore = defineStore("editor", {
       const node = this.createdNodes.find((n) => n.id === id);
       if (node) {
         node.props = { ...node.props, ...props };
+        this.recordHistory();
       }
+    },
+
+    startEditingText(targetEl?: HTMLElement | null) {
+      if (this.isPreviewMode) return;
+      const el = targetEl || (Array.isArray(this.currentTarget) ? this.currentTarget[0] : this.currentTarget) as HTMLElement | null;
+      if (!el) return;
+
+      const editableEl = (el.classList.contains('editable') ? el : el.closest('.editable')) as HTMLElement | null;
+      if (!editableEl || editableEl.getAttribute('data-type') !== 'Text') return;
+
+      this.isEditing = true;
+      editableEl.contentEditable = "true";
+
+      nextTick(() => {
+        editableEl.focus();
+        try {
+          const selection = window.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(editableEl);
+          if (editableEl.innerText !== 'Double click to edit') {
+            range.collapse(false);
+          }
+          selection?.removeAllRanges();
+          selection?.addRange(range);
+        } catch (err) {
+          console.warn('Could not set cursor position', err);
+        }
+      });
+    },
+
+    endEditingText(targetEl?: HTMLElement | null) {
+      const el = targetEl || (Array.isArray(this.currentTarget) ? this.currentTarget[0] : this.currentTarget) as HTMLElement | null;
+      if (el) {
+        const editableEl = (el.classList.contains('editable') ? el : el.closest('.editable')) as HTMLElement | null;
+        if (editableEl && editableEl.getAttribute('data-type') === 'Text') {
+          const id = editableEl.getAttribute('data-id');
+          if (id) {
+            this.updateNodeProps(Number(id), { content: editableEl.innerText });
+          }
+          editableEl.contentEditable = "false";
+        }
+      }
+      setTimeout(() => {
+        this.isEditing = false;
+        if (el && (!this.currentTarget || this.currentTarget === el)) {
+          this.currentTarget = el;
+        }
+      }, 50);
     },
 
     async saveCard(silent = false) {

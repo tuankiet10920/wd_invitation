@@ -19,4 +19,13 @@ p {
     /* Giữ lại lệnh xuống hàng và khoảng trắng */
     white-space: pre-wrap;
 }
+
+p[contenteditable="true"] {
+    outline: none;
+    cursor: text;
+    user-select: text;
+    -webkit-user-select: text;
+    min-width: 20px;
+    min-height: 1em;
+}
 </style>

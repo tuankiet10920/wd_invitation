@@ -79,42 +79,35 @@ const coms: Record<string, any> = {
 
 // Hàm xử lý Double Click vào phần tử văn bản
 const handleDblClick = (e: MouseEvent) => {
+    if (editor.isPreviewMode) return;
     const el = e.target as HTMLElement;
-    const editableEl = el.closest('.editable') as HTMLElement;
+    const editableEl = (el.classList?.contains('editable') ? el : el.closest('.editable')) as HTMLElement;
 
-    // Kiểm tra nếu là node Text thì cho phép edit
     if (editableEl && editableEl.getAttribute('data-type') === 'Text') {
-        editor.isEditing = true;
-        editableEl.contentEditable = "true";
-        editableEl.focus();
+        editor.startEditingText(editableEl);
+    }
+};
 
-        // Tắt Moveable tạm thời để không vướng víu khi gõ
-        editor.currentTarget = null;
+const handleNodeDblClick = (e: MouseEvent, item: any) => {
+    if (editor.isPreviewMode) return;
+    if (item.type === 'Text') {
+        const el = (e.currentTarget as HTMLElement) || (e.target as HTMLElement).closest('.editable');
+        if (el) {
+            editor.startEditingText(el as HTMLElement);
+        }
+    }
+};
+
+const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+        (e.target as HTMLElement).blur();
     }
 };
 
 // Hàm xử lý khi nhấn ra ngoài (Blur)
 const handleBlur = (e: FocusEvent) => {
     const el = e.target as HTMLElement;
-
-    // Save text content if it's a text node
-    if (el.getAttribute('data-type') === 'Text') {
-        const id = el.closest('.editable')?.getAttribute('data-id');
-        if (id) {
-            editor.updateNodeProps(Number(id), { content: el.innerText });
-        }
-    }
-
-    // Sử dụng setTimeout để đẩy việc gán trạng thái xuống cuối hàng đợi xử lý
-    // Giúp trình duyệt hoàn tất các sự kiện click trước khi khóa edit
-    setTimeout(() => {
-        el.contentEditable = "false";
-        editor.isEditing = false;
-
-        // Cập nhật lại target để Moveable "nhận diện" lại phần tử
-        // Điều này giúp reset các handles điều khiển của Moveable
-        editor.currentTarget = el;
-    }, 0);
+    editor.endEditingText(el);
 };
 
 // --- Action Component Logic ---
@@ -368,9 +361,20 @@ const onSelect = (e: any) => {
 };
 
 const handleNodeMouseDown = (e: MouseEvent, item: any) => {
-    if (editor.isPreviewMode || editor.isEditing) return;
+    if (editor.isPreviewMode) return;
 
     const el = (e.currentTarget as HTMLElement) || (e.target as HTMLElement).closest('.editable');
+
+    // Nếu đang trong chế độ edit text
+    if (editor.isEditing) {
+        // Nếu click vào đúng node text đang edit thì cho phép gõ/chọn text bình thường
+        if (el && el.getAttribute('contenteditable') === 'true') {
+            return;
+        }
+        // Nếu click sang node khác thì kết thúc edit node cũ
+        editor.endEditingText();
+    }
+
     if (el) {
         editor.currentTarget = el as HTMLElement;
         editor.selectedNodeId = item.id;
@@ -406,6 +410,9 @@ const handleContainerClick = (e: MouseEvent) => {
         target.classList.contains('canvas-wrapper') ||
         target.classList.contains('canvas-inner-wrapper')
     ) {
+        if (editor.isEditing) {
+            editor.endEditingText();
+        }
         element.type = 'Setup';
         editor.selectedNodeId = null;
         editor.selectedNodeIds = [];
@@ -428,6 +435,8 @@ const handleContainerClick = (e: MouseEvent) => {
                             position: 'absolute',
                             ...item.styles
                         }" :data-id="item.id" :data-type="item.type" @blur="handleBlur"
+                        @keydown="handleKeyDown"
+                        @dblclick.stop="handleNodeDblClick($event, item)"
                         @mousedown="handleNodeMouseDown($event, item)"
                         @click="editor.isPreviewMode ? null : (element.type = item.type)">
                     </component>

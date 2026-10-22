@@ -72,10 +72,11 @@ onUnmounted(() => {
 
 type MoveableTarget = HTMLElement | SVGElement;
 
-const onDrag = (e: any) => {
+let dragStartLeft = 0;
+let dragStartTop = 0;
+
+const onDragStart = (e: any) => {
     const target = e.target as MoveableTarget;
-    
-    // Xử lý chuyển đổi phần trăm sang pixel nếu cần để tránh hiện tượng "giật"
     if (target.style.left.includes('%')) {
         const parentWidth = target.parentElement?.offsetWidth || 500;
         const leftPx = (parseFloat(target.style.left) / 100) * parentWidth;
@@ -86,11 +87,32 @@ const onDrag = (e: any) => {
         const topPx = (parseFloat(target.style.top) / 100) * parentHeight;
         target.style.top = `${topPx}px`;
     }
+    dragStartLeft = parseFloat(target.style.left) || 0;
+    dragStartTop = parseFloat(target.style.top) || 0;
+};
 
-    const left = parseFloat(target.style.left) || 0;
-    const top = parseFloat(target.style.top) || 0;
-    target.style.left = `${left + e.beforeDelta[0]}px`;
-    target.style.top = `${top + e.beforeDelta[1]}px`;
+const onDrag = (e: any) => {
+    const target = e.target as MoveableTarget;
+    
+    if (e.beforeTranslate) {
+        target.style.left = `${dragStartLeft + e.beforeTranslate[0]}px`;
+        target.style.top = `${dragStartTop + e.beforeTranslate[1]}px`;
+    } else {
+        const left = parseFloat(target.style.left) || 0;
+        const top = parseFloat(target.style.top) || 0;
+        target.style.left = `${left + e.beforeDelta[0]}px`;
+        target.style.top = `${top + e.beforeDelta[1]}px`;
+    }
+
+    // Giữ styles trong node store đồng bộ trong lúc kéo để chống giật nếu có component re-render
+    const id = target.getAttribute('data-id');
+    if (id) {
+        const node = editor.createdNodes.find(n => n.id === Number(id));
+        if (node && node.styles) {
+            node.styles.left = target.style.left;
+            node.styles.top = target.style.top;
+        }
+    }
 };
 
 let initialFontSize = 16;
@@ -202,6 +224,15 @@ const onDragGroup = (e: any) => {
         const top = parseFloat(target.style.top) || 0;
         target.style.left = `${left + ev.beforeDelta[0]}px`;
         target.style.top = `${top + ev.beforeDelta[1]}px`;
+
+        const id = target.getAttribute('data-id');
+        if (id) {
+            const node = editor.createdNodes.find(n => n.id === Number(id));
+            if (node && node.styles) {
+                node.styles.left = target.style.left;
+                node.styles.top = target.style.top;
+            }
+        }
     });
 };
 
@@ -238,12 +269,26 @@ const onResizeGroupEnd = (e: any) => {
 const onRotateGroupEnd = (e: any) => {
     e.targets.forEach((target: MoveableTarget) => updateStoreStyle(target));
 };
+
+let lastClickTime = 0;
+const onMoveableClick = (e: any) => {
+    const now = Date.now();
+    const isFastClick = (now - lastClickTime) < 350;
+    lastClickTime = now;
+
+    if ((e.isDouble || e.inputEvent?.detail === 2 || isFastClick) && isTextNode.value && editor.currentTarget) {
+        const targetEl = (Array.isArray(editor.currentTarget) ? editor.currentTarget[0] : editor.currentTarget) as HTMLElement;
+        if (targetEl) {
+            editor.startEditingText(targetEl);
+        }
+    }
+};
 </script>
 
 <template>
     <ClientOnly>
         <Moveable v-if="editor.currentTarget && !editor.isEditing" ref="moveableRef" :target="editor.currentTarget"
-            v-bind="moveableConfig" :element-guidelines="elementGuidelines" @drag="onDrag" @resize-start="onResizeStart" @resize="onResize"
+            v-bind="moveableConfig" :element-guidelines="elementGuidelines" @click="onMoveableClick" @drag-start="onDragStart" @drag="onDrag" @resize-start="onResizeStart" @resize="onResize"
             @rotate="onRotate" @drag-end="onDragEnd" @resize-end="onResizeEnd" @rotate-end="onRotateEnd"
             @drag-group="onDragGroup" @resize-group="onResizeGroup" @rotate-group="onRotateGroup"
             @drag-group-end="onDragGroupEnd" @resize-group-end="onResizeGroupEnd" @rotate-group-end="onRotateGroupEnd" />

@@ -72,7 +72,7 @@ const handleImageUpload = async (event: Event) => {
 
 
 const startEdit = () => {
-    formData.image = userStore.image
+    formData.image = userStore.avatarUrl || userStore.image
     formData.name = userStore.name || ''
     formData.birthday = userStore.birthday || ''
     formData.phone = userStore.phone || ''
@@ -173,11 +173,11 @@ onMounted(() => {
             <div class="d-flex mb-4">
                 <div class="position-relative">
                     <div class="avatar-large shadow-sm overflow-hidden">
-                        <nuxt-img v-if="isEditing && formData.image" :src="formData.image"
+                        <nuxt-img v-if="isEditing && formData.image" :src="formatAvatar(formData.image)"
                             class="w-100 h-100 object-fit-cover a" />
-                        <nuxt-img v-else-if="!isEditing && userStore.image" :src="userStore.image"
+                        <nuxt-img v-else-if="!isEditing && (userStore.avatarUrl || userStore.image)" :src="userStore.avatarUrl"
                             class="w-100 h-100 object-fit-cover b" />
-                        <nuxt-img v-else-if="isEditing && userStore.image && !formData.image" :src="userStore.image"
+                        <nuxt-img v-else-if="isEditing && (userStore.avatarUrl || userStore.image) && !formData.image" :src="userStore.avatarUrl"
                             class="w-100 h-100 object-fit-cover c" />
                         <span v-else>{{ userStore.name?.charAt(0)?.toUpperCase() || 'U' }}</span>
                     </div>

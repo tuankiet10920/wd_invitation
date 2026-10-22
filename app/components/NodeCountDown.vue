@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import { useEditorStore } from '~~/stores/editor';
 
 const props = defineProps<{
     date?: string;
@@ -22,6 +23,12 @@ const timeUnits = ref([
 ]);
 
 let timer: NodeJS.Timeout | null = null;
+const route = useRoute();
+const editor = useEditorStore();
+
+const isEditorCanvas = computed(() => {
+    return route.path.startsWith('/editor') && !editor.isPreviewMode;
+});
 
 const updateCountdown = () => {
     if (!props.date) {
@@ -67,17 +74,41 @@ const setZeros = () => {
     ];
 };
 
+const startTimer = () => {
+    stopTimer();
+    // Do not run background 1s interval while editing in editor canvas to prevent dragging jitter
+    if (!isEditorCanvas.value) {
+        timer = setInterval(updateCountdown, 1000);
+    }
+};
+
+const stopTimer = () => {
+    if (timer) {
+        clearInterval(timer);
+        timer = null;
+    }
+};
+
 onMounted(() => {
     updateCountdown();
-    timer = setInterval(updateCountdown, 1000);
+    startTimer();
 });
 
 onUnmounted(() => {
-    if (timer) clearInterval(timer);
+    stopTimer();
 });
 
 watch(() => [props.date, props.time], () => {
     updateCountdown();
+});
+
+watch(() => editor.isPreviewMode, (preview) => {
+    if (preview) {
+        updateCountdown();
+        startTimer();
+    } else {
+        stopTimer();
+    }
 });
 
 const wrapperStyle = computed(() => {

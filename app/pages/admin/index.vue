@@ -42,7 +42,7 @@ onMounted(() => {
 const quickActions = [
     { title: 'Tạo mẫu thiệp', icon: 'layout', color: 'primary', link: '/admin/card-templates/create' },
     { title: 'Tạo bài viết', icon: 'file-plus', color: 'success', link: '/admin/articles/create' },
-    { title: 'Tạo danh mục', icon: 'folder-plus', color: 'warning', link: '/admin/categories/create' },
+    { title: 'Quản lý gói', icon: 'package', color: 'warning', link: '/admin/packages/list' },
     { title: 'Cấu hình', icon: 'settings', color: 'info', link: '/admin/settings/list' },
 ]
 
@@ -86,7 +86,7 @@ const brands = [
         <!-- Quick Actions Row -->
         <div class="row g-3 mb-4">
             <div class="col-md-6 col-xl-3" v-for="(action, index) in quickActions" :key="index">
-                <a :href="action.link" class="text-decoration-none">
+                <NuxtLink :to="action.link" class="text-decoration-none">
                     <div class="card h-100 border-0 shadow-sm hover-scale">
                         <div class="card-body d-flex align-items-center">
                             <div class="icon-shape rounded-circle d-flex align-items-center justify-content-center me-3"
@@ -100,7 +100,7 @@ const brands = [
                             </div>
                         </div>
                     </div>
-                </a>
+                </NuxtLink>
             </div>
         </div>
 

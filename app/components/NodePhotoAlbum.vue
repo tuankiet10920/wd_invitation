@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue';
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
+import { useEditorStore } from '~~/stores/editor';
 
 const props = defineProps<{
     images?: string[];
@@ -65,8 +66,15 @@ const goToSlide = (idx: number) => {
     }
 };
 
+const route = useRoute();
+const editor = useEditorStore();
+const isEditorCanvas = computed(() => {
+    return route.path.startsWith('/editor') && !editor.isPreviewMode;
+});
+
 const startAutoplay = () => {
     stopAutoplay();
+    if (isEditorCanvas.value) return; // Không tự động chạy slide khi đang thiết kế trong canvas
     if (config.value.autoplay && albumImages.value.length > 1) {
         autoplayInterval.value = setInterval(() => {
             nextSlide();
@@ -83,7 +91,7 @@ const stopAutoplay = () => {
 
 const resetAutoplay = () => {
     stopAutoplay();
-    if (config.value.autoplay) {
+    if (config.value.autoplay && !isEditorCanvas.value) {
         startAutoplay();
     }
 };
@@ -94,6 +102,14 @@ onMounted(() => {
 
 onUnmounted(() => {
     stopAutoplay();
+});
+
+watch(() => editor.isPreviewMode, (preview) => {
+    if (preview) {
+        startAutoplay();
+    } else {
+        stopAutoplay();
+    }
 });
 
 // Watch for prop changes from the Editor UI

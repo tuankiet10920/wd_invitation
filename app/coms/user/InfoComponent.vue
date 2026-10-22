@@ -60,7 +60,7 @@ onUnmounted(() => {
     <div class="position-relative">
         <div class="box" @click="isOpen = true">
             <NuxtImg
-                :src="editorStore.role == 'admin' ? `/images/avatars/${(currentStore.image as string)}` : (currentStore.image as string)"
+                :src="currentStore.avatarUrl"
                 :width="40" :height="40" />
         </div>
         <!--- INFO HERE  -->

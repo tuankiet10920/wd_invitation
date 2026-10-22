@@ -65,7 +65,7 @@ export const SEPAY_WEBHOOK_SECRET_TEST = SEPAY_WEBHOOK_SECRET_DEV;
  * @option production
  * @option development
  */
-export const NODE_ENV = "test";
+export const NODE_ENV = "development";
 
 export const DOMAIN_TEST = "subanconeal-nasir-lithologic.ngrok-free.dev";
 

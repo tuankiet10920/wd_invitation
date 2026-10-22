@@ -10,6 +10,23 @@ export const useAdminStore = defineStore("admin", {
     role: "admin" as Role,
     openModal: false,
   }),
+  getters: {
+    avatarUrl: (state): string => {
+      if (!state.image) return "/images/avatars/default-avatar.png";
+      if (
+        state.image.startsWith("http://") ||
+        state.image.startsWith("https://") ||
+        state.image.startsWith("data:") ||
+        state.image.startsWith("blob:")
+      ) {
+        return state.image;
+      }
+      if (state.image.startsWith("/")) {
+        return state.image;
+      }
+      return `/images/avatars/${state.image}`;
+    },
+  },
   actions: {
     async logout() {
       const adminInfo = useCookie<BodyDataAdminInfo | null>("auth_admin_info");

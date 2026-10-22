@@ -7,7 +7,17 @@ export default defineEventHandler(async (event) => {
     try {
         const session = await getUserSession(event);
         const sessionUser = session?.user as any;
-        const email = sessionUser?.email;
+        let email = sessionUser?.email;
+
+        if (!email) {
+            const adminCookie = getCookie(event, "auth_admin_info");
+            if (adminCookie) {
+                try {
+                    const adminData = JSON.parse(adminCookie);
+                    email = adminData?.email;
+                } catch {}
+            }
+        }
 
         if (!email) {
             return FormatResponse.error(event, "Bạn chưa đăng nhập!");
@@ -42,21 +52,33 @@ export default defineEventHandler(async (event) => {
 
         await user.update(updateData);
 
-        // Update session with new data
-        const newSessionData = {
-            ...session.user,
-            name: user.name,
-            image: user.avatar,
-            email: user.email,
+        const normalizeAvatar = (avatar?: string | null) => {
+            if (!avatar) return "/images/avatars/default-avatar.png";
+            if (avatar.startsWith("http://") || avatar.startsWith("https://") || avatar.startsWith("/")) {
+                return avatar;
+            }
+            return `/images/avatars/${avatar}`;
         };
 
-        await setUserSession(event, {
-            user: newSessionData,
-        });
+        const newAvatar = normalizeAvatar(user.avatar);
+
+        // Update session with new data if session exists
+        if (session?.user) {
+            const newSessionData = {
+                ...session.user,
+                name: user.name,
+                image: newAvatar,
+                email: user.email,
+            };
+
+            await setUserSession(event, {
+                user: newSessionData,
+            });
+        }
 
         return FormatResponse.success({
             name: user.name,
-            avatar: user.avatar,
+            avatar: newAvatar,
             birthday: user.birthday,
             phone: user.phone,
             introduction: user.introduction,
