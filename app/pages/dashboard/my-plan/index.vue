@@ -75,6 +75,7 @@ fetchMyPlan()
         </div>
 
         <div
+            @click="navigateTo('/pricing-plans')"
             class="upgrade-banner p-3 rounded-4 mb-4 d-flex align-items-center justify-content-between shadow-sm cursor-pointer border-0">
             <div class="d-flex align-items-center">
                 <div class="rocket-icon-bg me-3">🚀</div>
@@ -98,7 +99,7 @@ fetchMyPlan()
                 <div class="d-flex align-items-center text-uppercase">
                     <span class="me-2 fs-4">🆓</span> <span class="fw-bold fs-4">{{ myPlanData?.name || 'FREE' }}</span>
                 </div>
-                <button class="btn btn-secondary btn-sm rounded-2 px-4 py-2 fw-bold" style="font-size: 14px;">Nâng
+                <button type="button" @click="navigateTo('/pricing-plans')" class="btn btn-secondary btn-sm rounded-2 px-4 py-2 fw-bold cursor-pointer" style="font-size: 14px;">Nâng
                     cấp</button>
             </div>
 
@@ -199,7 +200,7 @@ fetchMyPlan()
                         <div class="text-muted" style="font-size: 13px;">Nâng cấp để mở khóa tất cả các tính năng và
                             giới hạn cao hơn</div>
                     </div>
-                    <button class="btn btn-primary btn-sm px-4 py-2 fw-bold shadow-sm">Xem gói</button>
+                    <button @click="navigateTo('/pricing-plans')" class="btn btn-primary btn-sm px-4 py-2 fw-bold shadow-sm">Xem gói</button>
                 </div>
             </div>
         </div>

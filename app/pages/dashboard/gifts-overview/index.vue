@@ -60,10 +60,10 @@ const giftPackages: GiftPackage[] = [
 
 // Truy cập nhanh
 const quickAccess = [
-    { label: 'Quà tặng đã nhận', desc: 'Xem danh sách quà tặng từ thiệp online', icon: 'gift' },
-    { label: 'Số dư và giao dịch', desc: 'Quản lý số dư quà tặng và giao dịch', icon: 'wallet' },
-    { label: 'Tài khoản ngân hàng', desc: 'Thông tin tài khoản ngân hàng', icon: 'credit-card' },
-    { label: 'Lịch sử thanh toán', desc: 'Xem chi tiết các giao dịch thanh toán', icon: 'history' }
+    { label: 'Quà tặng đã nhận', desc: 'Xem danh sách quà tặng từ thiệp online', icon: 'gift', to: '/dashboard/gifts-received' },
+    { label: 'Số dư và giao dịch', desc: 'Quản lý số dư quà tặng và giao dịch', icon: 'wallet', to: '/dashboard/wallet' },
+    { label: 'Tài khoản ngân hàng', desc: 'Thông tin tài khoản ngân hàng', icon: 'credit-card', to: '/dashboard/bank-accounts' },
+    { label: 'Lịch sử thanh toán', desc: 'Xem chi tiết các giao dịch thanh toán', icon: 'history', to: '/dashboard/payment-history' }
 ]
 
 // Tính năng & Thông tin chương trình
@@ -142,15 +142,16 @@ const steps = [
                 <NuxtLink to="/dashboard/gifts-gallery"
                     class="btn btn-primary px-4 py-2 fw-bold rounded-pill shadow-sm text-white text-decoration-none">Bộ
                     sưu tập quà tặng</NuxtLink>
-                <button class="btn btn-outline-dark px-4 py-2 fw-bold rounded-pill">Nâng cấp gói</button>
+                <NuxtLink to="/pricing-plans"
+                    class="btn btn-outline-dark px-4 py-2 fw-bold rounded-pill text-decoration-none">Nâng cấp gói</NuxtLink>
             </div>
         </div>
 
         <h6 class="fw-bold mb-4">Truy cập nhanh</h6>
         <div class="row g-3 mb-5 quick-access">
-            <div class="col-md-3 gom-card" v-for="item in quickAccess" :key="item.label">
+            <div class="col-md-3 gom-card" v-for="item in quickAccess" :key="item.label" @click="navigateTo(item.to)">
                 <div
-                    class="card gom-card-gift shadow-sm border-0 rounded-4 p-4 text-center h-100 quick-card hover-lift">
+                    class="card gom-card-gift shadow-sm border-0 rounded-4 p-4 text-center h-100 quick-card hover-lift cursor-pointer">
                     <div class="icon-circle mx-auto mb-3 bg-light d-flex align-items-center justify-content-center"
                         style="width: 48px; height: 48px;">
                         <BaseIconComponent :name="item.icon" type="lucide" :size="24" color="#2d3748" />
@@ -200,7 +201,7 @@ const steps = [
                                 }}</span>
                             </div>
                         </div>
-                        <button class="btn w-100 fw-bold gp-feature-button rounded-pill py-3 shadow-sm"
+                        <button @click="navigateTo('/pricing-plans')" class="btn w-100 fw-bold gp-feature-button rounded-pill py-3 shadow-sm"
                             :style="{ backgroundColor: pkg.color, color: '#fff' }">
                             {{ pkg.btnText }}
                         </button>

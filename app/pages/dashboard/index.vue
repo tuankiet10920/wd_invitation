@@ -76,7 +76,7 @@ const quickIcons: QuickIcon[] = [
     { label: 'Lời chúc', icon: 'message-circle', type: 'lucide', to: '/dashboard/blessing-box' },
     { label: 'Quà tặng', icon: 'gift', type: 'lucide', to: '/dashboard/gifts-overview' },
     { label: 'Tham dự', icon: 'calendar', type: 'lucide', to: '/dashboard/coming-soon' },
-    { label: 'Ví & Xu', icon: 'wallet', type: 'lucide', to: '/dashboard/coming-soon' }
+    { label: 'Ví & Xu', icon: 'wallet', type: 'lucide', to: '/dashboard/wallet' }
 ]
 </script>
 <template>
@@ -96,10 +96,10 @@ const quickIcons: QuickIcon[] = [
                 <span
                     class="badge current-package text-dark py-2 px-3 fw-normal rounded-pill d-flex align-items-center">
                     <span class="me-1" v-if="myPlanData?.name == 'Premium'">💎</span>
-                    <span class="fw-bold">{{ myPlanData?.name || 'Free' }}</span> <a
-                        v-if="myPlanData?.name != 'Premium'" href="#"
-                        class="text-primary text-decoration-none ms-1">Nâng
-                        cấp →</a>
+                    <span class="fw-bold">{{ myPlanData?.name || 'Free' }}</span>
+                    <NuxtLink
+                        v-if="myPlanData?.name != 'Premium'" to="/pricing-plans"
+                        class="text-primary text-decoration-none ms-1">Nâng cấp →</NuxtLink>
                 </span>
             </div>
         </div>
