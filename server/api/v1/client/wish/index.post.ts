@@ -3,16 +3,32 @@ import FormatResponse from "~~/composables/FormatResponse";
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
-    const { name, content, slug } = body;
+    const name = (body?.name || "").trim();
+    const content = (body?.content || "").trim();
+    const slug = (body?.slug || "").trim();
 
     if (!name || !content || !slug) {
-      return FormatResponse.error(event, "Vui lòng nhập đầy đủ thông tin!");
+      return FormatResponse.error(event, "Vui lòng nhập đầy đủ tên và lời chúc!");
     }
 
-    const { WeddingCard: WeddingCardModel, Wish: WishModel } = global.__db;
+    const { WeddingCard: WeddingCardModel, Wish: WishModel, Invitor: InvitorModel } = (global as any).__db;
 
-    // Tìm tấm thiệp theo slug (lưu ở cột url)
-    const card = await WeddingCardModel.findOne({ where: { url: slug } });
+    // 1. Tìm tấm thiệp theo slug (lưu ở cột url)
+    let card = await WeddingCardModel.findOne({ where: { url: slug } });
+
+    // 2. Fallback: Nếu slug là mã token của khách mời (/invite/[token])
+    if (!card && InvitorModel) {
+      const invitor = await InvitorModel.findOne({ where: { token: slug } });
+      if (invitor?.id_card) {
+        card = await WeddingCardModel.findByPk(invitor.id_card);
+      }
+    }
+
+    // 3. Fallback: Nếu slug là ID số của thiệp
+    if (!card && !isNaN(Number(slug))) {
+      card = await WeddingCardModel.findByPk(Number(slug));
+    }
+
     if (!card) {
       return FormatResponse.error(event, "Không tìm thấy thông tin thiệp!");
     }

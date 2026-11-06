@@ -17,6 +17,11 @@ interface ServiceSummary {
 const myPlanData = ref<any>(null)
 const features = ref<{ name: string, active: boolean }[]>([])
 
+const isMaxPlan = computed(() => {
+    if (!myPlanData.value) return false
+    return Number(myPlanData.value.level) >= 3 || String(myPlanData.value.name || '').toLowerCase().includes('premium')
+})
+
 const serviceSummary = computed<ServiceSummary[]>(() => {
     if (!myPlanData.value) return []
 
@@ -75,6 +80,7 @@ fetchMyPlan()
         </div>
 
         <div
+            v-if="!isMaxPlan"
             @click="navigateTo('/pricing-plans')"
             class="upgrade-banner p-3 rounded-4 mb-4 d-flex align-items-center justify-content-between shadow-sm cursor-pointer border-0">
             <div class="d-flex align-items-center">
@@ -97,10 +103,11 @@ fetchMyPlan()
             <div class="status-card bg-dark text-white p-3 d-flex justify-content-between align-items-center"
                 style="background-color: #343a40 !important;">
                 <div class="d-flex align-items-center text-uppercase">
-                    <span class="me-2 fs-4">🆓</span> <span class="fw-bold fs-4">{{ myPlanData?.name || 'FREE' }}</span>
+                    <span class="me-2 fs-4">{{ isMaxPlan ? '👑' : '🆓' }}</span> <span class="fw-bold fs-4">{{ myPlanData?.name || 'FREE' }}</span>
                 </div>
-                <button type="button" @click="navigateTo('/pricing-plans')" class="btn btn-secondary btn-sm rounded-2 px-4 py-2 fw-bold cursor-pointer" style="font-size: 14px;">Nâng
+                <button v-if="!isMaxPlan" type="button" @click="navigateTo('/pricing-plans')" class="btn btn-secondary btn-sm rounded-2 px-4 py-2 fw-bold cursor-pointer" style="font-size: 14px;">Nâng
                     cấp</button>
+                <span v-else class="badge bg-warning text-dark px-3 py-2 fw-bold">Gói cao nhất</span>
             </div>
 
             <div class="p-4 ip-tt">
@@ -193,7 +200,7 @@ fetchMyPlan()
                     </div>
                 </div>
 
-                <div class="mt-4 ip-update p-3 rounded-3 d-flex justify-content-between align-items-center"
+                <div v-if="!isMaxPlan" class="mt-4 ip-update p-3 rounded-3 d-flex justify-content-between align-items-center"
                     style="background-color: #f8f9fa; border: 1px dashed #dee2e6;">
                     <div>
                         <div class="fw-bold fs-6">Muốn có thêm tính năng?</div>

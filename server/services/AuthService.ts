@@ -366,7 +366,7 @@ export class AuthService {
           ? await User.checkUserNormal(attributes.email as string)
           : await User.checkUserFacebook(attributes.facebookUserId as string);
 
-      if (!existUser)
+      if (!existUser) {
         await User.createWithSocial(
           image,
           name,
@@ -375,6 +375,18 @@ export class AuthService {
             ? { email: attributes.email }
             : { facebookUserId: attributes.facebookUserId },
         );
+      } else {
+        const isDefaultAvatar =
+          !existUser.avatar ||
+          existUser.avatar === "default-avatar.png" ||
+          existUser.avatar === "/images/avatars/default-avatar.png";
+        const updates: Record<string, any> = {};
+        if (isDefaultAvatar && image) updates.avatar = image;
+        if (!existUser.name && name) updates.name = name;
+        if (Object.keys(updates).length > 0) {
+          await existUser.update(updates);
+        }
+      }
 
       const role: Role = "user";
 

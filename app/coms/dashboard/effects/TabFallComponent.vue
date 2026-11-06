@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import type { PropType } from 'vue';
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
 import ButtonCustomCompomnent from '~/coms/button/ButtonCustomCompomnent.vue';
 import { useEditorStore } from '~~/stores/editor';
+import { useUserStore } from '~~/stores/user';
 
 const props = defineProps({
     effects: {
@@ -13,12 +14,37 @@ const props = defineProps({
 });
 
 const editor = useEditorStore();
+const userStore = useUserStore();
 const selectedEffect = ref(editor.effect?.falling || 'none');
+const isPremium = ref(false);
+
+onMounted(async () => {
+    if (editor.role === 'admin' || userStore.role === 'admin') {
+        isPremium.value = true;
+        return;
+    }
+    if (userStore.packageName?.toLowerCase() === 'premium' || Number(userStore.packageLevel) >= 4) {
+        isPremium.value = true;
+        return;
+    }
+    try {
+        const res: any = await $fetch('/api/v1/client/my-plan');
+        if (res?.data && (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 4)) {
+            isPremium.value = true;
+        }
+    } catch (e) {
+        console.error('Failed to check plan in TabFallComponent', e);
+    }
+});
 
 const isEnabled = computed({
     get: () => selectedEffect.value !== 'none',
     set: (val) => {
         if (val) {
+            if (!isPremium.value && editor.role !== 'admin') {
+                editor.showNotification('Chỉ tài khoản gói Premium mới có thể sử dụng hiệu ứng rơi!', 'warning');
+                return;
+            }
             selectedEffect.value = props.effects.length > 0 ? props.effects[0].slug : 'falling-snowflake';
         } else {
             selectedEffect.value = 'none';
@@ -26,7 +52,21 @@ const isEnabled = computed({
     }
 });
 
+const handleToggleFalling = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    if (target.checked && !isPremium.value && editor.role !== 'admin') {
+        target.checked = false;
+        editor.showNotification('Chỉ tài khoản gói Premium mới có thể sử dụng hiệu ứng rơi!', 'warning');
+        return;
+    }
+    isEnabled.value = target.checked;
+};
+
 const handleEffectSelect = (slug: string) => {
+    if (!isPremium.value && editor.role !== 'admin') {
+        editor.showNotification('Chỉ tài khoản gói Premium mới có thể sử dụng hiệu ứng rơi!', 'warning');
+        return;
+    }
     if (!isEnabled.value) {
         isEnabled.value = true;
     }
@@ -147,7 +187,7 @@ const fallingItems = computed(() => {
                 </div>
                 <div class="form-check form-switch m-0 fs-3">
                     <input class="form-check-input custom-switch cursor-pointer shadow-sm" type="checkbox" role="switch"
-                        v-model="isEnabled">
+                        :checked="isEnabled" @change="handleToggleFalling">
                 </div>
             </div>
 

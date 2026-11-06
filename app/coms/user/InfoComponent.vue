@@ -71,7 +71,7 @@ onUnmounted(() => {
             <div class="user-info">
                 <div class="user-name">{{ currentStore.name || 'Unnamed' }}</div>
                 <div class="user-id">{{ currentStore.email || 'anonymous@anonymous.net' }}</div>
-                <div class="badge-free" v-if="editorStore.role !== 'admin'">Free</div>
+                <div class="badge-free" v-if="editorStore.role !== 'admin'">{{ userStore.packageName || 'Free' }}</div>
                 <div class="badge-free" v-else>Admin</div>
             </div>
 

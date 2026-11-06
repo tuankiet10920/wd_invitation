@@ -182,6 +182,21 @@ export class WeddingCardService {
       if (user) {
          body.id_user = user.id;
       }
+
+      if (body.template_id && user && user.role !== 'admin') {
+        const sourceTemplate = await WeddingCard.getById(body.template_id);
+        const requiredPkgId = Number(sourceTemplate?.id_package) || 1;
+        const userPkgId = Number(user.id_package) || 1;
+        if (userPkgId < requiredPkgId) {
+          const pkgNames: Record<number, string> = { 1: 'Free', 2: 'Basic', 3: 'Pro', 4: 'Premium' };
+          return FormatResponse.error(
+            event,
+            `Mẫu này yêu cầu gói ${pkgNames[requiredPkgId] || 'cao hơn'} trở lên!`,
+            403
+          );
+        }
+      }
+      delete body.template_id;
       
       // Flatten properties if they exist
       if (body.properties) {

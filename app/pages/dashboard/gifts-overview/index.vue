@@ -1,14 +1,18 @@
 <script setup lang="ts">
+import { ref, computed, onMounted } from 'vue';
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
 import ButtonReturnMobileComponent from '~/coms/button/ButtonReturnMobileComponent.vue';
-import type { IconType } from "~~/interfaces"
+import { useUserStore } from '~~/stores/user';
+import type { IconType } from "~~/interfaces";
 
 definePageMeta({
     layout: 'dashboard'
 })
 
 interface GiftPackage {
+    level: number
     name: string
+    percent: string
     icon: string
     type: IconType
     benefit: string
@@ -18,12 +22,42 @@ interface GiftPackage {
     btnText: string
     features: string[]
     isCurrent?: boolean
+    isLower?: boolean
+    isDisabled?: boolean
 }
 
-// Dữ liệu so sánh các gói quà tặng
-const giftPackages: GiftPackage[] = [
+const userStore = useUserStore();
+const myPlanData = ref<any>(null);
+
+const fetchMyPlan = async () => {
+    try {
+        const res = await $fetch<any>('/api/v1/client/my-plan');
+        if (res?.success && res?.data) {
+            myPlanData.value = res.data;
+            userStore.packageId = Number(res.data.id) || 1;
+            userStore.packageName = res.data.name || 'Free';
+            userStore.packageLevel = Number(res.data.level) || 1;
+        }
+    } catch (e) {
+        console.error('Failed to fetch user plan:', e);
+    }
+};
+
+onMounted(async () => {
+    await fetchMyPlan();
+});
+
+const currentPlanLevel = computed(() => {
+    if (myPlanData.value?.level) return Number(myPlanData.value.level);
+    if (userStore.packageLevel) return Number(userStore.packageLevel);
+    return 1;
+});
+
+const baseGiftPackages: Omit<GiftPackage, 'isCurrent' | 'isLower' | 'isDisabled'>[] = [
     {
+        level: 3,
         name: 'Gói Premium',
+        percent: '100%',
         icon: 'diamond',
         type: 'lucide',
         benefit: 'Nhận 100% giá trị quà tặng',
@@ -34,29 +68,43 @@ const giftPackages: GiftPackage[] = [
         features: ['Hiển thị quà tặng trên thiệp', 'Nhận 100% giá trị quà tặng', 'Không mất phí giao dịch', 'Rút tiền về tài khoản ngân hàng']
     },
     {
+        level: 2,
         name: 'Gói Basic',
+        percent: '90%',
         icon: 'star',
         type: 'lucide',
-        benefit: 'Nhận 80% giá trị quà tặng',
-        note: 'Phí giao dịch & cổng thanh toán 20%.',
+        benefit: 'Nhận 90% giá trị quà tặng',
+        note: 'Phí giao dịch & cổng thanh toán 10%.',
         color: '#28a745',
         bgColor: '#e8f5e9',
         btnText: 'Nâng cấp lên Basic',
-        features: ['Hiển thị quà tặng trên thiệp', 'Nhận 80% giá trị quà tặng', 'Phí giao dịch & cổng thanh toán 20%', 'Rút tiền về tài khoản ngân hàng']
+        features: ['Hiển thị quà tặng trên thiệp', 'Nhận 90% giá trị quà tặng', 'Phí giao dịch & cổng thanh toán 10%', 'Rút tiền về tài khoản ngân hàng']
     },
     {
+        level: 1,
         name: 'Gói miễn phí',
+        percent: '80%',
         icon: 'gift',
         type: 'lucide',
-        benefit: 'Giá trị quà tặng sẽ được sử dụng cho cổng thanh toán và duy trì dịch vụ miễn phí.',
-        note: '',
+        benefit: 'Nhận 80% giá trị quà tặng (20% phí duy trì cổng thanh toán và hệ thống miễn phí).',
+        note: 'Phí duy trì cổng thanh toán 20%.',
         color: '#fd7e14',
         bgColor: '#fff3e0',
-        isCurrent: true,
-        btnText: 'Nâng cấp gói',
-        features: ['Thiệp online hoàn toàn miễn phí', 'Quà tặng vẫn hiển thị trên thiệp', 'Nhận lời chúc từ mọi người', 'Giá trị quà tặng dùng để duy trì hệ thống']
+        btnText: 'Gói mặc định',
+        features: ['Thiệp online hoàn toàn miễn phí', 'Quà tặng vẫn hiển thị trên thiệp', 'Nhận 80% giá trị quà tặng', 'Rút tiền về tài khoản ngân hàng']
     }
-]
+];
+
+// Dữ liệu so sánh các gói quà tặng tự động tính trạng thái theo gói hiện tại của user
+const giftPackages = computed<GiftPackage[]>(() => {
+    const level = currentPlanLevel.value;
+    return baseGiftPackages.map(pkg => ({
+        ...pkg,
+        isCurrent: level === pkg.level,
+        isLower: level > pkg.level,
+        isDisabled: level >= pkg.level
+    }));
+});
 
 // Truy cập nhanh
 const quickAccess = [
@@ -121,10 +169,14 @@ const steps = [
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-4" v-for="pkg in giftPackages" :key="pkg.name">
                         <div class="pkg-summary-card p-4 rounded-3 border text-start h-100 position-relative transition-all"
+                            :class="{ 'pkg-card-disabled': pkg.isLower }"
                             :style="{ borderColor: pkg.isCurrent ? pkg.color : '#e2e8f0', backgroundColor: pkg.isCurrent ? pkg.bgColor : '#ffffff' }">
                             <div v-if="pkg.isCurrent" class="current-badge shadow-sm"
                                 :style="{ backgroundColor: pkg.color }">
                                 Gói hiện tại
+                            </div>
+                            <div v-else-if="pkg.isLower" class="current-badge shadow-sm bg-secondary">
+                                Đã vượt qua
                             </div>
                             <div class="d-flex align-items-center mb-3">
                                 <BaseIconComponent :name="pkg.icon" :type="pkg.type" :size="18" :color="pkg.color"
@@ -142,7 +194,7 @@ const steps = [
                 <NuxtLink to="/dashboard/gifts-gallery"
                     class="btn btn-primary px-4 py-2 fw-bold rounded-pill shadow-sm text-white text-decoration-none">Bộ
                     sưu tập quà tặng</NuxtLink>
-                <NuxtLink to="/pricing-plans"
+                <NuxtLink v-if="currentPlanLevel < 3" to="/pricing-plans"
                     class="btn btn-outline-dark px-4 py-2 fw-bold rounded-pill text-decoration-none">Nâng cấp gói</NuxtLink>
             </div>
         </div>
@@ -180,20 +232,20 @@ const steps = [
         <div class="row g-4 mb-5 gift-package-row">
             <div class="col-md-4" v-for="pkg in giftPackages" :key="'detail-' + pkg.name">
                 <div class="card shadow-sm border-0 rounded-4 h-100 overflow-hidden text-center position-relative transition-all"
+                    :class="{ 'pkg-card-disabled': pkg.isLower }"
                     :style="{ outline: pkg.isCurrent ? `2px solid ${pkg.color}` : 'none' }">
                     <div v-if="pkg.isCurrent" class="pkg-top-badge" :style="{ backgroundColor: pkg.color }">Gói hiện tại
                     </div>
-                    <div class="p-5 gp-box">
+                    <div class="p-5 gp-box d-flex flex-column h-100">
                         <BaseIconComponent :name="pkg.icon" :type="pkg.type" :size="40" :color="pkg.color"
-                            class="mb-4 gp-box-icon" />
+                            class="mb-4 gp-box-icon mx-auto" />
                         <h6 class="fw-bold text-dark fs-5 mb-2 gp-box-name">{{ pkg.name }}</h6>
                         <h3 class="fw-bold my-4 display-6 gp-box-percent" :style="{ color: pkg.color }">
-                            <span v-if="pkg.name.includes('Miễn phí')" class="gp-box-p">0%</span>
-                            <span v-else class="gp-box-p">{{ pkg.name.includes('Premium') ? '100%' : '80%' }}</span>
+                            <span class="gp-box-p">{{ pkg.percent }}</span>
                             <span style="font-size: 18px; display: block;">Quà tặng</span>
                         </h3>
-                        <p class="text-muted small mb-5 px-3 gp-small">{{ pkg.note || 'Duy trì dịch vụ miễn phí.' }}</p>
-                        <div class="text-start gp-feature mb-5 bg-light p-3 rounded-3">
+                        <p class="text-muted small mb-5 px-3 gp-small">{{ pkg.note }}</p>
+                        <div class="text-start gp-feature mb-5 bg-light p-3 rounded-3 flex-grow-1">
                             <div class="d-flex align-items-start mb-3" v-for="feat in pkg.features" :key="feat">
                                 <BaseIconComponent name="check-circle" type="lucide" :size="16" :color="pkg.color"
                                     class="me-2 mt-1 gp-feature-icon" />
@@ -201,8 +253,27 @@ const steps = [
                                 }}</span>
                             </div>
                         </div>
-                        <button @click="navigateTo('/pricing-plans')" class="btn w-100 fw-bold gp-feature-button rounded-pill py-3 shadow-sm"
-                            :style="{ backgroundColor: pkg.color, color: '#fff' }">
+
+                        <button
+                            v-if="pkg.isCurrent"
+                            disabled
+                            class="btn w-100 fw-bold gp-feature-button rounded-pill py-3 btn-pkg-disabled mt-auto"
+                        >
+                            Gói hiện tại
+                        </button>
+                        <button
+                            v-else-if="pkg.isLower"
+                            disabled
+                            class="btn w-100 fw-bold gp-feature-button rounded-pill py-3 btn-pkg-disabled mt-auto"
+                        >
+                            Gói thấp hơn gói hiện tại
+                        </button>
+                        <button
+                            v-else
+                            @click="navigateTo('/pricing-plans')"
+                            class="btn w-100 fw-bold gp-feature-button rounded-pill py-3 shadow-sm mt-auto"
+                            :style="{ backgroundColor: pkg.color, color: '#fff' }"
+                        >
                             {{ pkg.btnText }}
                         </button>
                     </div>
@@ -249,6 +320,18 @@ const steps = [
 
 .pkg-summary-card {
     transition: all 0.3s ease;
+}
+
+.pkg-card-disabled {
+    opacity: 0.68;
+}
+
+.btn-pkg-disabled {
+    background-color: #f3f4f6 !important;
+    color: #9ca3af !important;
+    border: 1px solid #e5e7eb !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
 }
 
 .current-badge {

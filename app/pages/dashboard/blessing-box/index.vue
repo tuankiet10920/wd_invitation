@@ -9,6 +9,7 @@ definePageMeta({
 })
 
 const router = useRouter();
+const route = useRoute();
 
 const data = ref<{
     stats: {
@@ -16,8 +17,12 @@ const data = ref<{
         latestWish: string | null;
         totalCards: number;
     };
+    cards?: any[];
     wishes: any[];
 } | null>(null)
+
+const searchQuery = ref('')
+const selectedCardSlug = ref((route.query.card as string) || 'all')
 
 const formatDate = (dateStr: string) => {
     if (!dateStr) return '---'
@@ -91,9 +96,12 @@ const handleConfirmDelete = async () => {
         })
 
         if (res.success) {
-            // Remove from list
             if (data.value?.wishes) {
                 data.value.wishes = data.value.wishes.filter((w: any) => w.id !== id)
+                if (data.value.stats) {
+                    data.value.stats.totalWishes = data.value.wishes.length
+                    data.value.stats.latestWish = data.value.wishes.length > 0 ? data.value.wishes[0].createdAt : null
+                }
             }
             alert('Đã xóa lời chúc thành công!')
         }
@@ -106,14 +114,29 @@ const handleConfirmDelete = async () => {
     }
 }
 
-const paginatedWishes = computed(() => {
-    if (!data.value?.wishes) return []
-    const start = (currentPage.value - 1) * itemsPerPage.value
-    const end = start + itemsPerPage.value
-    return data.value.wishes.slice(start, end)
+const filteredWishes = computed(() => {
+    let list = data.value?.wishes || []
+    if (selectedCardSlug.value && selectedCardSlug.value !== 'all') {
+        list = list.filter((w: any) => w.cardSlug === selectedCardSlug.value || String(w.cardId) === String(selectedCardSlug.value))
+    }
+    if (searchQuery.value.trim()) {
+        const q = searchQuery.value.toLowerCase().trim()
+        list = list.filter((w: any) =>
+            w.name?.toLowerCase().includes(q) ||
+            w.content?.toLowerCase().includes(q) ||
+            w.cardName?.toLowerCase().includes(q)
+        )
+    }
+    return list
 })
 
-watch(itemsPerPage, () => {
+const paginatedWishes = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage.value
+    const end = start + itemsPerPage.value
+    return filteredWishes.value.slice(start, end)
+})
+
+watch([itemsPerPage, selectedCardSlug, searchQuery], () => {
     currentPage.value = 1
 })
 
@@ -163,12 +186,32 @@ onMounted(fetchWishes)
             </div>
         </div>
 
-        <div class="mb-2">
-            <h6 class="fw-bold text-dark">Danh sách lời chúc ({{ data?.wishes.length || 0 }})</h6>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-3">
+            <h6 class="fw-bold text-dark mb-0">Danh sách lời chúc ({{ filteredWishes.length }})</h6>
+            <div class="d-flex gap-2 flex-wrap">
+                <input
+                    v-model="searchQuery"
+                    type="text"
+                    class="form-control form-control-sm"
+                    style="max-width: 240px;"
+                    placeholder="Tìm tên người gửi, lời chúc..."
+                />
+                <select
+                    v-if="data?.cards && data.cards.length > 0"
+                    v-model="selectedCardSlug"
+                    class="form-select form-select-sm"
+                    style="max-width: 220px;"
+                >
+                    <option value="all">Tất cả thiệp cưới</option>
+                    <option v-for="c in data.cards" :key="c.id" :value="c.slug">
+                        {{ c.name }}
+                    </option>
+                </select>
+            </div>
         </div>
 
         <!-- Wishes List Content -->
-        <div v-if="data && data.wishes.length > 0">
+        <div v-if="filteredWishes.length > 0">
             <!-- Desktop Table View -->
             <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden d-none d-md-block">
                 <div class="table-responsive">
@@ -237,7 +280,7 @@ onMounted(fetchWishes)
 
             <!-- PAGINATE -->
             <PaginationTableComponent v-model="currentPage" v-model:items-per-page="itemsPerPage"
-                :total-items="data?.wishes.length || 0" class="mt-3" />
+                :total-items="filteredWishes.length" class="mt-3" />
         </div>
 
         <!-- Empty State -->

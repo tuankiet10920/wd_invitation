@@ -5,6 +5,7 @@ import WrapperComponent from '~/coms/show/WrapperComponent.vue';
 import QrcodeVue from 'qrcode.vue';
 import { useRuntimeConfig } from '#app';
 import { useUserStore } from '~~/stores/user';
+import { useEditorStore } from '~~/stores/editor';
 
 const props = defineProps({
     modelValue: {
@@ -20,9 +21,41 @@ const props = defineProps({
 const configs = useRuntimeConfig()
 const emits = defineEmits(['update:modelValue', 'use'])
 const isOpen = ref(props.modelValue)
+const store = useUserStore()
+const editorStore = useEditorStore()
 
-watch(() => props.modelValue, (val) => {
+const PACKAGE_LEVELS: Record<string, number> = {
+    free: 1,
+    basic: 2,
+    pro: 3,
+    premium: 4,
+}
+
+const requiredPackageName = computed(() => {
+    const raw = props.card?.package?.name || props.card?.type || 'Free'
+    return String(raw).charAt(0).toUpperCase() + String(raw).slice(1).toLowerCase()
+})
+
+const requiredPackageLevel = computed(() => {
+    const key = requiredPackageName.value.toLowerCase()
+    return PACKAGE_LEVELS[key] || Number(props.card?.id_package) || 1
+})
+
+const userPackageLevel = computed(() => {
+    if (editorStore.role === 'admin' || store.role === 'admin') return 99
+    return Number(store.packageLevel) || PACKAGE_LEVELS[(store.packageName || 'free').toLowerCase()] || 1
+})
+
+const canUseTemplate = computed(() => {
+    if (!store.isLogin) return true
+    return userPackageLevel.value >= requiredPackageLevel.value
+})
+
+watch(() => props.modelValue, async (val) => {
     isOpen.value = val
+    if (val && store.isLogin) {
+        await store.fetchPlan()
+    }
 })
 
 watch(isOpen, (val) => {
@@ -86,14 +119,19 @@ const cardData = computed(() => {
     };
 })
 
-const store = useUserStore()
 const isUsing = ref(false)
 
 const handleUse = async () => {
-    if (!store.isLogin) {
+    if (!store.isLogin && editorStore.role !== 'admin') {
         store.openModal = true
         isOpen.value = false
         return
+    }
+
+    if (!canUseTemplate.value) {
+        const msg = `Mẫu này dành cho gói ${requiredPackageName.value} trở lên (Gói hiện tại của bạn: ${store.packageName || 'Free'})!`;
+        editorStore.showNotification(msg, 'warning');
+        return;
     }
 
     if (isUsing.value) return;
@@ -104,6 +142,7 @@ const handleUse = async () => {
             method: 'POST',
             body: {
                 name: `Mẫu-${props.card.name}`,
+                template_id: props.card.id,
                 properties: {
                     nodes: props.card.nodes,
                     background: props.card.background,
@@ -122,10 +161,14 @@ const handleUse = async () => {
             const targetPath = isMobile ? `/editor/m/${url}` : `/editor/${url}`;
 
             navigateTo(targetPath);
+        } else {
+            const errMsg = response.message || "Không thể sử dụng mẫu này.";
+            editorStore.showNotification(errMsg, 'warning');
         }
-    } catch (e) {
+    } catch (e: any) {
         console.error("Failed to clone template", e);
-        alert("Có lỗi xảy ra khi tạo thiệp. Vui lòng thử lại sau.");
+        const errMsg = e?.data?.message || "Có lỗi xảy ra khi tạo thiệp. Vui lòng thử lại sau.";
+        editorStore.showNotification(errMsg, 'error');
     } finally {
         isUsing.value = false;
     }
@@ -182,14 +225,25 @@ const handleLivePreview = () => {
                     <!-- Right Column: Info & Actions -->
                     <div class="col-md-7 p-3 p-md-5 detail-panel d-flex flex-column">
                         <!-- Stat Badges (Desktop Only) -->
-                        <div class="d-none d-md-flex justify-content-end gap-2 mb-4">
-                            <div class="badge-stat badge-like">
-                                <BaseIconComponent name="heart" type="mdi" :size="16" color="#FFFFFF" />
-                                <span>{{ card.likes }}</span>
-                            </div>
-                            <div class="badge-stat badge-view">
-                                <BaseIconComponent name="eye" type="mdi" :size="16" color="#FFFFFF" />
-                                <span>{{ card.views }}</span>
+                        <div class="d-none d-md-flex justify-content-between align-items-center gap-2 mb-4">
+                            <span class="badge rounded-pill px-3 py-2 fw-bold text-uppercase"
+                                :class="{
+                                    'bg-success': requiredPackageName.toLowerCase() === 'free',
+                                    'bg-primary': requiredPackageName.toLowerCase() === 'basic',
+                                    'bg-warning text-dark': requiredPackageName.toLowerCase() === 'pro',
+                                    'bg-purple text-white': requiredPackageName.toLowerCase() === 'premium'
+                                }">
+                                Gói {{ requiredPackageName }}
+                            </span>
+                            <div class="d-flex gap-2">
+                                <div class="badge-stat badge-like">
+                                    <BaseIconComponent name="heart" type="mdi" :size="16" color="#FFFFFF" />
+                                    <span>{{ card.likes }}</span>
+                                </div>
+                                <div class="badge-stat badge-view">
+                                    <BaseIconComponent name="eye" type="mdi" :size="16" color="#FFFFFF" />
+                                    <span>{{ card.views }}</span>
+                                </div>
                             </div>
                         </div>
 
@@ -209,13 +263,27 @@ const handleLivePreview = () => {
                             </div>
                         </div>
 
+                        <!-- Cảnh báo gói nếu gói hiện tại thấp hơn gói yêu cầu của mẫu -->
+                        <div v-if="store.isLogin && !canUseTemplate"
+                            class="alert alert-warning d-flex align-items-center justify-content-between gap-2 py-2 px-3 mb-3 rounded-3 small">
+                            <div>
+                                🔒 Mẫu này yêu cầu gói <strong>{{ requiredPackageName }}</strong> trở lên (Gói hiện tại: <strong>{{ store.packageName || 'Free' }}</strong>).
+                            </div>
+                            <button class="btn btn-sm btn-primary fw-bold text-nowrap rounded-pill px-3"
+                                @click="isOpen = false; navigateTo('/pricing-plans')">
+                                Nâng cấp
+                            </button>
+                        </div>
+
                         <!-- Actions -->
                         <div class="d-flex gap-2 gap-md-3 mb-4 mb-md-5 justify-content-center mt-3 mt-md-0">
                             <button class="btn btn-outline-secondary btn-action" @click="handleLivePreview">
                                 Xem trực tiếp
                             </button>
-                            <button class="btn btn-primary btn-action btn-main" @click="handleUse">
-                                Dùng mẫu này
+                            <button class="btn btn-primary btn-action btn-main"
+                                :class="{ 'opacity-75': store.isLogin && !canUseTemplate }"
+                                @click="handleUse">
+                                {{ store.isLogin && !canUseTemplate ? `Yêu cầu gói ${requiredPackageName}` : 'Dùng mẫu này' }}
                             </button>
                         </div>
 
@@ -242,6 +310,10 @@ const handleLivePreview = () => {
 </template>
 
 <style scoped>
+.bg-purple {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
 .detail-container {
     background: #fff;
     border-radius: 30px;

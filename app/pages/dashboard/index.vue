@@ -75,7 +75,7 @@ interface QuickIcon {
 const quickIcons: QuickIcon[] = [
     { label: 'Lời chúc', icon: 'message-circle', type: 'lucide', to: '/dashboard/blessing-box' },
     { label: 'Quà tặng', icon: 'gift', type: 'lucide', to: '/dashboard/gifts-overview' },
-    { label: 'Tham dự', icon: 'calendar', type: 'lucide', to: '/dashboard/coming-soon' },
+    { label: 'Tham dự', icon: 'calendar', type: 'lucide', to: '/dashboard/rsvp' },
     { label: 'Ví & Xu', icon: 'wallet', type: 'lucide', to: '/dashboard/wallet' }
 ]
 </script>
@@ -147,17 +147,7 @@ const quickIcons: QuickIcon[] = [
         </div>
 
 
-        <div
-            class="upgrade-banner p-3 rounded-4 mb-4 d-flex align-items-center justify-content-between cursor-pointer shadow-sm">
-            <div class="d-flex align-items-center">
-                <div class="rocket-icon me-3">🚀</div>
-                <div>
-                    <h6 class="upgrade-banner-text mb-0 fw-bold">Nâng cấp giới hạn</h6>
-                    <p class="upgrade-banner-small mb-0 small text-muted">Mở rộng giới hạn sử dụng của bạn</p>
-                </div>
-            </div>
-            <BaseIconComponent name="chevron-right" type="lucide" :size="18" color="#adb5bd" />
-        </div>
+
 
         <div class="bg-white p-4 mb-3 rounded-4 shadow-sm">
             <h5 class="fw-bold mb-4 text-dark">Công cụ phổ biến</h5>

@@ -17,8 +17,19 @@ const formData = reactive({
     bio: ''
 })
 
-console.log('userStore.image: ', userStore.image);
-
+const formatAvatar = (img?: string | null) => {
+    if (!img) return userStore.image || '/others/logo.svg'
+    if (
+        img.startsWith('http://') ||
+        img.startsWith('https://') ||
+        img.startsWith('data:') ||
+        img.startsWith('blob:') ||
+        img.startsWith('/')
+    ) {
+        return img
+    }
+    return `/images/avatars/${img}`
+}
 
 const fileInput = ref<HTMLInputElement | null>(null)
 const uploadedImagePath = ref<string | null>(null)
@@ -72,7 +83,7 @@ const handleImageUpload = async (event: Event) => {
 
 
 const startEdit = () => {
-    formData.image = userStore.avatarUrl || userStore.image
+    formData.image = userStore.image || '/others/logo.svg'
     formData.name = userStore.name || ''
     formData.birthday = userStore.birthday || ''
     formData.phone = userStore.phone || ''
@@ -89,13 +100,21 @@ const cancelEdit = () => {
 const isSaving = ref(false)
 const isLoadingProfile = ref(false)
 
+const isDefaultAvatar = (avatar?: string | null) =>
+    !avatar ||
+    avatar === 'default-avatar.png' ||
+    avatar === '/images/avatars/default-avatar.png'
+
 const fetchProfile = async () => {
     isLoadingProfile.value = true
     try {
+        await userStore.checkLogin()
         const res: any = await $fetch('/api/v1/client/profile')
         if (res.success && res.data) {
             userStore.name = res.data.name || userStore.name
-            userStore.image = res.data.avatar || userStore.image
+            if (res.data.avatar && (!isDefaultAvatar(res.data.avatar) || !userStore.image)) {
+                userStore.image = res.data.avatar
+            }
             userStore.birthday = res.data.birthday || null
             userStore.phone = res.data.phone || null
             userStore.bio = res.data.introduction || null
@@ -173,13 +192,10 @@ onMounted(() => {
             <div class="d-flex mb-4">
                 <div class="position-relative">
                     <div class="avatar-large shadow-sm overflow-hidden">
-                        <nuxt-img v-if="isEditing && formData.image" :src="formatAvatar(formData.image)"
-                            class="w-100 h-100 object-fit-cover a" />
-                        <nuxt-img v-else-if="!isEditing && (userStore.avatarUrl || userStore.image)" :src="userStore.avatarUrl"
-                            class="w-100 h-100 object-fit-cover b" />
-                        <nuxt-img v-else-if="isEditing && (userStore.avatarUrl || userStore.image) && !formData.image" :src="userStore.avatarUrl"
-                            class="w-100 h-100 object-fit-cover c" />
-                        <span v-else>{{ userStore.name?.charAt(0)?.toUpperCase() || 'U' }}</span>
+                        <NuxtImg v-if="isEditing && formData.image" :src="formatAvatar(formData.image)"
+                            class="w-100 h-100 object-fit-cover" />
+                        <NuxtImg v-else :src="userStore.image || '/others/logo.svg'"
+                            class="w-100 h-100 object-fit-cover" />
                     </div>
                     <input type="file" ref="fileInput" class="d-none" accept="image/*" @change="handleImageUpload">
                     <button v-if="isEditing" @click="triggerFileInput"
@@ -258,11 +274,12 @@ onMounted(() => {
                         <BaseIconComponent name="user" type="lucide" :size="18" color="#6c757d" />
                     </div>
                     <div>
-                        <div class="fw-bold small">Gói Free</div>
-                        <div class="text-muted" style="font-size: 11px;">Gói miễn phí cơ bản</div>
+                        <div class="fw-bold small">Gói {{ userStore.packageName || 'Free' }}</div>
+                        <div class="text-muted" style="font-size: 11px;">Gói dịch vụ hiện tại của bạn</div>
                     </div>
                 </div>
-                <button
+                <button v-if="userStore.packageName !== 'Premium' && (userStore.packageLevel || 1) < 4"
+                    @click="navigateTo('/pricing-plans')"
                     class="btn btn-primary btn-update-package btn-sm px-4 rounded-pill fw-bold shadow-sm d-flex align-items-center align-self-end align-self-md-auto">
                     <BaseIconComponent name="zap" type="lucide" :size="14" class="me-1" color="#fff" /> Nâng cấp
                 </button>

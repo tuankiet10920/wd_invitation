@@ -38,6 +38,7 @@ export class PackageFeatureData extends DataPattern {
           attributes: [], // để trống nếu muốn đẹp
         },
       ],
+      order: [["id_feature", "ASC"]],
       raw: true,
       nest: true,
     });

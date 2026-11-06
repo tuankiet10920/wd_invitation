@@ -13,7 +13,7 @@ const props = defineProps({
     },
     type: {
         type: String,
-        default: 'premium' // 'premium' | 'basic'
+        default: 'premium' // 'free' | 'basic' | 'pro' | 'premium'
     },
     image: {
         type: String,
@@ -33,6 +33,14 @@ const props = defineProps({
 
 const favoriteStore = useFavoriteStore();
 const isDetailOpen = ref(false);
+
+const badgeBackground = computed(() => {
+    const t = (props.type || 'free').toLowerCase();
+    if (t === 'premium') return 'linear-gradient(135deg,#8b5cf6,#7c3aed)';
+    if (t === 'pro') return 'linear-gradient(135deg,#f59e0b,#d97706)';
+    if (t === 'basic') return '#3b82f6';
+    return '#10b981';
+});
 
 const handleUse = (card: any) => {
     // Navigate to editor with this template
@@ -55,8 +63,8 @@ const toggleFav = () => {
         <div class="image">
             <NuxtImg :src="props.image" :width="210" class="w-100 h-auto d-block" />
         </div>
-        <ButtonCustomCompomnent class="btn-type text-uppercase"
-            :background="props.type === 'premium' ? `linear-gradient(135deg,#8b5cf6,#7c3aed)` : `#3b82f6`">
+        <ButtonCustomCompomnent class="btn-type text-uppercase text-white"
+            :background="badgeBackground">
             {{ props.type }}
         </ButtonCustomCompomnent>
         <div class="control">

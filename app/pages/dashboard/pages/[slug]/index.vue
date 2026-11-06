@@ -297,6 +297,28 @@ const rsvpStats = ref({
 });
 const isLoadingRsvp = ref(true);
 
+const cardWishes = ref<any[]>([]);
+const cardGifts = ref<any[]>([]);
+const totalCardGiftCoins = ref(0);
+
+const fetchCardInteractions = async () => {
+    try {
+        const [wishRes, giftRes]: any[] = await Promise.all([
+            $fetch(`/api/v1/client/wish?slug=${slug}`).catch(() => null),
+            $fetch(`/api/v1/client/gifts/received?slug=${slug}`).catch(() => null)
+        ]);
+        if (wishRes?.success && wishRes.data) {
+            cardWishes.value = wishRes.data.wishes || [];
+        }
+        if (giftRes?.success && giftRes.data) {
+            cardGifts.value = giftRes.data.gifts || [];
+            totalCardGiftCoins.value = Number(giftRes.data.stats?.totalCoins || 0);
+        }
+    } catch (e) {
+        console.error("Failed to fetch card interactions", e);
+    }
+};
+
 const fetchRsvpStats = async () => {
     try {
         isLoadingRsvp.value = true;
@@ -362,6 +384,7 @@ onMounted(() => {
     fetchCard();
     fetchInvitors();
     fetchRsvpStats();
+    fetchCardInteractions();
 })
 </script>
 <template>
@@ -810,41 +833,120 @@ onMounted(() => {
                             <small class="text-secondary" style="font-size: 0.8rem;">Lượt thích</small>
                             <div class="d-flex align-items-center gap-1">
                                 <BaseIconComponent name="heart" type="lucide" :size="20" color="#0d6efd" />
-                                <span class="fw-bold fs-5">0</span>
+                                <span class="fw-bold fs-5">{{ card.likes || 0 }}</span>
                             </div>
                         </div>
                     </div>
                     <!-- Wishes -->
                     <div class="col">
                         <div
-                            class="bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center gap-2">
+                            class="bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center gap-2 cursor-pointer"
+                            @click="router.push(`/dashboard/blessing-box?card=${card.url}`)">
                             <small class="text-secondary" style="font-size: 0.8rem;">Lời chúc</small>
                             <div class="d-flex align-items-center gap-1">
                                 <BaseIconComponent name="message-circle" type="lucide" :size="20" color="#0d6efd" />
-                                <span class="fw-bold fs-5">0</span>
+                                <span class="fw-bold fs-5">{{ cardWishes.length }}</span>
                             </div>
                         </div>
                     </div>
                     <!-- Gifts -->
                     <div class="col">
                         <div
-                            class="bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center gap-2">
+                            class="bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center gap-2 cursor-pointer"
+                            @click="router.push(`/dashboard/gifts-received?card=${card.id}`)">
                             <small class="text-secondary" style="font-size: 0.8rem;">Quà đã nhận</small>
                             <div class="d-flex align-items-center gap-1">
                                 <BaseIconComponent name="gift" type="lucide" :size="20" color="#0d6efd" />
-                                <span class="fw-bold fs-5">0</span>
+                                <span class="fw-bold fs-5">{{ cardGifts.length }}</span>
                             </div>
                         </div>
                     </div>
                     <!-- Total Value -->
                     <div class="col">
                         <div
-                            class="bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center gap-2">
+                            class="bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center gap-2 cursor-pointer"
+                            @click="router.push(`/dashboard/gifts-received?card=${card.id}`)">
                             <small class="text-secondary" style="font-size: 0.8rem;">Tổng giá trị quà</small>
                             <div class="d-flex align-items-center gap-1">
                                 <BaseIconComponent name="gift" type="lucide" :size="20" color="#0d6efd" />
-                                <span class="fw-bold fs-5">0</span>
+                                <span class="fw-bold fs-5">{{ totalCardGiftCoins.toLocaleString('vi-VN') }}</span>
                                 <BaseIconComponent name="coins" type="lucide" :size="16" color="#ffc107" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WISHES & GIFTS RECEIVED ON THIS CARD -->
+        <div class="row g-3">
+            <!-- Wishes Summary Card -->
+            <div class="col-12 col-lg-6">
+                <div class="card border-0 shadow-sm rounded-3 h-100">
+                    <div class="card-header bg-white border-bottom-0 pt-3 pb-0 d-flex justify-content-between align-items-center">
+                        <h6 class="fw-bold mb-0">Lời chúc đã nhận ({{ cardWishes.length }})</h6>
+                        <button
+                            class="btn btn-primary btn-sm px-3 py-1 rounded-2 shadow-none border-0 fw-medium"
+                            style="background-color: #3b82f6; font-size: 0.85rem;"
+                            @click="router.push(`/dashboard/blessing-box?card=${card.url}`)"
+                        >
+                            Xem tất cả
+                        </button>
+                    </div>
+                    <div class="card-body p-3 p-md-4">
+                        <div v-if="cardWishes.length === 0" class="text-center py-4 text-muted small">
+                            Chưa có lời chúc nào trên thiệp này.
+                        </div>
+                        <div v-else class="d-flex flex-column gap-2">
+                            <div
+                                v-for="w in cardWishes.slice(0, 3)"
+                                :key="w.id"
+                                class="p-3 border rounded-3 bg-light bg-opacity-50"
+                            >
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="fw-bold text-dark small">{{ w.name }}</span>
+                                    <span class="text-muted" style="font-size: 0.75rem;">{{ formatDate(w.createdAt) }}</span>
+                                </div>
+                                <div class="text-secondary small text-break">{{ w.content }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gifts Summary Card -->
+            <div class="col-12 col-lg-6">
+                <div class="card border-0 shadow-sm rounded-3 h-100">
+                    <div class="card-header bg-white border-bottom-0 pt-3 pb-0 d-flex justify-content-between align-items-center">
+                        <h6 class="fw-bold mb-0">Quà tặng đã nhận ({{ cardGifts.length }})</h6>
+                        <button
+                            class="btn btn-primary btn-sm px-3 py-1 rounded-2 shadow-none border-0 fw-medium"
+                            style="background-color: #3b82f6; font-size: 0.85rem;"
+                            @click="router.push(`/dashboard/gifts-received?card=${card.id}`)"
+                        >
+                            Xem tất cả
+                        </button>
+                    </div>
+                    <div class="card-body p-3 p-md-4">
+                        <div v-if="cardGifts.length === 0" class="text-center py-4 text-muted small">
+                            Chưa có quà tặng nào trên thiệp này.
+                        </div>
+                        <div v-else class="d-flex flex-column gap-2">
+                            <div
+                                v-for="g in cardGifts.slice(0, 3)"
+                                :key="g.id"
+                                class="p-3 border rounded-3 bg-light bg-opacity-50 d-flex align-items-center justify-content-between gap-2"
+                            >
+                                <div class="d-flex align-items-center gap-2 overflow-hidden">
+                                    <img :src="g.giftImage" :alt="g.giftName" style="width: 36px; height: 36px; object-fit: contain;" class="rounded bg-white p-1 border flex-shrink-0" />
+                                    <div class="overflow-hidden">
+                                        <div class="fw-bold text-dark small text-truncate">{{ g.senderName }} • <span class="text-primary">{{ g.giftName }}</span></div>
+                                        <div class="text-muted text-truncate" style="font-size: 0.75rem;">{{ g.message }}</div>
+                                    </div>
+                                </div>
+                                <span class="badge bg-warning-subtle text-dark fw-bold flex-shrink-0">
+                                    🪙 {{ (g.priceCoins || 0).toLocaleString('vi-VN') }} xu
+                                </span>
                             </div>
                         </div>
                     </div>

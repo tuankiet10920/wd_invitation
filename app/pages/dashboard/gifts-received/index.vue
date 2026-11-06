@@ -18,9 +18,10 @@ const giftsData = ref<{
     gifts: any[];
 } | null>(null);
 
+const route = useRoute();
 const isLoading = ref(true);
 const searchQuery = ref('');
-const selectedCardId = ref('all');
+const selectedCardId = ref((route.query.card as string) || 'all');
 const sortBy = ref('date_desc');
 
 const fetchReceivedGifts = async () => {
@@ -255,9 +256,14 @@ watch(showModal, (newVal) => {
                                     <span class="small text-muted">{{ formatDate(gift.createdAt) }}</span>
                                 </div>
                             </div>
-                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-bold">
-                                {{ formatCurrency(gift.amount) }}
-                            </span>
+                            <div class="d-flex flex-column align-items-end gap-1">
+                                <span v-if="gift.priceCoins" class="badge bg-warning-subtle text-dark px-3 py-1 rounded-pill fw-bold">
+                                    🪙 {{ gift.priceCoins.toLocaleString('vi-VN') }} xu
+                                </span>
+                                <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-bold">
+                                    {{ formatCurrency(gift.amount) }}
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Gift preview box -->
