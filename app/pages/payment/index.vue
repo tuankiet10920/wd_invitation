@@ -12,7 +12,8 @@ const userStore = useUserStore();
 
 const code = ref('GIFT753KW0J6');
 const amount = ref(13140);
-const paymentType = ref<'GIFT' | 'PACKAGE'>('GIFT');
+const paymentType = ref<'GIFT' | 'PACKAGE' | 'COIN_TOPUP'>('GIFT');
+const coins = ref<number>(0);
 const giftName = ref('Bắn tim');
 const packageId = ref<number | null>(null);
 const packageName = ref('');
@@ -193,7 +194,10 @@ onMounted(() => {
     if (route.query.amount) amount.value = Number(route.query.amount);
     if (route.query.type === 'PACKAGE' || route.query.packageId) {
         paymentType.value = 'PACKAGE';
+    } else if (route.query.type === 'COIN_TOPUP' || route.query.coins) {
+        paymentType.value = 'COIN_TOPUP';
     }
+    if (route.query.coins) coins.value = Number(route.query.coins);
     if (route.query.packageId) packageId.value = Number(route.query.packageId);
     if (route.query.packageName) packageName.value = route.query.packageName as string;
     if (route.query.gift) giftName.value = route.query.gift as string;
@@ -209,6 +213,7 @@ onMounted(() => {
                     if (data.code) code.value = data.code;
                     if (data.amount) amount.value = Number(data.amount);
                     if (data.type) paymentType.value = data.type;
+                    if (data.coins) coins.value = Number(data.coins);
                     if (data.packageId) packageId.value = Number(data.packageId);
                     if (data.packageName) packageName.value = data.packageName;
                     if (data.duration) duration.value = Number(data.duration);
@@ -224,6 +229,8 @@ onMounted(() => {
 
     if (formattedCode.value.includes('PKG')) {
         paymentType.value = 'PACKAGE';
+    } else if (formattedCode.value.includes('COIN')) {
+        paymentType.value = 'COIN_TOPUP';
     }
 
     timerId = setInterval(() => {
@@ -291,6 +298,10 @@ onUnmounted(() => {
                         <div v-if="paymentType === 'PACKAGE' && packageName" class="info-item">
                             <span class="info-label">Dịch vụ thanh toán:</span>
                             <span class="info-value text-primary font-weight-bold">Nâng cấp gói {{ packageName }}</span>
+                        </div>
+                        <div v-else-if="paymentType === 'COIN_TOPUP'" class="info-item">
+                            <span class="info-label">Dịch vụ thanh toán:</span>
+                            <span class="info-value text-warning font-weight-bold">Nạp +{{ formatCurrency(coins || Math.floor(amount / 10)) }} xu</span>
                         </div>
 
                         <!-- Account Owner -->
@@ -377,6 +388,9 @@ onUnmounted(() => {
                 <h4 class="fw-bold mb-2">🎉 Thanh toán thành công!</h4>
                 <p v-if="paymentType === 'PACKAGE'" class="mb-0">
                     Chúc mừng bạn đã nâng cấp lên gói <strong>{{ packageName || 'Mới' }}</strong> thành công! Đang quay lại trang gói dịch vụ...
+                </p>
+                <p v-else-if="paymentType === 'COIN_TOPUP'" class="mb-0">
+                    Nạp thành công <strong>+{{ formatCurrency(coins || Math.floor(amount / 10)) }} xu</strong> vào tài khoản! Đang tự động quay lại...
                 </p>
                 <p v-else class="mb-0">Cảm ơn bạn đã tặng quà. Đang tự động quay lại trang thiệp...</p>
             </div>

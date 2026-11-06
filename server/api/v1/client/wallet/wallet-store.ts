@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { getPaymentRecord } from "../payment/payment-store";
+import { getUserCoins, loadSentGifts } from "../gifts/coin-store";
 
 export interface WithdrawalRecord {
   id: string;
@@ -88,8 +89,18 @@ export async function calculateUserWallet(user: any) {
     receiveRate = 80;
   }
 
+  const realGiftItems = loadSentGifts().map((g) => ({
+    id: g.id,
+    code: g.code,
+    senderName: g.senderName,
+    giftName: g.giftName,
+    grossAmount: g.giftPriceCoins * 1000,
+    createdAt: g.createdAt,
+  }));
+
   // Danh sách giao dịch nhận quà mừng gốc
   const rawGiftItems = [
+    ...realGiftItems,
     {
       id: "tx-3",
       code: "GIFT-194028",
@@ -200,6 +211,7 @@ export async function calculateUserWallet(user: any) {
 
   return {
     balance: availableBalance,
+    coins: getUserCoins(user.id),
     grossReceived,
     netReceived,
     totalWithdrawn: totalWithdrawn + pendingWithdrawn,

@@ -75,7 +75,7 @@ interface QuickIcon {
 const quickIcons: QuickIcon[] = [
     { label: 'Lời chúc', icon: 'message-circle', type: 'lucide', to: '/dashboard/blessing-box' },
     { label: 'Quà tặng', icon: 'gift', type: 'lucide', to: '/dashboard/gifts-overview' },
-    { label: 'Tham dự', icon: 'calendar', type: 'lucide', to: '/dashboard/coming-soon' },
+    { label: 'Tham dự', icon: 'calendar', type: 'lucide', to: '/dashboard/rsvp' },
     { label: 'Ví & Xu', icon: 'wallet', type: 'lucide', to: '/dashboard/wallet' }
 ]
 </script>

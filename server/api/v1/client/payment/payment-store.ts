@@ -1,10 +1,12 @@
 import fs from "fs";
 import path from "path";
+import { addUserCoins, COIN_TO_VND_RATE } from "../gifts/coin-store";
 
 export interface PaymentRecord {
     code: string;
     amount: number;
-    type?: 'GIFT' | 'PACKAGE';
+    type?: 'GIFT' | 'PACKAGE' | 'COIN_TOPUP';
+    coins?: number;
     giftName?: string;
     senderName?: string;
     message?: string;
@@ -77,17 +79,22 @@ export const createPaymentRecord = (data: Partial<PaymentRecord>) => {
     const parsedUserId = codeMatch ? Number(codeMatch[1]) : undefined;
     const parsedPackageId = codeMatch ? Number(codeMatch[2]) : undefined;
 
+    const coinMatch = fullCode.match(/COINU(\d+)C(\d+)/i);
+    const parsedCoinUserId = coinMatch ? Number(coinMatch[1]) : undefined;
+    const parsedCoins = coinMatch ? Number(coinMatch[2]) : undefined;
+
     const record: PaymentRecord = {
         code: fullCode,
         amount: Number(data.amount) || 0,
-        type: data.type || (data.packageId || parsedPackageId ? 'PACKAGE' : 'GIFT'),
+        type: data.type || (data.packageId || parsedPackageId ? 'PACKAGE' : (data.coins || parsedCoins ? 'COIN_TOPUP' : 'GIFT')),
+        coins: data.coins ? Number(data.coins) : parsedCoins,
         giftName: data.giftName,
         senderName: data.senderName,
         message: data.message,
         slug: data.slug,
         packageId: data.packageId ? Number(data.packageId) : parsedPackageId,
         packageName: data.packageName,
-        userId: data.userId ? Number(data.userId) : parsedUserId,
+        userId: data.userId ? Number(data.userId) : (parsedUserId || parsedCoinUserId),
         duration: data.duration ? Number(data.duration) : undefined,
         status: 'PENDING',
         dbProcessed: false,
@@ -162,6 +169,39 @@ export const processPaymentSuccess = async (
         record.type = 'PACKAGE';
         record.userId = userId;
         record.packageId = packageId;
+    }
+
+    const coinMatch = canonicalCode.match(/COINU(\d+)C(\d+)/i);
+    if (coinMatch) {
+        if (!userId) userId = Number(coinMatch[1]);
+        record.coins = Number(coinMatch[2]);
+        record.type = 'COIN_TOPUP';
+        record.userId = userId;
+    }
+
+    if (
+        (record.type === 'COIN_TOPUP' || canonicalCode.includes('COIN')) &&
+        !record.dbProcessed &&
+        !processedPackageCodes.has(canonicalCode)
+    ) {
+        record.dbProcessed = true;
+        processedPackageCodes.add(canonicalCode);
+        const targetUserId = userId || 1;
+        const coinsToAdd =
+            record.coins ||
+            Math.floor((transferAmount || record.amount || 0) / COIN_TO_VND_RATE);
+        if (coinsToAdd > 0) {
+            addUserCoins(
+                targetUserId,
+                coinsToAdd,
+                `Nạp ${coinsToAdd.toLocaleString("vi-VN")} xu qua SePay (${canonicalCode})`,
+                canonicalCode
+            );
+            record.coins = coinsToAdd;
+            console.log(
+                `[SePay Coin Topup] Đã cộng +${coinsToAdd} xu cho User #${targetUserId} từ mã ${canonicalCode}`
+            );
+        }
     }
 
     const db = (global as any).__db;

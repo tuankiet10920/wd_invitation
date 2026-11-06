@@ -315,8 +315,8 @@ onMounted(() => {
         }
     }
 
-    // FETCH INVITOR IF IN INVITE PAGE AND GUEST NAME NODE EXISTS
-    if (route.path.includes('/invite/') && parsedNodes.value.some((n: any) => n.type === 'GuestName' || n.type === 'GuestName')) {
+    // FETCH INVITOR IF IN INVITE PAGE
+    if (route.path.includes('/invite/')) {
         const token = route.params.slug as string;
         if (token) {
             $fetch<any>(`/api/v1/client/invite/${token}`).then((res: any) => {

@@ -252,10 +252,13 @@ const openWithdrawalDetail = (tx: any) => {
         <div class="balance-banner p-4 p-md-5 rounded-4 shadow-sm mb-4 text-white position-relative overflow-hidden">
             <div class="row align-items-center position-relative z-1">
                 <div class="col-md-7 mb-3 mb-md-0">
-                    <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
                         <span class="small text-white-50 text-uppercase fw-semibold letter-spacing-1">Số dư khả dụng</span>
                         <span class="badge rounded-pill bg-white text-primary fw-bold px-2 py-1" style="font-size: 11px;">
                             {{ walletData?.packageName || 'Free' }}: {{ walletData?.receiveRate || 0 }}% quà tặng
+                        </span>
+                        <span class="badge rounded-pill bg-warning text-dark fw-bold px-2 py-1" style="font-size: 11px;">
+                            🪙 {{ (walletData?.coins ?? 0).toLocaleString('vi-VN') }} xu
                         </span>
                     </div>
                     <h2 class="display-5 fw-bold mb-3 text-white">

@@ -64,13 +64,13 @@ export default defineEventHandler(async (event) => {
 
         if (rawSearchText) {
             const match =
-                rawSearchText.match(/SEVQR\s*(?:PKG|GIFT)[A-Z0-9]+/i) ||
-                rawSearchText.match(/(?:PKG|GIFT)[A-Z0-9]+/i) ||
+                rawSearchText.match(/SEVQR\s*(?:PKG|GIFT|COIN)[A-Z0-9]+/i) ||
+                rawSearchText.match(/(?:PKG|GIFT|COIN)[A-Z0-9]+/i) ||
                 rawSearchText.match(/SEVQR[A-Z0-9]+/i);
 
             if (match) {
                 const matchedRaw = match[0].replace(/\s+/g, "").toUpperCase();
-                const subMatch = matchedRaw.match(/(?:GIFT|PKG)[A-Z0-9]+/i);
+                const subMatch = matchedRaw.match(/(?:GIFT|PKG|COIN)[A-Z0-9]+/i);
                 const shortCode = subMatch ? subMatch[0].toUpperCase() : matchedRaw.replace(/^SEVQR/i, "");
                 const fullCode = matchedRaw.startsWith("SEVQR") ? matchedRaw : `SEVQR${shortCode}`;
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useEditorStore } from '~~/stores/editor';
 import { useRoute } from 'vue-router';
-import { computed } from 'vue';
+import { computed, inject, watch } from 'vue';
 
 const props = withDefaults(defineProps<{
     slug?: string;
@@ -10,19 +10,42 @@ const props = withDefaults(defineProps<{
     isTemplate: false
 })
 
-const emit = defineEmits(['close'])
+const emit = defineEmits(['close', 'submitted'])
 
 const route = useRoute()
 const name = ref('')
 const message = ref('')
 const isSubmitting = ref(false)
 const editorStore = useEditorStore()
+const invitorData = inject<any>('invitorData', null)
 
+watch(
+    () => invitorData?.value,
+    (inv) => {
+        if (inv && !name.value) {
+            try {
+                const parsed = typeof inv.content === 'string' ? JSON.parse(inv.content) : inv.content
+                if (parsed?.value && parsed.value !== 'N/A') {
+                    name.value = parsed.value
+                }
+            } catch {}
+        }
+    },
+    { immediate: true }
+)
+
+const resolvedSlug = computed(() => props.slug || (route.params.slug as string) || '')
 const isTemplateMode = computed(() => props.isTemplate || (typeof route.path === 'string' && route.path.includes('/template/')))
 
 const handleSubmit = async () => {
-    if (!name.value.trim() || !message.value.trim()) return
-    if (!props.slug) return
+    if (!name.value.trim() || !message.value.trim()) {
+        editorStore.showNotification('Vui lòng nhập đầy đủ tên và lời chúc của bạn!', 'warning')
+        return
+    }
+    if (!resolvedSlug.value) {
+        editorStore.showNotification('Không xác định được thông tin thiệp!', 'error')
+        return
+    }
 
     if (isTemplateMode.value) {
         editorStore.showNotification('Đây là chế độ xem mẫu, không thể gửi lời chúc!', 'warning')
@@ -37,9 +60,9 @@ const handleSubmit = async () => {
         const response = await $fetch<any>('/api/v1/client/wish', {
             method: 'POST',
             body: {
-                name: name.value,
-                content: message.value,
-                slug: props.slug
+                name: name.value.trim(),
+                content: message.value.trim(),
+                slug: resolvedSlug.value
             }
         })
 
@@ -47,11 +70,14 @@ const handleSubmit = async () => {
             name.value = ''
             message.value = ''
             editorStore.showNotification('Cảm ơn bạn đã gửi lời chúc!', 'success')
+            emit('submitted', response.data)
             emit('close')
+        } else {
+            editorStore.showNotification(response.message || 'Không thể gửi lời chúc, vui lòng thử lại!', 'error')
         }
-    } catch (error) {
+    } catch (error: any) {
         console.error('Lỗi khi gửi lời chúc:', error)
-        editorStore.showNotification('Có lỗi xảy ra, vui lòng thử lại sau.', 'error')
+        editorStore.showNotification(error?.data?.message || 'Có lỗi xảy ra, vui lòng thử lại sau.', 'error')
     } finally {
         isSubmitting.value = false
     }
