@@ -65,7 +65,7 @@ export const SEPAY_WEBHOOK_SECRET_TEST = SEPAY_WEBHOOK_SECRET_DEV;
  * @option production
  * @option development
  */
-export const NODE_ENV = "development";
+export const NODE_ENV = "test";
 
 export const DOMAIN_TEST = "subanconeal-nasir-lithologic.ngrok-free.dev";
 
@@ -74,14 +74,14 @@ export const SEPAY_API_KEY =
   NODE_ENV == "production"
     ? SEPAY_API_KEY_PROD
     : NODE_ENV == "test"
-    ? SEPAY_API_KEY_TEST
-    : SEPAY_API_KEY_DEV;
+      ? SEPAY_API_KEY_TEST
+      : SEPAY_API_KEY_DEV;
 export const SEPAY_WEBHOOK_SECRET =
   NODE_ENV == "production"
     ? SEPAY_WEBHOOK_SECRET_PROD
     : NODE_ENV == "test"
-    ? SEPAY_WEBHOOK_SECRET_TEST
-    : SEPAY_WEBHOOK_SECRET_DEV;
+      ? SEPAY_WEBHOOK_SECRET_TEST
+      : SEPAY_WEBHOOK_SECRET_DEV;
 export const SEPAY_ACC_NO = "101874133953";
 export const SEPAY_BANK = "Vietinbank";
 export const SEPAY_ACC_NAME = "NGUYEN TUAN KIET";
