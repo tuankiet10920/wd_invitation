@@ -15,10 +15,13 @@ export const useUserStore = defineStore("user", {
     remember: false,
     openModal: false,
     social: "normal" as Social,
+    packageId: 1 as number,
+    packageName: "Free" as string,
+    packageLevel: 1 as number,
   }),
   getters: {
     avatarUrl: (state): string => {
-      if (!state.image) return "/images/avatars/default-avatar.png";
+      if (!state.image) return "/others/logo.svg";
       if (
         state.image.startsWith("http://") ||
         state.image.startsWith("https://") ||
@@ -40,6 +43,18 @@ export const useUserStore = defineStore("user", {
       this.$reset();
       navigateTo("/");
     },
+    async fetchPlan() {
+      try {
+        const res: any = await $fetch("/api/v1/client/my-plan");
+        if (res?.success && res?.data) {
+          this.packageId = Number(res.data.id) || 1;
+          this.packageName = res.data.name || "Free";
+          this.packageLevel = Number(res.data.level) || 1;
+          return res.data;
+        }
+      } catch (e) {}
+      return null;
+    },
     async checkLogin() {
       const { loggedIn, user, fetch } = useUserSession();
       if (import.meta.client) await fetch();
@@ -49,6 +64,9 @@ export const useUserStore = defineStore("user", {
       this.name = loggedIn.value ? (user.value?.name as string | null) : null;
       this.image = loggedIn.value ? (user.value?.image as string | null) : null;
       this.email = loggedIn.value ? (user.value?.email as string | null) : null;
+      if (import.meta.client && this.isLogin) {
+        await this.fetchPlan();
+      }
     },
   },
 });

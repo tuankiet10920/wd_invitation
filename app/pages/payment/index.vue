@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { useUserStore } from '~~/stores/user';
 
 definePageMeta({
     layout: 'blank'
@@ -7,10 +8,15 @@ definePageMeta({
 
 const route = useRoute();
 const router = useRouter();
+const userStore = useUserStore();
 
 const code = ref('GIFT753KW0J6');
 const amount = ref(13140);
+const paymentType = ref<'GIFT' | 'PACKAGE'>('GIFT');
 const giftName = ref('Bắn tim');
+const packageId = ref<number | null>(null);
+const packageName = ref('');
+const duration = ref<number>(12);
 const senderName = ref('');
 const message = ref('');
 const slug = ref('');
@@ -20,7 +26,7 @@ const config = useRuntimeConfig();
 const sepayPublic = (config.public as any).sepay || {};
 
 const bankInfo = {
-    name: `${sepayPublic.bank || 'MBBank'} Ngân hàng Quân đội (${sepayPublic.bank || 'MBBank'})`,
+    name: `${sepayPublic.bank || 'MBBank'} Ngân hàng (${sepayPublic.bank || 'MBBank'})`,
     accountNo: sepayPublic.accNo || '3819031991',
     accountName: sepayPublic.accName || 'HO KINH DOANH THIEP CUOI ONLINE',
     bankCode: sepayPublic.bank || 'MBBank'
@@ -59,6 +65,7 @@ const sepayQrUrl = computed(() => {
 // Timer state (10 minutes = 600s)
 const timeLeft = ref(600);
 let timerId: any = null;
+let pollId: any = null;
 const isSuccess = ref(false);
 const ws = ref<WebSocket | null>(null);
 
@@ -68,35 +75,77 @@ const formattedTimeLeft = computed(() => {
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 });
 
-const handleCancel = () => {
-    if (confirm('Bạn có chắc chắn muốn hủy giao dịch không?')) {
-        if (backUrl.value) {
-            window.location.href = backUrl.value;
-            return;
-        }
-        if (slug.value) {
-            router.push(`/invite/${slug.value}`);
-            return;
-        }
+const exitPaymentPage = () => {
+    if (typeof window !== 'undefined') {
+        sessionStorage.removeItem('sepay_payment_data');
+        try {
+            window.close();
+        } catch (e) {}
+    }
+    if (backUrl.value) {
+        window.location.href = backUrl.value;
+        return;
+    }
+    if (paymentType.value === 'PACKAGE') {
+        router.push('/pricing-plans');
+        return;
+    }
+    if (slug.value) {
+        router.push(`/invite/${slug.value}`);
+        return;
+    }
+    if (typeof window !== 'undefined' && window.history.length > 1) {
         router.back();
+    } else {
+        router.push('/');
     }
 };
 
-const triggerPaymentSuccess = () => {
+const handleExpired = () => {
+    if (isSuccess.value) return;
+    if (timerId) clearInterval(timerId);
+    if (pollId) clearInterval(pollId);
+    closeWebSocket();
+    exitPaymentPage();
+};
+
+const handleCancel = () => {
+    if (confirm('Bạn có chắc chắn muốn hủy giao dịch không?')) {
+        if (timerId) clearInterval(timerId);
+        if (pollId) clearInterval(pollId);
+        closeWebSocket();
+        exitPaymentPage();
+    }
+};
+
+const triggerPaymentSuccess = async () => {
     if (isSuccess.value) return;
     isSuccess.value = true;
     if (timerId) clearInterval(timerId);
+    if (pollId) clearInterval(pollId);
     closeWebSocket();
 
+    if (paymentType.value === 'PACKAGE') {
+        try {
+            await userStore.fetchPlan();
+        } catch (e) {}
+    }
+
     setTimeout(() => {
-        if (backUrl.value) {
-            window.location.href = backUrl.value;
-        } else if (slug.value) {
-            router.push(`/invite/${slug.value}`);
-        } else {
-            router.back();
-        }
+        exitPaymentPage();
     }, 3000);
+};
+
+const checkPaymentStatus = async () => {
+    if (isSuccess.value) return;
+    try {
+        const res: any = await $fetch('/api/v1/client/payment/check-status', {
+            query: { code: formattedCode.value }
+        });
+        if (res && res.status === 'SUCCESS') {
+            triggerPaymentSuccess();
+        }
+    } catch (e) {}
 };
 
 const connectWebSocket = () => {
@@ -142,6 +191,11 @@ const closeWebSocket = () => {
 onMounted(() => {
     if (route.query.code) code.value = route.query.code as string;
     if (route.query.amount) amount.value = Number(route.query.amount);
+    if (route.query.type === 'PACKAGE' || route.query.packageId) {
+        paymentType.value = 'PACKAGE';
+    }
+    if (route.query.packageId) packageId.value = Number(route.query.packageId);
+    if (route.query.packageName) packageName.value = route.query.packageName as string;
     if (route.query.gift) giftName.value = route.query.gift as string;
     if (route.query.sender) senderName.value = route.query.sender as string;
     if (route.query.slug) slug.value = route.query.slug as string;
@@ -151,30 +205,48 @@ onMounted(() => {
         if (stored) {
             try {
                 const data = JSON.parse(stored);
-                if (data.code) code.value = data.code;
-                if (data.amount) amount.value = data.amount;
-                if (data.giftName) giftName.value = data.giftName;
-                if (data.senderName) senderName.value = data.senderName;
-                if (data.message) message.value = data.message;
-                if (data.slug) slug.value = data.slug;
-                if (data.backUrl) backUrl.value = data.backUrl;
+                if (!route.query.code || data.code === route.query.code) {
+                    if (data.code) code.value = data.code;
+                    if (data.amount) amount.value = Number(data.amount);
+                    if (data.type) paymentType.value = data.type;
+                    if (data.packageId) packageId.value = Number(data.packageId);
+                    if (data.packageName) packageName.value = data.packageName;
+                    if (data.duration) duration.value = Number(data.duration);
+                    if (data.giftName) giftName.value = data.giftName;
+                    if (data.senderName) senderName.value = data.senderName;
+                    if (data.message) message.value = data.message;
+                    if (data.slug) slug.value = data.slug;
+                    if (data.backUrl) backUrl.value = data.backUrl;
+                }
             } catch (e) {}
         }
+    }
+
+    if (formattedCode.value.includes('PKG')) {
+        paymentType.value = 'PACKAGE';
     }
 
     timerId = setInterval(() => {
         if (timeLeft.value > 0) {
             timeLeft.value--;
+            if (timeLeft.value <= 0) {
+                handleExpired();
+            }
         } else {
-            clearInterval(timerId);
+            handleExpired();
         }
     }, 1000);
+
+    pollId = setInterval(() => {
+        checkPaymentStatus();
+    }, 3000);
 
     connectWebSocket();
 });
 
 onUnmounted(() => {
     if (timerId) clearInterval(timerId);
+    if (pollId) clearInterval(pollId);
     closeWebSocket();
 });
 </script>
@@ -215,6 +287,12 @@ onUnmounted(() => {
 
                     <!-- Payment Details Table -->
                     <div class="info-details-list">
+                        <!-- Package Info if PACKAGE type -->
+                        <div v-if="paymentType === 'PACKAGE' && packageName" class="info-item">
+                            <span class="info-label">Dịch vụ thanh toán:</span>
+                            <span class="info-value text-primary font-weight-bold">Nâng cấp gói {{ packageName }}</span>
+                        </div>
+
                         <!-- Account Owner -->
                         <div class="info-item">
                             <span class="info-label">Chủ tài khoản:</span>
@@ -297,7 +375,10 @@ onUnmounted(() => {
             <!-- Success Overlay Card (if payment completed) -->
             <div v-if="isSuccess" class="success-banner-card mt-3 text-center p-4 bg-success text-white rounded-4 shadow w-100">
                 <h4 class="fw-bold mb-2">🎉 Thanh toán thành công!</h4>
-                <p class="mb-0">Cảm ơn bạn đã tặng quà. Đang tự động quay lại trang thiệp...</p>
+                <p v-if="paymentType === 'PACKAGE'" class="mb-0">
+                    Chúc mừng bạn đã nâng cấp lên gói <strong>{{ packageName || 'Mới' }}</strong> thành công! Đang quay lại trang gói dịch vụ...
+                </p>
+                <p v-else class="mb-0">Cảm ơn bạn đã tặng quà. Đang tự động quay lại trang thiệp...</p>
             </div>
 
             <!-- Yellow Expiration Banner -->

@@ -154,11 +154,17 @@ const toggleMusic = (index: number) => {
 };
 
 onMounted(async () => {
+    if (editor.role === 'admin') {
+        isPremium.value = true;
+        currentPlanName.value = 'ADMIN';
+        await fetchPersonalMusics();
+        return;
+    }
     try {
         const res: any = await $fetch('/api/v1/client/my-plan');
         if (res && res.data) {
             currentPlanName.value = res.data.name || 'FREE';
-            if (res.data.name?.toLowerCase() === 'premium') {
+            if (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 4) {
                 isPremium.value = true;
                 await fetchPersonalMusics();
             }
@@ -207,7 +213,8 @@ onUnmounted(() => {
                 </div>
             </div>
 
-            <ButtonCustomCompomnent class="w-100 mb-2 btn-upgrade text-white fw-medium" :background="`#3b82f6`">
+            <ButtonCustomCompomnent class="w-100 mb-2 btn-upgrade text-white fw-medium" :background="`#3b82f6`"
+                @click="navigateTo('/pricing-plans')">
                 Nâng cấp lên Premium
             </ButtonCustomCompomnent>
 

@@ -1,37 +1,10 @@
 import FormatResponse from "~~/composables/FormatResponse";
-import { UserData } from "~~/server/data/user";
-import { getCookie } from "h3";
-import jwt from "jsonwebtoken";
+import { getAuthUser } from "~~/server/utils/auth";
 import { Op } from "sequelize";
-
-const User = new UserData();
 
 export default defineEventHandler(async (event) => {
   try {
-    const config = useRuntimeConfig();
-    let user = null;
-
-    // 1. Check normal user session
-    const session = await getUserSession(event);
-    const sessionUser = session?.user as any;
-    if (sessionUser?.email) {
-      user = await User.checkUserNormal(sessionUser.email);
-    }
-
-    // 2. Check admin token if no session user found
-    if (!user) {
-      const token = getCookie(event, "auth_admin_token");
-      if (token) {
-        try {
-          const decoded = jwt.verify(token, config.jwtSecret) as any;
-          if (decoded && decoded.id) {
-            user = await User.getById(decoded.id);
-          }
-        } catch (e) {
-          // Admin auth fail
-        }
-      }
-    }
+    const user = await getAuthUser(event);
 
     if (!user) {
       return FormatResponse.error(event, "Unauthorized", 401);
@@ -40,7 +13,7 @@ export default defineEventHandler(async (event) => {
     // Default package level is 1 (Free) if user doesn't have an id_package
     const userPackageId = user.id_package || 1;
 
-    const { Package: PackageModel, Feature: FeatureModel, PackageFeature: PackageFeatureModel, Image: ImageModel, ImageType: ImageTypeModel, WeddingCard: WeddingCardModel } = global.__db;
+    const { Package: PackageModel, Feature: FeatureModel, PackageFeature: PackageFeatureModel, Image: ImageModel, ImageType: ImageTypeModel, WeddingCard: WeddingCardModel } = (global as any).__db;
     
     // --- Usage Stats ---
     // 1. Count personal images (include admin_image for admins)
@@ -98,12 +71,14 @@ export default defineEventHandler(async (event) => {
 
     // Format the response structure required by the frontend
     const packageData = {
+        userId: user.id,
         id: userPackage.id,
         name: userPackage.name,
         level: userPackage.level,
         image_limits: userPackage.image_limits,
         number_of_cards: userPackage.number_of_cards,
         maximum_views: userPackage.maximum_views,
+        package_expired_at: user.package_expired_at,
         // Actual usage stats
         currentImages,
         currentWebsites,

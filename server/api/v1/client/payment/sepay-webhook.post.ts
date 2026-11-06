@@ -1,4 +1,4 @@
-import { markPaymentSuccess } from "./payment-store";
+import { processPaymentSuccess } from "./payment-store";
 import crypto from "crypto";
 
 export default defineEventHandler(async (event) => {
@@ -51,28 +51,44 @@ export default defineEventHandler(async (event) => {
         const body = await readBody(event);
         console.log("[SePay Webhook Received]:", JSON.stringify(body, null, 2));
 
-        const content = body.content || body.transferContent || body.des || body.description || "";
+        // Kết hợp cả trường code và nội dung chuyển khoản để không bỏ sót dù ngân hàng tách chuỗi
+        const rawSearchText = [
+            body.code,
+            body.content,
+            body.transferContent,
+            body.des,
+            body.description
+        ].filter(Boolean).join(" ");
 
-        if (content) {
-            const match = content.match(/SEVQR[A-Z0-9]+/i) || content.match(/GIFT[A-Z0-9]+/i);
+        const transferAmount = Number(body.transferAmount || body.amount || 0);
+
+        if (rawSearchText) {
+            const match =
+                rawSearchText.match(/SEVQR\s*(?:PKG|GIFT)[A-Z0-9]+/i) ||
+                rawSearchText.match(/(?:PKG|GIFT)[A-Z0-9]+/i) ||
+                rawSearchText.match(/SEVQR[A-Z0-9]+/i);
+
             if (match) {
-                const fullCode = match[0].toUpperCase();
-                const giftMatch = fullCode.match(/GIFT[A-Z0-9]+/i);
-                const giftCode = giftMatch ? giftMatch[0].toUpperCase() : fullCode;
+                const matchedRaw = match[0].replace(/\s+/g, "").toUpperCase();
+                const subMatch = matchedRaw.match(/(?:GIFT|PKG)[A-Z0-9]+/i);
+                const shortCode = subMatch ? subMatch[0].toUpperCase() : matchedRaw.replace(/^SEVQR/i, "");
+                const fullCode = matchedRaw.startsWith("SEVQR") ? matchedRaw : `SEVQR${shortCode}`;
 
-                console.log(`[SePay Webhook] Found code ${fullCode} (giftCode: ${giftCode}) in content "${content}"`);
+                console.log(`[SePay Webhook] Found code ${fullCode} (shortCode: ${shortCode}) in content "${rawSearchText}"`);
 
-                markPaymentSuccess(fullCode);
-                markPaymentSuccess(giftCode);
+                const record = await processPaymentSuccess(fullCode, shortCode, transferAmount);
 
                 if ((global as any).__wsPeers) {
-                    const keysToNotify = Array.from(new Set([fullCode, giftCode, `SEVQR${giftCode}`]));
+                    const keysToNotify = Array.from(new Set([fullCode, shortCode, `SEVQR${shortCode}`]));
                     keysToNotify.forEach((key) => {
                         const peers = (global as any).__wsPeers.get(key);
                         if (peers && peers.size > 0) {
                             const wsMessage = JSON.stringify({
                                 type: "payment_success",
-                                code: key
+                                code: key,
+                                paymentType: record?.type || "GIFT",
+                                packageId: record?.packageId,
+                                packageName: record?.packageName
                             });
                             for (const peer of peers) {
                                 try {
@@ -83,10 +99,22 @@ export default defineEventHandler(async (event) => {
                         }
                     });
                 }
+
+                return {
+                    success: true,
+                    message: "Webhook processed",
+                    data: {
+                        code: fullCode,
+                        type: record?.type,
+                        userId: record?.userId,
+                        packageId: record?.packageId,
+                        packageName: record?.packageName
+                    }
+                };
             }
         }
 
-        return { success: true, message: "Webhook processed" };
+        return { success: true, message: "Webhook processed (no matching code)" };
     } catch (e: any) {
         console.error("[SePay Webhook Error]:", e);
         return { success: false, error: e.message };

@@ -28,9 +28,33 @@ export default defineEventHandler(async (event) => {
       return FormatResponse.error(event, "Không tìm thấy người dùng!");
     }
 
-    const normalizeAvatar = (avatar?: string | null) => {
-      if (!avatar) return "/images/avatars/default-avatar.png";
-      if (avatar.startsWith("http://") || avatar.startsWith("https://") || avatar.startsWith("/")) {
+    const isDefaultAvatar = (avatar?: string | null) =>
+      !avatar ||
+      avatar === "default-avatar.png" ||
+      avatar === "/images/avatars/default-avatar.png";
+
+    // Đồng bộ avatar và tên từ session (ví dụ đăng nhập Google) vào DB nếu DB đang để mặc định
+    const updates: Record<string, any> = {};
+    if (isDefaultAvatar(user.avatar) && sessionUser?.image && !isDefaultAvatar(sessionUser.image)) {
+      updates.avatar = sessionUser.image;
+    }
+    if (!user.name && sessionUser?.name) {
+      updates.name = sessionUser.name;
+    }
+    if (Object.keys(updates).length > 0) {
+      await user.update(updates);
+    }
+
+    const resolveAvatar = (avatar?: string | null) => {
+      if (isDefaultAvatar(avatar) && sessionUser?.image) {
+        return sessionUser.image;
+      }
+      if (!avatar) return sessionUser?.image || "/others/logo.svg";
+      if (
+        avatar.startsWith("http://") ||
+        avatar.startsWith("https://") ||
+        avatar.startsWith("/")
+      ) {
         return avatar;
       }
       return `/images/avatars/${avatar}`;
@@ -38,8 +62,8 @@ export default defineEventHandler(async (event) => {
 
     return FormatResponse.success(
       {
-        name: user.name,
-        avatar: normalizeAvatar(user.avatar),
+        name: user.name || sessionUser?.name || "",
+        avatar: resolveAvatar(user.avatar),
         email: user.email,
         birthday: user.birthday,
         phone: user.phone,

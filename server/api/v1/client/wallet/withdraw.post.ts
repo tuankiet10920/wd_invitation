@@ -1,6 +1,10 @@
 import FormatResponse from "~~/composables/FormatResponse";
 import { getAuthUser } from "~~/server/utils/auth";
-import { withdrawalRecords } from "./index.get";
+import {
+  calculateUserWallet,
+  addWithdrawalRecord,
+  type WithdrawalRecord,
+} from "./wallet-store";
 
 export default defineEventHandler(async (event) => {
   try {
@@ -10,32 +14,84 @@ export default defineEventHandler(async (event) => {
     }
 
     const body = await readBody(event);
-    const amount = Number(body.amount);
+    const amount = Math.floor(Number(body.amount));
 
     if (!amount || isNaN(amount) || amount < 50000) {
       return FormatResponse.error(event, "Số tiền rút tối thiểu là 50,000 VNĐ!");
     }
 
-    if (!body.bankName || !body.accountNumber || !body.accountHolder) {
-      return FormatResponse.error(event, "Vui lòng nhập đầy đủ thông tin tài khoản ngân hàng!");
+    const bankName = String(body.bankName || "").trim();
+    const accountNumber = String(body.accountNumber || "").trim();
+    const accountHolder = String(body.accountHolder || "")
+      .trim()
+      .toUpperCase();
+
+    if (!bankName || !accountNumber || !accountHolder) {
+      return FormatResponse.error(
+        event,
+        "Vui lòng nhập đầy đủ thông tin tài khoản ngân hàng thụ hưởng!"
+      );
     }
 
-    const newWithdrawal = {
+    const wallet = await calculateUserWallet(user);
+    if (amount > wallet.balance) {
+      return FormatResponse.error(
+        event,
+        `Số tiền rút vượt quá số dư khả dụng (${wallet.balance.toLocaleString("vi-VN")} VNĐ)!`
+      );
+    }
+
+    // Lưu tài khoản ngân hàng vào qr_boxes nếu người dùng tích chọn
+    if (body.saveAccount) {
+      try {
+        const { WeddingCard: WeddingCardModel, QrBox: QrBoxModel } = (global as any).__db;
+        const firstCard = await WeddingCardModel?.findOne({
+          where: { id_user: user.id },
+          order: [["id", "ASC"]],
+        });
+        if (firstCard && QrBoxModel) {
+          const exists = await QrBoxModel.findOne({
+            where: {
+              id_wedding_card: firstCard.id,
+              name_bank: bankName,
+              number_bank: accountNumber,
+            },
+          });
+          if (!exists) {
+            await QrBoxModel.create({
+              name: "Tài khoản rút tiền",
+              name_reveive: accountHolder,
+              name_bank: bankName,
+              number_bank: accountNumber,
+              image: `https://img.vietqr.io/image/${bankName}-${accountNumber}-compact.png?accountName=${encodeURIComponent(accountHolder)}`,
+              id_wedding_card: firstCard.id,
+            });
+          }
+        }
+      } catch (e) {}
+    }
+
+    const nowIso = new Date().toISOString();
+    const newWithdrawal: WithdrawalRecord = {
       id: `wd-${Date.now()}`,
       code: `WD-${Math.floor(100000 + Math.random() * 900000)}`,
       userId: user.id,
       amount,
-      bankName: body.bankName,
-      accountNumber: body.accountNumber,
-      accountHolder: body.accountHolder,
-      note: body.note || "Rút tiền quà mừng thiệp online",
-      status: "PROCESSING",
-      createdAt: new Date().toISOString(),
+      bankName,
+      accountNumber,
+      accountHolder,
+      note: String(body.note || "Rút tiền tự động 24/7 về ngân hàng").trim(),
+      status: "COMPLETED",
+      createdAt: nowIso,
+      updatedAt: nowIso,
     };
 
-    withdrawalRecords.unshift(newWithdrawal);
+    addWithdrawalRecord(newWithdrawal);
 
-    return FormatResponse.success(newWithdrawal, "Yêu cầu rút tiền đã được tạo thành công! Hệ thống sẽ xử lý trong vòng 24h làm việc.");
+    return FormatResponse.success(
+      newWithdrawal,
+      `Rút thành công ${amount.toLocaleString("vi-VN")}đ về tài khoản ${bankName} - ${accountNumber}!`
+    );
   } catch (error: any) {
     return FormatResponse.failure(error);
   }

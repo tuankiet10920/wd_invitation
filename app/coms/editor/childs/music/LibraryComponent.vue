@@ -13,11 +13,16 @@ const currentPlanName = ref('FREE');
 
 onMounted(async () => {
     editor.fetchPublicMusics();
+    if (editor.role === 'admin') {
+        isPremium.value = true;
+        currentPlanName.value = 'ADMIN';
+        return;
+    }
     try {
         const res: any = await $fetch('/api/v1/client/my-plan');
         if (res && res.data) {
             currentPlanName.value = res.data.name || 'FREE';
-            if (res.data.name?.toLowerCase() === 'premium') {
+            if (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 4) {
                 isPremium.value = true;
             }
         }

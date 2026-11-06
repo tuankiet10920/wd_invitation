@@ -2,6 +2,7 @@
 import BreadcumbNormalComponent from '~/coms/breadcumb/BreadcumbNormalComponent.vue';
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
 import { useUserStore } from '~~/stores/user';
+
 definePageMeta({
     layout: 'user-default'
 })
@@ -20,6 +21,12 @@ const getDiscount = (original, sale) => {
 };
 
 const plans = ref([]);
+const myPlanData = ref(null);
+const showUpgradeModal = ref(false);
+const selectedPlan = ref(null);
+const isSubmittingPayment = ref(false);
+
+const userStore = useUserStore();
 
 const fetchPackages = async () => {
     try {
@@ -30,15 +37,126 @@ const fetchPackages = async () => {
     } catch (error) {
         console.error("Failed to fetch packages:", error);
     }
-}
+};
 
-onMounted(() => {
-    fetchPackages();
+const fetchMyPlan = async () => {
+    try {
+        const response = await $fetch('/api/v1/client/my-plan');
+        if (response && response.success && response.data) {
+            myPlanData.value = response.data;
+            userStore.packageId = Number(response.data.id) || 1;
+            userStore.packageName = response.data.name || 'Free';
+            userStore.packageLevel = Number(response.data.level) || 1;
+        }
+    } catch (error) {
+        myPlanData.value = null;
+    }
+};
+
+onMounted(async () => {
+    await Promise.all([
+        fetchPackages(),
+        userStore.checkLogin(),
+        fetchMyPlan()
+    ]);
+});
+
+watch(() => userStore.isLogin, (val) => {
+    if (val) {
+        fetchMyPlan();
+    }
 });
 
 const planFree = computed(() => plans.value.find(p => p.level === 1));
 const planBasic = computed(() => plans.value.find(p => p.level === 2));
 const planPremium = computed(() => plans.value.find(p => p.level === 3));
+
+const currentPlanName = computed(() => {
+    if (myPlanData.value?.name) return myPlanData.value.name;
+    if (userStore.isLogin && userStore.packageName) return userStore.packageName;
+    return null;
+});
+
+const currentPlanLevel = computed(() => {
+    if (myPlanData.value?.level) return Number(myPlanData.value.level);
+    if (userStore.isLogin && userStore.packageLevel) return Number(userStore.packageLevel);
+    return 0;
+});
+
+const selectedPlanPrice = computed(() => {
+    if (!selectedPlan.value) return 0;
+    const sale = Number(selectedPlan.value.sale_price);
+    const orig = Number(selectedPlan.value.original_price);
+    return sale > 0 ? sale : orig;
+});
+
+const handleSelectPlan = (plan) => {
+    if (!plan) return;
+    const targetLevel = Number(plan.level) || 1;
+
+    if (currentPlanLevel.value >= targetLevel) {
+        return;
+    }
+
+    selectedPlan.value = plan;
+    showUpgradeModal.value = true;
+};
+
+const closeUpgradeModal = () => {
+    if (isSubmittingPayment.value) return;
+    showUpgradeModal.value = false;
+    selectedPlan.value = null;
+};
+
+const confirmUpgradePayment = async () => {
+    if (!selectedPlan.value || isSubmittingPayment.value) return;
+
+    isSubmittingPayment.value = true;
+    try {
+        const userId = myPlanData.value?.userId || 1;
+        const pkgId = selectedPlan.value.id;
+        const rand = Math.random().toString(36).substring(2, 6).toUpperCase();
+        const transferCode = `SEVQRPKGU${userId}P${pkgId}R${rand}`;
+        const amountVnd = selectedPlanPrice.value;
+
+        const paymentData = {
+            code: transferCode,
+            type: 'PACKAGE',
+            amount: amountVnd,
+            packageId: pkgId,
+            packageName: selectedPlan.value.name,
+            duration: selectedPlan.value.time_save_card || 12,
+            userId: userId,
+            backUrl: typeof window !== 'undefined' ? window.location.href : '/pricing-plans'
+        };
+
+        await $fetch('/api/v1/client/payment/create', {
+            method: 'POST',
+            body: paymentData
+        });
+
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('sepay_payment_data', JSON.stringify(paymentData));
+        }
+
+        showUpgradeModal.value = false;
+
+        await navigateTo({
+            path: '/payment',
+            query: {
+                code: transferCode,
+                amount: amountVnd,
+                type: 'PACKAGE',
+                packageId: pkgId,
+                packageName: selectedPlan.value.name
+            }
+        });
+    } catch (error) {
+        console.error('Failed to initiate package payment:', error);
+    } finally {
+        isSubmittingPayment.value = false;
+    }
+};
 
 const featuresList = computed(() => {
     if (!plans.value.length) return [];
@@ -101,24 +219,6 @@ const breadcumb = computed(() => [
     { id: 2, text: 'Gói dịch vụ', path: '#' }
 ]);
 
-const userStore = useUserStore();
-const currentPlanName = computed(() => {
-    if (!userStore.isLogin) return null;
-    if (userStore.role === 'admin') return 'Admin';
-    // Simplified logic: usually users have a package_level or similar
-    // We'll default to 'Free' if not specified, but this should be adjusted to your data
-    return 'Premium';
-});
-
-const currentPlanLevel = computed(() => {
-    if (!userStore.isLogin) return 0;
-    if (userStore.role === 'admin') return 3; // Admin has highest level
-    if (currentPlanName.value === 'Premium') return 3;
-    if (currentPlanName.value === 'Basic') return 2;
-    if (currentPlanName.value === 'Free') return 1;
-    return 1;
-});
-
 const faqs = [
     {
         q: 'Tôi có thể nâng cấp gói dịch vụ sau khi đăng ký không?',
@@ -169,7 +269,7 @@ const faqs = [
         </div>
 
         <!-- CURRENT PLAN -->
-        <div v-if="userStore.isLogin && currentPlanName" class="d-flex justify-content-center mb-5">
+        <div v-if="currentPlanName" class="d-flex justify-content-center mb-5">
             <div class="current-plan-badge">
                 <BaseIconComponent name="star" type="mdi" :size="16" color="#2563eb" />
                 <span class="badge-text">Gói hiện tại: <span class="fw-bold">{{ currentPlanName }}</span></span>
@@ -193,10 +293,11 @@ const faqs = [
         <div class="row g-4 mb-5">
             <!-- FREE PLAN -->
             <div class="col-lg-4">
-                <div class="pricing-card pricing-card-free">
+                <div class="pricing-card pricing-card-free"
+                    :class="{ 'pricing-card-disabled': currentPlanLevel > (planFree?.level || 1) }">
                     <!-- Stackable Headers -->
                     <div class="card-headers">
-                        <div v-if="currentPlanName === 'Free'" class="card-header-status bg-blue-header">
+                        <div v-if="currentPlanLevel === (planFree?.level || 1)" class="card-header-status bg-blue-header">
                             <p class="mb-0 text-white fw-bold">
                                 <BaseIconComponent name="star" type="mdi" :size="14" color="#fff" class="me-1" /> Gói
                                 hiện tại
@@ -255,13 +356,13 @@ const faqs = [
 
                         <!-- Action Button -->
                         <div class="card-action">
-                            <div v-if="currentPlanLevel > 1" class="lower-tier-label">
+                            <button v-if="currentPlanLevel > (planFree?.level || 1)" class="btn-plan btn-plan-disabled" disabled>
                                 Gói thấp hơn gói hiện tại
-                            </div>
-                            <button v-else-if="currentPlanLevel === 1" class="btn-plan btn-plan-disabled" disabled>
+                            </button>
+                            <button v-else-if="currentPlanLevel === (planFree?.level || 1)" class="btn-plan btn-plan-disabled" disabled>
                                 Gói hiện tại
                             </button>
-                            <button v-else class="btn-plan btn-plan-basic">
+                            <button v-else class="btn-plan btn-plan-basic" @click="handleSelectPlan(planFree)">
                                 Chọn gói {{ planFree?.name || 'Free' }}
                             </button>
                         </div>
@@ -271,10 +372,11 @@ const faqs = [
 
             <!-- BASIC PLAN -->
             <div class="col-lg-4">
-                <div class="pricing-card pricing-card-basic">
+                <div class="pricing-card pricing-card-basic"
+                    :class="{ 'pricing-card-disabled': currentPlanLevel > (planBasic?.level || 2) }">
                     <!-- Stackable Headers -->
                     <div class="card-headers">
-                        <div v-if="currentPlanName === 'Basic'" class="card-header-status bg-blue-header">
+                        <div v-if="currentPlanLevel === (planBasic?.level || 2)" class="card-header-status bg-blue-header">
                             <p class="mb-0 text-white fw-bold">
                                 <BaseIconComponent name="star" type="mdi" :size="14" color="#fff" class="me-1" /> Gói
                                 hiện tại
@@ -309,7 +411,6 @@ const faqs = [
                                     v-if="planBasic?.original_price > planBasic?.sale_price">-{{
                                         getDiscount(planBasic?.original_price, planBasic?.sale_price) }}%</span>
                             </div>
-                            <!-- <div class="price-expiry">⏰ Khuyến mãi đến 17/1/2026</div> -->
                         </div>
 
                         <!-- Package Limits -->
@@ -350,13 +451,13 @@ const faqs = [
 
                         <!-- Action Button -->
                         <div class="card-action">
-                            <div v-if="currentPlanLevel > 2" class="lower-tier-label">
+                            <button v-if="currentPlanLevel > (planBasic?.level || 2)" class="btn-plan btn-plan-disabled" disabled>
                                 Gói thấp hơn gói hiện tại
-                            </div>
-                            <button v-else-if="currentPlanLevel === 2" class="btn-plan btn-plan-disabled" disabled>
+                            </button>
+                            <button v-else-if="currentPlanLevel === (planBasic?.level || 2)" class="btn-plan btn-plan-disabled" disabled>
                                 Gói hiện tại
                             </button>
-                            <button v-else class="btn-plan btn-plan-basic">
+                            <button v-else class="btn-plan btn-plan-basic" @click="handleSelectPlan(planBasic)">
                                 Chọn gói {{ planBasic?.name || 'Basic' }}
                             </button>
                         </div>
@@ -366,10 +467,11 @@ const faqs = [
 
             <!-- PREMIUM PLAN -->
             <div class="col-lg-4">
-                <div class="pricing-card pricing-card-premium">
+                <div class="pricing-card pricing-card-premium"
+                    :class="{ 'pricing-card-disabled': currentPlanLevel > (planPremium?.level || 3) }">
                     <!-- Stackable Headers -->
                     <div class="card-headers">
-                        <div v-if="currentPlanName === 'Premium'" class="card-header-status bg-blue-header">
+                        <div v-if="currentPlanLevel === (planPremium?.level || 3)" class="card-header-status bg-blue-header">
                             <p class="mb-0 text-white fw-bold">
                                 <BaseIconComponent name="star" type="mdi" :size="14" color="#fff" class="me-1" /> Gói
                                 hiện tại
@@ -390,7 +492,7 @@ const faqs = [
                             <h3 class="plan-title plan-title-premium">
                                 <BaseIconComponent name="crown" type="mdi" :size="24" color="#bf125d"
                                     class="me-1 v-middle" />
-                                Premium
+                                {{ planPremium?.name || 'Premium' }}
                             </h3>
                             <span class="premium-badge">Premium</span>
                         </div>
@@ -408,7 +510,6 @@ const faqs = [
                                     v-if="planPremium?.original_price > planPremium?.sale_price">-{{
                                         getDiscount(planPremium?.original_price, planPremium?.sale_price) }}%</span>
                             </div>
-                            <!-- <div class="price-expiry">⏰ Khuyến mãi đến 17/1/2026</div> -->
                         </div>
 
                         <!-- Package Limits -->
@@ -452,13 +553,13 @@ const faqs = [
 
                         <!-- Action Button -->
                         <div class="card-action">
-                            <div v-if="currentPlanLevel > 3" class="lower-tier-label">
+                            <button v-if="currentPlanLevel > (planPremium?.level || 3)" class="btn-plan btn-plan-disabled" disabled>
                                 Gói thấp hơn gói hiện tại
-                            </div>
-                            <button v-else-if="currentPlanLevel === 3" class="btn-plan btn-plan-disabled" disabled>
+                            </button>
+                            <button v-else-if="currentPlanLevel === (planPremium?.level || 3)" class="btn-plan btn-plan-disabled" disabled>
                                 Gói hiện tại
                             </button>
-                            <button v-else class="btn-plan btn-plan-premium">
+                            <button v-else class="btn-plan btn-plan-premium" @click="handleSelectPlan(planPremium)">
                                 Chọn gói {{ planPremium?.name || 'Premium' }}
                             </button>
                         </div>
@@ -466,6 +567,94 @@ const faqs = [
                 </div>
             </div>
         </div>
+
+        <!-- UPGRADE CONFIRMATION MODAL -->
+        <Teleport to="body">
+            <div v-if="showUpgradeModal && selectedPlan" class="upgrade-modal-overlay" @click.self="closeUpgradeModal">
+                <div class="upgrade-modal-box">
+                    <div class="upgrade-modal-header" :class="selectedPlan.level === 3 ? 'header-premium' : 'header-basic'">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-4">{{ selectedPlan.level === 3 ? '👑' : '🚀' }}</span>
+                            <div>
+                                <h5 class="m-0 fw-bold text-white">Xác nhận nâng cấp gói {{ selectedPlan.name }}</h5>
+                                <small class="text-white-50">Thanh toán trực tuyến tự động qua SePay (VietQR)</small>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close-modal" @click="closeUpgradeModal">✕</button>
+                    </div>
+
+                    <div class="upgrade-modal-body">
+                        <!-- Plan Transition -->
+                        <div class="plan-transition-box mb-3">
+                            <div class="plan-pill current">
+                                <span class="label">Gói hiện tại</span>
+                                <strong>{{ currentPlanName || 'Free' }}</strong>
+                            </div>
+                            <div class="transition-arrow">➔</div>
+                            <div class="plan-pill target" :class="selectedPlan.level === 3 ? 'target-premium' : 'target-basic'">
+                                <span class="label">Gói nâng cấp</span>
+                                <strong>{{ selectedPlan.name }}</strong>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Summary -->
+                        <div class="upgrade-summary-card mb-3">
+                            <div class="summary-row">
+                                <span>Thời hạn lưu trữ thiệp:</span>
+                                <strong>{{ selectedPlan.time_save_card }} tháng</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Số lượng thiệp có thể tạo:</span>
+                                <strong>{{ selectedPlan.number_of_cards }} thiệp</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Giới hạn hình ảnh tải lên:</span>
+                                <strong>{{ selectedPlan.image_limits }} ảnh</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Lượt xem tối đa:</span>
+                                <strong>{{ formatPrice(selectedPlan.maximum_views) }} lượt</strong>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="price-breakdown-card mb-3">
+                            <div v-if="selectedPlan.original_price > selectedPlan.sale_price" class="d-flex justify-content-between text-muted small mb-1">
+                                <span>Giá gốc:</span>
+                                <span class="text-decoration-line-through">{{ formatPrice(selectedPlan.original_price) }}đ</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-dark">Tổng thanh toán:</span>
+                                <span class="fs-4 fw-bold text-danger">{{ formatPrice(selectedPlanPrice) }}đ</span>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method Notice -->
+                        <div class="sepay-method-badge">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="sepay-icon">💳</span>
+                                <div>
+                                    <div class="fw-bold small text-dark">Cổng thanh toán trực tuyến SePay (VietQR)</div>
+                                    <div class="text-muted" style="font-size: 12px;">Quét mã QR ngân hàng — Kích hoạt nâng cấp gói tự động ngay lập tức</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upgrade-modal-footer">
+                        <button type="button" class="btn-modal-cancel" @click="closeUpgradeModal" :disabled="isSubmittingPayment">
+                            Hủy bỏ
+                        </button>
+                        <button type="button" class="btn-modal-confirm"
+                            :class="selectedPlan.level === 3 ? 'btn-plan-premium' : 'btn-plan-basic'"
+                            @click="confirmUpgradePayment" :disabled="isSubmittingPayment">
+                            <span v-if="isSubmittingPayment">Đang khởi tạo thanh toán...</span>
+                            <span v-else>Thanh toán ngay qua SePay</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </Teleport>
 
         <!-- COMPARISON TITLE -->
         <h3 class="text-center fw-bold mb-4 mt-5">So sánh chi tiết các gói dịch vụ</h3>
@@ -565,8 +754,9 @@ const faqs = [
             <h3 class="fw-bold mb-3">Sẵn sàng tạo website/thiệp online ấn tượng?</h3>
             <p class="text-muted mb-4">Đăng ký ngay hôm nay để bắt đầu lưu giữ khoảnh khắc hạnh phúc với các<br>ưu đãi
                 hấp dẫn dành riêng cho bạn</p>
-            <button class="btn btn-danger-gradient btn-lg rounded-pill px-5 shadow">
-                Đăng ký ngay hôm nay
+            <button v-if="currentPlanLevel < 3" class="btn btn-danger-gradient btn-lg rounded-pill px-5 shadow"
+                @click="handleSelectPlan(planPremium || planBasic)">
+                Nâng cấp ngay hôm nay
             </button>
         </div>
 
@@ -599,7 +789,7 @@ const faqs = [
     border-radius: 12px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -607,6 +797,14 @@ const faqs = [
 
 .pricing-card:hover {
     transform: translateY(-5px);
+}
+
+.pricing-card-disabled {
+    opacity: 0.72;
+}
+
+.pricing-card-disabled:hover {
+    transform: none;
 }
 
 /* Free Card */
@@ -846,7 +1044,7 @@ const faqs = [
 
 .btn-plan-disabled {
     background: #f3f4f6;
-    color: #999;
+    color: #9ca3af;
     border: 1px solid #e5e7eb;
     cursor: not-allowed;
 }
@@ -892,6 +1090,190 @@ const faqs = [
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     z-index: 5;
     letter-spacing: 0.5px;
+}
+
+/* ========== UPGRADE MODAL STYLES ========== */
+.upgrade-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.upgrade-modal-box {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: modalFadeUp 0.2s ease-out;
+}
+
+@keyframes modalFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.upgrade-modal-header {
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-basic {
+    background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
+}
+
+.header-premium {
+    background: linear-gradient(135deg, #c026d3 0%, #9333ea 100%);
+}
+
+.btn-close-modal {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-close-modal:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.upgrade-modal-body {
+    padding: 20px 22px;
+}
+
+.plan-transition-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+.plan-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.plan-pill .label {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.plan-pill strong {
+    font-size: 16px;
+    color: #334155;
+}
+
+.plan-pill.target-basic strong {
+    color: #e11d48;
+}
+
+.plan-pill.target-premium strong {
+    color: #9333ea;
+}
+
+.transition-arrow {
+    font-size: 20px;
+    color: #94a3b8;
+    padding: 0 12px;
+}
+
+.upgrade-summary-card {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #f1f5f9;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #4b5563;
+    padding: 5px 0;
+}
+
+.summary-row strong {
+    color: #111827;
+}
+
+.price-breakdown-card {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+.sepay-method-badge {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.sepay-icon {
+    font-size: 22px;
+}
+
+.upgrade-modal-footer {
+    padding: 14px 22px 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.btn-modal-cancel {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-modal-cancel:hover {
+    background: #f3f4f6;
+}
+
+.btn-modal-confirm {
+    flex: 2;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 /* ========== EXISTING STYLES ========== */

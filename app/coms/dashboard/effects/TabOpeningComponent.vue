@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import type { PropType } from 'vue';
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
 import ButtonCustomCompomnent from '~/coms/button/ButtonCustomCompomnent.vue';
 import ConfigEffectAnimatedComponent from '~/coms/dashboard/modal/ConfigEffectAnimatedComponent.vue';
 import { useEditorStore } from '~~/stores/editor';
+import { useUserStore } from '~~/stores/user';
 
 const props = defineProps({
     effects: {
@@ -14,10 +15,35 @@ const props = defineProps({
 });
 
 const editor = useEditorStore();
+const userStore = useUserStore();
 const selectedEffect = ref(editor.effect?.opening?.slug || 'none');
 const showConfigModal = ref(false);
+const isPremium = ref(false);
+
+onMounted(async () => {
+    if (editor.role === 'admin' || userStore.role === 'admin') {
+        isPremium.value = true;
+        return;
+    }
+    if (userStore.packageName?.toLowerCase() === 'premium' || Number(userStore.packageLevel) >= 4) {
+        isPremium.value = true;
+        return;
+    }
+    try {
+        const res: any = await $fetch('/api/v1/client/my-plan');
+        if (res?.data && (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 4)) {
+            isPremium.value = true;
+        }
+    } catch (e) {
+        console.error('Failed to check plan in TabOpeningComponent', e);
+    }
+});
 
 const handleEffectSelect = (effect: any) => {
+    if (!isPremium.value && editor.role !== 'admin') {
+        editor.showNotification('Chỉ tài khoản gói Premium mới có thể sử dụng hiệu ứng mở màn!', 'warning');
+        return;
+    }
     selectedEffect.value = effect.slug;
     // Auto apply
     if (editor.effect) {
