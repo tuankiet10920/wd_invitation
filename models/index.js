@@ -204,6 +204,9 @@ export const loadAndAssociateModels = (sequelize, DataTypes) => {
   // =========================================================
   db.News.hasMany(db.Gallery, { foreignKey: "id_news", as: "galleries" });
   db.Gallery.belongsTo(db.News, { foreignKey: "id_news", as: "news" });
+  db.News.belongsTo(db.User, { foreignKey: "id_user", as: "user" });
+  db.User.hasMany(db.News, { foreignKey: "id_user", as: "feedbacks" });
+  db.News.belongsTo(db.News, { foreignKey: "id_news", as: "category" });
 
   // =========================================================
   // ## PACKAGES & FEATURES & ORDERS ##

@@ -169,7 +169,7 @@ fetchMyPlan()
                             <BaseIconComponent name="clock" type="lucide" :size="18" /> <span class="fs-6 ms-2">Thời hạn
                                 website</span>
                         </div>
-                        <div class="fw-bold text-primary ip-text-p fs-5">6 tháng</div>
+                        <div class="fw-bold text-primary ip-text-p fs-5">{{ myPlanData.time_save_card || 6 }} tháng</div>
                     </div>
                     <div class="col-md-4 border-start border-end">
                         <div class="small text-muted mb-1 flex-js-ac">

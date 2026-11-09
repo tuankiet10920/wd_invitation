@@ -221,6 +221,35 @@ export function sendGiftWithCoins(params: {
   });
 
   map[key] = record;
+
+  // Cộng xu vào tài khoản người nhận thiệp (nếu người nhận khác người gửi)
+  if (params.recipientUserId && Number(params.recipientUserId) !== userId && priceCoins > 0) {
+    const recipientId = Number(params.recipientUserId);
+    const recipientKey = String(recipientId);
+    const recipientRecord = map[recipientKey] || {
+      userId: recipientId,
+      coins: DEFAULT_INITIAL_COINS,
+      updatedAt: record.updatedAt,
+      history: [],
+    };
+    recipientRecord.coins += priceCoins;
+    recipientRecord.updatedAt = record.updatedAt;
+    recipientRecord.history.unshift({
+      id: `coin-tx-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId: recipientId,
+      type: "TOPUP",
+      coins: priceCoins,
+      balanceAfter: recipientRecord.coins,
+      description: `Nhận quà "${params.giftName}" từ ${params.senderName} (+${priceCoins} xu)`,
+      code: `${txCode}-RECV`,
+      giftId: params.giftId,
+      giftName: params.giftName,
+      slug: params.slug,
+      createdAt: record.updatedAt,
+    });
+    map[recipientKey] = recipientRecord;
+  }
+
   saveCoinsMap(map);
 
   // Lưu lịch sử quà đã tặng

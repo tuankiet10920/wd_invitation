@@ -2,6 +2,10 @@
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
 
 defineProps({
+    modelValue: {
+        type: String,
+        default: ''
+    },
     placeholder: {
         type: String,
         default: 'Tìm kiếm...'
@@ -12,11 +16,14 @@ defineProps({
     }
 })
 
+const emit = defineEmits(['update:modelValue', 'search'])
+
 const route = useRoute()
 const isAppear = ref(true)
 
 const excepts = [
-    '/admin/users/list'
+    '/admin/users/list',
+    '/admin/feedbacks/list'
 ]
 
 watch(() => route.path, (newValue) => {
@@ -27,7 +34,9 @@ watch(() => route.path, (newValue) => {
 <template>
     <div class="d-flex gap-2 align-items-center">
         <div class="search-box">
-            <input type="text" class="form-control" :placeholder="placeholder">
+            <input type="text" class="form-control" :placeholder="placeholder" :value="modelValue"
+                @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+                @keyup.enter="emit('search')">
         </div>
         <NuxtLink v-if="isAppear" :to="linkCreate"
             class="btn btn-primary d-flex align-items-center justify-content-center p-2"

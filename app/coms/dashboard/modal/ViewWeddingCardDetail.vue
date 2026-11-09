@@ -6,6 +6,7 @@ import QrcodeVue from 'qrcode.vue';
 import { useRuntimeConfig } from '#app';
 import { useUserStore } from '~~/stores/user';
 import { useEditorStore } from '~~/stores/editor';
+import { useFavoriteStore } from '~~/stores/favorite';
 
 const props = defineProps({
     modelValue: {
@@ -23,6 +24,7 @@ const emits = defineEmits(['update:modelValue', 'use'])
 const isOpen = ref(props.modelValue)
 const store = useUserStore()
 const editorStore = useEditorStore()
+const favoriteStore = useFavoriteStore()
 
 const PACKAGE_LEVELS: Record<string, number> = {
     free: 1,
@@ -50,6 +52,28 @@ const canUseTemplate = computed(() => {
     if (!store.isLogin) return true
     return userPackageLevel.value >= requiredPackageLevel.value
 })
+
+const isCardLimitReached = computed(() => {
+    if (!store.isLogin || editorStore.role === 'admin' || store.role === 'admin') return false
+    return store.isWebsiteLimitReached
+})
+
+const templateCode = computed(() => {
+    if (props.card?.code) return props.card.code
+    if (props.card?.id) return `C${props.card.id}`
+    return 'C01'
+})
+
+const formatNumber = (num: any) => {
+    const n = Number(num) || 0
+    return n.toLocaleString('vi-VN')
+}
+
+const toggleSave = () => {
+    if (props.card?.id) {
+        favoriteStore.toggleFavorite(props.card.id)
+    }
+}
 
 watch(() => props.modelValue, async (val) => {
     isOpen.value = val
@@ -94,7 +118,7 @@ const cardData = computed(() => {
         }
     }
 
-    // Effect handling - WrapperComponent expects animaion string 
+    // Effect handling - WrapperComponent expects animation string 
     const eff = props.card.effect;
     let animationEffect = 'none';
 
@@ -114,12 +138,13 @@ const cardData = computed(() => {
         nodes: nodes,
         music: music,
         effect: animationEffect,
-        rawEffect: props.card.effect, // passing raw for other renders like falling 
+        rawEffect: props.card.effect,
         height: props.card.height || props.card.properties?.height || 1024
     };
 })
 
 const isUsing = ref(false)
+const warningPulse = ref(false)
 
 const handleUse = async () => {
     if (!store.isLogin && editorStore.role !== 'admin') {
@@ -131,6 +156,16 @@ const handleUse = async () => {
     if (!canUseTemplate.value) {
         const msg = `Mẫu này dành cho gói ${requiredPackageName.value} trở lên (Gói hiện tại của bạn: ${store.packageName || 'Free'})!`;
         editorStore.showNotification(msg, 'warning');
+        warningPulse.value = true;
+        setTimeout(() => { warningPulse.value = false; }, 600);
+        return;
+    }
+
+    if (isCardLimitReached.value) {
+        const msg = `Bạn đã đạt giới hạn tối đa ${store.currentWebsites}/${store.numberOfCards} trang thiệp của gói ${store.packageName || 'Free'}. Vui lòng nâng cấp gói hoặc xóa bớt trang cũ!`;
+        editorStore.showNotification(msg, 'warning');
+        warningPulse.value = true;
+        setTimeout(() => { warningPulse.value = false; }, 600);
         return;
     }
 
@@ -183,124 +218,125 @@ const handleLivePreview = () => {
 
 <template>
     <Teleport to="body">
-        <ModalZoomCenterComponent v-model="isOpen" :max-width="900">
-            <div class="detail-container">
-                <!-- Close Button (Heart circle top-left on Desktop) -->
-                <button class="btn-like d-none d-md-flex" @click="isOpen = false">
-                    <BaseIconComponent name="heart-outline" type="mdi" :size="24" class="text-secondary" />
-                </button>
-
-                <!-- Mobile Header Stats -->
-                <div class="modal-header-mobile d-flex d-md-none justify-content-between p-3">
-                    <button class="btn-heart-mobile" @click="isOpen = false">
-                        <BaseIconComponent name="heart-outline" type="mdi" :size="28" class="text-danger" />
-                    </button>
-                    <div class="bar-love">
-                        <div class="badge-stat badge-like">
-                            <BaseIconComponent name="heart" type="mdi" :size="16" color="#FFFFFF" />
-                            <span>{{ card.likes }}</span>
-                        </div>
-                        <div class="badge-stat badge-view">
-                            <BaseIconComponent name="eye" type="mdi" :size="16" color="#FFFFFF" />
-                            <span>{{ card.views }}</span>
-                        </div>
+        <ModalZoomCenterComponent v-model="isOpen" :max-width="840">
+            <div class="detail-container p-4">
+                <!-- Header: Title + Code badge + Close button -->
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <h5 class="modal-title-text mb-0 fw-bold">Xem trước mẫu thiệp</h5>
+                        <span class="code-badge">Mã mẫu {{ templateCode }}</span>
                     </div>
+                    <button type="button" class="btn-close-top" @click="isOpen = false" aria-label="Đóng">
+                        <BaseIconComponent name="x" type="lucide" :size="20" color="#6b7280" />
+                    </button>
                 </div>
 
-                <div class="row g-0 main-content-row">
-                    <!-- Left Column: Phone Mockup -->
-                    <div class="col-md-5 d-flex align-items-center mt-2 justify-content-center p-4 left-panel">
+                <!-- Main Content Row -->
+                <div class="row g-4 main-content-row align-items-start">
+                    <!-- Left Column: Phone Preview -->
+                    <div class="col-12 col-md-5 d-flex justify-content-center">
                         <div class="phone-frame">
                             <div class="phone-content h-100 w-100 d-flex justify-content-center overflow-hidden"
                                 v-if="cardData">
                                 <WrapperComponent :card-data="cardData" :scale="0.528" container-height="100%"
                                     :active-bar="false" />
                             </div>
-                            <div v-else class="h-100 d-flex align-items-center justify-content-center text-secondary">
+                            <div v-else class="h-100 d-flex align-items-center justify-content-center text-secondary small">
                                 Chưa có nội dung bản xem trước
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right Column: Info & Actions -->
-                    <div class="col-md-7 p-3 p-md-5 detail-panel d-flex flex-column">
-                        <!-- Stat Badges (Desktop Only) -->
-                        <div class="d-none d-md-flex justify-content-between align-items-center gap-2 mb-4">
-                            <span class="badge rounded-pill px-3 py-2 fw-bold text-uppercase"
-                                :class="{
-                                    'bg-success': requiredPackageName.toLowerCase() === 'free',
-                                    'bg-primary': requiredPackageName.toLowerCase() === 'basic',
-                                    'bg-warning text-dark': requiredPackageName.toLowerCase() === 'pro',
-                                    'bg-purple text-white': requiredPackageName.toLowerCase() === 'premium'
-                                }">
-                                Gói {{ requiredPackageName }}
-                            </span>
-                            <div class="d-flex gap-2">
-                                <div class="badge-stat badge-like">
-                                    <BaseIconComponent name="heart" type="mdi" :size="16" color="#FFFFFF" />
-                                    <span>{{ card.likes }}</span>
-                                </div>
-                                <div class="badge-stat badge-view">
-                                    <BaseIconComponent name="eye" type="mdi" :size="16" color="#FFFFFF" />
-                                    <span>{{ card.views }}</span>
-                                </div>
+                    <!-- Right Column: Stats, Features, QR -->
+                    <div class="col-12 col-md-7 d-flex flex-column">
+                        <!-- Stats Row -->
+                        <div class="stats-row d-flex align-items-center flex-wrap gap-3 pb-3 mb-3">
+                            <div class="stat-item d-flex align-items-center gap-1">
+                                <BaseIconComponent name="heart" type="lucide" :size="15" color="#6b7280" />
+                                <strong class="text-dark">{{ formatNumber(card.likes) }}</strong>
+                                <span class="text-muted">lượt thích</span>
+                            </div>
+                            <div class="stat-item d-flex align-items-center gap-1">
+                                <BaseIconComponent name="eye" type="lucide" :size="15" color="#6b7280" />
+                                <strong class="text-dark">{{ formatNumber(card.views) }}</strong>
+                                <span class="text-muted">lượt xem</span>
+                            </div>
+                            <div class="stat-item d-flex align-items-center gap-1">
+                                <BaseIconComponent name="edit-2" type="lucide" :size="14" color="#6b7280" />
+                                <strong class="text-dark">{{ formatNumber(card.uses || card.views) }}</strong>
+                                <span class="text-muted">lượt dùng</span>
                             </div>
                         </div>
 
-                        <!-- Features (Hidden on mobile) -->
-                        <div class="feature-list mb-auto d-none d-md-block">
-                            <div class="feature-item">
-                                <span class="feature-label">Chuyên nghiệp:</span>
-                                <span class="feature-desc">Thiết kế đẹp mắt, phù hợp nhiều phong cách</span>
+                        <!-- Features List -->
+                        <div class="features-section mb-4">
+                            <div class="features-heading fw-bold mb-3">Dùng mẫu này để</div>
+                            <div class="feature-row d-flex align-items-start gap-2 mb-2">
+                                <BaseIconComponent name="check" type="lucide" :size="16" color="#6b7280" class="mt-1 flex-shrink-0" />
+                                <span>Chỉnh sửa trực quan, không cần kinh nghiệm thiết kế</span>
                             </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Dễ dàng:</span>
-                                <span class="feature-desc">Chỉnh sửa trực quan, không cần kinh nghiệm</span>
+                            <div class="feature-row d-flex align-items-start gap-2 mb-2">
+                                <BaseIconComponent name="check" type="lucide" :size="16" color="#6b7280" class="mt-1 flex-shrink-0" />
+                                <span>Gửi link cho khách qua Zalo, Messenger hoặc mạng xã hội</span>
                             </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Tiện lợi:</span>
-                                <span class="feature-desc">Chia sẻ ngay qua mạng xã hội hoặc tin nhắn</span>
+                            <div class="feature-row d-flex align-items-start gap-2">
+                                <BaseIconComponent name="check" type="lucide" :size="16" color="#6b7280" class="mt-1 flex-shrink-0" />
+                                <span>Hiển thị đẹp trên điện thoại lẫn máy tính</span>
                             </div>
                         </div>
 
-                        <!-- Cảnh báo gói nếu gói hiện tại thấp hơn gói yêu cầu của mẫu -->
-                        <div v-if="store.isLogin && !canUseTemplate"
-                            class="alert alert-warning d-flex align-items-center justify-content-between gap-2 py-2 px-3 mb-3 rounded-3 small">
+                        <!-- QR Box -->
+                        <div class="qr-card d-flex align-items-center gap-3 p-3">
+                            <div class="qr-box flex-shrink-0">
+                                <qrcode-vue :value="getCardUrl" :size="88" level="H" render-as="svg" />
+                            </div>
                             <div>
-                                🔒 Mẫu này yêu cầu gói <strong>{{ requiredPackageName }}</strong> trở lên (Gói hiện tại: <strong>{{ store.packageName || 'Free' }}</strong>).
+                                <div class="fw-bold text-dark mb-1" style="font-size: 14px;">Xem trên điện thoại</div>
+                                <p class="text-muted mb-0" style="font-size: 13px; line-height: 1.45;">
+                                    Quét mã bằng camera để mở mẫu đúng như khách mời sẽ thấy.
+                                </p>
                             </div>
-                            <button class="btn btn-sm btn-primary fw-bold text-nowrap rounded-pill px-3"
+                        </div>
+
+                        <!-- Package Warning if user's plan is lower than template's required plan or card limit reached -->
+                        <div v-if="store.isLogin && (!canUseTemplate || isCardLimitReached)"
+                            class="alert alert-warning d-flex align-items-center justify-content-between gap-2 py-2 px-3 mt-3 mb-0 rounded-3 small">
+                            <div v-if="!canUseTemplate">
+                                Mẫu này yêu cầu gói <strong>{{ requiredPackageName }}</strong> trở lên (Gói hiện tại: <strong>{{ store.packageName || 'Free' }}</strong>).
+                            </div>
+                            <div v-else>
+                                Đã đạt giới hạn <strong>{{ store.currentWebsites }}/{{ store.numberOfCards }}</strong> trang thiệp của gói <strong>{{ store.packageName || 'Free' }}</strong>.
+                            </div>
+                            <button class="btn btn-sm btn-dark fw-bold text-nowrap rounded-pill px-3"
                                 @click="isOpen = false; navigateTo('/pricing-plans')">
                                 Nâng cấp
                             </button>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Actions -->
-                        <div class="d-flex gap-2 gap-md-3 mb-4 mb-md-5 justify-content-center mt-3 mt-md-0">
-                            <button class="btn btn-outline-secondary btn-action" @click="handleLivePreview">
-                                Xem trực tiếp
-                            </button>
-                            <button class="btn btn-primary btn-action btn-main"
-                                :class="{ 'opacity-75': store.isLogin && !canUseTemplate }"
-                                @click="handleUse">
-                                {{ store.isLogin && !canUseTemplate ? `Yêu cầu gói ${requiredPackageName}` : 'Dùng mẫu này' }}
-                            </button>
-                        </div>
+                <!-- Footer: Save button on left, Preview & Use buttons on right -->
+                <div class="footer-actions d-flex align-items-center justify-content-between flex-wrap gap-2 mt-4 pt-2">
+                    <button type="button" class="btn-save-pill d-inline-flex align-items-center gap-2"
+                        @click="toggleSave">
+                        <BaseIconComponent
+                            :name="favoriteStore.isFavorite(card.id) ? 'sharp-favorite' : 'sharp-favorite-border'"
+                            type="ic"
+                            color="#f43f5e"
+                            :size="18" />
+                        <span>{{ favoriteStore.isFavorite(card.id) ? 'Đã lưu' : 'Lưu mẫu' }}</span>
+                    </button>
 
-                        <!-- QR Section -->
-                        <div class="qr-section text-center">
-                            <div class="qr-wrapper mx-auto mb-3">
-                                <qrcode-vue :value="getCardUrl" :size="120" level="H" render-as="svg" />
-                            </div>
-                            <p class="qr-text mb-4">Quét mã QR để xem trên điện thoại</p>
-                        </div>
-
-                        <!-- Close Button Mobile -->
-                        <button
-                            class="btn btn-close-mobile d-md-none d-flex align-items-center justify-content-center gap-2"
-                            @click="isOpen = false">
-                            <BaseIconComponent name="close" type="mdi" :size="20" />
-                            <span>Đóng</span>
+                    <div class="d-flex align-items-center gap-2">
+                        <button type="button" class="btn-detail-pill d-inline-flex align-items-center gap-1"
+                            @click="handleLivePreview">
+                            <span>Xem chi tiết</span>
+                            <BaseIconComponent name="arrow-right" type="lucide" :size="15" color="#111827" />
+                        </button>
+                        <button type="button" class="btn-use-pill"
+                            :disabled="isUsing"
+                            @click="handleUse">
+                            {{ isUsing ? 'Đang xử lý...' : 'Dùng mẫu này' }}
                         </button>
                     </div>
                 </div>
@@ -310,83 +346,55 @@ const handleLivePreview = () => {
 </template>
 
 <style scoped>
-.bg-purple {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-}
-
 .detail-container {
-    background: #fff;
-    border-radius: 30px;
+    background: #ffffff;
+    border-radius: 20px;
     overflow-y: auto;
     overflow-x: hidden;
     height: fit-content;
     position: relative;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
 }
 
-.modal-header-mobile {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 20;
-    width: 100%;
-    background: transparent;
-    pointer-events: none;
+.modal-title-text {
+    font-size: 18px;
+    color: #111827;
 }
 
-.modal-header-mobile * {
-    pointer-events: auto;
+.code-badge {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
 }
 
-.bar-love {
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-    align-items: end;
-}
-
-.btn-heart-mobile {
+.btn-close-top {
     border: none;
     background: transparent;
-    padding: 0;
-    height: fit-content;
-}
-
-.btn-like {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: #fff;
-    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     cursor: pointer;
-    z-index: 10;
-    transition: transform 0.2s;
+    transition: background-color 0.2s;
 }
 
-.btn-like:hover {
-    transform: scale(1.05);
-}
-
-.left-panel {
-    background: #f8f9fa;
-    border-right: 1px solid #eee;
+.btn-close-top:hover {
+    background-color: #f3f4f6;
 }
 
 .phone-frame {
     width: 280px;
-    height: 560px;
-    background: #fff;
-    border-radius: 3;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    height: 520px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 6px solid #f1f5f9;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
     overflow: hidden;
-    /* border: 8px solid #333; */
     position: relative;
 }
 
@@ -395,137 +403,103 @@ const handleLivePreview = () => {
     height: 100%;
 }
 
-.detail-panel {
-    background: #fff;
-}
-
-.badge-stat {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 6px;
-    border-radius: 20px;
-    font-weight: 600;
+.stats-row {
+    border-bottom: 1px solid #f1f5f9;
     font-size: 13px;
-    color: #fff;
 }
 
-@media (max-width: 768px) {
-    .badge-stat span {
-        font-size: 12px !important;
-    }
+.stat-item strong {
+    font-weight: 700;
+    color: #111827;
 }
 
-.badge-like {
-    background: #ff5e7e;
+.features-heading {
+    font-size: 14px;
+    color: #111827;
 }
 
-.badge-view {
-    background: #4a90e2;
-}
-
-.feature-list {
-    margin-top: 20px;
-}
-
-.feature-item {
-    margin-bottom: 20px;
-    font-size: 16px;
+.feature-row {
+    font-size: 13.5px;
+    color: #4b5563;
     line-height: 1.5;
 }
 
-.feature-label {
-    font-weight: 700;
-    color: #333;
-    margin-right: 5px;
+.qr-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    background-color: #ffffff;
 }
 
-.feature-desc {
-    color: #666;
+.qr-box {
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 8px;
 }
 
-.btn-action {
-    flex: 1;
-    border-radius: 10px;
-    padding: 10px 15px;
+.btn-save-pill {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 13.5px;
     font-weight: 600;
-    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.btn-main {
-    background-color: #3b82f6;
-    border-color: #3b82f6;
-    color: white;
+.btn-save-pill:hover {
+    background: #fff1f2;
+    border-color: #fecdd3;
 }
 
-.btn-main:hover {
-    background-color: #2563eb;
-    border-color: #2563eb;
-}
-
-.btn-outline-secondary {
-    border-color: #ccc;
-    color: #333;
-    background: #fff;
-}
-
-.qr-section {
-    padding-top: 15px;
-}
-
-.qr-wrapper {
-    background: #fff;
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-}
-
-.qr-text {
-    font-size: 14px;
-    color: #888;
-    margin: 0;
-}
-
-.btn-close-mobile {
-    width: 100%;
-    background: #f1f3f5;
-    border: none;
-    padding: 14px;
-    border-radius: 12px;
+.btn-detail-pill {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-size: 13.5px;
     font-weight: 600;
-    color: #495057;
-    transition: background 0.2s;
+    color: #111827;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.btn-close-mobile:active {
-    background: #e9ecef;
+.btn-detail-pill:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.btn-use-pill {
+    background: #111827;
+    border: 1px solid #111827;
+    border-radius: 999px;
+    padding: 9px 22px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-use-pill:hover:not(:disabled) {
+    background: #1f2937;
+}
+
+.btn-use-pill:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
     .detail-container {
-        height: 90vh;
-        border-radius: 20px;
-    }
-
-    .main-content-row {
-        height: auto !important;
-    }
-
-    .left-panel {
-        background: transparent;
-        border-right: none;
-        padding: 15px !important;
+        max-height: 90vh;
+        border-radius: 18px;
     }
 
     .phone-frame {
         width: 260px;
-        height: 500px;
-        /* border: 4px solid #333; */
-    }
-
-    .detail-panel {
-        padding-top: 5px !important;
+        height: 460px;
     }
 }
 </style>

@@ -21,20 +21,31 @@ const fetchMyPlan = async () => {
 }
 
 fetchMyPlan()
+onMounted(() => {
+    fetchMyPlan()
+})
 
 // Thống kê sử dụng từ API
 const stats = computed(() => {
     if (!myPlanData.value) return []
     const d = myPlanData.value
 
-    const websitePercent = Math.min(100, ((d.currentWebsites || 0) / (d.number_of_cards || 1)) * 100)
-    const imagePercent = Math.min(100, ((d.currentImages || 0) / (d.image_limits || 1)) * 100)
-    const viewPercent = Math.min(100, ((d.currentViews || 0) / (d.maximum_views || 1)) * 100)
+    const maxWebsites = d.number_of_cards || 1
+    const maxImages = d.image_limits || 1
+    const maxViews = d.maximum_views || 1
+
+    const curWebsites = Math.min(d.currentWebsites || 0, maxWebsites)
+    const curImages = Math.min(d.currentImages || 0, maxImages)
+    const curViews = Math.min(d.currentViews || 0, maxViews)
+
+    const websitePercent = Math.min(100, (curWebsites / maxWebsites) * 100)
+    const imagePercent = Math.min(100, (curImages / maxImages) * 100)
+    const viewPercent = Math.min(100, (curViews / maxViews) * 100)
 
     return [
-        { name: 'Website', current: d.currentWebsites || 0, max: d.number_of_cards || 0, icon: 'globe', iconColor: '#3b82f6', barColor: '#f97316', percent: websitePercent, limit: `${d.number_of_cards} trang` },
-        { name: 'Hình ảnh', current: d.currentImages || 0, max: d.image_limits || 0, icon: 'image', iconColor: '#10b981', barColor: '#10b981', percent: imagePercent, limit: `${d.image_limits} hình ảnh` },
-        { name: 'Lượt xem', current: d.currentViews || 0, max: d.maximum_views || 0, icon: 'eye', iconColor: '#8b5cf6', barColor: '#adb5bd', percent: viewPercent, limit: `${d.maximum_views.toLocaleString('en-US')} lượt xem` }
+        { name: 'Website', current: curWebsites, max: d.number_of_cards || 0, isFull: (d.currentWebsites || 0) >= maxWebsites, icon: 'globe', iconColor: '#3b82f6', barColor: (d.currentWebsites || 0) >= maxWebsites ? '#ef4444' : '#f97316', percent: websitePercent, limit: `${d.number_of_cards} trang` },
+        { name: 'Hình ảnh', current: curImages, max: d.image_limits || 0, isFull: (d.currentImages || 0) >= maxImages, icon: 'image', iconColor: '#10b981', barColor: (d.currentImages || 0) >= maxImages ? '#ef4444' : '#10b981', percent: imagePercent, limit: `${d.image_limits} hình ảnh` },
+        { name: 'Lượt xem', current: curViews, max: d.maximum_views || 0, isFull: (d.currentViews || 0) >= maxViews, icon: 'eye', iconColor: '#8b5cf6', barColor: (d.currentViews || 0) >= maxViews ? '#ef4444' : '#adb5bd', percent: viewPercent, limit: `${d.maximum_views.toLocaleString('en-US')} lượt xem` }
     ]
 })
 

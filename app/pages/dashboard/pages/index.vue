@@ -12,7 +12,9 @@ const totalViews = computed(() => {
     return myInvitations.value.reduce((sum, inv) => sum + (inv.views || 0), 0);
 });
 
-const maxViews = ref(300);
+const maxViews = ref(1000);
+const maxCards = ref(1);
+const currentPlanName = ref('Free');
 
 const viewPercentage = computed(() => {
     if (maxViews.value === 0) return 0;
@@ -50,8 +52,10 @@ const fetchMyPlan = async () => {
             method: 'GET'
         });
 
-        if (success && data && data.maximum_views) {
-            maxViews.value = data.maximum_views;
+        if (success && data) {
+            if (data.maximum_views) maxViews.value = data.maximum_views;
+            if (data.number_of_cards) maxCards.value = data.number_of_cards;
+            if (data.name) currentPlanName.value = data.name;
         }
     } catch (error) {
         console.error("Failed to fetch my plan", error);
@@ -64,6 +68,12 @@ onMounted(() => {
 })
 
 const createNewPage = () => {
+    if (myInvitations.value.length >= maxCards.value) {
+        if (confirm(`Bạn đã đạt giới hạn tối đa ${maxCards.value} trang thiệp của gói ${currentPlanName.value}. Bạn có muốn nâng cấp gói để tạo thêm không?`)) {
+            navigateTo('/pricing-plans');
+        }
+        return;
+    }
     const isMobile = window.innerWidth < 992;
     const prefix = isMobile ? '/editor/m' : '/editor';
     navigateTo(`${prefix}/new-blank`);

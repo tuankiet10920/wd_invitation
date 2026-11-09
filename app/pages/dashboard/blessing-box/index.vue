@@ -16,6 +16,7 @@ const data = ref<{
         totalWishes: number;
         latestWish: string | null;
         totalCards: number;
+        totalCoins?: number;
     };
     cards?: any[];
     wishes: any[];
@@ -36,6 +37,10 @@ const formatDate = (dateStr: string) => {
     })
 }
 
+const formatCoins = (val: number | undefined | null) => {
+    return Number(val || 0).toLocaleString('vi-VN')
+}
+
 const fetchWishes = async () => {
     try {
         const response = await $fetch<any>('/api/v1/client/wish')
@@ -46,32 +51,6 @@ const fetchWishes = async () => {
         console.error("Failed to fetch wishes", error)
     }
 }
-
-const wishStats = computed(() => [
-    {
-        label: 'Tổng lời chúc',
-        value: data.value?.stats.totalWishes || 0,
-        unit: 'lời chúc',
-        icon: 'mail',
-        color: 'text-primary'
-    },
-    {
-        label: 'Lời chúc mới nhất',
-        value: data.value?.stats.latestWish ? formatDate(data.value.stats.latestWish) : 'Chưa có',
-        unit: '',
-        icon: 'clock',
-        color: 'text-success'
-    },
-    {
-        label: 'Trang nhận lời chúc',
-        value: data.value?.stats.totalCards || 0,
-        unit: 'trang',
-        icon: 'heart',
-        color: 'text-danger'
-    }
-])
-
-const tableHeaders = ['Người gửi', 'Lời chúc', 'Ngày nhận', 'Trang', 'Thao tác']
 
 // Pagination
 const currentPage = ref(1)
@@ -101,6 +80,10 @@ const handleConfirmDelete = async () => {
                 if (data.value.stats) {
                     data.value.stats.totalWishes = data.value.wishes.length
                     data.value.stats.latestWish = data.value.wishes.length > 0 ? data.value.wishes[0].createdAt : null
+                    data.value.stats.totalCoins = data.value.wishes.reduce(
+                        (sum: number, w: any) => sum + (Number(w.coins) || 0),
+                        0
+                    )
                 }
             }
             alert('Đã xóa lời chúc thành công!')
@@ -124,6 +107,8 @@ const filteredWishes = computed(() => {
         list = list.filter((w: any) =>
             w.name?.toLowerCase().includes(q) ||
             w.content?.toLowerCase().includes(q) ||
+            w.cleanContent?.toLowerCase().includes(q) ||
+            w.giftName?.toLowerCase().includes(q) ||
             w.cardName?.toLowerCase().includes(q)
         )
     }
@@ -154,9 +139,9 @@ onMounted(fetchWishes)
             </div>
         </div>
 
-        <!-- Stats Grid (2x2-like on mobile) -->
+        <!-- Stats Grid -->
         <div class="row g-2 mb-4">
-            <div class="col-6">
+            <div class="col-6 col-md-3">
                 <div class="card border-0 rounded-3 p-3 shadow-sm h-100 bg-white">
                     <div class="d-flex align-items-center gap-1 text-muted mb-2" style="font-size: 13px;">
                         <BaseIconComponent name="mail" type="lucide" :size="14" />
@@ -165,17 +150,28 @@ onMounted(fetchWishes)
                     <div class="h4 fw-bold mb-0 text-primary">{{ data?.stats.totalWishes || 0 }}</div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-3">
+                <div class="card border-0 rounded-3 p-3 shadow-sm h-100 bg-white">
+                    <div class="d-flex align-items-center gap-1 text-muted mb-2" style="font-size: 13px;">
+                        <BaseIconComponent name="coins" type="lucide" :size="14" color="#d97706" />
+                        <span class="si-text">Tổng xu nhận được</span>
+                    </div>
+                    <div class="h4 fw-bold mb-0" style="color: #d97706;">
+                        +{{ formatCoins(data?.stats.totalCoins) }} <span class="fs-6 fw-semibold">xu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
                 <div class="card border-0 rounded-3 p-3 shadow-sm h-100 bg-white">
                     <div class="d-flex align-items-center gap-1 text-muted mb-2" style="font-size: 13px;">
                         <BaseIconComponent name="clock" type="lucide" :size="14" />
                         <span class="si-text">Mới nhất</span>
                     </div>
-                    <div class="h4 new-text fw-bold mb-0" style="color: #65a30d;">{{ data?.stats.latestWish ?
+                    <div class="h5 new-text fw-bold mb-0" style="color: #65a30d;">{{ data?.stats.latestWish ?
                         formatDate(data?.stats.latestWish) : 'Chưa có' }}</div>
                 </div>
             </div>
-            <div class="col-12 mt-2">
+            <div class="col-6 col-md-3">
                 <div class="card border-0 rounded-3 p-3 shadow-sm h-100 bg-white">
                     <div class="d-flex align-items-center gap-1 text-muted mb-2" style="font-size: 13px;">
                         <BaseIconComponent name="heart" type="lucide" :size="14" />
@@ -220,6 +216,7 @@ onMounted(fetchWishes)
                             <tr>
                                 <th class="ps-3 py-3 small fw-bold text-muted text-uppercase">Người gửi</th>
                                 <th class="py-3 small fw-bold text-muted text-uppercase">Lời chúc</th>
+                                <th class="py-3 small fw-bold text-muted text-uppercase">Số xu chuyển đến tài khoản</th>
                                 <th class="pe-3 py-3 small fw-bold text-muted text-uppercase text-center">Xóa</th>
                             </tr>
                         </thead>
@@ -231,12 +228,32 @@ onMounted(fetchWishes)
                                     }}</div>
                                 </td>
                                 <td class="py-3">
-                                    <div class="text-secondary small">{{ wish.content }}</div>
+                                    <div v-if="wish.giftName" class="mb-1">
+                                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 fw-semibold" style="font-size: 11px;">
+                                            🎁 Tặng {{ wish.giftName }}
+                                        </span>
+                                    </div>
+                                    <div class="text-secondary small">{{ wish.cleanContent || wish.content }}</div>
                                     <div class="mt-1">
                                         <nuxt-link :to="'/dashboard/pages/' + wish.cardSlug"
                                             class="text-primary text-decoration-none" style="font-size: 11px;">
                                             {{ wish.cardName }}
                                         </nuxt-link>
+                                    </div>
+                                </td>
+                                <td class="py-3">
+                                    <div v-if="Number(wish.coins) > 0" class="d-inline-flex flex-column">
+                                        <span class="badge rounded-pill px-3 py-2 fw-bold d-inline-flex align-items-center gap-1"
+                                            style="background-color: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 12px;">
+                                            <BaseIconComponent name="coins" type="lucide" :size="14" color="#d97706" />
+                                            <span>+{{ formatCoins(wish.coins) }} xu</span>
+                                        </span>
+                                        <span class="text-success mt-1 fw-medium" style="font-size: 11px;">
+                                            ✓ Đã chuyển vào tài khoản
+                                        </span>
+                                    </div>
+                                    <div v-else class="text-muted small">
+                                        <span class="badge bg-light text-secondary border fw-normal">0 xu (Chỉ gửi lời chúc)</span>
                                     </div>
                                 </td>
                                 <td class="pe-3 py-3 text-center">
@@ -264,7 +281,28 @@ onMounted(fetchWishes)
                             <BaseIconComponent name="trash-2" type="lucide" :size="18" />
                         </button>
                     </div>
-                    <div class="text-secondary wish-content small mb-3">{{ wish.content }}</div>
+
+                    <div v-if="wish.giftName" class="mb-1">
+                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 fw-semibold" style="font-size: 11px;">
+                            🎁 Tặng {{ wish.giftName }}
+                        </span>
+                    </div>
+
+                    <div class="text-secondary wish-content small mb-2">{{ wish.cleanContent || wish.content }}</div>
+
+                    <!-- Log số xu chuyển đến tài khoản trên Mobile -->
+                    <div class="mb-2">
+                        <div v-if="Number(wish.coins) > 0"
+                            class="d-inline-flex align-items-center gap-1 px-2 py-1 rounded-2 fw-bold"
+                            style="background-color: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 12px;">
+                            <BaseIconComponent name="coins" type="lucide" :size="13" color="#d97706" />
+                            <span>+{{ formatCoins(wish.coins) }} xu đã chuyển đến tài khoản</span>
+                        </div>
+                        <div v-else class="text-muted" style="font-size: 11px;">
+                            <span>0 xu (Chỉ gửi lời chúc)</span>
+                        </div>
+                    </div>
+
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 fw-normal"
                             style="font-size: 11px; border-radius: 6px;">

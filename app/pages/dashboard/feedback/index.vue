@@ -194,10 +194,10 @@ const submitFeedback = async () => {
                             <label class="small fw-bold mb-1 text-dark"><span class="text-danger">*</span> Tiêu
                                 đề</label>
                             <div class="position-relative">
-                                <input v-model="feedbackForm.title" type="text"
-                                    class="form-control form-control-sm py-2 rounded-2"
+                                <input v-model="feedbackForm.title" type="text" maxlength="100"
+                                    class="form-control form-control-sm py-2 rounded-2 pe-5"
                                     placeholder="Nhập tiêu đề ngắn gọn cho ý kiến của bạn">
-                                <span class="char-count text-muted">0 / 100</span>
+                                <span class="char-count text-muted">{{ feedbackForm.title.length }} / 100</span>
                             </div>
                         </div>
 
@@ -205,9 +205,9 @@ const submitFeedback = async () => {
                             <label class="small fw-bold mb-1 text-dark"><span class="text-danger">*</span> Nội dung chi
                                 tiết</label>
                             <div class="position-relative">
-                                <textarea v-model="feedbackForm.content" class="form-control rounded-2" rows="5"
+                                <textarea v-model="feedbackForm.content" class="form-control rounded-2 pb-4" rows="5" maxlength="1000"
                                     placeholder="Mô tả chi tiết ý kiến, đề xuất hoặc vấn đề bạn gặp phải..."></textarea>
-                                <span class="char-count text-muted">0 / 1000</span>
+                                <span class="char-count text-muted">{{ feedbackForm.content.length }} / 1000</span>
                             </div>
                         </div>
 
@@ -279,28 +279,46 @@ const submitFeedback = async () => {
                 <div v-for="item in feedbackList" :key="item.id" class="col-12">
                     <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
                         <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap gap-2">
                                 <div>
                                     <h6 class="fw-bold mb-1 text-dark">{{ item.content }}</h6>
-                                    <div class="text-muted small d-flex align-items-center">
+                                    <div class="text-muted small d-flex align-items-center flex-wrap gap-1">
                                         <BaseIconComponent name="clock" type="lucide" :size="12" class="me-1" />
-                                        {{ new Date(item.createdAt).toLocaleString('vi-VN') }}
-                                        <span class="mx-2 text-light-subtle">•</span>
+                                        <span>{{ new Date(item.createdAt).toLocaleString('vi-VN') }}</span>
+                                        <span class="mx-1 text-light-subtle">•</span>
                                         <span class="badge bg-light text-dark border fw-normal">
-                                            Phản hồi
+                                            {{ item.categoryName || 'Phản hồi' }}
                                         </span>
                                     </div>
                                 </div>
+                                <span v-if="item.status === 'resolved' || item.adminReply"
+                                    class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">
+                                    Đã phản hồi
+                                </span>
+                                <span v-else
+                                    class="badge bg-warning bg-opacity-10 text-warning-emphasis border border-warning border-opacity-25 px-2 py-1">
+                                    Đã tiếp nhận
+                                </span>
                             </div>
                             <p class="text-dark small mb-3 white-space-pre-line">{{ item.desc }}</p>
 
                             <!-- Hiển thị hình ảnh nếu có -->
                             <div v-if="item.galleries && item.galleries.length > 0" class="d-flex flex-wrap gap-2 mt-2">
-                                <div v-for="gal in item.galleries" :key="gal.id"
-                                    class="rounded-3 border overflow-hidden" style="width: 80px; height: 80px;">
+                                <a v-for="gal in item.galleries" :key="gal.id"
+                                    :href="`/images/user_feedback/USER_FEEDBACK_${gal.id}.png`" target="_blank"
+                                    class="rounded-3 border overflow-hidden d-block" style="width: 80px; height: 80px;">
                                     <img :src="`/images/user_feedback/USER_FEEDBACK_${gal.id}.png`"
                                         class="w-100 h-100 object-fit-cover" alt="Feedback image" loading="lazy" />
+                                </a>
+                            </div>
+
+                            <!-- Phản hồi từ Admin nếu có -->
+                            <div v-if="item.adminReply" class="mt-3 p-3 rounded-3 bg-primary bg-opacity-10 border border-primary border-opacity-25">
+                                <div class="d-flex align-items-center gap-1 fw-bold text-primary small mb-1">
+                                    <BaseIconComponent name="message-circle" type="lucide" :size="14" />
+                                    <span>Phản hồi từ Quản trị viên CineLove:</span>
                                 </div>
+                                <div class="small text-dark white-space-pre-line">{{ item.adminReply }}</div>
                             </div>
                         </div>
                     </div>

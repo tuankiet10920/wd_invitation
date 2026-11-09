@@ -145,11 +145,11 @@ const confirmClone = async () => {
         if (response.success) {
             router.push('/dashboard/pages');
         } else {
-            alert('Nhân bản thất bại. Có thể URL đã tồn tại.');
+            alert(response.message || 'Nhân bản thất bại. Có thể bạn đã đạt giới hạn trang thiệp của gói hiện tại.');
         }
-    } catch (e) {
+    } catch (e: any) {
         console.error(e);
-        alert('Có lỗi xảy ra khi nhân bản.');
+        alert(e?.data?.message || 'Có lỗi xảy ra khi nhân bản hoặc đã đạt giới hạn trang thiệp của gói.');
     } finally {
         isCloneModalOpen.value = false;
     }

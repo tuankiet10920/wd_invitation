@@ -71,7 +71,10 @@ const items = [
     }
 ]
 
+const limitWarning = ref<string | null>(null)
+
 const handleSelect = async (item: typeof items[0]) => {
+    limitWarning.value = null;
     let targetPath = item.path;
     if (item.id === 1 && import.meta.client && window.innerWidth < 768) {
         targetPath = '/editor/m/new-blank';
@@ -82,6 +85,11 @@ const handleSelect = async (item: typeof items[0]) => {
         if (!userStore.isLogin) {
             isOpen.value = false;
             userStore.openModal = true;
+            return;
+        }
+        await userStore.fetchPlan();
+        if (userStore.isWebsiteLimitReached) {
+            limitWarning.value = `Bạn đã sử dụng tối đa ${userStore.currentWebsites}/${userStore.numberOfCards} trang thiệp của gói ${userStore.packageName || 'Free'}. Vui lòng nâng cấp gói hoặc xóa bớt trang cũ để tạo thiết kế mới!`;
             return;
         }
     }
@@ -108,6 +116,16 @@ const handleSelect = async (item: typeof items[0]) => {
                     </div>
                     <button class="btn-close-modal" @click="isOpen = false">
                         <BaseIconComponent name="close-circle-outline" type="mdi" :size="24" class="text-secondary" />
+                    </button>
+                </div>
+
+                <!-- Alert if website limit reached -->
+                <div v-if="limitWarning"
+                    class="alert alert-warning d-flex align-items-center justify-content-between gap-3 py-2 px-3 mb-3 rounded-3 small">
+                    <span>⚠️ {{ limitWarning }}</span>
+                    <button class="btn btn-sm btn-primary fw-bold text-nowrap rounded-pill px-3"
+                        @click="isOpen = false; navigateTo('/pricing-plans')">
+                        Nâng cấp ngay
                     </button>
                 </div>
 

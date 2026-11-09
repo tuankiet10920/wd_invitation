@@ -850,6 +850,16 @@ export const useEditorStore = defineStore("editor", {
             method: "POST",
             body: payload,
           });
+          if (data && data.success === false) {
+            if (!silent) {
+              this.showNotification(
+                data.message || "Không thể xuất bản trang thiệp do vượt giới hạn gói!",
+                "warning",
+              );
+            }
+            this.isSaving = false;
+            return;
+          }
           if (data && data.data) {
             const oldId = this.currentCardId;
             this.currentCardId = data.data.id;
@@ -963,9 +973,15 @@ export const useEditorStore = defineStore("editor", {
           }
         }
         return { id: savedCardId, url: route.params.slug };
-      } catch (error) {
+      } catch (error: any) {
         console.error("Failed to save card", error);
-        if (!silent) this.showNotification("Lưu thất bại! Vui lòng thử lại.", "error");
+        const serverMsg = error?.data?.message || error?.response?._data?.message;
+        if (!silent) {
+          this.showNotification(
+            serverMsg || "Lưu thất bại! Vui lòng thử lại.",
+            serverMsg ? "warning" : "error",
+          );
+        }
       } finally {
         this.isSaving = false;
       }
