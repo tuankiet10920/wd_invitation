@@ -128,8 +128,21 @@ export class WeddingCardService {
       if (!url) return FormatResponse.error(event, "URL is required!");
       const item = await WeddingCard.getByUrl(url);
       if (!item) return FormatResponse.error(event, "Card template not found!");
+
+      const plainItem = item.toJSON ? item.toJSON() : { ...item };
+      if (!plainItem.is_template && plainItem.id_user && plainItem.user?.role !== "admin") {
+        const { WeddingCard: WeddingCardModel, Package: PackageModel } = (global as any).__db;
+        const userPkgId = plainItem.user?.id_package || 1;
+        const pkg = plainItem.user?.package || (await PackageModel.findByPk(userPkgId));
+        const maxViews = Number(pkg?.maximum_views) || 1000;
+        const totalViews = (await WeddingCardModel.sum("views", { where: { id_user: plainItem.id_user } })) || 0;
+        plainItem.is_view_limit_reached = totalViews >= maxViews;
+        plainItem.maximum_views = maxViews;
+        plainItem.current_total_views = totalViews;
+      }
+
       return FormatResponse.success(
-        item,
+        plainItem,
         "Get card template detail successfully!",
       );
     } catch (error) {
@@ -181,6 +194,23 @@ export class WeddingCardService {
 
       if (user) {
          body.id_user = user.id;
+      }
+
+      if (user && user.role !== 'admin') {
+        const { WeddingCard: WeddingCardModel, Package: PackageModel } = (global as any).__db;
+        const userPkgId = Number(user.id_package) || 1;
+        const userPackage = await PackageModel.findByPk(userPkgId);
+        const maxCards = Number(userPackage?.number_of_cards) || 1;
+        const currentWebsites = await WeddingCardModel.count({
+          where: { id_user: user.id },
+        });
+        if (currentWebsites >= maxCards) {
+          return FormatResponse.error(
+            event,
+            `Bạn đã đạt giới hạn tối đa ${maxCards} trang thiệp của gói ${userPackage?.name || 'Free'}. Vui lòng nâng cấp gói hoặc xóa bớt trang cũ!`,
+            403
+          );
+        }
       }
 
       if (body.template_id && user && user.role !== 'admin') {
@@ -296,6 +326,21 @@ export class WeddingCardService {
     try {
       const card = await WeddingCard.getByUrl(slug);
       if (!card) return FormatResponse.error(event, "Card not found!");
+
+      if (!card.is_template && card.id_user && card.user?.role !== "admin") {
+        const { WeddingCard: WeddingCardModel, Package: PackageModel } = (global as any).__db;
+        const userPkgId = card.user?.id_package || 1;
+        const pkg = card.user?.package || (await PackageModel.findByPk(userPkgId));
+        const maxViews = Number(pkg?.maximum_views) || 1000;
+        const totalViews = (await WeddingCardModel.sum("views", { where: { id_user: card.id_user } })) || 0;
+        if (totalViews >= maxViews) {
+          return FormatResponse.error(
+            event,
+            `Trang thiệp đã đạt giới hạn tối đa ${maxViews.toLocaleString("vi-VN")} lượt xem của gói ${pkg?.name || "Free"}!`,
+            403,
+          );
+        }
+      }
 
       // Increment views
       await WeddingCard.update(card.id, {

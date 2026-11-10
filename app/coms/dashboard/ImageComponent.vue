@@ -32,7 +32,7 @@ if (personalImages.value && personalImages.value.success) {
 
 const triggerFileInput = () => {
     if (editor.role !== 'admin' && uploadedFilesCount.value >= maxFiles.value) {
-        alert('Đã đạt giới hạn số lượng ảnh cho gói dịch vụ của bạn.')
+        editor.showNotification(`Đã đạt giới hạn tối đa ${maxFiles.value} hình ảnh cho gói dịch vụ của bạn! Vui lòng nâng cấp gói hoặc xóa bớt ảnh cũ.`, 'warning')
         return
     }
     fileInput.value?.click()
@@ -45,7 +45,15 @@ const handleFileChange = async (event: Event) => {
 
     let maxUpload = 15;
     if (editor.role !== 'admin') {
-        const remaining = maxFiles.value - uploadedFilesCount.value
+        const remaining = Math.max(0, maxFiles.value - uploadedFilesCount.value)
+        if (remaining <= 0) {
+            editor.showNotification(`Đã đạt giới hạn tối đa ${maxFiles.value} hình ảnh cho gói dịch vụ của bạn!`, 'warning')
+            if (fileInput.value) fileInput.value.value = ''
+            return
+        }
+        if (files.length > remaining) {
+            editor.showNotification(`Gói của bạn chỉ còn tải thêm được ${remaining} ảnh (tối đa ${maxFiles.value} ảnh).`, 'warning')
+        }
         maxUpload = Math.min(files.length, remaining, 15)
     } else {
         maxUpload = Math.min(files.length, 15)
@@ -75,12 +83,13 @@ const handleFileChange = async (event: Event) => {
         if (response.success) {
             uploadedImages.value.push(...response.data)
             uploadedFilesCount.value += response.data.length
+            editor.showNotification(`Đã tải lên ${response.data.length} hình ảnh (${uploadedFilesCount.value}/${maxFiles.value}).`, 'success')
         } else {
-            alert('Lỗi tải ảnh: ' + response.message)
+            editor.showNotification(response.message || 'Lỗi tải ảnh!', 'warning')
         }
     } catch (e: any) {
         const errorMsg = e?.response?._data?.message || e?.message || 'Unknown error'
-        alert(`Không thể tải ảnh lên lúc này. (Chi tiết: ${errorMsg})`)
+        editor.showNotification(`Không thể tải ảnh: ${errorMsg}`, 'error')
         console.error(e)
     } finally {
         isUploading.value = false

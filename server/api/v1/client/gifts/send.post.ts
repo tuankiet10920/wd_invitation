@@ -99,12 +99,13 @@ export default defineEventHandler(async (event) => {
       };
     }
 
-    // Nếu người gửi có kèm lời nhắn khi tặng quà thì lưu luôn vào Hộp lời chúc của thiệp đó
-    if (message && weddingCardId && db?.Wish) {
+    // Lưu thông tin quà tặng & số xu chuyển vào Hộp lời chúc của thiệp đó
+    if (weddingCardId && db?.Wish) {
       try {
+        const wishText = message || "Chúc hai bạn trăm năm hạnh phúc!";
         await db.Wish.create({
           name: senderName,
-          content: `[Tặng ${giftName}] ${message}`,
+          content: `[Tặng ${giftName} • +${result.deductedCoins} xu] ${wishText}`,
           id_wedding_card: weddingCardId,
         });
       } catch (wishErr) {

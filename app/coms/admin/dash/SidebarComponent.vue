@@ -40,6 +40,7 @@ const menuGroups = ref<MenuGroup[]>([
         items: [
             { id: 'dashboard', text: 'Dashboard', icon: 'home', type: 'lucide', href: '/admin', isChoose: true, isHover: false },
             { id: 'users', text: 'Quản lý người dùng', icon: 'users', type: 'lucide', href: '/admin/users/list', activePath: '/admin/users', isChoose: false, isHover: false },
+            { id: 'feedbacks', text: 'Ý kiến phản hồi', icon: 'message-square', type: 'lucide', href: '/admin/feedbacks/list', activePath: '/admin/feedbacks', isChoose: false, isHover: false },
             { id: 'config', text: 'Quản lý cấu hình', icon: 'settings', type: 'lucide', href: '/admin/settings/list', activePath: '/admin/settings', isChoose: false, isHover: false },
             // { id: 'tokens', text: 'Quản lý token imgur', icon: 'key', type: 'lucide', href: '/admin/imgur-tokens/list', activePath: '/admin/imgur-tokens', isChoose: false, isHover: false },
         ]

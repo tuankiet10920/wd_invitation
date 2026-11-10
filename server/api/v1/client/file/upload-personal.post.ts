@@ -61,7 +61,7 @@ export default defineEventHandler(async (event) => {
       );
     }
 
-    const { Image: ImageModel, ImageType: ImageTypeModel } = global.__db;
+    const { Image: ImageModel, ImageType: ImageTypeModel, Package: PackageModel } = global.__db;
 
     // Determine the proper image type: prioritizes 'admin_image' for admins
     let typeKey = "personal_image";
@@ -102,7 +102,30 @@ export default defineEventHandler(async (event) => {
     const savedImages: any[] = [];
     const imagesParts = parts.filter((p) => p.name === "images" && p.filename);
 
-    for (const part of imagesParts.slice(0, 15)) {
+    let allowedCount = 15;
+    if (user.role !== "admin") {
+      const userPackage = await PackageModel.findByPk(user.id_package || 1);
+      const maxFiles = Number(userPackage?.image_limits) || 5;
+      const currentImages = await ImageModel.count({
+        where: {
+          id_user: user.id,
+          id_image_type: targetImageType.id,
+        },
+      });
+      const remaining = Math.max(0, maxFiles - currentImages);
+      if (remaining <= 0) {
+        return FormatResponse.error(
+          event,
+          `Bạn đã đạt giới hạn tối đa ${maxFiles} hình ảnh của gói ${userPackage?.name || "Free"}. Vui lòng nâng cấp gói hoặc xóa bớt ảnh cũ!`,
+          403,
+        );
+      }
+      allowedCount = Math.min(imagesParts.length, remaining, 15);
+    } else {
+      allowedCount = Math.min(imagesParts.length, 15);
+    }
+
+    for (const part of imagesParts.slice(0, allowedCount)) {
       try {
         // 1. Create image record first to get the ID
         const newImage = await ImageModel.create({

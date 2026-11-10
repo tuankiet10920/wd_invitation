@@ -10,6 +10,7 @@ definePageMeta({
 
 const route = useRoute();
 const slug = route.params.slug as string;
+const isViewLimitReached = ref(false);
 const cardData = ref<{
     background: string;
     nodes: any[];
@@ -26,8 +27,6 @@ const cardData = ref<{
 const { data: response } = await useFetch<any>(`/api/v1/client/card-template/${slug}`);
 const cardItem = response.value?.data;
 
-console.log('cardItem: ', cardItem);
-
 const config = useRuntimeConfig();
 const siteUrl = (config.public.env === "production" || config.public.env === "test") ? config.public.siteUrl : config.public.urlLocalHost;
 
@@ -36,6 +35,8 @@ const fullCardUrl = computed(() => {
 });
 
 if (cardItem) {
+    isViewLimitReached.value = Boolean(cardItem.is_view_limit_reached);
+
     const rawTitle = cardItem.name || 'Thiệp Cưới Của Chúng Tôi';
     const desc = cardItem.meta_desc || `Mời bạn đến dự đám cưới của ${rawTitle}`;
     const imagePath = cardItem.avatar ? (cardItem.avatar.includes('/') ? cardItem.avatar : `/images/wcards/${cardItem.avatar}`) : '';
@@ -73,15 +74,29 @@ const updateScale = () => {
     const height = window.innerHeight;
     const padding = 40;
     const availableHeight = height - padding * 2;
-    // We want the card to fit a standard mobile height proportion visually (e.g. ~850px) 
-    // instead of shrinking the entire design. The WrapperComponent will handle the overflow scroll.
     const standardMobileHeight = 850;
     scale.value = Math.min(1, availableHeight / standardMobileHeight);
 };
 
-onMounted(() => {
+onMounted(async () => {
     updateScale();
     window.addEventListener('resize', updateScale);
+
+    if (isViewLimitReached.value) return;
+
+    try {
+        const res: any = await $fetch('/api/v1/client/card-template/view', {
+            method: 'POST',
+            body: { slug }
+        });
+        if (res && res.success === false) {
+            isViewLimitReached.value = true;
+        }
+    } catch (e: any) {
+        if (e?.status === 403 || e?.statusCode === 403) {
+            isViewLimitReached.value = true;
+        }
+    }
 });
 
 onUnmounted(() => {
@@ -89,7 +104,17 @@ onUnmounted(() => {
 });
 </script>
 <template>
-    <div class="pc-layout d-flex justify-content-center align-items-center position-relative">
+    <div v-if="isViewLimitReached" class="min-vh-100 d-flex align-items-center justify-content-center bg-light p-4">
+        <div class="bg-white rounded-4 shadow-sm p-4 text-center" style="max-width: 420px;">
+            <div class="fs-1 mb-2">🔒</div>
+            <h5 class="fw-bold text-dark mb-2">Đã đạt giới hạn lượt xem</h5>
+            <p class="text-muted small mb-3">
+                Trang thiệp này đã đạt giới hạn lượt xem tối đa của gói dịch vụ hiện tại. Chủ sở hữu cần nâng cấp gói để tiếp tục mở xem thiệp.
+            </p>
+            <NuxtLink to="/" class="btn btn-dark rounded-pill px-4 btn-sm fw-bold">Về trang chủ</NuxtLink>
+        </div>
+    </div>
+    <div v-else class="pc-layout d-flex justify-content-center align-items-center position-relative">
         <!-- TOP LEFT LOGO -->
         <div class="brand-logo position-fixed top-0 start-0 m-3">
             <div class="logo-circle d-flex align-items-center justify-content-center" @click="navigateTo('/')">

@@ -29,7 +29,6 @@ export default (sequelize, DataTypes) => {
       id_user: {
         type: DataTypes.BIGINT,
         allowNull: true,
-        unique: true,
       },
     },
     {

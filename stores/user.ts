@@ -18,6 +18,12 @@ export const useUserStore = defineStore("user", {
     packageId: 1 as number,
     packageName: "Free" as string,
     packageLevel: 1 as number,
+    numberOfCards: 1 as number,
+    imageLimits: 5 as number,
+    maximumViews: 1000 as number,
+    currentWebsites: 0 as number,
+    currentImages: 0 as number,
+    currentViews: 0 as number,
   }),
   getters: {
     avatarUrl: (state): string => {
@@ -35,6 +41,18 @@ export const useUserStore = defineStore("user", {
       }
       return `/images/avatars/${state.image}`;
     },
+    isWebsiteLimitReached: (state): boolean => {
+      if (state.role === "admin") return false;
+      return state.currentWebsites >= state.numberOfCards;
+    },
+    isImageLimitReached: (state): boolean => {
+      if (state.role === "admin") return false;
+      return state.currentImages >= state.imageLimits;
+    },
+    isViewLimitReached: (state): boolean => {
+      if (state.role === "admin") return false;
+      return state.currentViews >= state.maximumViews;
+    },
   },
   actions: {
     async logout() {
@@ -50,6 +68,12 @@ export const useUserStore = defineStore("user", {
           this.packageId = Number(res.data.id) || 1;
           this.packageName = res.data.name || "Free";
           this.packageLevel = Number(res.data.level) || 1;
+          this.numberOfCards = Number(res.data.number_of_cards) || 1;
+          this.imageLimits = Number(res.data.image_limits) || 5;
+          this.maximumViews = Number(res.data.maximum_views) || 1000;
+          this.currentWebsites = Number(res.data.currentWebsites) || 0;
+          this.currentImages = Number(res.data.currentImages) || 0;
+          this.currentViews = Number(res.data.currentViews) || 0;
           return res.data;
         }
       } catch (e) {}
