@@ -17,10 +17,10 @@ watch(isOpen, (val) => {
     emits('update:modelValue', val)
 })
 
-const title = ref('Trang mới - 13/1/2026');
+const editorStore = useEditorStore();
+const title = ref(editorStore.name || 'Thiệp cưới của tôi');
 const maxTitleLength = 100;
 
-const editorStore = useEditorStore();
 const avatarUrl = ref(editorStore.avatar);
 const cacheBust = ref(Date.now());
 const fileInput = ref<HTMLInputElement | null>(null);
@@ -29,6 +29,7 @@ watch(() => props.modelValue, (val) => {
     isOpen.value = val
     if (val) {
         // Synchronize local state with the store when opening
+        title.value = editorStore.name || 'Thiệp cưới của tôi';
         avatarUrl.value = editorStore.avatar;
         cacheBust.value = editorStore.avatarCacheBuster || Date.now();
         if (fileInput.value) {
@@ -37,13 +38,19 @@ watch(() => props.modelValue, (val) => {
     }
 })
 
+watch(() => editorStore.name, (newVal) => {
+    if (newVal && !isOpen.value) {
+        title.value = newVal;
+    }
+}, { immediate: true })
+
 const handleFileUpload = async (event: Event) => {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
         const file = input.files[0];
         const formData = new FormData();
         const filename = editorStore.currentCardId
-            ? `WEDDING_CARD_AVATAR_${editorStore.currentCardId}`
+            ? `WEDDING_CARD_AVATAR_${editorStore.currentCardId}_${Date.now()}`
             : `WEDDING_CARD_AVATAR_DRAFT_${Date.now()}`;
 
         formData.append('file', file);
@@ -75,6 +82,12 @@ const triggerFileInput = () => {
 };
 
 const saveChanges = async () => {
+    const trimmedTitle = title.value.trim();
+    if (!trimmedTitle) {
+        alert('Vui lòng nhập tiêu đề trang!');
+        return;
+    }
+    editorStore.name = trimmedTitle.slice(0, maxTitleLength);
     editorStore.avatar = avatarUrl.value;
     editorStore.avatarCacheBuster = cacheBust.value;
     await editorStore.saveCard();
@@ -107,7 +120,7 @@ watch(() => editorStore.avatar, (newValue, oldValue) => {
                         <span class="text-danger">*</span> Tiêu đề trang
                     </label>
                     <div class="position-relative">
-                        <input type="text" class="form-control shadow-none" v-model="title"
+                        <input type="text" class="form-control shadow-none" v-model="title" :maxlength="maxTitleLength"
                             style="font-size: 14px; padding-right: 70px;">
                         <span class="position-absolute text-secondary"
                             style="font-size: 13px; right: 10px; top: 50%; transform: translateY(-50%);">
@@ -119,7 +132,7 @@ watch(() => editorStore.avatar, (newValue, oldValue) => {
                 <div class="mb-4">
                     <label class="form-label mb-2 fw-normal" style="font-size: 14px;">Hình đại diện</label>
                     <div class="bg-dark rounded overflow-hidden mb-2 mx-auto" style="width: 250px; height: 140px;">
-                        <img :src="avatarUrl ? `${avatarUrl}?t=${cacheBust}` : ''" class="w-100 h-100 object-fit-cover" v-if="avatarUrl" />
+                        <NuxtImg :src="avatarUrl" class="w-100 h-100 object-fit-cover" v-if="avatarUrl" />
                     </div>
                     <div class="text-center text-secondary mb-3" style="font-size: 12px;">Tỉ lệ khuyến nghị: 16:9</div>
 

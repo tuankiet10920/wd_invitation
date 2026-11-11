@@ -145,11 +145,10 @@ const handleEditClick = () => {
     <!-- IMAGE -->
     <div class="preview-card border rounded-3 overflow-hidden mb-3">
         <div class="preview-image bg-dark" style="height: 160px; width: 100%;">
-            <img :src="editorStore.avatar ? `${editorStore.avatar}?t=${editorStore.avatarCacheBuster || 0}` : ''"
-                class="w-100 h-100 object-fit-cover" v-if="editorStore.avatar" />
+            <NuxtImg :src="editorStore.avatar" class="w-100 h-100 object-fit-cover" v-if="editorStore.avatar" />
         </div>
         <div class="p-3 bg-white">
-            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px;">Trang mới - {{ expirationDetails.createdAtStr }}
+            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px;">{{ editorStore.name || `Trang mới - ${expirationDetails.createdAtStr}` }}
             </h6>
         </div>
     </div>

@@ -288,14 +288,20 @@ export class WeddingCardService {
         delete body.properties;
       }
 
+      await WeddingCard.update(id, body);
+
       const isAdmin = userOrAdminToken?.role === 'admin';
-      updateQueue.add("update-card", { id, body, isAdmin }).catch(e => {
-        console.error("Error adding to updateQueue:", e);
-      });
+      if (isAdmin) {
+        WeddingCard.getById(id)
+          .then((fullCard) => {
+            if (fullCard) return exportToSeeder(fullCard);
+          })
+          .catch((e) => console.error("Error exporting seeder on update:", e));
+      }
 
       return FormatResponse.success(
         { id },
-        "Tiến trình cập nhật đã được đưa vào hàng đợi!",
+        "Cập nhật thiệp cưới thành công!",
       );
     } catch (error) {
       return FormatResponse.failure(error);
