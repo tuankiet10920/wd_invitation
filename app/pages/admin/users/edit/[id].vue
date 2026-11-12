@@ -8,16 +8,19 @@ definePageMeta({
 const formData = reactive({
     name: '',
     email: '',
-    role: 'User',
+    role: 'user',
     status: 'Active',
     phone: '',
+    birthday: '',
+    id_package: 1,
+    password: '',
     introduction: '',
-    avatar: null
+    avatar: '' as string | null
 })
 
 const route = useRoute()
-const router = useRouter()
 const isLoading = ref(false)
+const isUploadingAvatar = ref(false)
 const userId = route.params.id
 
 const openModal = ref(false)
@@ -25,19 +28,59 @@ const title = ref('')
 const message = ref('')
 const type = ref<'success' | 'error'>('success')
 
+const { data: packageResponse } = useFetch('/api/v1/client/packages')
+const packages = computed(() => (packageResponse.value as any)?.data?.data || [])
+
+const avatarPreviewUrl = computed(() => {
+    const av = formData.avatar
+    if (!av) return '/images/avatars/default-avatar.png'
+    if (av.startsWith('http://') || av.startsWith('https://') || av.startsWith('/')) {
+        return av
+    }
+    return `/images/avatars/${av}`
+})
+
+const handleAvatarChange = async (event: Event) => {
+    const target = event.target as HTMLInputElement
+    const file = target.files?.[0]
+    if (!file) return
+
+    const uploadData = new FormData()
+    uploadData.append('file', file)
+    uploadData.append('folder', 'avatars')
+
+    isUploadingAvatar.value = true
+    try {
+        const res: any = await $fetch('/api/v1/admin/file/upload-raw', {
+            method: 'POST',
+            body: uploadData
+        })
+        if (res?.success && res.path) {
+            formData.avatar = res.path
+        }
+    } catch (error) {
+        console.error('Failed to upload avatar', error)
+    } finally {
+        isUploadingAvatar.value = false
+        if (target) target.value = ''
+    }
+}
+
 const fetchUser = async () => {
     if (!userId) return
     try {
         const data: any = await $fetch(`/api/v1/admin/users/${userId}`)
         if (data && data.data) {
             const user = data.data
-            formData.name = user.name
-            formData.email = user.email
-            formData.role = user.role
+            formData.name = user.name || ''
+            formData.email = user.email || ''
+            formData.role = (user.role || 'user').toLowerCase()
             formData.status = user.is_active ? 'Active' : 'Inactive'
             formData.phone = user.phone || ''
+            formData.birthday = user.birthday || ''
+            formData.id_package = Number(user.id_package) || 1
             formData.introduction = user.introduction || ''
-            formData.avatar = user.avatar
+            formData.avatar = user.avatar || ''
         }
     } catch (error) {
         console.error("Failed to fetch user", error)
@@ -48,16 +91,27 @@ const submitForm = async () => {
     if (!userId) return
     isLoading.value = true
     try {
-        const payload = {
-            ...formData,
-            is_active: formData.status === 'Active'
+        const payload: any = {
+            name: formData.name,
+            email: formData.email,
+            role: formData.role,
+            is_active: formData.status === 'Active',
+            phone: formData.phone,
+            birthday: formData.birthday || null,
+            id_package: Number(formData.id_package) || 1,
+            introduction: formData.introduction,
+            avatar: formData.avatar
+        }
+        if (formData.password && formData.password.trim() !== '') {
+            payload.password = formData.password.trim()
         }
         await $fetch(`/api/v1/admin/users/${userId}`, {
             method: 'PUT',
             body: payload
         })
+        formData.password = ''
         title.value = "Thành công!"
-        message.value = "Cập nhật người dùng thành công!"
+        message.value = "Cập nhật thông tin người dùng thành công!"
         type.value = "success"
     } catch (error) {
         console.error(error)
@@ -90,47 +144,67 @@ onMounted(() => {
                 <form @submit.prevent="submitForm">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <label class="form-label fw-medium text-secondary">Full Name</label>
+                            <label class="form-label fw-medium text-secondary">Họ và tên</label>
                             <input type="text" class="form-control" v-model="formData.name"
-                                placeholder="Enter full name">
+                                placeholder="Nhập họ và tên">
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label fw-medium text-secondary">Email Address</label>
-                            <input type="email" class="form-control" v-model="formData.email" placeholder="Enter email">
+                            <label class="form-label fw-medium text-secondary">Địa chỉ Email</label>
+                            <input type="email" class="form-control" v-model="formData.email" placeholder="Nhập email">
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label fw-medium text-secondary">Role</label>
+                        <div class="col-md-4">
+                            <label class="form-label fw-medium text-secondary">Vai trò (Role)</label>
                             <select class="form-select" v-model="formData.role">
-                                <option value="User">User</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Guest">Guest</option>
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label fw-medium text-secondary">Status</label>
+                        <div class="col-md-4">
+                            <label class="form-label fw-medium text-secondary">Trạng thái</label>
                             <select class="form-select" v-model="formData.status">
                                 <option value="Active">Active</option>
                                 <option value="Inactive">Inactive</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label fw-medium text-secondary">Phone</label>
+                        <div class="col-md-4">
+                            <label class="form-label fw-medium text-secondary">Gói dịch vụ</label>
+                            <select class="form-select" v-model="formData.id_package">
+                                <option v-for="pkg in packages" :key="pkg.id" :value="pkg.id">
+                                    {{ pkg.name }}
+                                </option>
+                                <option v-if="packages.length === 0" :value="1">Free</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-medium text-secondary">Số điện thoại</label>
                             <input type="text" class="form-control" v-model="formData.phone"
-                                placeholder="Enter phone number">
+                                placeholder="Nhập số điện thoại">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-medium text-secondary">Ngày sinh</label>
+                            <input type="date" class="form-control" v-model="formData.birthday">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-medium text-secondary">Mật khẩu mới (để trống nếu không đổi)</label>
+                            <input type="password" class="form-control" v-model="formData.password"
+                                placeholder="Nhập mật khẩu mới..." autocomplete="new-password">
                         </div>
                         <div class="col-md-12">
-                            <label class="form-label fw-medium text-secondary">Introduction</label>
+                            <label class="form-label fw-medium text-secondary">Giới thiệu (Introduction)</label>
                             <textarea class="form-control" v-model="formData.introduction" rows="3"
-                                placeholder="Enter introduction"></textarea>
+                                placeholder="Nhập giới thiệu..."></textarea>
                         </div>
                         <div class="col-md-12">
-                            <label class="form-label fw-medium text-secondary">Avatar</label>
+                            <label class="form-label fw-medium text-secondary">Ảnh đại diện (Avatar)</label>
                             <div class="d-flex align-items-center gap-4">
-                                <NuxtImg src="/images/avatars/avatar-1.jpg" width="80" height="80"
-                                    class="rounded-circle object-fit-cover shadow-sm" />
+                                <img :src="avatarPreviewUrl" width="80" height="80"
+                                    class="rounded-circle object-fit-cover shadow-sm border" alt="Avatar"
+                                    referrerpolicy="no-referrer" />
                                 <div class="flex-grow-1">
-                                    <input type="file" class="form-control">
-                                    <div class="form-text text-muted mt-1">Allowed JPG, GIF or PNG. Max size of 800K
+                                    <input type="file" class="form-control" accept="image/*" @change="handleAvatarChange">
+                                    <div class="form-text text-muted mt-1">
+                                        <span v-if="isUploadingAvatar">Đang tải ảnh lên...</span>
+                                        <span v-else>Hỗ trợ JPG, GIF hoặc PNG.</span>
                                     </div>
                                 </div>
                             </div>

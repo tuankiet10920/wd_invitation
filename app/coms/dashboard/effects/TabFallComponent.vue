@@ -23,13 +23,13 @@ onMounted(async () => {
         isPremium.value = true;
         return;
     }
-    if (userStore.packageName?.toLowerCase() === 'premium' || Number(userStore.packageLevel) >= 4) {
+    if (userStore.packageName?.toLowerCase() === 'premium' || Number(userStore.packageLevel) >= 3) {
         isPremium.value = true;
         return;
     }
     try {
         const res: any = await $fetch('/api/v1/client/my-plan');
-        if (res?.data && (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 4)) {
+        if (res?.data && (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 3)) {
             isPremium.value = true;
         }
     } catch (e) {

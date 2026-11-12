@@ -214,14 +214,21 @@ export class WeddingCardService {
       }
 
       if (body.template_id && user && user.role !== 'admin') {
+        const { Package: PackageModel } = (global as any).__db;
         const sourceTemplate = await WeddingCard.getById(body.template_id);
         const requiredPkgId = Number(sourceTemplate?.id_package) || 1;
         const userPkgId = Number(user.id_package) || 1;
-        if (userPkgId < requiredPkgId) {
-          const pkgNames: Record<number, string> = { 1: 'Free', 2: 'Basic', 3: 'Pro', 4: 'Premium' };
+        const [userPkg, requiredPkg] = await Promise.all([
+          PackageModel.findByPk(userPkgId),
+          PackageModel.findByPk(requiredPkgId),
+        ]);
+        const userPkgLevel = Number(userPkg?.level) || userPkgId || 1;
+        const requiredPkgLevel = Number(requiredPkg?.level) || requiredPkgId || 1;
+        if (userPkgLevel < requiredPkgLevel) {
+          const pkgNames: Record<number, string> = { 1: 'Free', 2: 'Basic', 3: 'Premium' };
           return FormatResponse.error(
             event,
-            `Mẫu này yêu cầu gói ${pkgNames[requiredPkgId] || 'cao hơn'} trở lên!`,
+            `Mẫu này yêu cầu gói ${requiredPkg?.name || pkgNames[requiredPkgId] || 'cao hơn'} trở lên!`,
             403
           );
         }

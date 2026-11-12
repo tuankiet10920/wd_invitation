@@ -69,6 +69,7 @@ const menuGroups = ref<MenuGroup[]>([
         id: 'elements',
         label: 'Thành phần',
         items: [
+            { id: 'gifts', text: 'Quản lý quà tặng', icon: 'gift', type: 'lucide', href: '/admin/gifts/list', activePath: '/admin/gifts', isChoose: false, isHover: false },
             { id: 'widgets', text: 'Quản lý tiện ích', icon: 'list', type: 'lucide', href: '/admin/widgets/list', activePath: '/admin/widgets', isChoose: false, isHover: false },
             { id: 'animations', text: 'Hiệu ứng động', icon: 'list', type: 'lucide', href: '/admin/animations/list', activePath: '/admin/animations', isChoose: false, isHover: false },
             { id: 'falling', text: 'Hiệu ứng rơi', icon: 'list', type: 'lucide', href: '/admin/falling/list', activePath: '/admin/falling', isChoose: false, isHover: false },

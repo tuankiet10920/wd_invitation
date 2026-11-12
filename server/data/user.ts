@@ -114,23 +114,37 @@ export class UserData extends DataPattern {
   }
 
   public async list(query: any) {
-    const UserModel = this.getModels()?.User;
-    // Map UI query params to Backend query params
-    const options = {
-        query: {
-            page: query.page || "1",
-            limit: query.limit || "10",
-            search: query.search || "",
-        },
-        where: {},
-        order: [['createdAt', 'DESC']]
+    const models = this.getModels();
+    const UserModel = models?.User;
+    const PackageModel = models?.Package;
+    const where: any = {};
+    if (query.search) {
+      where[Op.or] = [
+        { name: { [Op.like]: `%${query.search}%` } },
+        { email: { [Op.like]: `%${query.search}%` } },
+        { phone: { [Op.like]: `%${query.search}%` } },
+      ];
+    }
+    const options: any = {
+      query: {
+        page: query.page || "1",
+        limit: query.limit || "10",
+        search: "",
+      },
+      where,
+      include: PackageModel ? [{ model: PackageModel, as: "package" }] : [],
+      order: [["createdAt", "DESC"]],
     };
     return await this.pagination(UserModel, options);
   }
 
   public async getById(id: string | number) {
-    const UserModel = this.getModels()?.User;
-    return await UserModel.findByPk(id);
+    const models = this.getModels();
+    const UserModel = models?.User;
+    const PackageModel = models?.Package;
+    return await UserModel.findByPk(id, {
+      include: PackageModel ? [{ model: PackageModel, as: "package" }] : [],
+    });
   }
 
   public async delete(id: string | number) {

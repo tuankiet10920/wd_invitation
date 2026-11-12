@@ -44,7 +44,6 @@ const templates = computed(() => {
                     { key: 'all', label: 'Tất cả' },
                     { key: 'free', label: 'Free' },
                     { key: 'basic', label: 'Basic' },
-                    { key: 'pro', label: 'Pro' },
                     { key: 'premium', label: 'Premium' }
                 ]" :key="pkg.key"
                     class="btn btn-sm rounded-pill px-2 py-1"

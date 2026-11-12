@@ -20,6 +20,7 @@ const props = defineProps({
 })
 
 const configs = useRuntimeConfig()
+const route = useRoute()
 const emits = defineEmits(['update:modelValue', 'use'])
 const isOpen = ref(props.modelValue)
 const store = useUserStore()
@@ -29,23 +30,48 @@ const favoriteStore = useFavoriteStore()
 const PACKAGE_LEVELS: Record<string, number> = {
     free: 1,
     basic: 2,
-    pro: 3,
-    premium: 4,
+    premium: 3,
 }
 
-const requiredPackageName = computed(() => {
-    const raw = props.card?.package?.name || props.card?.type || 'Free'
-    return String(raw).charAt(0).toUpperCase() + String(raw).slice(1).toLowerCase()
-})
+const PACKAGE_NAMES_BY_ID: Record<number, string> = {
+    1: 'Free',
+    2: 'Basic',
+    3: 'Premium',
+}
 
 const requiredPackageLevel = computed(() => {
-    const key = requiredPackageName.value.toLowerCase()
-    return PACKAGE_LEVELS[key] || Number(props.card?.id_package) || 1
+    if (props.card?.package?.level) {
+        return Number(props.card.package.level)
+    }
+    const pkgNameKey = String(props.card?.package?.name || props.card?.type || '').toLowerCase()
+    if (pkgNameKey && PACKAGE_LEVELS[pkgNameKey]) {
+        return PACKAGE_LEVELS[pkgNameKey]
+    }
+    const pkgId = Number(props.card?.id_package)
+    if (pkgId && PACKAGE_NAMES_BY_ID[pkgId]) {
+        return pkgId
+    }
+    return 1
+})
+
+const requiredPackageName = computed(() => {
+    if (props.card?.package?.name) {
+        return props.card.package.name
+    }
+    return PACKAGE_NAMES_BY_ID[requiredPackageLevel.value] || 'Free'
 })
 
 const userPackageLevel = computed(() => {
     if (editorStore.role === 'admin' || store.role === 'admin') return 99
-    return Number(store.packageLevel) || PACKAGE_LEVELS[(store.packageName || 'free').toLowerCase()] || 1
+    const nameKey = String(store.packageName || '').toLowerCase()
+    const levelFromName = nameKey ? (PACKAGE_LEVELS[nameKey] || 0) : 0
+    const levelFromStore = Number(store.packageLevel) || 0
+    const levelFromId = Number(store.packageId) || 0
+    return Math.max(levelFromName, levelFromStore, levelFromId, 1)
+})
+
+const isMaxUserPlan = computed(() => {
+    return userPackageLevel.value >= 3
 })
 
 const canUseTemplate = computed(() => {
@@ -53,8 +79,13 @@ const canUseTemplate = computed(() => {
     return userPackageLevel.value >= requiredPackageLevel.value
 })
 
+const isEditingExistingCard = computed(() => {
+    return route.path.startsWith('/editor') && Boolean(route.params.slug) && route.params.slug !== 'new-blank'
+})
+
 const isCardLimitReached = computed(() => {
     if (!store.isLogin || editorStore.role === 'admin' || store.role === 'admin') return false
+    if (isEditingExistingCard.value) return false
     return store.isWebsiteLimitReached
 })
 
@@ -162,10 +193,61 @@ const handleUse = async () => {
     }
 
     if (isCardLimitReached.value) {
-        const msg = `Bạn đã đạt giới hạn tối đa ${store.currentWebsites}/${store.numberOfCards} trang thiệp của gói ${store.packageName || 'Free'}. Vui lòng nâng cấp gói hoặc xóa bớt trang cũ!`;
+        const msg = isMaxUserPlan.value
+            ? `Bạn đã đạt giới hạn tối đa ${store.currentWebsites}/${store.numberOfCards} trang thiệp của gói ${store.packageName || 'Premium'}. Vui lòng xóa bớt trang cũ để tạo trang mới!`
+            : `Bạn đã đạt giới hạn tối đa ${store.currentWebsites}/${store.numberOfCards} trang thiệp của gói ${store.packageName || 'Free'}. Vui lòng nâng cấp gói hoặc xóa bớt trang cũ!`;
         editorStore.showNotification(msg, 'warning');
         warningPulse.value = true;
         setTimeout(() => { warningPulse.value = false; }, 600);
+        return;
+    }
+
+    if (isEditingExistingCard.value && cardData.value) {
+        editorStore.createdNodes = JSON.parse(JSON.stringify(cardData.value.nodes || []));
+        editorStore.background = cardData.value.background || '#ffffff';
+        editorStore.height = cardData.value.height || 1024;
+        if (props.card?.id_category_wedding_card && !editorStore.id_category_wedding_card) {
+            editorStore.id_category_wedding_card = props.card.id_category_wedding_card;
+        }
+        const defaultEffect = {
+            dynamic: 'none',
+            falling: 'none',
+            opening: {
+                isCustom: false,
+                slug: 'none',
+                custom: { title: '', subtitle: '', time: 0, image: '' },
+            },
+        };
+        let rawEff = cardData.value.rawEffect;
+        if (typeof rawEff === 'string') {
+            try {
+                rawEff = JSON.parse(rawEff);
+            } catch (e) {
+                rawEff = { dynamic: rawEff };
+            }
+        }
+        if (rawEff && typeof rawEff === 'object') {
+            editorStore.effect = {
+                ...defaultEffect,
+                ...rawEff,
+                opening: {
+                    ...defaultEffect.opening,
+                    ...(rawEff.opening || {}),
+                },
+            };
+        } else {
+            editorStore.effect = defaultEffect;
+        }
+        if (cardData.value.music && typeof cardData.value.music === 'object') {
+            editorStore.music = {
+                icon: cardData.value.music.icon || 'music-circle-outline',
+                color: cardData.value.music.color || '#000000',
+                path: cardData.value.music.path || '',
+            };
+        }
+        editorStore.recordHistory();
+        isOpen.value = false;
+        editorStore.showNotification('Đã áp dụng mẫu thiệp thành công!', 'success');
         return;
     }
 
@@ -178,6 +260,7 @@ const handleUse = async () => {
             body: {
                 name: `Mẫu-${props.card.name}`,
                 template_id: props.card.id,
+                id_category_wedding_card: props.card.id_category_wedding_card || 1,
                 properties: {
                     nodes: props.card.nodes,
                     background: props.card.background,
@@ -307,9 +390,15 @@ const handleLivePreview = () => {
                             <div v-else>
                                 Đã đạt giới hạn <strong>{{ store.currentWebsites }}/{{ store.numberOfCards }}</strong> trang thiệp của gói <strong>{{ store.packageName || 'Free' }}</strong>.
                             </div>
-                            <button class="btn btn-sm btn-dark fw-bold text-nowrap rounded-pill px-3"
+                            <button v-if="!isMaxUserPlan"
+                                class="btn btn-sm btn-dark fw-bold text-nowrap rounded-pill px-3"
                                 @click="isOpen = false; navigateTo('/pricing-plans')">
                                 Nâng cấp
+                            </button>
+                            <button v-else
+                                class="btn btn-sm btn-dark fw-bold text-nowrap rounded-pill px-3"
+                                @click="isOpen = false; navigateTo('/dashboard')">
+                                Quản lý trang
                             </button>
                         </div>
                     </div>

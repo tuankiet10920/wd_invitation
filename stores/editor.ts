@@ -803,7 +803,7 @@ export const useEditorStore = defineStore("editor", {
       }, 50);
     },
 
-    async saveCard(silent = false) {
+    async saveCard(silent = false, redirectToPage = false) {
       if (this.isSaving) return;
       this.isSaving = true;
       const route = useRoute();
@@ -853,6 +853,7 @@ export const useEditorStore = defineStore("editor", {
         const isDraft =
           !this.currentCardId || typeof this.currentCardId === "string";
         let savedCardId = this.currentCardId;
+        let targetSlug: any = route.params.slug;
 
         if (isDraft) {
           // Create New
@@ -874,6 +875,7 @@ export const useEditorStore = defineStore("editor", {
             const oldId = this.currentCardId;
             this.currentCardId = data.data.id;
             savedCardId = data.data.id;
+            targetSlug = data.data.url || data.data.id;
 
             // Xóa bản nháp khỏi LocalStorage sau khi đã xuất bản thành công
             const savedRaw = localStorage.getItem("wd_invitations");
@@ -891,29 +893,16 @@ export const useEditorStore = defineStore("editor", {
             }
 
             if (!silent) this.showNotification("Xuất bản thành công!", "success");
-
-            // Update URL without reload
-            const isMobile = route.path.includes("/editor/m");
-            const targetSlug = data.data.url || data.data.id;
-
-            if (this.role === "admin") {
-              router.push(`/admin/editor/${targetSlug}`);
-            } else if (route.params.slug === "new-blank") {
-              router.push(`/dashboard/pages/${targetSlug}`);
-            } else {
-              const prefix = isMobile ? "/editor/m" : "/editor";
-              router.push(`${prefix}/${targetSlug}`);
-            }
-            this.is_saved = true;
-            localStorage.setItem("is_saved", "true");
-            return data.data;
           }
         } else {
           // Update Existing
-          await $fetch(`${apiBase}/${this.currentCardId}`, {
+          const resUpdate: any = await $fetch(`${apiBase}/${this.currentCardId}`, {
             method: "PUT",
             body: payload,
           });
+          if (resUpdate?.data?.url) {
+            targetSlug = resUpdate.data.url;
+          }
 
           // Xóa bản nháp khỏi LocalStorage sau khi đã lưu lại lên server thành công
           const savedRaw = localStorage.getItem("wd_invitations");
@@ -932,7 +921,12 @@ export const useEditorStore = defineStore("editor", {
             }
           }
 
-          if (!silent) this.showNotification("Cập nhật thành công", "success");
+          if (!silent) {
+            this.showNotification(
+              redirectToPage ? "Xuất bản thành công!" : "Cập nhật thành công",
+              "success",
+            );
+          }
         }
 
         // Mark as saved
@@ -982,7 +976,27 @@ export const useEditorStore = defineStore("editor", {
             console.error("Failed to auto-generate image:", imgError);
           }
         }
-        return { id: savedCardId, url: route.params.slug };
+
+        const finalSlug = targetSlug || savedCardId;
+        if (redirectToPage) {
+          if (this.role === "admin") {
+            router.push(`/admin/editor/${finalSlug}`);
+          } else {
+            router.push(`/dashboard/pages/${finalSlug}`);
+          }
+        } else if (isDraft && finalSlug) {
+          const isMobile = route.path.includes("/editor/m");
+          if (this.role === "admin") {
+            router.push(`/admin/editor/${finalSlug}`);
+          } else if (route.params.slug === "new-blank") {
+            router.push(`/dashboard/pages/${finalSlug}`);
+          } else {
+            const prefix = isMobile ? "/editor/m" : "/editor";
+            router.push(`${prefix}/${finalSlug}`);
+          }
+        }
+
+        return { id: savedCardId, url: finalSlug };
       } catch (error: any) {
         console.error("Failed to save card", error);
         const serverMsg = error?.data?.message || error?.response?._data?.message;
@@ -1018,7 +1032,8 @@ export const useEditorStore = defineStore("editor", {
 
     // Alias for compatibility if needed, or remove
     async saveTemplate() {
-      return this.saveCard();
+      this.is_publish = true;
+      return this.saveCard(false, true);
     },
   },
 });

@@ -29,7 +29,8 @@ const fetchUsers = async () => {
             headers: useRequestHeaders(['cookie']),
             query: {
                 page: pagination.value.currentPage,
-                limit: 10
+                limit: 10,
+                search: route.query.search || ''
             }
         })
         if (data && data.data) {
@@ -71,6 +72,7 @@ const openViewModal = async (user: any) => {
         { label: 'Tên', value: userDetail.name },
         { label: 'Email', value: userDetail.email },
         { label: 'Phone', value: userDetail.phone || 'N/A' },
+        { label: 'Gói dịch vụ', value: userDetail.package?.name || 'Free' },
         { label: 'Role', value: userDetail.role },
         { label: 'Status', value: userDetail.is_active ? 'Active' : 'Inactive' },
         { label: 'Joined Date', value: formatDate(userDetail.createdAt) },
@@ -99,6 +101,21 @@ const handleDeleteConfirm = async () => {
     } catch (error) {
         console.error("Failed to delete user", error)
     }
+}
+
+const resolveUserAvatar = (user: any) => {
+    const img = user?.avatar
+    if (!img) return '/images/avatars/default-avatar.png'
+    if (
+        img.startsWith('http://') ||
+        img.startsWith('https://') ||
+        img.startsWith('data:') ||
+        img.startsWith('blob:') ||
+        img.startsWith('/')
+    ) {
+        return img
+    }
+    return `/images/avatars/${img}`
 }
 
 const formatDate = (dateString: string) => {
@@ -179,8 +196,8 @@ watch(() => route.query, async (query) => {
                                     <div class="d-flex align-items-center gap-3">
                                         <FancyBoxComponent class="flex-jc-ac rounded-circle overflow-hidden"
                                             :data-fancybox="`image-selected`" :height="40" :width="40"
-                                            :url="user.social == 'normal' ? `/images/avatars/${user.avatar}` : user.avatar"
-                                            :key="`gallery`" />
+                                            :url="resolveUserAvatar(user)"
+                                            :key="`gallery-${user.id}`" />
                                         <div class="d-flex flex-column">
                                             <span class="fw-medium text-dark">{{ user.name }}</span>
                                             <span class="text-muted small">{{ user.email }}</span>
@@ -212,6 +229,16 @@ watch(() => route.query, async (query) => {
                                             @click="openViewModal(user)">
                                             <BaseIconComponent name="round-remove-red-eye" type="ic" :size="18"
                                                 color="#6366f1" />
+                                        </button>
+                                        <NuxtLink :to="{
+                                            path: `/admin/users/edit/${user.id}`,
+                                            query: { page: $route.query?.page ?? undefined }
+                                        }" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <BaseIconComponent name="edit" :size="18" color="#d97706" />
+                                        </NuxtLink>
+                                        <button class="btn-action btn-delete" type="button" title="Xóa"
+                                            @click="openDeleteModal(user)">
+                                            <BaseIconComponent name="delete-sharp" :size="18" color="#dc2626" />
                                         </button>
                                     </div>
                                 </td>
