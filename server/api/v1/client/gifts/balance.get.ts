@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   try {
     const user = await getAuthUser(event);
     const userId = user?.id || 1;
-    const coinRecord = getUserCoinRecord(userId);
+    const coinRecord = await getUserCoinRecord(userId);
 
     return FormatResponse.success(
       {
@@ -21,4 +21,3 @@ export default defineEventHandler(async (event) => {
     return FormatResponse.failure(error);
   }
 });
-

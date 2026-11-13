@@ -1,7 +1,5 @@
-import fs from "fs";
-import path from "path";
-import { getPaymentRecord } from "../payment/payment-store";
-import { getUserCoins, loadSentGifts } from "../gifts/coin-store";
+import { Op } from "sequelize";
+import { getUserCoins, loadSentGifts, COIN_TO_VND_RATE } from "../gifts/coin-store";
 
 export interface WithdrawalRecord {
   id: string;
@@ -17,58 +15,84 @@ export interface WithdrawalRecord {
   updatedAt?: string;
 }
 
-const STORAGE_PATH = path.resolve(process.cwd(), "server/data/withdrawals.json");
+function mapWithdrawalRow(row: any): WithdrawalRecord {
+  const plain = row?.get ? row.get({ plain: true }) : row;
+  const code = plain.code || `WD-${plain.id}`;
+  return {
+    id: code,
+    code,
+    userId: Number(plain.id_user),
+    amount: Number(plain.amount || 0),
+    bankName: plain.bank_name || "",
+    accountNumber: plain.account_number || "",
+    accountHolder: plain.account_holder || "",
+    note: plain.note || "",
+    status: plain.status || "PROCESSING",
+    createdAt: plain.createdAt ? new Date(plain.createdAt).toISOString() : new Date().toISOString(),
+    updatedAt: plain.updatedAt ? new Date(plain.updatedAt).toISOString() : undefined,
+  };
+}
 
-function loadWithdrawalsFromDisk(): WithdrawalRecord[] {
-  try {
-    if (fs.existsSync(STORAGE_PATH)) {
-      const raw = fs.readFileSync(STORAGE_PATH, "utf-8");
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed)) return parsed;
-    }
-  } catch (e) {
-    console.error("[WalletStore] Failed to read withdrawals.json:", e);
+export async function getUserWithdrawals(userId: number): Promise<WithdrawalRecord[]> {
+  const db = (global as any).__db;
+  const rows = await db.Withdrawal.findAll({
+    where: { id_user: Number(userId) },
+    order: [
+      ["createdAt", "DESC"],
+      ["id", "DESC"],
+    ],
+  });
+  return rows.map(mapWithdrawalRow);
+}
+
+export async function addWithdrawalRecord(
+  record: Partial<WithdrawalRecord> & {
+    userId: number;
+    amount: number;
+    bankName: string;
+    accountNumber: string;
+    accountHolder: string;
   }
-  return [];
+): Promise<WithdrawalRecord> {
+  const db = (global as any).__db;
+  const code = record.code || record.id || `WD-${Math.floor(100000 + Math.random() * 900000)}`;
+
+  const row = await db.Withdrawal.create({
+    code,
+    id_user: Number(record.userId),
+    amount: Number(record.amount),
+    bank_name: record.bankName,
+    account_number: record.accountNumber,
+    account_holder: record.accountHolder,
+    note: record.note || "",
+    status: record.status || "PROCESSING",
+  });
+
+  return mapWithdrawalRow(row);
 }
 
-function saveWithdrawalsToDisk(records: WithdrawalRecord[]) {
-  try {
-    const dir = path.dirname(STORAGE_PATH);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    fs.writeFileSync(STORAGE_PATH, JSON.stringify(records, null, 2), "utf-8");
-  } catch (e) {
-    console.error("[WalletStore] Failed to save withdrawals.json:", e);
-  }
-}
-
-export function getUserWithdrawals(userId: number): WithdrawalRecord[] {
-  const all = loadWithdrawalsFromDisk();
-  return all.filter((w) => Number(w.userId) === Number(userId));
-}
-
-export function addWithdrawalRecord(record: WithdrawalRecord): WithdrawalRecord {
-  const all = loadWithdrawalsFromDisk();
-  all.unshift(record);
-  saveWithdrawalsToDisk(all);
-  return record;
-}
-
-export function updateWithdrawalStatus(
+export async function updateWithdrawalStatus(
   id: string,
   userId: number,
   status: "PROCESSING" | "COMPLETED" | "CANCELLED"
-): WithdrawalRecord | null {
-  const all = loadWithdrawalsFromDisk();
-  const idx = all.findIndex((w) => w.id === id && Number(w.userId) === Number(userId));
-  if (idx === -1) return null;
+): Promise<WithdrawalRecord | null> {
+  const db = (global as any).__db;
+  const orConds: any[] = [{ code: String(id) }];
+  if (!isNaN(Number(id))) {
+    orConds.push({ id: Number(id) });
+  }
 
-  all[idx].status = status;
-  all[idx].updatedAt = new Date().toISOString();
-  saveWithdrawalsToDisk(all);
-  return all[idx];
+  const row = await db.Withdrawal.findOne({
+    where: {
+      id_user: Number(userId),
+      [Op.or]: orConds,
+    },
+  });
+
+  if (!row) return null;
+
+  await row.update({ status });
+  return mapWithdrawalRow(row);
 }
 
 export async function calculateUserWallet(user: any) {
@@ -89,84 +113,18 @@ export async function calculateUserWallet(user: any) {
     receiveRate = 80;
   }
 
-  const realGiftItems = loadSentGifts().map((g) => ({
-    id: g.id,
-    code: g.code,
-    senderName: g.senderName,
-    giftName: g.giftName,
-    grossAmount: g.giftPriceCoins * 1000,
-    createdAt: g.createdAt,
-  }));
+  // Lấy danh sách thiệp cưới và tài khoản ngân hàng đã lưu của user (từ qr_boxes)
+  let weddingCards: any[] = [];
+  let cardIds: number[] = [];
+  const savedBankAccounts: any[] = [];
 
-  // Danh sách giao dịch nhận quà mừng gốc
-  const rawGiftItems = [
-    ...realGiftItems,
-    {
-      id: "tx-3",
-      code: "GIFT-194028",
-      senderName: "Vũ Tuấn Kiệt",
-      giftName: "Rượu mừng",
-      grossAmount: 3000000,
-      createdAt: new Date(Date.now() - 1440 * 60 * 1000).toISOString(),
-    },
-    {
-      id: "tx-2",
-      code: "GIFT-193851",
-      senderName: "Phạm Thùy Linh",
-      giftName: "Hoa gấu bông",
-      grossAmount: 2020000,
-      createdAt: new Date(Date.now() - 720 * 60 * 1000).toISOString(),
-    },
-    {
-      id: "tx-1",
-      code: "GIFT-193402",
-      senderName: "Nguyễn Văn Hùng",
-      giftName: "Bắn tim",
-      grossAmount: 1780000,
-      createdAt: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
-    },
-  ];
-
-  const giftTransactions = rawGiftItems.map((g) => {
-    const netAmount = Math.round((g.grossAmount * receiveRate) / 100);
-    return {
-      id: g.id,
-      code: g.code,
-      type: "GIFT",
-      title: `Nhận quà mừng: ${g.giftName}`,
-      description: `Từ người thân ${g.senderName} (Gốc: ${g.grossAmount.toLocaleString("vi-VN")}đ - Nhận ${receiveRate}%)`,
-      grossAmount: g.grossAmount,
-      amount: netAmount,
-      status: "COMPLETED",
-      createdAt: g.createdAt,
-    };
-  });
-
-  const grossReceived = rawGiftItems.reduce((sum, g) => sum + g.grossAmount, 0);
-  const netReceived = giftTransactions.reduce((sum, g) => sum + g.amount, 0);
-
-  const userWithdrawals = getUserWithdrawals(user.id);
-
-  // Chỉ tính các lệnh rút không bị hủy vào tổng tiền đã rút / đang giữ
-  const activeWithdrawals = userWithdrawals.filter((w) => w.status !== "CANCELLED");
-  const totalWithdrawn = activeWithdrawals
-    .filter((w) => w.status === "COMPLETED")
-    .reduce((sum, w) => sum + w.amount, 0);
-  const pendingWithdrawn = activeWithdrawals
-    .filter((w) => w.status === "PROCESSING")
-    .reduce((sum, w) => sum + w.amount, 0);
-
-  const availableBalance = Math.max(0, netReceived - totalWithdrawn - pendingWithdrawn);
-
-  // Lấy danh sách tài khoản ngân hàng đã lưu của user (từ qr_boxes)
-  let savedBankAccounts: any[] = [];
   try {
-    const weddingCards = await WeddingCardModel.findAll({
+    weddingCards = await WeddingCardModel.findAll({
       where: { id_user: user.id },
-      attributes: ["id", "name"],
+      attributes: ["id", "name", "url"],
       raw: true,
     });
-    const cardIds = weddingCards.map((c: any) => c.id);
+    cardIds = weddingCards.map((c: any) => Number(c.id));
     if (cardIds.length > 0 && QrBoxModel) {
       const qrBoxes = await QrBoxModel.findAll({
         where: { id_wedding_card: cardIds },
@@ -190,6 +148,52 @@ export async function calculateUserWallet(user: any) {
     }
   } catch (e) {}
 
+  // Lấy danh sách quà tặng của user từ bảng sent_gifts trong MySQL
+  const userSentGifts = await loadSentGifts({
+    recipientUserId: user.id,
+    weddingCardIds: cardIds,
+  });
+
+  const rawGiftItems = userSentGifts.map((g) => ({
+    id: g.id,
+    code: g.code,
+    senderName: g.senderName,
+    giftName: g.giftName,
+    grossAmount: Number(g.amountVnd) > 0 ? Number(g.amountVnd) : Number(g.giftPriceCoins || 0) * COIN_TO_VND_RATE,
+    createdAt: g.createdAt,
+  }));
+
+  const giftTransactions = rawGiftItems.map((g) => {
+    const netAmount = Math.round((g.grossAmount * receiveRate) / 100);
+    return {
+      id: g.id,
+      code: g.code,
+      type: "GIFT",
+      title: `Nhận quà mừng: ${g.giftName}`,
+      description: `Từ người thân ${g.senderName} (Gốc: ${g.grossAmount.toLocaleString("vi-VN")}đ - Nhận ${receiveRate}%)`,
+      grossAmount: g.grossAmount,
+      amount: netAmount,
+      status: "COMPLETED",
+      createdAt: g.createdAt,
+    };
+  });
+
+  const grossReceived = rawGiftItems.reduce((sum, g) => sum + g.grossAmount, 0);
+  const netReceived = giftTransactions.reduce((sum, g) => sum + g.amount, 0);
+
+  const userWithdrawals = await getUserWithdrawals(user.id);
+
+  // Chỉ tính các lệnh rút không bị hủy vào tổng tiền đã rút / đang giữ
+  const activeWithdrawals = userWithdrawals.filter((w) => w.status !== "CANCELLED");
+  const totalWithdrawn = activeWithdrawals
+    .filter((w) => w.status === "COMPLETED")
+    .reduce((sum, w) => sum + w.amount, 0);
+  const pendingWithdrawn = activeWithdrawals
+    .filter((w) => w.status === "PROCESSING")
+    .reduce((sum, w) => sum + w.amount, 0);
+
+  const availableBalance = Math.max(0, netReceived - totalWithdrawn - pendingWithdrawn);
+
   const withdrawTransactions = userWithdrawals.map((w) => ({
     id: w.id,
     code: w.code,
@@ -209,9 +213,11 @@ export async function calculateUserWallet(user: any) {
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   );
 
+  const coins = await getUserCoins(user.id);
+
   return {
     balance: availableBalance,
-    coins: getUserCoins(user.id),
+    coins,
     grossReceived,
     netReceived,
     totalWithdrawn: totalWithdrawn + pendingWithdrawn,
@@ -224,4 +230,3 @@ export async function calculateUserWallet(user: any) {
     transactions,
   };
 }
-

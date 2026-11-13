@@ -1,4 +1,4 @@
-import { getPaymentRecord } from "./payment-store";
+import { getPaymentRecord, processPaymentSuccess } from "./payment-store";
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event);
@@ -8,14 +8,23 @@ export default defineEventHandler(async (event) => {
         return { success: false, message: "Code is required" };
     }
 
-    const record = getPaymentRecord(code);
+    let record = await getPaymentRecord(code);
     if (!record) {
         return { success: true, status: "PENDING" };
+    }
+
+    if (record.status === "SUCCESS") {
+        record = (await processPaymentSuccess(code)) || record;
+        return {
+            success: true,
+            status: "SUCCESS",
+            data: record,
+        };
     }
 
     return {
         success: true,
         status: record.status,
-        data: record
+        data: record,
     };
 });

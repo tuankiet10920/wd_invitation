@@ -69,7 +69,7 @@ export default defineEventHandler(async (event) => {
       }
     }
 
-    const result = sendGiftWithCoins({
+    const result = await sendGiftWithCoins({
       senderUserId,
       senderName,
       senderAvatar: body?.avatar || "",

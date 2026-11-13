@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
       return FormatResponse.error(event, "Số xu nạp thêm phải lớn hơn 0!", 400);
     }
 
-    const updated = addUserCoins(
+    const updated = await addUserCoins(
       userId,
       coins,
       body?.description || `Nạp thêm ${coins.toLocaleString("vi-VN")} xu`,
@@ -33,4 +33,3 @@ export default defineEventHandler(async (event) => {
     return FormatResponse.failure(error);
   }
 });
-

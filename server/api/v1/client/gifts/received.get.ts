@@ -9,7 +9,6 @@ export default defineEventHandler(async (event) => {
 
     const { WeddingCard: WeddingCardModel, Gift: GiftModel, Invitor: InvitorModel } = (global as any).__db;
     const allGifts = await GiftModel.findAll({ raw: true });
-    const allSent = loadSentGifts();
 
     // Nếu truyền slug cụ thể (VD: trang chi tiết thiệp /dashboard/pages/[slug])
     if (filterSlug) {
@@ -40,7 +39,11 @@ export default defineEventHandler(async (event) => {
         );
       }
 
-      const cardGifts = allSent
+      const cardSent = await loadSentGifts({
+        weddingCardIds: [Number(targetCard.id)],
+      });
+
+      const cardGifts = cardSent
         .filter(
           (g) =>
             Number(g.weddingCardId) === Number(targetCard.id) ||
@@ -50,6 +53,7 @@ export default defineEventHandler(async (event) => {
         .map((g) => {
           const dbGift = allGifts.find((item: any) => Number(item.id) === Number(g.giftId));
           const priceCoins = Number(g.giftPriceCoins || dbGift?.price || 0);
+          const amountVnd = Number(g.amountVnd) > 0 ? Number(g.amountVnd) : priceCoins * COIN_TO_VND_RATE;
           return {
             id: g.id,
             code: g.code,
@@ -64,7 +68,7 @@ export default defineEventHandler(async (event) => {
                 : `/images/gift_images/${g.giftImage}`
               : "/images/gift_images/two-hearts.png",
             giftFile: g.giftFile || dbGift?.file,
-            amount: priceCoins * COIN_TO_VND_RATE,
+            amount: amountVnd,
             weddingCardId: targetCard.id,
             weddingCardName: targetCard.name,
             weddingCardUrl: targetCard.url,
@@ -96,7 +100,7 @@ export default defineEventHandler(async (event) => {
       return FormatResponse.error(event, "Unauthorized", 401);
     }
 
-    // Lấy danh sách thiệp của user
+    // Lấy danh sách thiệp của user từ MySQL
     const allUserCards = await WeddingCardModel.findAll({
       where: { id_user: user.id },
       attributes: ["id", "name", "url", "is_template"],
@@ -106,73 +110,26 @@ export default defineEventHandler(async (event) => {
 
     const personalCards = allUserCards.filter((c: any) => !c.is_template);
     const weddingCards = personalCards.length > 0 ? personalCards : allUserCards;
+    const cardIds = allUserCards.map((c: any) => Number(c.id));
 
-    const cardNames =
-      weddingCards.length > 0
-        ? weddingCards
-        : [{ id: 1, name: "Thiệp Cưới Mẫu", url: "demo-card" }];
-
-    const cardIdSet = new Set(allUserCards.map((c: any) => Number(c.id)));
-    const cardUrlSet = new Set(allUserCards.map((c: any) => c.url));
-
-    const sampleSenders = [
-      { name: "Nguyễn Văn Hùng", message: "Chúc hai bạn trăm năm hạnh phúc, đầu bạc răng long nhé!", giftId: 1, minsAgo: 25 },
-      { name: "Trần Thị Mai Anh", message: "Mừng ngày vui của hai bạn, luôn ngập tràn tiếng cười và yêu thương!", giftId: 3, minsAgo: 90 },
-      { name: "Lê Hoàng Long", message: "Cung hỷ cung hỷ! Chúc tân lang tân nương sớm sinh quý tử!", giftId: 6, minsAgo: 240 },
-      { name: "Phạm Thùy Linh", message: "Xinh đẹp và hạnh phúc mãi mãi nha cô dâu chú rể ơi!", giftId: 8, minsAgo: 720 },
-      { name: "Vũ Tuấn Kiệt", message: "Chúc mừng hạnh phúc lứa đôi! Một món quà nhỏ gửi gắm tình cảm to lớn!", giftId: 10, minsAgo: 1440 },
-    ];
-
-    const sampleGifts = sampleSenders.map((item, index) => {
-      const card = cardNames[index % cardNames.length];
-      const gift = allGifts.find((g: any) => g.id === item.giftId) ||
-        allGifts[0] || {
-          id: item.giftId,
-          name: "Hộp quà yêu thương",
-          price: 1500,
-          image: "two-hearts.png",
-        };
-
-      const date = new Date(Date.now() - item.minsAgo * 60 * 1000);
-      const priceCoins = Number(gift.price || 0);
-
-      return {
-        id: `sample-${index + 1}`,
-        senderName: item.name,
-        message: item.message,
-        giftName: gift.name,
-        priceCoins,
-        giftImage: gift.image ? `/images/gift_images/${gift.image}` : "/images/gift_images/two-hearts.png",
-        giftFile: gift.file,
-        amount: priceCoins * 1000,
-        weddingCardId: card.id,
-        weddingCardName: card.name,
-        weddingCardUrl: card.url,
-        createdAt: date.toISOString(),
-        status: "SUCCESS",
-      };
+    // Truy vấn quà tặng của user từ bảng sent_gifts trong MySQL
+    const userSentGifts = await loadSentGifts({
+      recipientUserId: user.id,
+      weddingCardIds: cardIds,
     });
 
-    // Lọc các quà thật đã gửi tới các thiệp của user hiện tại (hoặc tất cả nếu môi trường test)
-    const userSentGifts = allSent.filter(
-      (g) =>
-        Number(g.recipientUserId) === Number(user.id) ||
-        (g.weddingCardId && cardIdSet.has(Number(g.weddingCardId))) ||
-        (g.slug && cardUrlSet.has(g.slug)) ||
-        !g.recipientUserId
-    );
-
-    const realSentGifts = userSentGifts.map((g) => {
+    const receivedGifts = userSentGifts.map((g) => {
       const matchedCard =
         allUserCards.find(
           (c: any) => c.url === g.slug || Number(c.id) === Number(g.weddingCardId)
         ) ||
         (g.weddingCardId
           ? { id: g.weddingCardId, name: g.weddingCardName || "Thiệp cưới", url: g.slug || "" }
-          : cardNames[0]);
+          : weddingCards[0] || { id: 1, name: "Thiệp cưới", url: "" });
 
       const dbGift = allGifts.find((item: any) => Number(item.id) === Number(g.giftId));
       const priceCoins = Number(g.giftPriceCoins || dbGift?.price || 0);
+      const amountVnd = Number(g.amountVnd) > 0 ? Number(g.amountVnd) : priceCoins * COIN_TO_VND_RATE;
 
       return {
         id: g.id,
@@ -188,7 +145,7 @@ export default defineEventHandler(async (event) => {
             : `/images/gift_images/${g.giftImage}`
           : "/images/gift_images/two-hearts.png",
         giftFile: g.giftFile || dbGift?.file,
-        amount: priceCoins * 1000,
+        amount: amountVnd,
         weddingCardId: matchedCard.id,
         weddingCardName: matchedCard.name,
         weddingCardUrl: matchedCard.url,
@@ -197,7 +154,6 @@ export default defineEventHandler(async (event) => {
       };
     });
 
-    const receivedGifts = [...realSentGifts, ...sampleGifts];
     const totalAmount = receivedGifts.reduce((acc, curr) => acc + (curr.amount || 0), 0);
     const totalCoins = receivedGifts.reduce((acc, curr) => acc + (curr.priceCoins || 0), 0);
 
@@ -207,7 +163,7 @@ export default defineEventHandler(async (event) => {
           totalGifts: receivedGifts.length,
           totalCoins,
           totalAmount,
-          cardsCount: cardNames.length,
+          cardsCount: weddingCards.length,
         },
         cards: weddingCards,
         gifts: receivedGifts,

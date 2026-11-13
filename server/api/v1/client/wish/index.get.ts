@@ -72,7 +72,7 @@ export default defineEventHandler(async (event) => {
         giftPriceMap.set(String(g.name).trim().toLowerCase(), Number(g.price || 0));
       }
     }
-    const allSent = loadSentGifts();
+    const allSent = await loadSentGifts();
 
     // Nếu truyền slug cụ thể (VD: xem thống kê lời chúc của 1 thiệp)
     if (filterSlug) {

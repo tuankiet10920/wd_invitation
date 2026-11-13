@@ -96,6 +96,11 @@ export default (sequelize, DataTypes) => {
         allowNull: true,
         defaultValue: 1,
       },
+      coins: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 2000,
+      },
     },
     {
       sequelize,

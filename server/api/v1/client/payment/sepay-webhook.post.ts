@@ -1,122 +1,122 @@
-import { processPaymentSuccess } from "./payment-store";
-import crypto from "crypto";
+import { getPaymentRecord, getPendingPayments, processPaymentSuccess } from './payment-store';
 
+/**
+ * Chuẩn hóa chuỗi nội dung chuyển khoản: viết hoa và bỏ toàn bộ ký tự đặc biệt/khoảng trắng
+ */
+function normalizeText(str: string): string {
+  return String(str || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+/**
+ * Webhook nhận thông báo biến động số dư từ SePay (MBBank / VietQR)
+ * Cấu hình URL trên SePay Dashboard: https://<domain>/api/v1/client/payment/sepay-webhook
+ */
 export default defineEventHandler(async (event) => {
-    try {
-        const config = useRuntimeConfig();
-        const sepayConfig = config.payment?.sepay;
+  try {
+    const config = useRuntimeConfig();
+    const webhookSecret = config.sepayWebhookSecret || process.env.SEPAY_WEBHOOK_SECRET || '';
+    const apiToken = config.sepayApiToken || process.env.SEPAY_API_TOKEN || '';
 
-        if (sepayConfig) {
-            const signature = getHeader(event, "x-sepay-signature");
-            const timestampHeader = getHeader(event, "x-sepay-timestamp");
+    // Kiểm tra bảo mật Webhook nếu hệ thống có cấu hình Secret / API Key
+    const authHeader = getHeader(event, 'authorization') || '';
+    const signatureHeader = getHeader(event, 'x-sepay-signature') || '';
 
-            let isAuthenticated = false;
-
-            if (signature && timestampHeader) {
-                // 1. Verify via HMAC-SHA256
-                const rawBody = await readRawBody(event, "utf-8") || "";
-                const timestamp = Number(timestampHeader);
-
-                if (Math.abs(Date.now() / 1000 - timestamp) <= 300) {
-                    const secret = sepayConfig.webhookSecret || sepayConfig.apiKey;
-                    const expected = "sha256=" + crypto.createHmac("sha256", secret)
-                        .update(`${timestamp}.${rawBody}`)
-                        .digest("hex");
-
-                    try {
-                        const sig = Buffer.from(signature);
-                        const exp = Buffer.from(expected);
-                        if (sig.length === exp.length && crypto.timingSafeEqual(sig, exp)) {
-                            isAuthenticated = true;
-                        }
-                    } catch (e) {}
-                }
-            } else {
-                // 2. Fallback to API Key Authorization header
-                const authHeader = getHeader(event, "authorization");
-                if (authHeader) {
-                    const token = authHeader.replace(/^(Apikey|Bearer)\s+/i, "").trim();
-                    if (token === sepayConfig.apiKey) {
-                        isAuthenticated = true;
-                    }
-                }
-            }
-
-            // In production/configured environment, reject if authentication failed
-            if (!isAuthenticated && (signature || getHeader(event, "authorization"))) {
-                return { success: false, error: "Xác thực Webhook không thành công (API Key hoặc HMAC-SHA256 không hợp lệ)." };
-            }
-        }
-
-        const body = await readBody(event);
-        console.log("[SePay Webhook Received]:", JSON.stringify(body, null, 2));
-
-        // Kết hợp cả trường code và nội dung chuyển khoản để không bỏ sót dù ngân hàng tách chuỗi
-        const rawSearchText = [
-            body.code,
-            body.content,
-            body.transferContent,
-            body.des,
-            body.description
-        ].filter(Boolean).join(" ");
-
-        const transferAmount = Number(body.transferAmount || body.amount || 0);
-
-        if (rawSearchText) {
-            const match =
-                rawSearchText.match(/SEVQR\s*(?:PKG|GIFT|COIN)[A-Z0-9]+/i) ||
-                rawSearchText.match(/(?:PKG|GIFT|COIN)[A-Z0-9]+/i) ||
-                rawSearchText.match(/SEVQR[A-Z0-9]+/i);
-
-            if (match) {
-                const matchedRaw = match[0].replace(/\s+/g, "").toUpperCase();
-                const subMatch = matchedRaw.match(/(?:GIFT|PKG|COIN)[A-Z0-9]+/i);
-                const shortCode = subMatch ? subMatch[0].toUpperCase() : matchedRaw.replace(/^SEVQR/i, "");
-                const fullCode = matchedRaw.startsWith("SEVQR") ? matchedRaw : `SEVQR${shortCode}`;
-
-                console.log(`[SePay Webhook] Found code ${fullCode} (shortCode: ${shortCode}) in content "${rawSearchText}"`);
-
-                const record = await processPaymentSuccess(fullCode, shortCode, transferAmount);
-
-                if ((global as any).__wsPeers) {
-                    const keysToNotify = Array.from(new Set([fullCode, shortCode, `SEVQR${shortCode}`]));
-                    keysToNotify.forEach((key) => {
-                        const peers = (global as any).__wsPeers.get(key);
-                        if (peers && peers.size > 0) {
-                            const wsMessage = JSON.stringify({
-                                type: "payment_success",
-                                code: key,
-                                paymentType: record?.type || "GIFT",
-                                packageId: record?.packageId,
-                                packageName: record?.packageName
-                            });
-                            for (const peer of peers) {
-                                try {
-                                    peer.send(wsMessage);
-                                } catch (err) {}
-                            }
-                            console.log(`[SePay Webhook] WebSocket payment success notification sent to ${peers.size} peer(s) for key ${key}`);
-                        }
-                    });
-                }
-
-                return {
-                    success: true,
-                    message: "Webhook processed",
-                    data: {
-                        code: fullCode,
-                        type: record?.type,
-                        userId: record?.userId,
-                        packageId: record?.packageId,
-                        packageName: record?.packageName
-                    }
-                };
-            }
-        }
-
-        return { success: true, message: "Webhook processed (no matching code)" };
-    } catch (e: any) {
-        console.error("[SePay Webhook Error]:", e);
-        return { success: false, error: e.message };
+    if (webhookSecret && signatureHeader && signatureHeader !== webhookSecret) {
+      setResponseStatus(event, 401);
+      return { success: false, message: 'Invalid Webhook Signature' };
     }
+
+    if (apiToken && authHeader && !authHeader.includes(apiToken) && !authHeader.includes(webhookSecret)) {
+      setResponseStatus(event, 401);
+      return { success: false, message: 'Unauthorized Webhook Request' };
+    }
+
+    const body = await readBody(event);
+    if (!body) {
+      return { success: false, message: 'Empty payload' };
+    }
+
+    // SePay gửi thông tin giao dịch trong body:
+    // content: Nội dung chuyển khoản
+    // transferAmount: Số tiền chuyển
+    // transferType: 'in' (tiền vào) | 'out' (tiền ra)
+    // code: Mã thanh toán SePay tự bóc tách (nếu có)
+    const content = String(body.content || body.description || '').toUpperCase();
+    const cleanContent = normalizeText(content);
+    const transferAmount = Number(body.transferAmount || body.amount_in || 0);
+    const transferType = String(body.transferType || 'in').toLowerCase();
+
+    if (transferType !== 'in') {
+      return { success: true, message: 'Ignored outgoing transaction' };
+    }
+
+    console.log(`[SePay Webhook] Nhận giao dịch: +${transferAmount}đ | Nội dung: "${content}"`);
+
+    let matchedRecord: any = null;
+
+    // Bước 1: Thử khớp chính xác qua regex SEVQR... trong nội dung
+    const match = content.match(/SEVQR[A-Z0-9]+/i) || cleanContent.match(/SEVQR[A-Z0-9]+/i);
+    const candidateCode = body.code ? String(body.code).toUpperCase() : (match ? match[0].toUpperCase() : '');
+
+    if (candidateCode) {
+      matchedRecord = await getPaymentRecord(candidateCode);
+    }
+
+    // Bước 2: Nếu ngân hàng làm rớt chữ hoặc cắt ngắn mã, quét các giao dịch PENDING trong MySQL để đối chiếu thông minh
+    if (!matchedRecord) {
+      const pendingRecords = await getPendingPayments();
+
+      for (const rec of pendingRecords) {
+        const cleanCode = normalizeText(rec.code);
+        const shortCode = normalizeText(rec.shortCode || rec.code.slice(-4));
+        const suffixAfterPrefix = cleanCode.replace(/^SEVQR(PKGU\d+P\d+|COINU\d+C\d+|GIFT)?/, '');
+
+        // Khớp nếu nội dung chứa toàn bộ mã, hoặc chứa phần đuôi định danh + đúng số tiền
+        const isCodeMatched =
+          (cleanCode && cleanContent.includes(cleanCode)) ||
+          (suffixAfterPrefix.length >= 4 && cleanContent.includes(suffixAfterPrefix)) ||
+          (shortCode.length >= 4 && cleanContent.includes(shortCode));
+
+        if (isCodeMatched && transferAmount >= rec.amount) {
+          matchedRecord = rec;
+          break;
+        }
+      }
+    }
+
+    if (!matchedRecord) {
+      console.warn(`[SePay Webhook] Không tìm thấy đơn hàng khớp với nội dung: "${content}"`);
+      return {
+        success: true,
+        message: 'No matching payment order found in store',
+      };
+    }
+
+    // Kiểm tra số tiền chuyển vào phải lớn hơn hoặc bằng số tiền đơn hàng
+    if (transferAmount > 0 && transferAmount < matchedRecord.amount) {
+      console.warn(
+        `[SePay Webhook] Giao dịch ${matchedRecord.code} chuyển thiếu tiền (${transferAmount} < ${matchedRecord.amount})`
+      );
+      return {
+        success: true,
+        message: 'Transfer amount is less than required amount',
+      };
+    }
+
+    const updated = await processPaymentSuccess(matchedRecord.code);
+    console.log(`[SePay Webhook] Đã xác nhận thanh toán & cập nhật DB thành công cho mã: ${matchedRecord.code}`);
+
+    return {
+      success: true,
+      message: 'Payment confirmed and DB updated successfully',
+      data: updated,
+    };
+  } catch (error: any) {
+    console.error('[SePay Webhook] Lỗi xử lý webhook:', error);
+    setResponseStatus(event, 500);
+    return {
+      success: false,
+      message: error?.message || 'Webhook processing error',
+    };
+  }
 });

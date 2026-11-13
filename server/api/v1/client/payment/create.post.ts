@@ -18,6 +18,6 @@ export default defineEventHandler(async (event) => {
         body.type = "COIN_TOPUP";
     }
 
-    const record = createPaymentRecord(body);
+    const record = await createPaymentRecord(body);
     return { success: true, data: record };
 });

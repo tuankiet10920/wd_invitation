@@ -1,282 +1,204 @@
-import fs from "fs";
-import path from "path";
-import { addUserCoins, COIN_TO_VND_RATE } from "../gifts/coin-store";
+import { addUserCoins } from '../gifts/coin-store';
 
 export interface PaymentRecord {
-    code: string;
-    amount: number;
-    type?: 'GIFT' | 'PACKAGE' | 'COIN_TOPUP';
-    coins?: number;
-    giftName?: string;
-    senderName?: string;
-    message?: string;
-    slug?: string;
-    packageId?: number;
-    packageName?: string;
-    userId?: number;
-    duration?: number;
-    status: 'PENDING' | 'SUCCESS' | 'EXPIRED';
-    dbProcessed?: boolean;
-    createdAt: number;
+  code: string;
+  shortCode: string; // Mã định danh ngắn 4 ký tự cuối để chống ngân hàng cắt chuỗi
+  type: 'GIFT' | 'PACKAGE' | 'COIN_TOPUP';
+  amount: number;
+  coins?: number;
+  giftName?: string;
+  senderName?: string;
+  message?: string;
+  slug?: string;
+  packageId?: number;
+  packageName?: string;
+  duration?: number;
+  userId?: number;
+  status: 'PENDING' | 'SUCCESS' | 'EXPIRED';
+  dbProcessed?: boolean;
+  createdAt: number;
 }
 
-const PAYMENTS_FILE = path.resolve(process.cwd(), "server/data/payments.json");
-const paymentsMap = new Map<string, PaymentRecord>();
-const processedPackageCodes = new Set<string>();
+function mapPaymentRow(row: any): PaymentRecord {
+  const plain = row?.get ? row.get({ plain: true }) : row;
+  return {
+    code: plain.code,
+    shortCode: plain.short_code || plain.code.slice(-4),
+    type: plain.type,
+    amount: Number(plain.amount || 0),
+    coins: plain.coins !== null && plain.coins !== undefined ? Number(plain.coins) : undefined,
+    giftName: plain.gift_name || undefined,
+    senderName: plain.sender_name || undefined,
+    message: plain.message || undefined,
+    slug: plain.slug || undefined,
+    packageId: plain.id_package !== null && plain.id_package !== undefined ? Number(plain.id_package) : undefined,
+    packageName: plain.package_name || undefined,
+    duration: plain.duration !== null && plain.duration !== undefined ? Number(plain.duration) : undefined,
+    userId: plain.id_user !== null && plain.id_user !== undefined ? Number(plain.id_user) : undefined,
+    status: plain.status,
+    dbProcessed: Boolean(plain.db_processed),
+    createdAt: plain.createdAt ? new Date(plain.createdAt).getTime() : Date.now(),
+  };
+}
 
-function loadPaymentsFromDisk() {
+export async function createPaymentRecord(
+  params: Omit<PaymentRecord, 'status' | 'createdAt' | 'shortCode'>
+): Promise<PaymentRecord> {
+  const db = (global as any).__db;
+  const code = params.code.toUpperCase();
+  const shortCode = code.slice(-4);
+
+  const [row, created] = await db.PaymentTransaction.findOrCreate({
+    where: { code },
+    defaults: {
+      code,
+      short_code: shortCode,
+      type: params.type,
+      amount: Number(params.amount || 0),
+      coins: params.coins ?? null,
+      gift_name: params.giftName ?? null,
+      sender_name: params.senderName ?? null,
+      message: params.message ?? null,
+      slug: params.slug ?? null,
+      id_package: params.packageId ?? null,
+      package_name: params.packageName ?? null,
+      duration: params.duration ?? null,
+      id_user: params.userId ?? null,
+      status: 'PENDING',
+      db_processed: false,
+    },
+  });
+
+  if (!created) {
+    await row.update({
+      short_code: shortCode,
+      type: params.type,
+      amount: Number(params.amount || 0),
+      coins: params.coins ?? null,
+      gift_name: params.giftName ?? null,
+      sender_name: params.senderName ?? null,
+      message: params.message ?? null,
+      slug: params.slug ?? null,
+      id_package: params.packageId ?? null,
+      package_name: params.packageName ?? null,
+      duration: params.duration ?? null,
+      id_user: params.userId ?? null,
+    });
+  }
+
+  return mapPaymentRow(row);
+}
+
+export async function getPaymentRecord(code: string): Promise<PaymentRecord | null> {
+  if (!code) return null;
+  const db = (global as any).__db;
+  const row = await db.PaymentTransaction.findOne({
+    where: { code: code.toUpperCase() },
+  });
+  return row ? mapPaymentRow(row) : null;
+}
+
+export async function getPendingPayments(): Promise<PaymentRecord[]> {
+  const db = (global as any).__db;
+  const rows = await db.PaymentTransaction.findAll({
+    where: { status: 'PENDING' },
+    order: [['createdAt', 'DESC']],
+    limit: 200,
+  });
+  return rows.map(mapPaymentRow);
+}
+
+export async function markPaymentSuccess(code: string): Promise<PaymentRecord | null> {
+  if (!code) return null;
+  const db = (global as any).__db;
+  const row = await db.PaymentTransaction.findOne({
+    where: { code: code.toUpperCase() },
+  });
+  if (!row) return null;
+
+  await row.update({ status: 'SUCCESS' });
+  return mapPaymentRow(row);
+}
+
+/**
+ * Xử lý nâng cấp gói dịch vụ, nạp xu và lưu đơn hàng vào MySQL khi thanh toán thành công
+ * Đảm bảo chỉ chạy 1 lần duy nhất (idempotent thông qua cờ db_processed)
+ */
+export async function processPaymentSuccess(code: string): Promise<PaymentRecord | null> {
+  if (!code) return null;
+  const db = (global as any).__db;
+  const upperCode = code.toUpperCase();
+
+  const row = await db.PaymentTransaction.findOne({
+    where: { code: upperCode },
+  });
+  if (!row) return null;
+
+  if (row.status === 'SUCCESS' && row.db_processed) {
+    return mapPaymentRow(row);
+  }
+
+  await row.update({ status: 'SUCCESS' });
+  const record = mapPaymentRow(row);
+
+  if (!record.dbProcessed) {
     try {
-        if (fs.existsSync(PAYMENTS_FILE)) {
-            const raw = fs.readFileSync(PAYMENTS_FILE, "utf-8");
-            const list: PaymentRecord[] = JSON.parse(raw);
-            if (Array.isArray(list)) {
-                for (const rec of list) {
-                    if (rec && rec.code) {
-                        const full = rec.code.trim().toUpperCase();
-                        const short = full.replace(/^SEVQR/i, "");
-                        paymentsMap.set(full, rec);
-                        paymentsMap.set(short, rec);
-                        if (rec.dbProcessed) {
-                            processedPackageCodes.add(full);
-                        }
-                    }
-                }
-            }
+      // 1. Nạp Xu vào ví nếu là giao dịch COIN_TOPUP
+      if (record.type === 'COIN_TOPUP' && record.userId && record.coins) {
+        await addUserCoins(
+          record.userId,
+          Number(record.coins),
+          `Nạp ${Number(record.coins).toLocaleString('vi-VN')} Xu qua chuyển khoản (${record.code})`
+        );
+        await row.update({ db_processed: true });
+        console.log(
+          `[Payment DB] Đã cộng ${record.coins} Xu cho User #${record.userId} (Mã GD: ${record.code})`
+        );
+      }
+      // 2. Nâng cấp gói dịch vụ nếu là giao dịch PACKAGE
+      else if (record.type === 'PACKAGE' && record.userId && record.packageId) {
+        if (db && db.User && db.Order) {
+          const durationMonths = Number(record.duration || 12);
+          const expiredAt = new Date();
+          expiredAt.setMonth(expiredAt.getMonth() + durationMonths);
+
+          // Cập nhật id_package và hạn sử dụng cho User
+          await db.User.update(
+            {
+              id_package: Number(record.packageId),
+              package_expired_at: expiredAt,
+            },
+            { where: { id: Number(record.userId) } }
+          );
+
+          // Đồng bộ id_package cho toàn bộ thiệp cưới của User đó
+          if (db.WeddingCard) {
+            await db.WeddingCard.update(
+              { id_package: Number(record.packageId) },
+              { where: { id_user: Number(record.userId) } }
+            );
+          }
+
+          // Ghi nhận lịch sử đơn hàng vào bảng orders
+          await db.Order.create({
+            total: Number(record.amount || 0),
+            duration: durationMonths,
+            id_user: Number(record.userId),
+            id_package: Number(record.packageId),
+          });
+
+          await row.update({ db_processed: true });
+          console.log(
+            `[Payment DB] Đã nâng cấp gói #${record.packageId} (${durationMonths} tháng) cho User #${record.userId}`
+          );
         }
-    } catch (e) {
-        console.error("[PaymentStore] Failed to load payments.json:", e);
+      } else {
+        await row.update({ db_processed: true });
+      }
+    } catch (err) {
+      console.error('[Payment DB] Lỗi khi cập nhật Database:', err);
     }
+  }
+
+  return mapPaymentRow(row);
 }
-
-function savePaymentsToDisk() {
-    try {
-        const dir = path.dirname(PAYMENTS_FILE);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-        const uniqueRecords = Array.from(new Set(paymentsMap.values()));
-        // Giữ tối đa 200 giao dịch gần nhất
-        const recentRecords = uniqueRecords
-            .sort((a, b) => b.createdAt - a.createdAt)
-            .slice(0, 200);
-        fs.writeFileSync(PAYMENTS_FILE, JSON.stringify(recentRecords, null, 2), "utf-8");
-    } catch (e) {
-        console.error("[PaymentStore] Failed to save payments.json:", e);
-    }
-}
-
-// Khởi tạo dữ liệu từ đĩa khi server khởi động
-loadPaymentsFromDisk();
-
-export const createPaymentRecord = (data: Partial<PaymentRecord>) => {
-    if (!data.code) return null;
-    const rawCode = data.code.replace(/\s+/g, "").toUpperCase();
-    const shortCode = rawCode.replace(/^SEVQR/i, "");
-    const fullCode = rawCode.startsWith("SEVQR") ? rawCode : `SEVQR${rawCode}`;
-
-    // Nếu mã có dạng PKGU{userId}P{packageId} thì tự động trích xuất luôn
-    const codeMatch = fullCode.match(/PKGU(\d+)P(\d+)/i);
-    const parsedUserId = codeMatch ? Number(codeMatch[1]) : undefined;
-    const parsedPackageId = codeMatch ? Number(codeMatch[2]) : undefined;
-
-    const coinMatch = fullCode.match(/COINU(\d+)C(\d+)/i);
-    const parsedCoinUserId = coinMatch ? Number(coinMatch[1]) : undefined;
-    const parsedCoins = coinMatch ? Number(coinMatch[2]) : undefined;
-
-    const record: PaymentRecord = {
-        code: fullCode,
-        amount: Number(data.amount) || 0,
-        type: data.type || (data.packageId || parsedPackageId ? 'PACKAGE' : (data.coins || parsedCoins ? 'COIN_TOPUP' : 'GIFT')),
-        coins: data.coins ? Number(data.coins) : parsedCoins,
-        giftName: data.giftName,
-        senderName: data.senderName,
-        message: data.message,
-        slug: data.slug,
-        packageId: data.packageId ? Number(data.packageId) : parsedPackageId,
-        packageName: data.packageName,
-        userId: data.userId ? Number(data.userId) : (parsedUserId || parsedCoinUserId),
-        duration: data.duration ? Number(data.duration) : undefined,
-        status: 'PENDING',
-        dbProcessed: false,
-        createdAt: Date.now()
-    };
-
-    paymentsMap.set(fullCode, record);
-    paymentsMap.set(shortCode, record);
-    paymentsMap.set(rawCode, record);
-    savePaymentsToDisk();
-    return record;
-};
-
-export const getPaymentRecord = (code: string) => {
-    if (!code) return undefined;
-    const clean = code.replace(/\s+/g, "").toUpperCase();
-    const short = clean.replace(/^SEVQR/i, "");
-    return (
-        paymentsMap.get(clean) ||
-        paymentsMap.get(short) ||
-        paymentsMap.get(`SEVQR${short}`)
-    );
-};
-
-export const markPaymentSuccess = (code: string) => {
-    const record = getPaymentRecord(code);
-    if (record) {
-        record.status = 'SUCCESS';
-        const clean = code.replace(/\s+/g, "").toUpperCase();
-        const shortCode = clean.replace(/^SEVQR/i, '');
-        paymentsMap.set(clean, record);
-        paymentsMap.set(shortCode, record);
-        paymentsMap.set(`SEVQR${shortCode}`, record);
-        savePaymentsToDisk();
-        return true;
-    }
-    return false;
-};
-
-export const processPaymentSuccess = async (
-    fullCode: string,
-    shortCode?: string,
-    transferAmount?: number
-) => {
-    const cleanFull = fullCode.replace(/\s+/g, "").toUpperCase();
-    const cleanShort = (shortCode || cleanFull.replace(/^SEVQR/i, '')).replace(/\s+/g, "").toUpperCase();
-    const canonicalCode = cleanFull.startsWith('SEVQR') ? cleanFull : `SEVQR${cleanShort}`;
-
-    let record = getPaymentRecord(cleanFull) || getPaymentRecord(cleanShort);
-
-    if (record) {
-        record.status = 'SUCCESS';
-    } else {
-        record = {
-            code: canonicalCode,
-            amount: transferAmount || 0,
-            status: 'SUCCESS',
-            dbProcessed: false,
-            createdAt: Date.now()
-        };
-    }
-
-    // 1. Lấy userId và packageId đã lưu trong PaymentRecord
-    let userId = record.userId;
-    let packageId = record.packageId;
-
-    // 2. Giải mã trực tiếp từ mã nội dung chuyển khoản (VD: SEVQRPKGU2P2R3V4N -> userId = 2, packageId = 2)
-    const codeMatch = canonicalCode.match(/PKGU(\d+)P(\d+)/i);
-    if (codeMatch) {
-        if (!userId) userId = Number(codeMatch[1]);
-        if (!packageId) packageId = Number(codeMatch[2]);
-        record.type = 'PACKAGE';
-        record.userId = userId;
-        record.packageId = packageId;
-    }
-
-    const coinMatch = canonicalCode.match(/COINU(\d+)C(\d+)/i);
-    if (coinMatch) {
-        if (!userId) userId = Number(coinMatch[1]);
-        record.coins = Number(coinMatch[2]);
-        record.type = 'COIN_TOPUP';
-        record.userId = userId;
-    }
-
-    if (
-        (record.type === 'COIN_TOPUP' || canonicalCode.includes('COIN')) &&
-        !record.dbProcessed &&
-        !processedPackageCodes.has(canonicalCode)
-    ) {
-        record.dbProcessed = true;
-        processedPackageCodes.add(canonicalCode);
-        const targetUserId = userId || 1;
-        const coinsToAdd =
-            record.coins ||
-            Math.floor((transferAmount || record.amount || 0) / COIN_TO_VND_RATE);
-        if (coinsToAdd > 0) {
-            addUserCoins(
-                targetUserId,
-                coinsToAdd,
-                `Nạp ${coinsToAdd.toLocaleString("vi-VN")} xu qua SePay (${canonicalCode})`,
-                canonicalCode
-            );
-            record.coins = coinsToAdd;
-            console.log(
-                `[SePay Coin Topup] Đã cộng +${coinsToAdd} xu cho User #${targetUserId} từ mã ${canonicalCode}`
-            );
-        }
-    }
-
-    const db = (global as any).__db;
-
-    // 3. Fallback: Nếu là giao dịch gói (PKG) nhưng chưa rõ packageId, đối chiếu theo số tiền chuyển khoản (transferAmount)
-    if (!packageId && canonicalCode.includes("PKG") && transferAmount && db?.Package) {
-        try {
-            const allPkgs = await db.Package.findAll({ raw: true });
-            const matchedPkg = allPkgs.find(
-                (p: any) => Number(p.sale_price) === Number(transferAmount) || Number(p.original_price) === Number(transferAmount)
-            );
-            if (matchedPkg) {
-                packageId = Number(matchedPkg.id);
-                record.packageId = packageId;
-                record.packageName = matchedPkg.name;
-                record.type = 'PACKAGE';
-            }
-        } catch (e) {}
-    }
-
-    paymentsMap.set(cleanFull, record);
-    paymentsMap.set(cleanShort, record);
-    paymentsMap.set(canonicalCode, record);
-
-    if (
-        (record.type === 'PACKAGE' || (userId && packageId)) &&
-        userId &&
-        packageId &&
-        !record.dbProcessed &&
-        !processedPackageCodes.has(canonicalCode)
-    ) {
-        record.dbProcessed = true;
-        processedPackageCodes.add(canonicalCode);
-
-        try {
-            if (db && db.User && db.Package && db.Order) {
-                const pkg = await db.Package.findByPk(packageId);
-                if (pkg) {
-                    const duration = Number(pkg.time_save_card || record.duration || 12);
-                    const expiredAt = new Date();
-                    expiredAt.setMonth(expiredAt.getMonth() + duration);
-
-                    await db.User.update(
-                        {
-                            id_package: pkg.id,
-                            package_expired_at: expiredAt
-                        },
-                        {
-                            where: { id: userId }
-                        }
-                    );
-
-                    const orderTotal =
-                        record.amount ||
-                        transferAmount ||
-                        Number(pkg.sale_price ?? pkg.original_price ?? 0);
-
-                    await db.Order.create({
-                        total: orderTotal,
-                        duration: duration,
-                        id_user: userId,
-                        id_package: pkg.id
-                    });
-
-                    record.packageName = pkg.name;
-                    console.log(
-                        `[SePay Package Upgrade] Đã xác định User #${userId} đăng ký Gói #${pkg.id} (${pkg.name}) từ mã ${canonicalCode}. Đã cập nhật User & tạo Order trong DB.`
-                    );
-                }
-            }
-        } catch (dbErr) {
-            console.error('[SePay Package Upgrade DB Error]:', dbErr);
-        }
-    }
-
-    savePaymentsToDisk();
-    return record;
-};

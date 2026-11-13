@@ -86,10 +86,10 @@ export default defineEventHandler(async (event) => {
       updatedAt: nowIso,
     };
 
-    addWithdrawalRecord(newWithdrawal);
+    const created = await addWithdrawalRecord(newWithdrawal);
 
     return FormatResponse.success(
-      newWithdrawal,
+      created,
       `Rút thành công ${amount.toLocaleString("vi-VN")}đ về tài khoản ${bankName} - ${accountNumber}!`
     );
   } catch (error: any) {

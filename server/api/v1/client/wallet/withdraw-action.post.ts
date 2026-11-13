@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const targetStatus = action === "cancel" ? "CANCELLED" : "COMPLETED";
-    const updated = updateWithdrawalStatus(id, user.id, targetStatus);
+    const updated = await updateWithdrawalStatus(id, user.id, targetStatus);
 
     if (!updated) {
       return FormatResponse.error(event, "Không tìm thấy yêu cầu rút tiền!");
@@ -33,4 +33,3 @@ export default defineEventHandler(async (event) => {
     return FormatResponse.failure(error);
   }
 });
-

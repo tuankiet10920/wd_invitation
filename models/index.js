@@ -38,6 +38,10 @@ import defineFontType from "./font-types.js";
 import defineFont from "./fonts.js";
 import defineAcceptInvitation from "./accept-invitations.js";
 import defineQrBox from "./qr_boxes.js";
+import definePaymentTransaction from "./payment-transactions.js";
+import defineCoinTransaction from "./coin-transactions.js";
+import defineSentGift from "./sent-gifts.js";
+import defineWithdrawal from "./withdrawals.js";
 
 const db = {};
 
@@ -83,6 +87,10 @@ export const loadAndAssociateModels = (sequelize, DataTypes) => {
     defineFont(sequelize, DataTypes),
     defineAcceptInvitation(sequelize, DataTypes),
     defineQrBox(sequelize, DataTypes),
+    definePaymentTransaction(sequelize, DataTypes),
+    defineCoinTransaction(sequelize, DataTypes),
+    defineSentGift(sequelize, DataTypes),
+    defineWithdrawal(sequelize, DataTypes),
   ];
 
   models.forEach((model) => {
@@ -298,6 +306,28 @@ export const loadAndAssociateModels = (sequelize, DataTypes) => {
   // Orders
   db.Order.belongsTo(db.User, { foreignKey: "id_user", as: "user" });
   db.Order.belongsTo(db.Package, { foreignKey: "id_package", as: "package" });
+
+  // =========================================================
+  // ## PAYMENTS, COINS, GIFTS & WITHDRAWALS ##
+  // =========================================================
+  db.User.hasMany(db.PaymentTransaction, { foreignKey: "id_user", as: "paymentTransactions" });
+  db.PaymentTransaction.belongsTo(db.User, { foreignKey: "id_user", as: "user" });
+  db.PaymentTransaction.belongsTo(db.Package, { foreignKey: "id_package", as: "package" });
+
+  db.User.hasMany(db.CoinTransaction, { foreignKey: "id_user", as: "coinTransactions" });
+  db.CoinTransaction.belongsTo(db.User, { foreignKey: "id_user", as: "user" });
+  db.CoinTransaction.belongsTo(db.Gift, { foreignKey: "id_gift", as: "gift" });
+
+  db.User.hasMany(db.SentGift, { foreignKey: "id_sender_user", as: "sentGifts" });
+  db.User.hasMany(db.SentGift, { foreignKey: "id_recipient_user", as: "receivedGifts" });
+  db.SentGift.belongsTo(db.User, { foreignKey: "id_sender_user", as: "sender" });
+  db.SentGift.belongsTo(db.User, { foreignKey: "id_recipient_user", as: "recipient" });
+  db.SentGift.belongsTo(db.Gift, { foreignKey: "id_gift", as: "gift" });
+  db.SentGift.belongsTo(db.WeddingCard, { foreignKey: "id_wedding_card", as: "weddingCard" });
+  db.WeddingCard.hasMany(db.SentGift, { foreignKey: "id_wedding_card", as: "sentGifts" });
+
+  db.User.hasMany(db.Withdrawal, { foreignKey: "id_user", as: "withdrawals" });
+  db.Withdrawal.belongsTo(db.User, { foreignKey: "id_user", as: "user" });
 
   return {
     sequelize,
