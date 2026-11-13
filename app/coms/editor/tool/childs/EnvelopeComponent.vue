@@ -60,27 +60,36 @@ const handleFileChange = async (event: Event) => {
     const file = target.files?.[0];
     if (!file) return;
 
+    if (!file.type.startsWith('image/')) {
+        editor.showNotification('Vui lòng chọn tệp hình ảnh hợp lệ!', 'warning');
+        if (target) target.value = '';
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('images', file);
+
     isUploading.value = true;
     try {
-        const base64 = await new Promise<string>((resolve) => {
-            const reader = new FileReader();
-            reader.onload = (e) => resolve(e.target?.result as string);
-            reader.readAsDataURL(file);
-        });
-
         const response = await $fetch<any>('/api/v1/client/file/upload-personal', {
             method: 'POST',
-            body: { images: [base64] }
+            body: formData,
+            credentials: 'include'
         });
 
-        if (response.success && response.data?.length > 0) {
-            imageSrc.value = response.data[0].url;
+        if (response?.success && response.data?.length > 0) {
+            const rawUrl = response.data[0].url;
+            imageSrc.value = (rawUrl.startsWith('http') || rawUrl.startsWith('/'))
+                ? rawUrl
+                : `/images/personal_image/${rawUrl}`;
+            editor.showNotification('Tải ảnh phong bì thành công!', 'success');
         } else {
-            imageSrc.value = base64;
+            editor.showNotification(response?.message || 'Tải ảnh lên thất bại!', 'warning');
         }
-    } catch (e) {
+    } catch (e: any) {
         console.error(e);
-        alert('Tải ảnh lên thất bại.');
+        const errMsg = e?.data?.message || e?.response?._data?.message || 'Tải ảnh lên thất bại.';
+        editor.showNotification(errMsg, 'error');
     } finally {
         isUploading.value = false;
         if (target) target.value = '';

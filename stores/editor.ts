@@ -14,6 +14,7 @@ interface NodeInterface {
 
 interface CardData {
   id: string;
+  name?: string | null;
   id_category_wedding_card?: number | null;
   is_publish?: boolean;
   is_template?: boolean;
@@ -47,6 +48,7 @@ export const useEditorStore = defineStore("editor", {
     background: "#ffffff" as string,
     height: 1024 as number,
     currentCardId: null as string | null,
+    name: "Thiệp cưới của tôi" as string,
     id_category_wedding_card: null as number | null,
     is_publish: true as boolean,
     is_template: false as boolean,
@@ -131,6 +133,7 @@ export const useEditorStore = defineStore("editor", {
 
     getSnapshot() {
       return JSON.stringify({
+        name: this.name,
         nodes: this.createdNodes,
         background: this.background,
         height: this.height,
@@ -189,6 +192,7 @@ export const useEditorStore = defineStore("editor", {
     applySnapshot(snapshot: string) {
       try {
         const data = JSON.parse(snapshot);
+        if (data.name !== undefined) this.name = data.name;
         this.createdNodes = data.nodes;
         this.background = data.background;
         this.height = data.height;
@@ -245,6 +249,7 @@ export const useEditorStore = defineStore("editor", {
         // Load the first card for now
         const card = allCards[0]!;
         this.currentCardId = card.id;
+        this.name = card.name || "Thiệp cưới của tôi";
         this.id_category_wedding_card = card.id_category_wedding_card || null;
         this.is_publish =
           card.is_publish !== undefined ? card.is_publish : true;
@@ -402,6 +407,7 @@ export const useEditorStore = defineStore("editor", {
               );
               const cardData = {
                 id: state.currentCardId,
+                name: state.name,
                 id_category_wedding_card: state.id_category_wedding_card,
                 is_publish: state.is_publish,
                 is_template: state.is_template,
@@ -579,6 +585,7 @@ export const useEditorStore = defineStore("editor", {
       if (slug === "new-blank") {
         // Initialize blank state
         this.currentCardId = uuidv4(); // Generate temp ID for LocalStorage
+        this.name = `Trang mới - ${new Date().toLocaleDateString("vi-VN")}`;
         this.id_category_wedding_card = null;
         this.is_publish = true;
         this.is_template = false;
@@ -612,6 +619,7 @@ export const useEditorStore = defineStore("editor", {
         const cards: CardData[] = savedRaw ? JSON.parse(savedRaw) : [];
         cards.push({
           id: this.currentCardId as string,
+          name: this.name,
           id_category_wedding_card: this.id_category_wedding_card,
           is_publish: this.is_publish,
           is_template: this.is_template,
@@ -638,6 +646,7 @@ export const useEditorStore = defineStore("editor", {
         if (data && data.data) {
           const card = data.data;
           this.currentCardId = card.id;
+          this.name = card.name || "Thiệp cưới của tôi";
 
           // Parse properties if it's a string, otherwise use as object
           let properties = card.properties;
@@ -794,7 +803,7 @@ export const useEditorStore = defineStore("editor", {
       }, 50);
     },
 
-    async saveCard(silent = false) {
+    async saveCard(silent = false, redirectToPage = false) {
       if (this.isSaving) return;
       this.isSaving = true;
       const route = useRoute();
@@ -817,6 +826,7 @@ export const useEditorStore = defineStore("editor", {
 
       // Collect data
       const payload: any = {
+        name: this.name || "Thiệp cưới của tôi",
         avatar: this.avatar,
         properties: {
           nodes: this.createdNodes,
@@ -843,6 +853,7 @@ export const useEditorStore = defineStore("editor", {
         const isDraft =
           !this.currentCardId || typeof this.currentCardId === "string";
         let savedCardId = this.currentCardId;
+        let targetSlug: any = route.params.slug;
 
         if (isDraft) {
           // Create New
@@ -864,6 +875,7 @@ export const useEditorStore = defineStore("editor", {
             const oldId = this.currentCardId;
             this.currentCardId = data.data.id;
             savedCardId = data.data.id;
+            targetSlug = data.data.url || data.data.id;
 
             // Xóa bản nháp khỏi LocalStorage sau khi đã xuất bản thành công
             const savedRaw = localStorage.getItem("wd_invitations");
@@ -881,29 +893,16 @@ export const useEditorStore = defineStore("editor", {
             }
 
             if (!silent) this.showNotification("Xuất bản thành công!", "success");
-
-            // Update URL without reload
-            const isMobile = route.path.includes("/editor/m");
-            const targetSlug = data.data.url || data.data.id;
-
-            if (this.role === "admin") {
-              router.push(`/admin/editor/${targetSlug}`);
-            } else if (route.params.slug === "new-blank") {
-              router.push(`/dashboard/pages/${targetSlug}`);
-            } else {
-              const prefix = isMobile ? "/editor/m" : "/editor";
-              router.push(`${prefix}/${targetSlug}`);
-            }
-            this.is_saved = true;
-            localStorage.setItem("is_saved", "true");
-            return data.data;
           }
         } else {
           // Update Existing
-          await $fetch(`${apiBase}/${this.currentCardId}`, {
+          const resUpdate: any = await $fetch(`${apiBase}/${this.currentCardId}`, {
             method: "PUT",
             body: payload,
           });
+          if (resUpdate?.data?.url) {
+            targetSlug = resUpdate.data.url;
+          }
 
           // Xóa bản nháp khỏi LocalStorage sau khi đã lưu lại lên server thành công
           const savedRaw = localStorage.getItem("wd_invitations");
@@ -922,7 +921,12 @@ export const useEditorStore = defineStore("editor", {
             }
           }
 
-          if (!silent) this.showNotification("Cập nhật thành công", "success");
+          if (!silent) {
+            this.showNotification(
+              redirectToPage ? "Xuất bản thành công!" : "Cập nhật thành công",
+              "success",
+            );
+          }
         }
 
         // Mark as saved
@@ -972,7 +976,27 @@ export const useEditorStore = defineStore("editor", {
             console.error("Failed to auto-generate image:", imgError);
           }
         }
-        return { id: savedCardId, url: route.params.slug };
+
+        const finalSlug = targetSlug || savedCardId;
+        if (redirectToPage) {
+          if (this.role === "admin") {
+            router.push(`/admin/editor/${finalSlug}`);
+          } else {
+            router.push(`/dashboard/pages/${finalSlug}`);
+          }
+        } else if (isDraft && finalSlug) {
+          const isMobile = route.path.includes("/editor/m");
+          if (this.role === "admin") {
+            router.push(`/admin/editor/${finalSlug}`);
+          } else if (route.params.slug === "new-blank") {
+            router.push(`/dashboard/pages/${finalSlug}`);
+          } else {
+            const prefix = isMobile ? "/editor/m" : "/editor";
+            router.push(`${prefix}/${finalSlug}`);
+          }
+        }
+
+        return { id: savedCardId, url: finalSlug };
       } catch (error: any) {
         console.error("Failed to save card", error);
         const serverMsg = error?.data?.message || error?.response?._data?.message;
@@ -1008,7 +1032,8 @@ export const useEditorStore = defineStore("editor", {
 
     // Alias for compatibility if needed, or remove
     async saveTemplate() {
-      return this.saveCard();
+      this.is_publish = true;
+      return this.saveCard(false, true);
     },
   },
 });

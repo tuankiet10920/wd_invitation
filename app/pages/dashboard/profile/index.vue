@@ -278,7 +278,7 @@ onMounted(() => {
                         <div class="text-muted" style="font-size: 11px;">Gói dịch vụ hiện tại của bạn</div>
                     </div>
                 </div>
-                <button v-if="userStore.packageName !== 'Premium' && (userStore.packageLevel || 1) < 4"
+                <button v-if="userStore.packageName !== 'Premium' && (userStore.packageLevel || 1) < 3"
                     @click="navigateTo('/pricing-plans')"
                     class="btn btn-primary btn-update-package btn-sm px-4 rounded-pill fw-bold shadow-sm d-flex align-items-center align-self-end align-self-md-auto">
                     <BaseIconComponent name="zap" type="lucide" :size="14" class="me-1" color="#fff" /> Nâng cấp

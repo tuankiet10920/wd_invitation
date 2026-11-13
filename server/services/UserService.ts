@@ -55,14 +55,30 @@ export class UserService {
       const user = await User.getById(id);
       if (!user) return FormatResponse.error(event, "User not found!");
 
-      // Specific update logic (password hashing if needed, etc)
-      if (body.password) {
-        // Assume model hooks handle hashing or do it here
-         const salt = await bcrypt.genSalt(10);
-         body.password = await bcrypt.hash(body.password, salt);
+      const updateData: any = {
+        name: body.name,
+        email: body.email,
+        phone: body.phone ?? null,
+        birthday: body.birthday || null,
+        introduction: body.introduction ?? null,
+        is_active: body.is_active !== undefined ? Boolean(body.is_active) : user.is_active,
+        role: body.role ? String(body.role).toLowerCase() : user.role,
+      };
+
+      if (body.id_package !== undefined && body.id_package !== null && body.id_package !== "") {
+        updateData.id_package = Number(body.id_package);
       }
 
-      await user.update(body);
+      if (body.avatar !== undefined && body.avatar !== null && body.avatar !== "") {
+        updateData.avatar = body.avatar;
+      }
+
+      if (body.password && String(body.password).trim() !== "") {
+        const salt = await bcrypt.genSalt(10);
+        updateData.password = await bcrypt.hash(String(body.password).trim(), salt);
+      }
+
+      await user.update(updateData);
       return FormatResponse.success(user, "User updated successfully!");
     } catch (error) {
       return FormatResponse.failure(error);

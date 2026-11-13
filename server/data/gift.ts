@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import { DataPattern } from ".";
 
 export class GiftData extends DataPattern {
@@ -5,13 +6,17 @@ export class GiftData extends DataPattern {
 
   public async list(query: any) {
     const GiftModel = this.getModels()?.Gift;
+    const where: any = {};
+    if (query.search) {
+      where.name = { [Op.like]: `%${query.search}%` };
+    }
     const options = {
       query: {
         page: query.page || "1",
         limit: query.limit || "50",
-        search: query.search || "",
+        search: "",
       },
-      where: {},
+      where,
       order: [["price", "ASC"]],
     };
     return await this.pagination(GiftModel, options);

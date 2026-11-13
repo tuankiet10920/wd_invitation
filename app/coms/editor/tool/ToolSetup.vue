@@ -1,15 +1,33 @@
 <script setup lang="ts">
 import BaseIconComponent from '~/coms/icons/BaseIconComponent.vue';
 import { useEditorStore } from '~~/stores/editor';
+import { useUserStore } from '~~/stores/user';
 
 const editorStore = useEditorStore();
+const userStore = useUserStore();
+
+onMounted(async () => {
+    if (userStore.isLogin) {
+        await userStore.fetchPlan();
+    }
+});
 
 const { data: categoryResponse } = useFetch('/api/v1/client/category-wedding-cards');
 const categories = computed(() => (categoryResponse.value as any)?.data || []);
 
 const { data: packageResponse } = useFetch('/api/v1/client/packages');
 const packages = computed(() => (packageResponse.value as any)?.data?.data || []);
-const selectedPackage = computed(() => packages.value.find((p: any) => p.id === editorStore.id_package));
+const selectedPackage = computed(() => {
+    if (editorStore.role === 'admin') {
+        return packages.value.find((p: any) => Number(p.id) === Number(editorStore.id_package));
+    }
+    return (
+        packages.value.find((p: any) => Number(p.id) === Number(userStore.packageId)) ||
+        packages.value.find((p: any) => p.name?.toLowerCase() === userStore.packageName?.toLowerCase()) ||
+        packages.value.find((p: any) => Number(p.time_save_card) === Number(editorStore.package_time_save_card)) ||
+        packages.value.find((p: any) => Number(p.id) === Number(editorStore.id_package))
+    );
+});
 
 watch(packages, (newPkgs) => {
     if (newPkgs.length > 0 && editorStore.id_package === null) {
@@ -19,8 +37,12 @@ watch(packages, (newPkgs) => {
 
 const expirationDetails = computed(() => {
     const createdAt = editorStore.createdAt ? new Date(editorStore.createdAt) : new Date();
-    let timeSaveCard = selectedPackage.value?.time_save_card || editorStore.package_time_save_card || 6; // Default to 6 months if not found
-    timeSaveCard = timeSaveCard * 30; // convert months to days
+    const timeSaveMonths = Number(
+        selectedPackage.value?.time_save_card ||
+        editorStore.package_time_save_card ||
+        3
+    );
+    const timeSaveCard = timeSaveMonths * 30; // convert months to days
 
     const expiryDate = new Date(createdAt.getTime());
     expiryDate.setDate(createdAt.getDate() + timeSaveCard);
@@ -145,11 +167,10 @@ const handleEditClick = () => {
     <!-- IMAGE -->
     <div class="preview-card border rounded-3 overflow-hidden mb-3">
         <div class="preview-image bg-dark" style="height: 160px; width: 100%;">
-            <img :src="editorStore.avatar ? `${editorStore.avatar}?t=${editorStore.avatarCacheBuster || 0}` : ''"
-                class="w-100 h-100 object-fit-cover" v-if="editorStore.avatar" />
+            <NuxtImg :src="editorStore.avatar" class="w-100 h-100 object-fit-cover" v-if="editorStore.avatar" />
         </div>
         <div class="p-3 bg-white">
-            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px;">Trang mới - {{ expirationDetails.createdAtStr }}
+            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px;">{{ editorStore.name || `Trang mới - ${expirationDetails.createdAtStr}` }}
             </h6>
         </div>
     </div>
@@ -187,12 +208,12 @@ const handleEditClick = () => {
 
             <div class="bg-secondary-subtle bg-opacity-10 rounded p-3 mb-0" style="background-color: #f8f9fa;">
                 <p class="mb-3 text-secondary lh-base" style="font-size: 13px;" v-if="!selectedPackage">
-                    Vui lòng chọn gói dịch vụ để xem thông tin thời hạn. Thông thường gói Free có thời hạn 6 tháng.
+                    Vui lòng chọn gói dịch vụ để xem thông tin thời hạn. Thông thường gói Free có thời hạn 3 tháng.
                 </p>
                 <p class="mb-3 text-secondary lh-base" style="font-size: 13px;" v-else>
                     Gói <strong>{{ selectedPackage.name }}</strong> có thời hạn {{ selectedPackage.time_save_card || 0
                     }} tháng.
-                    Cho phép tối đa {{ selectedPackage.image_limits || 0 }} ảnh và {{ selectedPackage.maximum_views || 0
+                    Cho phép tối đa {{ selectedPackage.image_limits || 0 }} ảnh và {{ (selectedPackage.maximum_views || 0).toLocaleString('vi-VN')
                     }} lượt xem.
                 </p>
                 <button class="btn btn-primary btn-sm text-white border-0 fw-medium"

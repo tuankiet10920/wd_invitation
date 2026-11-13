@@ -56,7 +56,10 @@ onBeforeUnmount(() => {
         'image-hover': props.fit,
         'cursor-zoom-in': props.fit,
     }" :data-fancybox="dataFancybox" :data-caption="dataCaption">
-        <NuxtImg class="ts-3" :class="{ 'fit-image': props.fit }" :src="url" :alt="alt" :width="width" :height="height" />
+        <img v-if="url && (url.startsWith('http://') || url.startsWith('https://'))"
+            class="ts-3 object-fit-cover" :class="{ 'fit-image': props.fit }" :src="url" :alt="alt"
+            :width="width" :height="height" referrerpolicy="no-referrer" />
+        <NuxtImg v-else class="ts-3" :class="{ 'fit-image': props.fit }" :src="url" :alt="alt" :width="width" :height="height" />
     </a>
 </template>
 

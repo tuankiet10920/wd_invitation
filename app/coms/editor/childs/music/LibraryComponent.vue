@@ -22,7 +22,7 @@ onMounted(async () => {
         const res: any = await $fetch('/api/v1/client/my-plan');
         if (res && res.data) {
             currentPlanName.value = res.data.name || 'FREE';
-            if (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 4) {
+            if (res.data.name?.toLowerCase() === 'premium' || Number(res.data.level) >= 3) {
                 isPremium.value = true;
             }
         }
